@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/stylesobre.css') }}">
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -34,7 +35,7 @@
             <div class="nav_option">
                 <li><a id="phone_Group" href="#"><img id="phone_Icon" src="{{ asset('img/phone_icon.png') }}"
                             alt="">266123123</a></li>
-                <li><a class="active" href="#home">Sobre</a></li>
+                <li><a class="active" href="{{route('sobre')}}">Sobre</a></li>
                 <li><a c href="#news">Horarios</a></li>
                 <li><a href="#contact">Aulas</a></li>
                 <li><a href="#about">Desportos</a></li>
