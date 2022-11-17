@@ -70,7 +70,7 @@
 
         <div class="imagemtexto col">
             <img src="../IMG/joel.png" alt="1a Imagem">
-            <h6>Joel Mota <br> CEO</h6>
+            <h6>Joel Mota <br> CFO</h6>
         </div>
         <div class="imagemtexto col">
             <img src="../IMG/miguel.png" alt="2a Imagem">
@@ -78,7 +78,7 @@
         </div>
         <div class="imagemtexto col">
             <img src="../IMG/roman.png" alt="3a Imagem">
-            <h6>Roman Kalyuzhnov<br> CFO</h6>
+            <h6>Roman Kalyuzhnov<br> CEO</h6>
         </div>
         <div class="imagemtexto col">
             <img src="../IMG/nuno.png" alt="4a Imagem">
