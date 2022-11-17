@@ -136,12 +136,14 @@ nav .nav_option li a:hover {
 
 .info_home{
     background-image: url(../img/info_background_aulas_hover.png);
+    background-repeat: no-repeat;
     height: 165px;
     overflow: hidden;
 }
 
 .info_home:hover{
     background-image: url(../img/info_background_aulas.png);
+    background-repeat: no-repeat;
 }
 
 .info_text{

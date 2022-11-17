@@ -17,12 +17,11 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-<<<<<<< Updated upstream
 Route::get('/sobre', function () {
     return view('sobre');
 })->name('sobre');
-=======
+
 Route::get('/aula', function () {
     return view('aula');
 })->name('aula');
->>>>>>> Stashed changes
+
