@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}">
 <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 <link rel="stylesheet" href="{{ asset('css/stylesobre.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style_faqs.css') }}">
 
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"

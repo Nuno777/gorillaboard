@@ -2,7 +2,7 @@
 @section('main')
 <div class="container content-fuid">
     <div class="row">
-        <div class="col-6">
+        <div class=" FAQS col-lg-6">
 
         </div>
         <div class="contacts  col-lg-4 mx-auto">
