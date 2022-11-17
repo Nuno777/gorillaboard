@@ -7,12 +7,23 @@
 .text{
    
     text-align: center;
+    margin-bottom: .30rem;
+    align-items: center;
+    align-content: center;
 }
 .text hr{
     align-content: center;
     width: 20%;
     height: auto;
     color:#2AA9FF
+}
+.text p {
+    max-width: 60% auto;
+
+}
+
+.container{
+    margin-top: 9em;
 }
 
 .accrodion-item{
