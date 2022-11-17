@@ -112,5 +112,6 @@
                 </div>
             </div>
         </div>
+        <p class="card-text text-center"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
     </div>
 @endsection
