@@ -5,7 +5,7 @@
 }
 
 .text{
-   
+
     text-align: center;
     margin-bottom: .30rem;
     align-items: center;
@@ -23,7 +23,7 @@
 }
 
 .container{
-    margin-top: 9em;
+    margin-top: 4em;
 }
 
 .accrodion-item{
@@ -43,7 +43,7 @@
     padding: 1rem 0;
 }
 
-.accordion-link i{  
+.accordion-link i{
     color:#2AA9FF;
     padding:.5rem;
 }

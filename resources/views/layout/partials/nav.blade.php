@@ -10,9 +10,8 @@
             <li><a href="{{ route('faqs') }}">FAQS</a></li>
             <li><a href="{{ route('sobre') }}">Sobre</a></li>
             <li><a href="#news">Horarios</a></li>
-            <li><a href="{{ route('aula') }}">Aulas</a></li>
+            <li><a class="dropdown" href="{{ route('aula') }}">Aulas</a></li>
             <li><a href="#about">Desportos</a></li>
-
         </div>
     </ul>
 </nav>
