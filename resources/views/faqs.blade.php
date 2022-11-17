@@ -1,4 +1,5 @@
 @extends('layout.master')
+@section('title', 'GorillaBoards')
 @section('main')
 <div class="container content-fuid">
     <div class="row">
