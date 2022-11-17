@@ -1,8 +1,9 @@
 @extends('layout.master')
+@section('title', 'GorillaBoards')
 @section('main')
 
 <div class="imagem1">
-        <img src="{{ asset('img/imagem1.png') }}" alt="imagem central"> 
+        <img src="{{ asset('img/imagem1.png') }}" alt="imagem central">
     </div>
 
     <div class="texto1">

@@ -7,9 +7,9 @@
         <div class="nav_option">
             <li><a id="phone_Group" href="#"><img id="phone_Icon" src="{{ asset('img/phone_icon.png') }}"
                         alt="">266123123</a></li>
-            <li><a class="active" href="{{ route('faqs') }}">FAQS</a></li>
-            <li><a class="active" href="{{ route('sobre') }}">Sobre</a></li>
-            <li><a c href="#news">Horarios</a></li>
+            <li><a href="{{ route('faqs') }}">FAQS</a></li>
+            <li><a href="{{ route('sobre') }}">Sobre</a></li>
+            <li><a href="#news">Horarios</a></li>
             <li><a href="{{ route('aula') }}">Aulas</a></li>
             <li><a href="#about">Desportos</a></li>
 
