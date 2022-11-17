@@ -1,46 +1,3 @@
-/* #navbar_Logo{
-    width: 15%;
-    margin-left: 15px;
-}
-
-#nav_Options a{
-    font-size: 15pt;
-}
-
-#nav_Options p{
-    font-size: 15pt;
-    margin-bottom: 0px;
-}
-
-#nav_Options{
-margin-right: 20px;
-}
-
-#navbarDropdownMenuAvatar{
-    width: 80px;
-    text-align: center;
-    padding-top: 18px;
-}
-
-#nav_Profile{
-    background-color: #2AA9FF;
-    height: 80px;
-    text-align: center;
-}
-
-#nav_Profile img{
-    margin: auto;
-    
-}
-
-#Nav{
-    padding: 0;
-}
-
-#phone_numbr{
-    align-items: center;
-} */
-
 nav{
     position: sticky;
     z-index: 100;
@@ -134,16 +91,23 @@ nav .nav_option li a:hover {
 
 }
 
-.info_home{
-    background-image: url(../img/info_background_aulas_hover.png);
+#info_Row {
+    width: 100%;
+}
+
+#info_Row .info_home{
+    background-image: url(../img/info_backgorund.png);
     background-repeat: no-repeat;
+    background-size: cover;
     height: 165px;
+    width: 515px;
     overflow: hidden;
 }
 
-.info_home:hover{
-    background-image: url(../img/info_background_aulas.png);
+#info_Row .info_home:hover{
+    background-image: url(../img/info_backgorund_hover.png);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .info_text{
