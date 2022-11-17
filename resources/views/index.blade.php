@@ -1,4 +1,6 @@
 @extends('layout.master')
+@section('title', 'GorillaBoards')
+
 @section('main')
  <!-- Carousel wrapper -->
  <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
