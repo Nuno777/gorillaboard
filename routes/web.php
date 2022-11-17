@@ -25,3 +25,7 @@ Route::get('/aula', function () {
     return view('aula');
 })->name('aula');
 
+Route::get('/PerguntasFrequentes', function () {
+    return view('faqs');
+})->name('faqs');
+
