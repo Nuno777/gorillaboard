@@ -1,0 +1,45 @@
+.title {
+    padding-bottom: 10px;
+}
+
+.map-size {
+    width: 134%;
+    border-radius: 5px;
+    height: 300px
+}
+
+.name {
+    padding-top: 20px;
+}
+
+.name-padding {
+    padding-bottom: 5px;
+}
+
+.email {
+    padding-top: 20px;
+}
+
+.email-padding {
+    padding-bottom: 5px;
+}
+
+.message {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.message-padding {
+    padding-bottom: 5px;
+}
+
+#message {
+    position: static;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}

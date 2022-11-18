@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PagueController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/', [PagueController::class,'index'])->name('index');
+
+Route::get('/sobre', [PagueController::class,'sobre'])->name('sobre');
+
+Route::get('/aula', [PagueController::class,'aula'])->name('aula');
+
+Route::get('/PerguntasFrequentes', [PagueController::class,'faqs'])->name('faqs');
+
+Route::get('/contactos', [PagueController::class,'contactos'])->name('contactos');
+
+/*
 Route::get('/', function () {
     return view('index');
 })->name('index');
@@ -28,4 +42,4 @@ Route::get('/aula', function () {
 Route::get('/PerguntasFrequentes', function () {
     return view('faqs');
 })->name('faqs');
-
+ */
