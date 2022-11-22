@@ -49,11 +49,12 @@
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
+                <h3 class="row justify-content-center">Aulas de Surf em Grupo</h3>
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">1 Aula</h5>
-                            <p class="card-text text-center"><b>30€</b></p>
+                            <p class="card-text text-center"><b>28€</b></p>
                             <p class="card-text text-center"><b>por pessoa</b></p>
                         </div>
                     </div>
@@ -62,32 +63,43 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">3 Aula</h5>
-                            <p class="card-text text-center"><b>60€</b></p>
-                            <p class="card-text text-center"><b>por pessoa</b></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">5 Aula</h5>
                             <p class="card-text text-center"><b>90€</b></p>
                             <p class="card-text text-center"><b>por pessoa</b></p>
                         </div>
                     </div>
                 </div>
+                <div class="col col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">5 Aula</h5>
+                            <p class="card-text text-center"><b>130€</b></p>
+                            <p class="card-text text-center"><b>por pessoa</b></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
     </div>
-
+<br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
+                <h3 class="row justify-content-center">Aulas Privadas de Surf</h3>
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">1 Aula</h5>
-                            <p class="card-text text-center"><b>50€</b></p>
+                            <p class="card-text text-center"><b>70€</b></p>
+                            <p class="card-text text-center"><b>por pessoa</b></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">2 Aula</h5>
+                            <p class="card-text text-center"><b>130€</b></p>
                             <p class="card-text text-center"><b>por pessoa</b></p>
                         </div>
                     </div>
@@ -96,22 +108,13 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title text-center">3 Aula</h5>
-                            <p class="card-text text-center"><b>80€</b></p>
-                            <p class="card-text text-center"><b>por pessoa</b></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-lg-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">5 Aula</h5>
-                            <p class="card-text text-center"><b>110€</b></p>
+                            <p class="card-text text-center"><b>180€</b></p>
                             <p class="card-text text-center"><b>por pessoa</b></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <p class="card-text text-center"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
+        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
     </div>
 @endsection
