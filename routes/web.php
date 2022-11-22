@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\PagueController;
+use App\Http\Controllers\PageController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [PagueController::class,'index'])->name('index');
+Route::get('/', [PageController::class,'index'])->name('index');
 
-Route::get('/sobre', [PagueController::class,'sobre'])->name('sobre');
+Route::get('/sobre', [PageController::class,'sobre'])->name('sobre');
 
-Route::get('/aula', [PagueController::class,'aula'])->name('aula');
+Route::get('/aula', [PageController::class,'aula'])->name('aula');
 
-Route::get('/PerguntasFrequentes', [PagueController::class,'faqs'])->name('faqs');
+Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs');
 
-Route::get('/contactos', [PagueController::class,'contactos'])->name('contactos');
+Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
 
 /*
 Route::get('/', function () {
