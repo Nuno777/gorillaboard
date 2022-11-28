@@ -5,7 +5,7 @@
         <li id="li_Logo"><a href="/"><img id="nav_Logo" src="{{ asset('img/gorilla_horizontal.png') }}"
                     alt=""></a></li>
         <div class="nav_option">
-            <li><a id="phone_Group" href="#"><img id="phone_Icon" src="{{ asset('img/phone_icon.png') }}"
+            <li><a id="phone_Group" href="{{ route('contactos') }}"><img id="phone_Icon" src="{{ asset('img/phone_icon.png') }}"
                         alt="">266123123</a></li>
             <li><a href="{{ route('contactos') }}">Contactos</a></li>
             <li><a href="{{ route('faqs') }}">FAQS</a></li>
