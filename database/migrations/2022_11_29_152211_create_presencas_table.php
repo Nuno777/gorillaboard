@@ -14,8 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('presencas', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_presencas');
+
             $table->timestamps();
+
+            // $table->unsignedBigInteger('id_users')->nullable();
+            // $table->unsignedBigInteger('id_aulas')->nullable();
+
+            // $table->foreign('id_users')->references('id_presencas')->on('users');
+            // $table->foreign('id_aulas')->references('id_presencas')->on('aulas');
         });
     }
 

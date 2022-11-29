@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('aulas', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_aulas');
+            $table->string('alunos_aulas',50);
+            $table->string('professor_aulas',50);
+            $table->string('local_aulas',50);
+            $table->date('data_aulas');
             $table->timestamps();
+
+            #$table->unsignedBigInteger('alunos_aulas');
         });
     }
 
