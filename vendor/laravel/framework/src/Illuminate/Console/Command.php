@@ -2,9 +2,12 @@
 
 namespace Illuminate\Console;
 
+use Illuminate\Console\View\Components\Factory;
+use Illuminate\Contracts\Console\Isolatable;
 use Illuminate\Support\Traits\Macroable;
 use Symfony\Component\Console\Command\Command as SymfonyCommand;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class Command extends SymfonyCommand
@@ -12,6 +15,7 @@ class Command extends SymfonyCommand
     use Concerns\CallsCommands,
         Concerns\HasParameters,
         Concerns\InteractsWithIO,
+        Concerns\InteractsWithSignals,
         Macroable;
 
     /**
@@ -84,6 +88,10 @@ class Command extends SymfonyCommand
         if (! isset($this->signature)) {
             $this->specifyParameters();
         }
+
+        if ($this instanceof Isolatable) {
+            $this->configureIsolation();
+        }
     }
 
     /**
@@ -105,21 +113,43 @@ class Command extends SymfonyCommand
     }
 
     /**
+     * Configure the console command for isolation.
+     *
+     * @return void
+     */
+    protected function configureIsolation()
+    {
+        $this->getDefinition()->addOption(new InputOption(
+            'isolated',
+            null,
+            InputOption::VALUE_OPTIONAL,
+            'Do not run the command if another instance of the command is already running',
+            false
+        ));
+    }
+
+    /**
      * Run the console command.
      *
      * @param  \Symfony\Component\Console\Input\InputInterface  $input
      * @param  \Symfony\Component\Console\Output\OutputInterface  $output
      * @return int
      */
-    public function run(InputInterface $input, OutputInterface $output)
+    public function run(InputInterface $input, OutputInterface $output): int
     {
         $this->output = $this->laravel->make(
             OutputStyle::class, ['input' => $input, 'output' => $output]
         );
 
-        return parent::run(
-            $this->input = $input, $this->output
-        );
+        $this->components = $this->laravel->make(Factory::class, ['output' => $this->output]);
+
+        try {
+            return parent::run(
+                $this->input = $input, $this->output
+            );
+        } finally {
+            $this->untrap();
+        }
     }
 
     /**
@@ -131,9 +161,38 @@ class Command extends SymfonyCommand
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        if ($this instanceof Isolatable && $this->option('isolated') !== false &&
+            ! $this->commandIsolationMutex()->create($this)) {
+            $this->comment(sprintf(
+                'The [%s] command is already running.', $this->getName()
+            ));
+
+            return (int) (is_numeric($this->option('isolated'))
+                        ? $this->option('isolated')
+                        : self::SUCCESS);
+        }
+
         $method = method_exists($this, 'handle') ? 'handle' : '__invoke';
 
-        return (int) $this->laravel->call([$this, $method]);
+        try {
+            return (int) $this->laravel->call([$this, $method]);
+        } finally {
+            if ($this instanceof Isolatable && $this->option('isolated') !== false) {
+                $this->commandIsolationMutex()->forget($this);
+            }
+        }
+    }
+
+    /**
+     * Get a command isolation mutex instance for the command.
+     *
+     * @return \Illuminate\Console\CommandMutex
+     */
+    protected function commandIsolationMutex()
+    {
+        return $this->laravel->bound(CommandMutex::class)
+            ? $this->laravel->make(CommandMutex::class)
+            : $this->laravel->make(CacheCommandMutex::class);
     }
 
     /**
@@ -166,17 +225,15 @@ class Command extends SymfonyCommand
      *
      * @return bool
      */
-    public function isHidden()
+    public function isHidden(): bool
     {
         return $this->hidden;
     }
 
     /**
      * {@inheritdoc}
-     *
-     * @return static
      */
-    public function setHidden(bool $hidden)
+    public function setHidden(bool $hidden = true): static
     {
         parent::setHidden($this->hidden = $hidden);
 

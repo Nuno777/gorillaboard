@@ -30,7 +30,7 @@ class Listener
     protected $sleep = 3;
 
     /**
-     * The amount of times to try a job before logging it failed.
+     * The number of times to try a job before logging it failed.
      *
      * @var int
      */
@@ -157,6 +157,7 @@ class Listener
             "--memory={$options->memory}",
             "--sleep={$options->sleep}",
             "--tries={$options->maxTries}",
+            $options->force ? '--force' : null,
         ], function ($value) {
             return ! is_null($value);
         });

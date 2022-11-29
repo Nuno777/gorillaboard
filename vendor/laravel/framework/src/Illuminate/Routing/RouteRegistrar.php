@@ -22,13 +22,16 @@ use InvalidArgumentException;
  * @method \Illuminate\Routing\RouteRegistrar middleware(array|string|null $middleware)
  * @method \Illuminate\Routing\RouteRegistrar name(string $value)
  * @method \Illuminate\Routing\RouteRegistrar namespace(string|null $value)
- * @method \Illuminate\Routing\RouteRegistrar prefix(string  $prefix)
+ * @method \Illuminate\Routing\RouteRegistrar prefix(string $prefix)
  * @method \Illuminate\Routing\RouteRegistrar scopeBindings()
- * @method \Illuminate\Routing\RouteRegistrar where(array  $where)
- * @method \Illuminate\Routing\RouteRegistrar withoutMiddleware(array|string  $middleware)
+ * @method \Illuminate\Routing\RouteRegistrar where(array $where)
+ * @method \Illuminate\Routing\RouteRegistrar withoutMiddleware(array|string $middleware)
+ * @method \Illuminate\Routing\RouteRegistrar withoutScopedBindings()
  */
 class RouteRegistrar
 {
+    use CreatesRegularExpressionRouteConstraints;
+
     /**
      * The router instance.
      *
@@ -156,11 +159,13 @@ class RouteRegistrar
      * Create a route group with shared attributes.
      *
      * @param  \Closure|string  $callback
-     * @return void
+     * @return $this
      */
     public function group($callback)
     {
         $this->router->group($this->attributes, $callback);
+
+        return $this;
     }
 
     /**

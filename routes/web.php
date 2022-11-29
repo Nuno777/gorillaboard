@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
-
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', [PageController::class,'index'])->name('index');
 
 Route::get('/sobre', [PageController::class,'sobre'])->name('sobre');
@@ -26,20 +25,14 @@ Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs')
 
 Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
 
-/*
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/sobre', function () {
-    return view('sobre');
-})->name('sobre');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
-Route::get('/aula', function () {
-    return view('aula');
-})->name('aula');
-
-Route::get('/PerguntasFrequentes', function () {
-    return view('faqs');
-})->name('faqs');
- */
+require __DIR__.'/auth.php';

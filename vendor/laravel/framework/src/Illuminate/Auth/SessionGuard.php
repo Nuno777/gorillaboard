@@ -59,7 +59,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      *
      * @var int
      */
-    protected $rememberDuration = 2628000;
+    protected $rememberDuration = 576000;
 
     /**
      * The session used by the guard.
@@ -287,6 +287,8 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      * @param  string  $field
      * @param  array  $extraConditions
      * @return \Symfony\Component\HttpFoundation\Response|null
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      */
     public function basic($field = 'email', $extraConditions = [])
     {
@@ -310,6 +312,8 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      * @param  string  $field
      * @param  array  $extraConditions
      * @return \Symfony\Component\HttpFoundation\Response|null
+     *
+     * @throws \Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException
      */
     public function onceBasic($field = 'email', $extraConditions = [])
     {
@@ -398,7 +402,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      *
      * @param  array  $credentials
      * @param  array|callable  $callbacks
-     * @param  false  $remember
+     * @param  bool  $remember
      * @return bool
      */
     public function attemptWhen(array $credentials = [], $callbacks = null, $remember = false)
@@ -700,9 +704,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     public function attempting($callback)
     {
-        if (isset($this->events)) {
-            $this->events->listen(Events\Attempting::class, $callback);
-        }
+        $this->events?->listen(Events\Attempting::class, $callback);
     }
 
     /**
@@ -714,11 +716,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     protected function fireAttemptEvent(array $credentials, $remember = false)
     {
-        if (isset($this->events)) {
-            $this->events->dispatch(new Attempting(
-                $this->name, $credentials, $remember
-            ));
-        }
+        $this->events?->dispatch(new Attempting($this->name, $credentials, $remember));
     }
 
     /**
@@ -729,11 +727,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     protected function fireValidatedEvent($user)
     {
-        if (isset($this->events)) {
-            $this->events->dispatch(new Validated(
-                $this->name, $user
-            ));
-        }
+        $this->events?->dispatch(new Validated($this->name, $user));
     }
 
     /**
@@ -745,11 +739,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     protected function fireLoginEvent($user, $remember = false)
     {
-        if (isset($this->events)) {
-            $this->events->dispatch(new Login(
-                $this->name, $user, $remember
-            ));
-        }
+        $this->events?->dispatch(new Login($this->name, $user, $remember));
     }
 
     /**
@@ -760,11 +750,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     protected function fireAuthenticatedEvent($user)
     {
-        if (isset($this->events)) {
-            $this->events->dispatch(new Authenticated(
-                $this->name, $user
-            ));
-        }
+        $this->events?->dispatch(new Authenticated($this->name, $user));
     }
 
     /**
@@ -775,11 +761,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     protected function fireOtherDeviceLogoutEvent($user)
     {
-        if (isset($this->events)) {
-            $this->events->dispatch(new OtherDeviceLogout(
-                $this->name, $user
-            ));
-        }
+        $this->events?->dispatch(new OtherDeviceLogout($this->name, $user));
     }
 
     /**
@@ -791,11 +773,7 @@ class SessionGuard implements StatefulGuard, SupportsBasicAuth
      */
     protected function fireFailedEvent($user, array $credentials)
     {
-        if (isset($this->events)) {
-            $this->events->dispatch(new Failed(
-                $this->name, $user, $credentials
-            ));
-        }
+        $this->events?->dispatch(new Failed($this->name, $user, $credentials));
     }
 
     /**

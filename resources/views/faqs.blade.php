@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('layouts.master')
 @section('title', 'GorillaBoards')
 
 @section('main')

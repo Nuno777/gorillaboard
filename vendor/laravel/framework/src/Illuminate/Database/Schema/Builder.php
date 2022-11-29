@@ -34,7 +34,7 @@ class Builder
     /**
      * The default string length for migrations.
      *
-     * @var int
+     * @var int|null
      */
     public static $defaultStringLength = 255;
 
@@ -78,8 +78,8 @@ class Builder
      */
     public static function defaultMorphKeyType(string $type)
     {
-        if (! in_array($type, ['int', 'uuid'])) {
-            throw new InvalidArgumentException("Morph key type must be 'int' or 'uuid'.");
+        if (! in_array($type, ['int', 'uuid', 'ulid'])) {
+            throw new InvalidArgumentException("Morph key type must be 'int', 'uuid', or 'ulid'.");
         }
 
         static::$defaultMorphKeyType = $type;
@@ -93,6 +93,16 @@ class Builder
     public static function morphUsingUuids()
     {
         return static::defaultMorphKeyType('uuid');
+    }
+
+    /**
+     * Set the default morph key type for migrations to ULIDs.
+     *
+     * @return void
+     */
+    public static function morphUsingUlids()
+    {
+        return static::defaultMorphKeyType('ulid');
     }
 
     /**
@@ -168,6 +178,36 @@ class Builder
         }
 
         return true;
+    }
+
+    /**
+     * Execute a table builder callback if the given table has a given column.
+     *
+     * @param  string  $table
+     * @param  string  $column
+     * @param  \Closure  $callback
+     * @return void
+     */
+    public function whenTableHasColumn(string $table, string $column, Closure $callback)
+    {
+        if ($this->hasColumn($table, $column)) {
+            $this->table($table, fn (Blueprint $table) => $callback($table));
+        }
+    }
+
+    /**
+     * Execute a table builder callback if the given table doesn't have a given column.
+     *
+     * @param  string  $table
+     * @param  string  $column
+     * @param  \Closure  $callback
+     * @return void
+     */
+    public function whenTableDoesntHaveColumn(string $table, string $column, Closure $callback)
+    {
+        if (! $this->hasColumn($table, $column)) {
+            $this->table($table, fn (Blueprint $table) => $callback($table));
+        }
     }
 
     /**
@@ -382,19 +422,6 @@ class Builder
         }
 
         return Container::getInstance()->make(Blueprint::class, compact('table', 'callback', 'prefix'));
-    }
-
-    /**
-     * Register a custom Doctrine mapping type.
-     *
-     * @param  string  $class
-     * @param  string  $name
-     * @param  string  $type
-     * @return void
-     */
-    public function registerCustomDoctrineType($class, $name, $type)
-    {
-        $this->connection->registerDoctrineType($class, $name, $type);
     }
 
     /**
