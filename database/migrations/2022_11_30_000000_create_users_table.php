@@ -22,7 +22,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('categoria_users')->nullable();
-            $table->string('cartao_cidadao_users')->nullable();  
+            $table->string('cartao_cidadao_users')->nullable();
             $table->unsignedBigInteger('atletas_id')->nullable();
             $table->unsignedBigInteger('aulas_id')->nullable();
             $table->foreign('atletas_id')->references('id')->on('atletas');
