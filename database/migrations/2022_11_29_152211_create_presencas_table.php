@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('presencas', function (Blueprint $table) {
             $table->id();
-
+            $table->unsignedBigInteger('id_aulas')->nullable();
+            $table->foreign('id_aulas')->references('id')->on('aulas');
             $table->timestamps();
         });
     }
