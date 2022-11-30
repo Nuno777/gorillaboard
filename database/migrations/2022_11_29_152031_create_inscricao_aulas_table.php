@@ -14,7 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('inscricao_aulas', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_inscri_aulas');
+            $table->string('id_users')->foreign('id_users')->references('id')->on('users');
+            $table->string('id_desportos')->foreign('id_desportos')->references('id')->on('desportos');
+            $table->string('quant_inscri_aulas');
             $table->timestamps();
         });
     }

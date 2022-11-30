@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('atletas', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_atletas');
+            $table->date('nasc_atleta');
+            $table->string('idade_atleta');
+            $table->string('email_encarregado_edu')->unique();
+            $table->string('cc_encarregado_edu')->unique();
+            $table->string('tele_encarregado_edu')->unique();
             $table->timestamps();
         });
     }
