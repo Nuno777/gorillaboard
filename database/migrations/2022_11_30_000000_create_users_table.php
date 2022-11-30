@@ -23,10 +23,10 @@ return new class extends Migration
             $table->timestamps();
             $table->string('categoria_users')->nullable();
             $table->string('cartao_cidadao_users')->nullable();  
+            $table->unsignedBigInteger('atletas_id')->nullable();
             $table->unsignedBigInteger('aulas_id')->nullable();
-            $table->unsignedBigInteger('aulas_id')->nullable();
-            $table->foreign('id_atletas')->references('id')->on('atletas');
-            $table->foreign('id_aulas')->references('id')->on('aulas');
+            $table->foreign('atletas_id')->references('id')->on('atletas');
+            $table->foreign('aulas_id')->references('id')->on('aulas');
         });
     }
 
