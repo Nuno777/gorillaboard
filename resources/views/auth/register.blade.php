@@ -1,3 +1,6 @@
+<link href="{{ asset('img/favicon.png') }}" rel="icon">
+<link href="{{ asset('img/favicon.png') }}" rel="apple-touch-icon">
+<title>Register</title>
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
