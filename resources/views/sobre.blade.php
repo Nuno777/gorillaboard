@@ -32,13 +32,13 @@
 
     <div class="row">
         <div class="column">
-            <img src="../IMG/equipa.png" alt="1a Imagem" style="width:100%">
+        <img src="{{ asset('img/equipa.png') }}" alt="1a Imagem" style="width:100%"> 
         </div>
         <div class="column">
-            <img src="../IMG/escolaskate.png" alt="2a Imagem" style="width:100%">
+        <img src="{{ asset('img/escolaskate.png') }}" alt="2a Imagem" style="width:100%">
         </div>
         <div class="column">
-            <img src="../IMG/equipaskate.png" alt="3a Imagem" style="width:100%">
+        <img src="{{ asset('img/equipaskate.png') }}" alt="3a Imagem" style="width:100%">
         </div>
     </div>
 
