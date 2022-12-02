@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    @include('layouts.partials.header')
-</head>
+
+@include('layouts.partials.head')
+
 
 <body>
 
-    <header>
-        @include('layouts.partials.nav')
-    </header>
+    @include('layouts.partials.nav')
 
     <main>
         @yield('main')
     </main>
 
 
-    <footer class="footer">
-        @include('layouts.partials.footer')
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.js"></script>
+    @include('layouts.partials.footer')
 
 </body>
 
