@@ -151,7 +151,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -281,7 +281,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #fff;
@@ -1067,8 +1067,8 @@ section {
 }
 
 .slideshow .swiper-slide img {
-  width: 100%; 
-  height: 337px; 
+  width: 100%;
+  height: 337px;
   object-fit: cover;
 }
 

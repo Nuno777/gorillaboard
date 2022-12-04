@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\faqsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/dashboard2', function () {
+    return view('dashboard2');
+})->name('dashboard');
 
 Route::get('/', [PageController::class,'index'])->name('index');
 
@@ -24,6 +28,7 @@ Route::get('/aula', [PageController::class,'aula'])->name('aula');
 Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs');
 
 Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

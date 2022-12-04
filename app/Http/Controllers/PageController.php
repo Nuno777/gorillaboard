@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\faqs;
 
 class PageController extends Controller
 {
@@ -19,11 +20,15 @@ class PageController extends Controller
     }
 
     public function faqs(){
-        return view('faqs');
+        $faq = faqs::all();
+
+        return view('faqs')->with('faqResults', $faq);
     }
 
     public function contactos(){
         return view('contactos');
+
     }
+
 
 }
