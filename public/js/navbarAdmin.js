@@ -1,28 +1,30 @@
-const ListItems = document.querySelectorAll(".sidebar-list li")
-
-ListItems.forEach(item => {
-    item.addEventListener("click", () =>{
-        let isActive = item.classList.contains("active");
-
-        ListItems.forEach((el) => {
-            el.classList.remove("active");
-        });
-
-        if (isActive) item.classList.remove("active");
-        else item.classList.add("active");
-    });
-});
+const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
 
 
-const toggleSidebar = document.querySelector(".toggle-sidebar");
-const logo = document.querySelector(".logo-box");
-const sidebar = document.querySelector(".sidebar");
 
 
-toggleSidebar.addEventListener("click", () => {
-    toggleSidebar.classList.toggle("close");
-});
-
-logo.addEventListener("click", () =>{
+toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");
+    document.getElementById("logo").src="img/gorilla_horizontal.png";
+})
+
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+        document.getElementById("logo").src="img/gorilla_horizontal.png";
+    }else{
+        modeText.innerText = "Dark mode";
+        document.getElementById("logo").src="img/gorilla_horizontal.png";
+    }
 });
