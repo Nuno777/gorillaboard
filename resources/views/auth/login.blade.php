@@ -1,34 +1,7 @@
-<<<<<<< Updated upstream
-<link href="{{ asset('img/favicon.png') }}" rel="icon">
-<link href="{{ asset('img/favicon.png') }}" rel="apple-touch-icon">
-<title>Login</title>
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="{{ route('index') }}">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                    required autofocus />
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
-            </div>
-=======
 @extends('layouts.master')
 @vite(['/public/css/style_login.css', '/public/js/app.js'])
 @section('title', 'GorillaBoards')
 @section('main')
->>>>>>> Stashed changes
 
     {{-- Sing in code --}}
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -50,15 +23,9 @@
                         {{-- <x-input-label for="password" :value="__('Password')" /> --}}
                         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                             autocomplete="current-password" placeholder="Password" />
-
-<<<<<<< Updated upstream
-                <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                    autocomplete="current-password" />
-=======
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
                     <input type="submit" value="Login" class="btn solid" />
->>>>>>> Stashed changes
 
                     <!-- Remember Me -->
                     <div class="block mt-4">
@@ -69,36 +36,6 @@
                             <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                         </label>
                     </div>
-
-<<<<<<< Updated upstream
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox"
-                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                @if (Route::has('register'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        href="{{ route('register') }}">
-                        {{ __('Create Account') }}
-                    </a>
-                @endif
-
-                <x-primary-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-primary-button>
-=======
                     <div class="flex items-center justify-end mt-4">
                         @if (Route::has('password.request'))
                             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -163,7 +100,6 @@
                         </x-primary-button> --}}
                     </div>
                 </form>
->>>>>>> Stashed changes
             </div>
         </div>
 
