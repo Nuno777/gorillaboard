@@ -1,6 +1,51 @@
 # Release Notes for 9.x
 
-## [Unreleased](https://github.com/laravel/framework/compare/v9.40.1...9.x)
+## [Unreleased](https://github.com/laravel/framework/compare/v9.42.0...9.x)
+
+
+## [v9.42.0](https://github.com/laravel/framework/compare/v9.41.0...v9.42.0) - 2022-11-29
+
+### Added
+- Added --rest option to queue:listen ([00a12e2](https://github.com/laravel/framework/commit/00a12e256f897d215012bddf76b6b6c0d66f7f67), [82fde9e](https://github.com/laravel/framework/commit/82fde9e0dc4f08f4c4db254b9449fd87652c40a6))
+- Added `Illuminate/Support/Stringable::isUlid()` ([#45100](https://github.com/laravel/framework/pull/45100))
+- Add news report_if and report_unless helpers functions ([#45093](https://github.com/laravel/framework/pull/45093))
+- Add callback to resolve custom mutex name of schedule events ([#45126](https://github.com/laravel/framework/pull/45126))
+- Add WorkOptions to WorkerStopping Event ([#45120](https://github.com/laravel/framework/pull/45120))
+- Added `singleton` and `creatable` options to `Illuminate/Routing/Console/ControllerMakeCommand` ([#44872](https://github.com/laravel/framework/pull/44872))
+
+### Fixed
+- Fix pure enums validation ([#45121](https://github.com/laravel/framework/pull/45121))
+- Prevent test issues with relations with the $touches property ([#45118](https://github.com/laravel/framework/pull/45118))
+- Fix factory breaking when trying to determine whether a relation is empty ([#45135](https://github.com/laravel/framework/pull/45135))
+
+### Changed
+- Allow set command description via AsCommand attribute ([#45117](https://github.com/laravel/framework/pull/45117))
+- Updated Mailable to prevent duplicated recipients ([#45119](https://github.com/laravel/framework/pull/45119))
+
+
+## [v9.41.0](https://github.com/laravel/framework/compare/v9.40.1...v9.41.0) - 2022-11-22
+
+### Added
+- Added `Illuminate/Validation/Rules/DatabaseRule::onlyTrashed()` ([#44989](https://github.com/laravel/framework/pull/44989))
+- Add some class rules in class Rule ([#44998](https://github.com/laravel/framework/pull/44998))
+- Added `Illuminate/View/ComponentAttributeBag::missing()` ([#45016](https://github.com/laravel/framework/pull/45016))
+- Added `Illuminate/Http/Concerns/InteractsWithInput::whenMissing()` ([#45019](https://github.com/laravel/framework/pull/45019))
+- Add isolation levels to SQL Server Connector ([#45023](https://github.com/laravel/framework/pull/45023))
+- Fix php artisan serve with PHP_CLI_SERVER_WORKERS > 1 ([#45041](https://github.com/laravel/framework/pull/45041))
+- Add ability to prune cancelled job batches ([#45034](https://github.com/laravel/framework/pull/45034))
+- Adding option for custom manifest filename on Vite Facade ([#45007](https://github.com/laravel/framework/pull/45007))
+
+### Fixed
+- Fix deprecation warning when comparing a password against a NULL database password ([#44986](https://github.com/laravel/framework/pull/44986), [206e465](https://github.com/laravel/framework/commit/206e465f9680ef4618009ddfeafa672f8015a511))
+- Outlook web dark mode email layout fix ([#45024](https://github.com/laravel/framework/pull/45024))
+
+### Changed
+- Improves queue:work command output ([#44971](https://github.com/laravel/framework/pull/44971))
+- Optimize Collection::containsStrict ([#44970](https://github.com/laravel/framework/pull/44970))
+- Make name required in `Illuminate/Testing/TestResponse::assertRedirectToRoute()` ([98a0301](https://github.com/laravel/framework/commit/98a03013ed74925f68040beee0937203b632f57d))
+- Strip key, secret and token from root config options on aws clients ([#44979](https://github.com/laravel/framework/pull/44979))
+- Allow customised implementation of the SendQueuedMailable job ([#45040](https://github.com/laravel/framework/pull/45040))
+- Validate uuid before route binding query ([#44945](https://github.com/laravel/framework/pull/44945))
 
 
 ## [v9.40.1](https://github.com/laravel/framework/compare/v9.40.0...v9.40.1) - 2022-11-15
