@@ -36,6 +36,7 @@ nav .nav_option li a:hover {
     background-color: #2AA9FF !important;
     color: white !important;
     font-size: 14pt !important;
+    font-weight: bold !important;
 }
 
 #nav_Logo{
@@ -78,6 +79,7 @@ nav .nav_option li a:hover {
     text-shadow: none !important;
     font-size: 12pt !important;
     border-bottom: #2AA9FF 15px solid;
+    font-weight: bold !important;
 }
 
 .dropdown-menu.show{
@@ -120,7 +122,6 @@ nav .nav_option li a:hover {
 
 #info_Row {
     width: 100%;
-    display: ;
 }
 
 .info_home{
