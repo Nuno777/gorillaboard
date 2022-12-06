@@ -7,12 +7,9 @@
     <link href="{{ asset('img/favicon.png') }}" rel="icon">
     <link href="{{ asset('img/favicon.png ') }}" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/stylesobre.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style_faqs.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/contactos.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/aulas.css') }}">
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -24,4 +21,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.0/mdb.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="@yield('custom_css')">
+
 </head>

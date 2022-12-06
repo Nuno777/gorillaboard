@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+@section('custom_css', asset("css/aulas.css"))
+
 @section('title', 'GorillaBoards')
 @section('main')
 
