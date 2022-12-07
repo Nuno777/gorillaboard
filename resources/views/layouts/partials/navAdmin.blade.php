@@ -68,7 +68,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="{{ route('adminfaq') }}">
+                        <a href="{{ route('admin.faqs.index') }}">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">faqs</span>
                         </a>
@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="{{ route('admincontactos') }}">
+                        <a href="#">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">contactos</span>
                         </a>
