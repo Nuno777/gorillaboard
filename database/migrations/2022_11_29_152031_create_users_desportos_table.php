@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inscricao_aulas', function (Blueprint $table) {
+        Schema::create('users_desportos', function (Blueprint $table) {
             $table->id();
-            $table->string('id_users')->foreign('id_users')->references('id')->on('users');
-            $table->string('id_desportos')->foreign('id_desportos')->references('id')->on('desportos');
-            $table->string('quant_inscri_aulas');
+            $table->integer('num_inscricoes');
+            $table->integer('num_presencas');
+            $table->unsignedBigInteger('desporto_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('desporto_id')->references('id')->on('desportos');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
