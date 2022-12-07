@@ -42,37 +42,68 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
-                            <span class="text nav-text">Revenue</span>
+                            <span class="text nav-text">Users</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Notifications</span>
+                            <span class="text nav-text">professor_aula</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-pie-chart-alt icon'></i>
-                            <span class="text nav-text">Analytics</span>
+                            <span class="text nav-text">presencas</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-heart icon'></i>
-                            <span class="text nav-text">Likes</span>
+                            <span class="text nav-text">inscricao_aulas</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="{{ route('adminfaq') }}">
                             <i class='bx bx-wallet icon'></i>
-                            <span class="text nav-text">Wallets</span>
+                            <span class="text nav-text">faqs</span>
                         </a>
                     </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">desportos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="{{ route('admincontactos') }}">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">contactos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">aulas </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">atletas </span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon'></i>
+                            <span class="text nav-text">aluno_aula </span>
+                        </a>
+                    </li>
+
 
                 </ul>
             </div>
