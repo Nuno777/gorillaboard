@@ -114,9 +114,9 @@
                 <img src="{{ asset('img/'.Auth::user()->img) }}" alt="imagem Utilizador">
             </div>
         </div>
-    </section>
-    <section>
-        @yield('adminMain')
+        <div class="content">
+            @yield('adminMain')
+        </div>
     </section>
 
 </body>

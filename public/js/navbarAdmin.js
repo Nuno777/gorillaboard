@@ -10,7 +10,6 @@ const body = document.querySelector('body'),
 
 toggle.addEventListener("click" , () =>{
     sidebar.classList.toggle("close");
-    document.getElementById("logo").src="img/gorilla_horizontal.png";
 })
 
 searchBtn.addEventListener("click" , () =>{
@@ -22,9 +21,8 @@ modeSwitch.addEventListener("click" , () =>{
 
     if(body.classList.contains("dark")){
         modeText.innerText = "Light mode";
-        document.getElementById("logo").src="img/gorilla_horizontal.png";
+
     }else{
         modeText.innerText = "Dark mode";
-        document.getElementById("logo").src="img/gorilla_horizontal.png";
     }
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\faqs;
+use App\Models\User;
 
 class PageController extends Controller
 {
@@ -20,14 +21,18 @@ class PageController extends Controller
     }
 
     public function faqs(){
-        $faq = faqs::all();
-
-        return view('faqs')->with('faqResults', $faq);
+        return view('faqs');
     }
 
     public function contactos(){
         return view('contactos');
 
+    }
+    public function dashboard(){
+        $countUsers = User::count();
+
+
+        return view('dashboard')->with('countUsers', $countUsers);
     }
 
 

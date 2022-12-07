@@ -15,6 +15,9 @@
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
+    --color-danger:#e65054;
+    --color-alert:#bd8600;
+    --color-correct:#00a32a;
 
     /* ====== Transition ====== */
     --tran-03: all 0.2s ease;
@@ -27,6 +30,7 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    color: var(--text-color);
 }
 
 ::selection{
@@ -42,6 +46,9 @@ body.dark{
     --primary-color-light: #3a3b3c;
     --toggle-color: #fff;
     --text-color: #ccc;
+    --color-danger:#e65054;
+    --color-alert:#bd8600;
+    --color-correct:#00a32a;
 }
 
 /* ===== Sidebar ===== */
@@ -109,6 +116,10 @@ body.dark{
 .sidebar header .image-text{
     display: flex;
     align-items: center;
+    margin-left: calc(100% - 60%);
+}
+.sidebar.close header .image-text{
+    margin-left: calc(100% - 85%);
 }
 .sidebar header .logo-text{
     display: flex;
@@ -133,8 +144,12 @@ header .image-text .profession{
 }
 
 .sidebar header .image img{
-    width: 60%;
+    width: 35%;
 }
+.sidebar.close header .image img{
+    width: 70%;
+}
+
 
 .sidebar header .toggle{
     position: absolute;
@@ -293,10 +308,12 @@ body.dark .switch::before{
     top: 0;
     left: 250px;
     height: 100vh;
-    width: calc(100% - 250px);
+    padding-left: 15px;
+    margin-left: 15px;
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
+
 .home .text{
     font-size: 30px;
     font-weight: 500;
