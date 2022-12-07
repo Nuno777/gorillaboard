@@ -8,37 +8,39 @@ nav ul {
     list-style-type: none;
     margin: 0 !important;
     padding: 0;
-    overflow: hidden;
     background-color: white;
     align-items: center;
-  }
+}
   
 nav li {
     float: right;
-  }
+}
   
 nav li a {
-    color: #1B272C;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    height: 100px;
-    display: flex;
-    align-content: space-around;
-    flex-wrap: wrap;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 16pt;
-    transition: .5s ease-in-out;
+    background-color: white !important;
+    color: #1B272C !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    text-decoration: none !important;
+    height: 60px !important;
+    display: flex !important;
+    align-content: space-around !important;
+    flex-wrap: wrap !important;
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 12pt !important;
+    transition: .5s ease-in-out !important;
+    border-radius: 0 !important;
   }
   
 nav .nav_option li a:hover {
-    background-color: #2AA9FF;
-    color: white;
-    text-shadow: #1B272C 2px 2px;
+    background-color: #2AA9FF !important;
+    color: white !important;
+    font-size: 14pt !important;
+    font-weight: bold !important;
 }
 
 #nav_Logo{
-    width: 200px;
+    width: 130px;
 }
 
 #li_Logo{
@@ -46,7 +48,7 @@ nav .nav_option li a:hover {
 }
 
 .nav_option{
-    height: 100px;
+    height: 60px;
 }
 
 #phone_Icon{
@@ -55,24 +57,51 @@ nav .nav_option li a:hover {
 }
 
 #phone_Group{
-    background-color: #1B272C;
-    color: white;
+    background-color: #1B272C !important;
+    color: white !important;
 }
 
 #navbar{
     z-index: 100;
+    height: 60px;
+}
+
+.dropdown-menu a{
+    background-color: white !important;
+    color: #1B272C !important;
+    font-size: 10pt !important;
+    border-bottom: #2AA9FF 5px solid;
+}
+
+.dropdown .dropdown-menu a:hover{
+    background-color: white !important;
+    color: #1B272C !important;
+    text-shadow: none !important;
+    font-size: 12pt !important;
+    border-bottom: #2AA9FF 15px solid;
+    font-weight: bold !important;
+}
+
+.dropdown-menu.show{
+    border-radius: 0 !important;
+    display: flex !important;
+}
+
+.desp_btn_nav{
+    font-weight: normal !important;
+    margin: 0 !important;
 }
 
 #profile_Icon_Box{
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     text-align: center;
-    background-color: #2AA9FF;
+    background-color: #2AA9FF !important;
     justify-content: center;
 }
 
 #profile_Icon{
-    width: 50px;
+    width: 30px;
 }
 
 .color_back{
@@ -95,6 +124,11 @@ nav .nav_option li a:hover {
     width: 100%;
 }
 
+.info_home{
+    display: flex;
+    align-items: center;
+}
+
 #info_Row .info_home{
     background-image: url(../img/info_backgorund.png);
     background-repeat: no-repeat;
@@ -110,10 +144,11 @@ nav .nav_option li a:hover {
     background-size: cover;
 }
 
-.info_text{
+.info_text h3{
     color: white;
     padding: 30px;
-
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+    font-size: 45pt;
 }
 
 .info_text img{
