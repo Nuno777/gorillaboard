@@ -39,6 +39,13 @@ nav .nav_option li a:hover {
     font-weight: bold !important;
 }
 
+.nav_option a:focus{
+    background-color: #2AA9FF !important;
+    color: white !important;
+    font-size: 14pt !important;
+    font-weight: bold !important;
+}
+
 #nav_Logo{
     width: 130px;
 }
@@ -82,6 +89,7 @@ nav .nav_option li a:hover {
     font-weight: bold !important;
 }
 
+
 .dropdown-menu.show{
     border-radius: 0 !important;
     display: flex !important;
@@ -114,8 +122,6 @@ nav .nav_option li a:hover {
 }
 
 .carousel-indicators{
-    margin-bottom: 0.1px !important;
-    background-color: hsl(198, 24%, 14%, 60%);
     height: 20px;
 
 }
@@ -127,31 +133,67 @@ nav .nav_option li a:hover {
 .info_home{
     display: flex;
     align-items: center;
+    padding-right: 0 !important;
 }
 
 #info_Row .info_home{
-    background-image: url(../img/info_backgorund.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 165px;
-    width: 515px;
+    background-color: #1B272C;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
 }
 
 #info_Row .info_home:hover{
-    background-image: url(../img/info_backgorund_hover.png);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #2AA9FF;
 }
 
-.info_text h3{
+.info_home h3{
     color: white;
     padding: 30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
     font-size: 45pt;
 }
 
-.info_text img{
-    width: 30px !important;
+.info_home img{
+    top: 0;
+    right: 0;
+    height: 165px;
 }
 
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    font-size: 50pt;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#info_Row .info_home:hover .cls-4{
+    fill: #1B272C !important;
+}
+
+
+.cls-1 {
+    fill: none;
+  }
+
+  .cls-1, .cls-2 {
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 5.21px;
+  }
+
+  .cls-3, .cls-2 {
+    fill: #fff;
+  }
+
+  .cls-4 {
+    fill: #2aa9ff;
+  }
+
+  #Layer_1{
+      height: 165px;
+  }
