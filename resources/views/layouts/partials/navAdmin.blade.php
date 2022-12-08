@@ -103,13 +103,27 @@
                             <span class="text nav-text">aluno_aula </span>
                         </a>
                     </li>
-
-
                 </ul>
             </div>
-
+            <div class="profile-details">
+                <div class="profile-content">
+                    <img src="{{ asset('img/' . Auth::user()->img) }}" alt="profile">
+                </div>
+                    <div class="name-job">
+                        <div class="profile-name">{{ Auth::user()->name }}</div>
+                        <div class="job">{{ Auth::user()->perms }}</div>
+                    </div>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <a href="route('logout')"
+                            onclick="event.preventDefault();
+                                this.closest('form').submit();">
+                            <i class='bx bx-log-out icon'></i>
+                        </a>
+                    </form>
+            </div>
             <div class="bottom-content">
-                <li class="">
+                {{-- <li class="">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <a href="route('logout')"
@@ -119,7 +133,7 @@
                             <span class="text nav-text">Logout</span>
                         </a>
                     </form>
-                </li>
+                </li> --}}
 
                 <li class="mode">
                     <div class="sun-moon">
@@ -139,12 +153,6 @@
     </nav>
 
     <section class="home">
-        <div class="user">
-            <h5>{{ Auth::user()->name }}</h4>
-            <div class="img">
-                <img src="{{ asset('img/'.Auth::user()->img) }}" alt="imagem Utilizador">
-            </div>
-        </div>
         <div class="content">
             @yield('adminMain')
         </div>
