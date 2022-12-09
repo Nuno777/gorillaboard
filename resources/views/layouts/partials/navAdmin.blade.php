@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="{{  r }}oute('admincontactos')}}">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">contactos</span>
                         </a>
