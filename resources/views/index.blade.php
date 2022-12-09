@@ -84,7 +84,7 @@
   </div>
   <div id="card_section" class="row">
     <a href="" class="col-md">
-      <div class="card">
+      <div class="card outercard cartas_home">
         <img src="{{ asset('img/surf_homepage_img.png') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Surf</h5>
@@ -92,7 +92,7 @@
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card nexttomiddlecard">
+      <div class="card nexttomiddlecard cartas_home">
         <img src="{{ asset('img/skate_homepage_img.png') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Skate</h5>
@@ -100,7 +100,7 @@
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card middlecard">
+      <div class="card middlecard cartas_home">
         <img src="{{ asset('img/bodyboard_homepage_img.png') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Bodyboard</h5>
@@ -108,7 +108,7 @@
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card nexttomiddlecard">
+      <div class="card nexttomiddlecard cartas_home">
         <img src="{{ asset('img/dhskate_homepage_img.png') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Downhill Skate</h5>
@@ -116,7 +116,7 @@
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card">
+      <div class="card outercard cartas_home">
         <img src="{{ asset('img/psurf_homepage_img.png') }}" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Paddle Surf</h5>
@@ -126,7 +126,7 @@
   </div>
 </div>
 
-<div id="aulas_section">
+<div id="aulas_section" class="aulassec">
   <h3>Aulas</h3>
 </div>
 

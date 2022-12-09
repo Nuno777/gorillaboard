@@ -212,7 +212,7 @@ nav .nav_option li a:hover {
     width: 100%;
     position: absolute;
     z-index: -10;
-
+    animation: wipe-enter 3s;
 }
 
 .title_sections_home h3{
@@ -240,17 +240,16 @@ nav .nav_option li a:hover {
     width: 300px !important;
 }
 
-#card_section .card{
+#card_section .cartas_home{
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     z-index: -1000;
-    animation: wipe-enter1 5s;
 }
 
-.card img{
+.cartas_home img{
     border-radius: 0 !important;
 }
 
@@ -269,11 +268,11 @@ nav .nav_option li a:hover {
     transition: ease-in-out 0.5s;
 }
 
-.card:hover .card-body{
+.cartas_home:hover .card-body{
     background-color: #2AA9FF;
 } 
 
-.card:hover .card-body h5{
+.cartas_home:hover .card-body h5{
     font-size: 18pt !important;
 }
 
@@ -285,4 +284,9 @@ nav .nav_option li a:hover {
     animation: wipe-enter1 4s;
 }
 
+.outercard{
+    animation: wipe-enter1 5s;
+}
+
 /*============Seccao Desportos FIM=============*/
+
