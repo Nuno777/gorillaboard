@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('local_aulas', 50);
             $table->date('data_aulas');
+            $table->unsignedBigInteger('formador_id');
+            $table->unsignedBigInteger('desporto_id');
+            $table->foreign('formador_id')->references('id')->on('users');
+            $table->foreign('desporto_id')->references('id')->on('desportos');
             $table->timestamps();
         });
     }

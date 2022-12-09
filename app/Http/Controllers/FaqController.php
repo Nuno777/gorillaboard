@@ -15,10 +15,10 @@ class FaqController extends Controller
      */
     public function index()
     {
-        return
-        $faq = faqs::all();
 
-        return view('adminPage.faqs')->with('faqResults', $faq);
+        $faqs = faqs::all();
+
+        return view('adminPage.faqs')->with('faqs', $faqs);
     }
 
     /**
