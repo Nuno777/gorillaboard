@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+@vite("public/js/homepage.js")
+
 @section('title', 'GorillaBoards')
 
 @section('main')
@@ -77,7 +80,7 @@
 <div id="desportos_section">
   <div class="title_sections_home">
     <h3>Desportos</h3>
-    <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle">
+    <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
   </div>
   <div id="card_section" class="row">
     <a href="" class="col-md">
