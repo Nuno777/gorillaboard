@@ -140,6 +140,8 @@ nav .nav_option li a:hover {
 
 /*============Botoes Depois do Carrossel=============*/
 
+
+
 #info_Row {
     width: 100%;
     overflow-x: hidden;
@@ -173,17 +175,44 @@ nav .nav_option li a:hover {
     color: white;
     padding: 30px;
     font-family: 'Raleway', sans-serif !important;
-    font-size: 40pt;
+    font-size: 30pt;
 }
 
 /*============Botoes Depois do Carrossel FIM=============*/
 
 /*============Seccao Desportos=============*/
 
+@keyframes wipe-enter {
+	0% {
+		top: 300px;
+	}
+	100% {
+		top: 715px;
+	}
+}
+
+@keyframes wipe-enter1 {
+	0% {
+		top:-500px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+
+.animationnew{
+    animation: wipe-enter 3s;
+}
+
+.animationnew2{
+    animation: wipe-enter1 3s;
+}
+
 .title_sections_home img{
     width: 100%;
     position: absolute;
-    z-index: 999;
+    z-index: -10;
+    animation: wipe-enter 3s;
 }
 
 .title_sections_home h3{
@@ -197,11 +226,13 @@ nav .nav_option li a:hover {
     height: 170px;
     width: 100%;
     color: white;
-    z-index: 1000;
+    z-index: -9;
+    animation: wipe-enter 3s;
 }
 
 #card_section{
     display: flex;
+    
 }
 
 #card_section a{
@@ -209,25 +240,26 @@ nav .nav_option li a:hover {
     width: 300px !important;
 }
 
-.card{
+#card_section .cartas_home{
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 0 !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
+    z-index: -1000;
 }
 
-.card img{
+.cartas_home img{
     border-radius: 0 !important;
 }
 
-.card-body{
+.card_titulo{
     padding: 10px !important;
     background-color: #1B272C;
     transition: ease-in-out 0.5s;
 }
 
-.card-body h5{
+.card_titulo h5{
     color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -236,12 +268,25 @@ nav .nav_option li a:hover {
     transition: ease-in-out 0.5s;
 }
 
-.card:hover .card-body{
-    background-color: #2AA9FF;
+#desportos_section a:hover .card_titulo{
+    background-color: #2AA9FF !important;
 } 
 
-.card:hover .card-body h5{
+#desportos_section a:hover .card_titulo h5{
     font-size: 18pt !important;
 }
 
+.middlecard{
+    animation: wipe-enter1 3s;
+}
+
+.nexttomiddlecard{
+    animation: wipe-enter1 4s;
+}
+
+.outercard{
+    animation: wipe-enter1 5s;
+}
+
 /*============Seccao Desportos FIM=============*/
+
