@@ -10,6 +10,7 @@
                 <li><a href="{{ route('faqs') }}">FAQS</a></li>
                 <li><a href="#news">HORÁRIOS</a></li>
                 <li><a href="{{ route('aula') }}">AULAS</a></li>
+                <li><a href="{{ route('sobre') }}">SOBRE</a></li>
                 <li>
                     <div class="dropdown">
                         <a class="btn btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,7 +26,6 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="{{ route('sobre') }}">SOBRE</a></li>
             </div>
         </ul>
     </nav>
