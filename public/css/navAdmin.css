@@ -16,11 +16,11 @@
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 8px;
+    width: 15xp;
   }
 
   *::-webkit-scrollbar-track {
-    background:var(--primary-color);
+    background:var(--text-color);
   }
 
   *::-webkit-scrollbar-thumb {
