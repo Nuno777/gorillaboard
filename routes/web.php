@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ContactosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +30,12 @@ Route::get('/contactos', [PageController::class,'contactos'])->name('contactos')
 Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/adminfaq', [FaqController::class,'index'])->name('adminfaq');
+
+
+Route::get('/admincontactos', [ContactosController::class,'index'])->name('admincontactos');
+Route::get('/admincontactosShow', [ContactosController::class,'show'])->name('adminPage.adminContactos.show');
+Route::get('/admincontactosDestroy', [ContactosController::class,'destroy'])->name('adminPage.adminContactos.destroy');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

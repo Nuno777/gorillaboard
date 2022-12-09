@@ -34,6 +34,4 @@ class PageController extends Controller
 
         return view('dashboard')->with('countUsers', $countUsers);
     }
-
-
 }

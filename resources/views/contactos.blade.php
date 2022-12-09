@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col">
                 <div class="">
-                    <form action="#" method="post">
+                    <form action="" method="post">
 
                         <div class="name">
                             <label for="name" class="name-padding">Nome</label><br>
