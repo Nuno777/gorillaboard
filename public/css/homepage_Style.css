@@ -153,6 +153,7 @@ nav .nav_option li a:hover {
     display: flex;
     align-items: center;
     padding-right: 0 !important;
+    height: 100px;
 }
 
 #info_Row .info_home {
@@ -161,6 +162,7 @@ nav .nav_option li a:hover {
     display: flex;
     justify-content: space-between;
     transition: ease-in-out 0.3s;
+    justify-content: center;
 }
 
 #info_Row .info_home:hover {
@@ -170,43 +172,8 @@ nav .nav_option li a:hover {
 .info_home h3 {
     color: white;
     padding: 30px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
-    font-size: 45pt;
-}
-
-.info_home img {
-    top: 0;
-    right: 0;
-    height: 165px;
-}
-
-#info_Row .info_home:hover .cls-4 {
-    fill: #1B272C !important;
-}
-
-.cls-1 {
-    fill: none;
-}
-
-.cls-1,
-.cls-2 {
-    stroke: #fff;
-    stroke-miterlimit: 10;
-    stroke-width: 5.21px;
-}
-
-.cls-3,
-.cls-2 {
-    fill: #fff;
-}
-
-.cls-4 {
-    fill: #2aa9ff;
-    transition: ease-in-out 0.3s;
-}
-
-#Layer_1 {
-    height: 165px;
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 40pt;
 }
 
 /*============Botoes Depois do Carrossel FIM=============*/
@@ -227,7 +194,7 @@ nav .nav_option li a:hover {
     font-weight: bold;
     font-size: 32pt;
     position: absolute;
-    height: 265px;
+    height: 170px;
     width: 100%;
     color: white;
     z-index: 1000;
@@ -235,8 +202,11 @@ nav .nav_option li a:hover {
 
 #card_section{
     display: flex;
-    padding-top: 15px !important;
-    padding: 35px;
+}
+
+#card_section a{
+    padding: 0 !important;
+    width: 300px !important;
 }
 
 .card{
@@ -274,11 +244,4 @@ nav .nav_option li a:hover {
     font-size: 18pt !important;
 }
 
-.middlecard{
-    margin-top: 175px;
-}
-
-.nexttomiddlecard{
-    margin-top: 100px;
-}
 /*============Seccao Desportos FIM=============*/
