@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateFaqsRequest;
+use App\Http\Requests\StoreFaqsRequest;
 use App\Models\faqs;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -28,7 +30,8 @@ class FaqController extends Controller
      */
     public function create()
     {
-        //
+        $faqs = new faqs;
+        return view('adminPage.faqs.create')->with('faqs', $faqs);;
     }
 
     /**
@@ -37,10 +40,15 @@ class FaqController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFaqsRequest  $request)
     {
-        //
+        $fields=$request->validate();
+        $faq=new faqs();
+        $faq->fill($fields);
+        $faq->save();
+        return redirect()->route('adminPage.faqs')->with('success', 'Categoria criada com sucesso');
     }
+
 
     /**
      * Display the specified resource.
@@ -50,7 +58,7 @@ class FaqController extends Controller
      */
     public function show(faqs $faqs)
     {
-        //
+        return view('adminPage.faqs.show')->with('faqs', $faqs);
     }
 
     /**
@@ -61,7 +69,7 @@ class FaqController extends Controller
      */
     public function edit(faqs $faqs)
     {
-        //
+        return view('adminPage.faqs.edit')->with('faqs', $faqs);
     }
 
     /**
@@ -71,9 +79,12 @@ class FaqController extends Controller
      * @param  \App\Models\faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, faqs $faqs)
+    public function update(UpdateFaqsRequest $request, faqs $faqs)
     {
-        //
+        $fields=$request->validated();
+        $faqs->fill($fields);
+        $faqs->save();
+        return redirect()->route('adminPage.faqs')->with('success','Categoria atualizada com sucesso');
     }
 
     /**
@@ -84,6 +95,13 @@ class FaqController extends Controller
      */
     public function destroy(faqs $faqs)
     {
-        //
+        if ($faqs->projects()->exists()){
+            return redirect()->route('admin.categories.index')->withErrors(
+            ['delete'=>'A categoria que tentou eliminar tem projetos
+            associados'] );
+            }
+            $faqs->delete();
+            return redirect()->route('admin.categories.index')->with('success',
+            'Categoria eliminada com sucesso');
     }
 }

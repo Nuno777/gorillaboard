@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com -->
 <html lang="en">
 
 <head>
@@ -8,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite(['public/css/navAdmin.css', 'public/js/navbarAdmin.js'])
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <title>Dashboard Sidebar Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Dashboard - GorillaBoard</title>
 </head>
 
 <body>
@@ -16,7 +16,8 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img id="logo" src="{{ asset('img/favicon.png') }}" alt="logotipo">
+                    <a href="#"><img id="logo" src="{{ asset('img/favicon.png') }}" alt="logotipo"></a>
+
                 </span>
             </div>
 
@@ -27,21 +28,21 @@
             <div class="menu">
 
                 <li class="search-box">
-                    <i class='bx bx-search icon'></i>
+                    <i class="fa-solid fa-magnifying-glass icon"></i>
                     <input type="text" placeholder="Search...">
                 </li>
 
                 <ul class="menu-links">
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-home-alt icon'></i>
+                            <i class="fa-regular fa-house icon"></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <i class="fa-light fa-users icon"></i>
                             <span class="text nav-text">Users</span>
                         </a>
                     </li>
@@ -55,7 +56,7 @@
 
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-pie-chart-alt icon'></i>
+                            <i class="fa-regular fa-presentation-screen icon"></i>
                             <span class="text nav-text">presencas</span>
                         </a>
                     </li>
@@ -87,7 +88,7 @@
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-wallet icon'></i>
+                            <i class="fa-regular fa-screen-users icon"></i>
                             <span class="text nav-text">aulas </span>
                         </a>
                     </li>

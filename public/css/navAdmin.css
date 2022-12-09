@@ -72,13 +72,23 @@ body.dark{
     --color-alert:#bd8600;
     --color-correct:#00a32a;
 }
-
+ /* deafult btn-color CRUD */
+.btn-danger{
+    background-color: var(--color-danger);
+}
+.btn-alert{
+    background-color: var(--color-alert);
+}
+.btn-correct{
+    background-color: var(--color-correct);
+}
 /* ===== Sidebar ===== */
 
 
 ol,ul{
     padding: 0 !important;
 }
+
 .sidebar{
     position: fixed;
     top: 0;
@@ -376,8 +386,8 @@ body.dark .home .text{
     justify-content: space-between;
     margin: 0.5rem 0;
 
-}
 
+}
 .sidebar.close .profile-details img{
     margin: 0;
     margin-left: 0.3rem;
@@ -403,13 +413,5 @@ body.dark .home .text{
 }
 
 
-.btn-danger{
-    background-color: var(--color-danger);
-}
-.btn-alert{
-    background-color: var(--color-alert);
-}
-.btn-correct{
-    background-color: var(--color-correct);
-}
+
 
