@@ -253,13 +253,13 @@ nav .nav_option li a:hover {
     border-radius: 0 !important;
 }
 
-.card-body{
+.card_titulo{
     padding: 10px !important;
     background-color: #1B272C;
     transition: ease-in-out 0.5s;
 }
 
-.card-body h5{
+.card_titulo h5{
     color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -268,11 +268,11 @@ nav .nav_option li a:hover {
     transition: ease-in-out 0.5s;
 }
 
-.cartas_home:hover .card-body{
-    background-color: #2AA9FF;
+#desportos_section a:hover .card_titulo{
+    background-color: #2AA9FF !important;
 } 
 
-.cartas_home:hover .card-body h5{
+#desportos_section a:hover .card_titulo h5{
     font-size: 18pt !important;
 }
 
