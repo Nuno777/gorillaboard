@@ -29,9 +29,17 @@ Route::get('/contactos', [PageController::class,'contactos'])->name('contactos')
 
 Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
-    Route::resource('faqs', FaqController::class);
-});
+// Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
+//     Route::resource('faqs', FaqController::class);
+// });
+
+
+Route::get('/adminfaqs', [FaqController::class,'index'])->name('adminfaqs');
+Route::get('/adminfaqscreate', [FaqController::class,'create'])->name('adminFaqsCreate');
+Route::get('/adminfaqsedit', [FaqController::class,'edit'])->name('adminFaqsEdit');
+Route::get('/adminfaqsstore', [FaqController::class,'store'])->name('adminFaqsStore');
+Route::get('/adminfaqsShow', [FaqController::class,'show'])->name('adminFaqsShow');
+Route::get('/adminfaqsdestroy', [FaqController::class,'destroy'])->name('adminFaqsDestroy');
 
 
 Route::get('/admincontactos', [ContactosController::class,'index'])->name('admincontactos');

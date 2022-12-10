@@ -20,7 +20,7 @@ class FaqController extends Controller
 
         $faqs = faqs::all();
 
-        return view('adminPage.faqs')->with('faqs', $faqs);
+        return view ('adminPage.faqs')->with('faqs', $faqs);
     }
 
     /**
