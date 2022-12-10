@@ -27,7 +27,7 @@ Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs')
 
 Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
 
-Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified','admin'])->name('dashboard');
 
 // Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
 //     Route::resource('faqs', FaqController::class);
