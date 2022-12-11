@@ -77,7 +77,7 @@
   </div>    
 </div>
 
-<div id="desportos_section">
+<div id="desportos_section" class="desp_sec">
   <div class="title_sections_home">
     <h3>Desportos</h3>
     <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
@@ -126,7 +126,7 @@
   </div>
 </div>
 
-<div id="aulas_section" class="aulassec">
+<div id="aulas_section">
   <h3>Aulas</h3>
 </div>
 

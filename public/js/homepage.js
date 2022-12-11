@@ -9,6 +9,6 @@ const observer = new IntersectionObserver(entries => {
     });
   });
   
-  observer.observe(document.querySelector('.aulassec'));
+  observer.observe(document.querySelector('.desp_sec'));
 
   
