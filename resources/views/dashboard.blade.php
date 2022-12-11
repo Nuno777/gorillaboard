@@ -54,55 +54,56 @@
 
                         <li class="active">
                             <a class="sidenav-item-link" href="index.html">
-                                <i class="mdi mdi-briefcase-account-outline"></i>
+                                <i class="mdi mdi-monitor-dashboard"></i>
                                 <span class="nav-text">Dashboard</span>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a class="sidenav-item-link" href="analytics.html">
-                                <i class="mdi mdi-chart-line"></i>
-                                <span class="nav-text">Analytics Dashboard</span>
-                            </a>
-                        </li>
-
-                        <li class="section-title">
-                            Apps
-                        </li>
-
-                        <li>
-                            <a class="sidenav-item-link" href="calendar.html">
-                                <i class="mdi mdi-calendar-check"></i>
-                                <span class="nav-text">Calendar</span>
                             </a>
                         </li>
 
                         <li class="has-sub">
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                                data-target="#email" aria-expanded="false" aria-controls="email">
-                                <i class="mdi mdi-email"></i>
-                                <span class="nav-text">email</span> <b class="caret"></b>
+                                data-target="#faq" aria-expanded="false" aria-controls="email">
+                                <i class="mdi mdi-information-outline"></i>
+                                <span class="nav-text">Faqs</span> <b class="caret"></b>
                             </a>
-                            <ul class="collapse" id="email" data-parent="#sidebar-menu">
+                            <ul class="collapse" id="faq" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
 
                                     <li>
                                         <a class="sidenav-item-link" href="email-inbox.html">
-                                            <span class="nav-text">Email Inbox</span>
+                                            <span class="nav-text">Mostrar Faqs</span>
 
                                         </a>
                                     </li>
 
                                     <li>
                                         <a class="sidenav-item-link" href="email-details.html">
-                                            <span class="nav-text">Email Details</span>
+                                            <span class="nav-text">Editar Faqs</span>
+
+                                        </a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                                data-target="#contactos" aria-expanded="false" aria-controls="email">
+                                <i class="mdi mdi-phone"></i>
+                                <span class="nav-text">Contactos</span> <b class="caret"></b>
+                            </a>
+                            <ul class="collapse" id="contactos" data-parent="#sidebar-menu">
+                                <div class="sub-menu">
+
+                                    <li>
+                                        <a class="sidenav-item-link" href="email-inbox.html">
+                                            <span class="nav-text">Mostrar Contactos</span>
 
                                         </a>
                                     </li>
 
                                     <li>
-                                        <a class="sidenav-item-link" href="email-compose.html">
-                                            <span class="nav-text">Email Compose</span>
+                                        <a class="sidenav-item-link" href="email-details.html">
+                                            <span class="nav-text">Editar Contactos</span>
 
                                         </a>
                                     </li>
