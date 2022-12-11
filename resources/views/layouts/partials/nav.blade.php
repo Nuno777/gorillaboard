@@ -4,7 +4,6 @@
             <li>
 
                 <div class="dropdown dropbtn_nav">
-                    <a id="profile_Icon_Box" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         @if (Auth::check())
                         <img id="profile_Icon" src="{{ asset('img/' . Auth::user()->img) }}" alt="" style="border-radius: 100%;">
 
@@ -30,8 +29,6 @@
                                     LOGOUT
                                 </a>
                             </form>
-                        @else
-                        <a class="dropdown-item" href="{{ route('login') }}">LOGIN</a>
                         @endauth
                     </li>
 
@@ -65,18 +62,6 @@
                 </li>
             </div>
         </ul>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </nav>
