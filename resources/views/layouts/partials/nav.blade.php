@@ -4,21 +4,22 @@
             <li>
 
                 <div class="dropdown dropbtn_nav">
-                    <a id="profile_Icon_Box" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                        @if (Auth::check())
+
+                    @if (Auth::check())
+                        <a id="profile_Icon_Box" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         <img id="profile_Icon" src="{{ asset('img/' . Auth::user()->img) }}" alt="" style="border-radius: 100%;">
+                        </a>
+                    @else
+                        <a id="profile_Icon_Box" href="{{ route('login') }}">
+                            <img id="profile_Icon"src="{{ asset('img/profile_icon.png') }}" alt="">
+                        </a>
+                    @endauth
 
-                        @else
-                        <img id="profile_Icon"src="{{ asset('img/profile_icon.png') }}" alt="">
-
-                        @endauth
-                    </a>
 
                     <ul class="dropdown-menu drop_perfil" aria-labelledby="dropdownMenuLink">
                         @if (Auth::check())
                             <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
-                            <li><a class="dropdown-item" href="#">PERFIL</a></li>
-                            <li><a class="dropdown-item" href="/dashboard">DASHBOARD</a></li>
+                            <li><a class="dropdown-item" href="{{ route('dashboard') }}">DASHBOARD</a></li>
                         @endauth
                     <li>
                         @if (Auth::check())
@@ -30,8 +31,6 @@
                                     LOGOUT
                                 </a>
                             </form>
-                        @else
-                        <a class="dropdown-item" href="{{ route('login') }}">LOGIN</a>
                         @endauth
                     </li>
 
