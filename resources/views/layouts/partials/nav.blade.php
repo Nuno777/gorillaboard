@@ -18,7 +18,7 @@
                         @if (Auth::check())
                             <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
                             <li><a class="dropdown-item" href="#">PERFIL</a></li>
-                            <li><a class="dropdown-item" href="/dashboard">DASHBOARD</a></li>
+                            <li><a class="dropdown-item" href="#">DASHBOARD</a></li>
                         @endauth
                     <li>
                         @if (Auth::check())
