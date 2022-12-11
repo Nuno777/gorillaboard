@@ -7,7 +7,7 @@
     <link href="{{ asset('img/favicon.png') }}" rel="icon">
     <link href="{{ asset('img/favicon.png ') }}" rel="apple-touch-icon">
 
-    <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style_faqs.css') }}">
 

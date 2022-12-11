@@ -7,18 +7,18 @@
                     <a id="profile_Icon_Box" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         @if (Auth::check())
                         <img id="profile_Icon" src="{{ asset('img/' . Auth::user()->img) }}" alt="" style="border-radius: 100%;">
-                        
+
                         @else
                         <img id="profile_Icon"src="{{ asset('img/profile_icon.png') }}" alt="">
-                      
+
                         @endauth
                     </a>
-                
+
                     <ul class="dropdown-menu drop_perfil" aria-labelledby="dropdownMenuLink">
                         @if (Auth::check())
                             <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
                             <li><a class="dropdown-item" href="#">PERFIL</a></li>
-                            <li><a class="dropdown-item" href="#">DASHBOARD</a></li>
+                            <li><a class="dropdown-item" href="/dashboard">DASHBOARD</a></li>
                         @endauth
                     <li>
                         @if (Auth::check())
@@ -53,7 +53,7 @@
                         <a class="btn btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                         Desportos
                         </a>
-                    
+
                         <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
                         <li><a class="dropdown-item" href="#">SURF</a></li>
                         <li><a class="dropdown-item" href="#">SKATE</a></li>
