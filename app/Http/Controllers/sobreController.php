@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\sobre;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class sobreController extends Controller
@@ -14,9 +15,10 @@ class sobreController extends Controller
      */
     public function index()
     {
-        $sobre = sobre::all();
+        $sobre = sobre::where('featured', '1')->get();
+        $users = User::where('admin', '1')->get();
 
-        return view ('sobre')->with('sobre', $sobre);   
+        return view ('sobre')->with('sobre', $sobre)->with('users', $users);   
     }
 
     /**

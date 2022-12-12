@@ -63,9 +63,29 @@
         </div>
     </div>
 
- <!-- IMAGENS DE NOS -->
+ <!-- IMAGENS DE NOS E CARGOS-->
+<div class="containerimgs">
+ @foreach ($users as $user)
+ <div class="imagenspessoas row">
 
-    <div class="imagenspessoas row">
+<div class="imagemtexto col">
+   
+    <img src="{{ asset('img/' . $user->img) }}" alt="1a Imagem">
+    <h6>{{ $user->name }} <br></h6>
+  
+</div>
+</div>
+
+
+  @endforeach
+</div>
+
+
+
+
+
+
+    <!-- <div class="imagenspessoas row">
 
         <div class="imagemtexto col">
             <img src="{{ asset('img/joel.png') }}" alt="1a Imagem">
@@ -88,6 +108,6 @@
             <h6>Tiago Marques<br> CMO</h6>
         </div>
 
-        </div>
+        </div> -->
 
 @endsection
