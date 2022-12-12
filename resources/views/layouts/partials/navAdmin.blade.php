@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['public/css/navAdmin.css', 'public/js/navbarAdmin.js'])
+    @vite(['public/css/adminCss/navAdmin.css', 'public/js/navbarAdmin.js'])
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Dashboard - GorillaBoard</title>
@@ -15,7 +15,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <a href="#"><img id="logo" src="{{ asset('img/favicon.png') }}" alt="logotipo"></a>
+                    <a href="{{ route('index') }}"><img id="logo" src="{{ asset('img/favicon.png') }}" alt="logotipo"></a>
 
                 </span>
             </div>
@@ -68,7 +68,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="{{ route('adminfaqs') }}">
+                        <a href="{{ route('admin.faqs.index') }}">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">faqs</span>
                         </a>

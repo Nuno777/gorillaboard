@@ -56,9 +56,9 @@ class FaqController extends Controller
      * @param  \App\Models\faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function show(faqs $faqs)
+    public function show(faqs $faq)
     {
-        return view('adminPage.faqs.show')->with('faqs', $faqs);
+        return view('adminPage.faqs.show')->with('faq', $faq);
     }
 
     /**
@@ -67,9 +67,9 @@ class FaqController extends Controller
      * @param  \App\Models\faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function edit(faqs $faqs)
+    public function edit(faqs $faq)
     {
-        return view('adminPage.faqs.edit')->with('faqs', $faqs);
+        return view('adminPage.faqs.edit')->with('faq', $faq);
     }
 
     /**
@@ -79,12 +79,12 @@ class FaqController extends Controller
      * @param  \App\Models\faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateFaqsRequest $request, faqs $faqs)
+    public function update(UpdateFaqsRequest $request, faqs $faq)
     {
         $fields=$request->validated();
-        $faqs->fill($fields);
-        $faqs->save();
-        return redirect()->route('adminPage.faqs')->with('success','Categoria atualizada com sucesso');
+        $faq->fill($fields);
+        $faq->save();
+        return redirect()->route('admin.faqs.index')->with('success','Categoria atualizada com sucesso');
     }
 
     /**
@@ -93,15 +93,10 @@ class FaqController extends Controller
      * @param  \App\Models\faqs  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(faqs $faqs)
+    public function destroy(faqs $faq)
     {
-        if ($faqs->projects()->exists()){
-            return redirect()->route('admin.categories.index')->withErrors(
-            ['delete'=>'A categoria que tentou eliminar tem projetos
-            associados'] );
-            }
-            $faqs->delete();
-            return redirect()->route('admin.categories.index')->with('success',
-            'Categoria eliminada com sucesso');
+            $faq->delete();
+            return redirect()->route('admin.faqs.index')->with('success',
+            'Faq eliminada com sucesso');
     }
 }

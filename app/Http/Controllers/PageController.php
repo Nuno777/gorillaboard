@@ -21,7 +21,9 @@ class PageController extends Controller
     }
 
     public function faqs(){
-        return view('faqs');
+        $faqs = faqs::all();
+
+        return view ('faqs')->with('faqs', $faqs);
     }
 
     public function contactos(){

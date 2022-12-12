@@ -29,18 +29,9 @@ Route::get('/contactos', [PageController::class,'contactos'])->name('contactos')
 
 Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
-//     Route::resource('faqs', FaqController::class);
-// });
-
-
-Route::get('/adminfaqs', [FaqController::class,'index'])->middleware(['auth', 'verified'])->name('adminfaqs');
-Route::get('/adminfaqscreate', [FaqController::class,'create'])->middleware(['auth', 'verified'])->name('adminFaqsCreate');
-Route::get('/adminfaqsedit', [FaqController::class,'edit'])->middleware(['auth', 'verified'])->name('adminFaqsEdit');
-Route::get('/adminfaqsstore', [FaqController::class,'store'])->middleware(['auth', 'verified'])->name('adminFaqsStore');
-Route::get('/adminfaqsShow', [FaqController::class,'show'])->middleware(['auth', 'verified'])->name('adminFaqsShow');
-Route::get('/adminfaqsdestroy', [FaqController::class,'destroy'])->middleware(['auth', 'verified'])->name('adminFaqsDestroy');
-
+Route::group(['prefix'=>'admin', 'as'=>'admin.', 'middleware' => ['auth', 'verified']], function () {
+    Route::resource('faqs', FaqController::class);
+});
 
 Route::get('/admincontactos', [ContactosController::class,'index'])->name('admincontactos');
 Route::get('/admincontactosShow', [ContactosController::class,'show'])->name('adminPage.adminContactos.show');

@@ -24,7 +24,7 @@ class StoreFaqsRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" =>'required|min:3|max:20|unique:categories,name|regex:/^[A-ZÀ-úa-z\s]+$/'
+            "name" =>'required|min:3|max:20|unique:faqs,name|regex:/^[A-ZÀ-úa-z\s]+$/'
         ];
 }
     public function messages()

@@ -1,7 +1,7 @@
 @extends('layouts.partials.navAdmin')
 
 @section('adminMain')
-    <form method="POST" action="{{ route('adminFaqsStore') }}" class="form-group">
+    <form method="POST" action="{{ route('admin.faqs.Store') }}" class="form-group">
         @csrf
         <h2>Criar nova Faq</h2>
         @include('adminPage.faqs.partials.add-edit')

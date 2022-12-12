@@ -412,6 +412,8 @@ body.dark .home .text{
     font-size: 12px;
 }
 
-
+.content{
+    color: var(--text-color);
+}
 
 

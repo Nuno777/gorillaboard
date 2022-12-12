@@ -24,12 +24,12 @@ class UpdateFaqsRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => 'required|min:3|max:20|unique:categories,name,'.$this->faqs->id.'|regex:/^[A-ZÀ-úa-z\s]+$/',
+            "pergunta" => 'required|min:3|unique:faqs,pergunta,'.$this->faq->id.'|regex:/^[A-ZÀ-úa-z\s]+$/',
         ];
             }
     public function messages()
     {
-    return ['name.regex' => 'O nome deve conter apenas letras e espaços'];
+    return ['pergunta.regex' => 'A pergunta deve conter apenas letras e espaços'];
     }
 
 }

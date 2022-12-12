@@ -9,13 +9,13 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa est laboriosam voluptates nobis nisi blanditiis? Consequatur, ut molestias quidem, a eos rem sunt fugiat saepe perferendis fugit minus? Hic.</p>
 </div>
 <div class="questions-container">
-    @foreach ($faqResults as $faqResult)
+    @foreach ($faqs as $faq)
         <div class="question">
             <button>
-                <span>{{ $faqResult->Pergunta}}</span>
+                <span>{{ $faq->pergunta}}</span>
                 <i class="fas fa-chevron-down d-arrow"></i>
             </button>
-            <p>{{ $faqResult->Resposta}}</p>
+            <p>{{ $faq->resposta}}</p>
         </div>
     @endforeach
 </div>

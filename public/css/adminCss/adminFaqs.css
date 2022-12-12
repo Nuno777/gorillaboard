@@ -1,0 +1,44 @@
+*, ul, li, a{
+    list-style: none !important;
+}
+
+tbody tr td{
+    padding-right: 1rem;
+}
+
+.table-content{
+    width: 79%;
+}
+
+.btn-view,
+.btn-view>i:hover{
+    color: var(--color-correct);
+}
+
+.btn-edit,
+.btn-edit>i:hover{
+    color: var(--color-alert);
+}
+.btn-delete,
+.btn-delete>i:hover{
+    color: var(--color-danger);
+}
+.goback a{
+    list-style: none !important;
+    border: none;
+    color: var(--color-text);
+    text-align: right;
+    justify-content: right;
+    background-color: none  ;
+
+}
+.goback button{
+    background-color: var(--body-color);
+    border: none;
+
+}
+.goback button:hover, a:hover{
+    background-color: var(--body-color);
+    color: var(--primary-color);
+}
+
