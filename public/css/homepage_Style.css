@@ -94,7 +94,7 @@ nav .nav_option li a:hover {
     color: #1B272C !important;
     text-shadow: none !important;
     font-size: 12pt !important;
-    border-bottom: #2AA9FF 15px solid;
+    border-bottom: #2AA9FF 10px solid;
     font-weight: bold !important;
 }
 
@@ -103,7 +103,7 @@ nav .nav_option li a:hover {
     color: #1B272C !important;
     text-shadow: none !important;
     font-size: 12pt !important;
-    border-bottom: #2AA9FF 15px solid;
+    border-bottom: #2AA9FF 10px solid;
     font-weight: bold !important;
 }
 
@@ -249,10 +249,20 @@ nav .nav_option li a:hover {
     border-radius: 0 !important;
 }
 
+.cartas_home{
+    width: 100%;
+    height: 100%;
+}
+
 .card_titulo{
     padding: 10px !important;
     background-color: #1B272C;
     transition: ease-in-out 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px !important;
+
 }
 
 .card_titulo h5{
@@ -313,3 +323,101 @@ nav .nav_option li a:hover {
 
 /*============Seccao Desportos FIM=============*/
 
+/*============Seccao Aulas=============*/
+
+ .card_aulas img {
+    max-width: 100%;
+  }
+  .carousel-container {
+    width: 1100px;
+    margin: 50px auto;
+    position: relative;
+  }
+  @media (max-width: 768px) {
+    .carousel-container {
+      width: 95%;
+    }
+  }
+  .inner-carousel {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  .track {
+    display: inline-flex;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+  }
+  .card-container {
+    width: 275px;
+    height: 400px;
+    flex-shrink: 0;
+    padding-right: 10px;
+  }
+  @media (max-width: 768px) {
+    .card-container {
+      width: 184px;
+    }
+  }
+  .card_aulas {
+    width: 100%;
+    height: 100%;
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    background-position: center bottom;
+    background-size: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+  .card1 {
+    background-image: url("https://cdn.pixabay.com/photo/2018/08/21/23/29/fog-3622519_960_720.jpg");
+  }
+  
+  .nav_carousel_aulas button {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    outline: none;
+    border: 1px solid #000;
+    cursor: pointer;
+  }
+  .nav_carousel_aulas .prev_aulas {
+    left: -30px;
+    display: none;
+  }
+  .nav_carousel_aulas .prev_aulas.show {
+    display: block;
+  }
+  .nav_carousel_aulas .next_aulas {
+    right: -30px;
+  }
+  .nav_carousel_aulas .next_aulas.hide {
+    display: none;
+  }
+
+  .title_sections_home_aulas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title_sections_home_aulas img{
+    width: 75%;
+    z-index: 0;
+  }
+
+  .title_sections_home_aulas h3{
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: bold;
+    position: absolute;
+    font-size: 32pt;
+    color: white;
+    z-index: 1;
+  }
+
+  /*============Seccao Aulas FIM=============*/

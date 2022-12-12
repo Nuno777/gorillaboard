@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\faqs;
 use App\Models\User;
+use App\Models\Desporto;
 
 class PageController extends Controller
 {
     public function index(){
-        return view('index');
+        $desportos = Desporto::all();
+        return view('index', compact('desportos'));
     }
 
     public function sobre(){
