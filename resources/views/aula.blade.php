@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-<br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center">
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-<br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
@@ -119,5 +119,24 @@
             </div>
         </div>
         <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
+
+        <form role="form" method="POST" action="/aulas/" enctype="multipart/form-data">
+            @csrf
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="inputEmail4">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Nome"
+                        value="{{ Auth::user()->name }}">
+                </div>
+                <div class="form-group col">
+                    <label for="inputPassword4">Número de Aulas</label>
+                    <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1"
+                        max="5">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Inscrição</button>
+        </form>
     </div>
 @endsection

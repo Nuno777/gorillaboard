@@ -23,7 +23,7 @@ Route::get('/', [PageController::class,'index'])->name('index');
 
 Route::get('/sobre', [sobreController::class,'index'])->name('sobre');
 
-Route::get('/aula', [PageController::class,'aula'])->name('aula');
+Route::get('/aula/{desporto}', [PageController::class,'aula'])->name('aula');
 
 Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs');
 

@@ -6,20 +6,21 @@ use Illuminate\Http\Request;
 use App\Models\faqs;
 use App\Models\User;
 use App\Models\Desporto;
+use App\Models\Aula;
 
 class PageController extends Controller
 {
     public function index(){
-        $desportos = Desporto::all();
-        return view('index', compact('desportos'));
+        return view('index');
     }
 
     public function sobre(){
         return view('sobre');
     }
 
-    public function aula(){
-        return view('aula');
+    public function aula(Desporto $desporto){
+        $aulas = Aula::all();
+        return view('aula', compact('aulas'));
     }
 
     public function faqs(){

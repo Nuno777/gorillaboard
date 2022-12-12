@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\desportos;
+use App\Models\Desporto;
 use Illuminate\Http\Request;
 
 class DesportoController extends Controller
@@ -24,7 +24,7 @@ class DesportoController extends Controller
      */
     public function create()
     {
-        $desportos = desportos::all();
+        $desportos = Desporto::all();
 
         return view ('index')->with('desportos', $desportos);
     }
@@ -46,7 +46,7 @@ class DesportoController extends Controller
      * @param  \App\Models\desportos  $desportos
      * @return \Illuminate\Http\Response
      */
-    public function show(desportos $desportos)
+    public function show(Desporto $desporto)
     {
         //
     }
@@ -57,7 +57,7 @@ class DesportoController extends Controller
      * @param  \App\Models\desportos  $desportos
      * @return \Illuminate\Http\Response
      */
-    public function edit(desportos $desportos)
+    public function edit(Desporto $desporto)
     {
         //
     }
@@ -69,7 +69,7 @@ class DesportoController extends Controller
      * @param  \App\Models\desportos  $desportos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, desportos $desportos)
+    public function update(Request $request, Desporto $desporto)
     {
         //
     }
@@ -80,7 +80,7 @@ class DesportoController extends Controller
      * @param  \App\Models\desportos  $desportos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(desportos $desportos)
+    public function destroy(Desporto $desporto)
     {
         //
     }
