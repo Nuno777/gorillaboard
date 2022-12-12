@@ -39,7 +39,7 @@
                     <div class="col-xl-3 col-sm-6">
                         <div class="card card-default card-mini">
                             <div class="card-header">
-                                <h2>Exemplo</h2>
+                                <h2>Criar nova Aula</h2>
                                 <div class="sub-title">
                                     <span class="mr-1"></span>
                                 </div>
@@ -47,7 +47,7 @@
                             <div class="card-body">
                                 <div class="chart-wrapper">
                                     <div>
-                                        Ex
+                                        Criar Aula
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                     <div class="col-xl-3 col-sm-6">
                         <div class="card card-default card-mini">
                             <div class="card-header">
-                                <h2>Exemplo</h2>
+                                <h2>Marcar presenças</h2>
                                 <div class="sub-title">
                                     <span class="mr-1"></span>
                                 </div>
@@ -64,7 +64,7 @@
                             <div class="card-body">
                                 <div class="chart-wrapper">
                                     <div>
-                                        Ex
+                                        Presenças
                                     </div>
                                 </div>
                             </div>

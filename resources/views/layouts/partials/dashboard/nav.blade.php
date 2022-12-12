@@ -20,7 +20,66 @@
 
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                        data-target="#faq" aria-expanded="false" aria-controls="email">
+                        data-target="#aulas" aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-file"></i>
+                        <span class="nav-text">Aulas</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="aulas" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Criar Aulas</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Mostrar Aulas</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="email-details.html">
+                                    <span class="nav-text">Editar Aulas</span>
+
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                        data-target="#presencas" aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-account-check"></i>
+                        <span class="nav-text">Presenças</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="presencas" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Mostrar Presenças</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="email-details.html">
+                                    <span class="nav-text">Editar Presenças</span>
+
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#faq"
+                        aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-information-outline"></i>
                         <span class="nav-text">Faqs</span> <b class="caret"></b>
                     </a>
@@ -116,8 +175,7 @@
                         <button class="dropdown-toggle nav-link" data-toggle="dropdown">
                             <img src="{{ asset('img/' . Auth::user()->img) }}"
                                 class="user-image
-                            rounded-circle"
-                                alt="User Image" />
+                            rounded-circle" alt="User Image" />
                             <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
