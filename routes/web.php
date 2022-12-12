@@ -26,6 +26,7 @@ Route::get('/aula', [PageController::class,'aula'])->name('aula');
 Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs');
 
 Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
+Route::post('/contactos', [ContactosController::class, 'store'])->name('contactos.store');
 
 Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
