@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('img')->nullable()->default('person.svg');
-            $table->string('perms')->nullable()->default(0);
+            $table->boolean('admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
             $table->string('categoria_users')->nullable();

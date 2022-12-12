@@ -72,9 +72,24 @@ body.dark{
     --color-alert:#bd8600;
     --color-correct:#00a32a;
 }
-
+ /* deafult btn-color CRUD */
+.btn-danger{
+    background-color: var(--color-danger);
+}
+.btn-alert{
+    background-color: var(--color-alert);
+}
+.btn-correct{
+    background-color: var(--color-correct);
+}
 /* ===== Sidebar ===== */
- .sidebar{
+
+
+ol,ul{
+    padding: 0 !important;
+}
+
+.sidebar{
     position: fixed;
     top: 0;
     left: 0;
@@ -299,6 +314,7 @@ body.dark .mode .sun-moon i.moon{
     justify-content: center;
     border-radius: 6px;
     cursor: pointer;
+
 }
 .toggle-switch .switch{
     position: relative;
@@ -332,6 +348,7 @@ body.dark .switch::before{
     top: 0;
     left: 250px;
     height: 100vh;
+    width: 79%;
     padding-left: 15px;
     margin-left: 15px;
     background-color: var(--body-color);
@@ -348,7 +365,7 @@ body.dark .switch::before{
 .sidebar.close ~ .home{
     left: 78px;
     height: 100vh;
-    width: calc(100% - 78px);
+    width: calc(100% - 110px);
 }
 body.dark .home .text{
     color: var(--text-color);
@@ -369,8 +386,8 @@ body.dark .home .text{
     justify-content: space-between;
     margin: 0.5rem 0;
 
-}
 
+}
 .sidebar.close .profile-details img{
     margin: 0;
     margin-left: 0.3rem;
@@ -394,3 +411,7 @@ body.dark .home .text{
 {
     font-size: 12px;
 }
+
+
+
+

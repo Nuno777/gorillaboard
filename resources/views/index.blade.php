@@ -1,4 +1,7 @@
 @extends('layouts.master')
+
+@vite("public/js/homepage.js")
+
 @section('title', 'GorillaBoards')
 
 @section('main')
@@ -20,13 +23,13 @@
         <div class="carousel-item active">
             <img src="{{ asset('img/supertubosgifback.gif') }}" class="d-block w-100" alt="Supertubos" />
 
-            <div class="centered"><img src="{{ asset('img/supertubosgif.gif') }}" alt=""></div>
+            <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt="" style="width: 1000px"></div>
         </div>
 
         <!-- Single item -->
         <div class="carousel-item">
             <img src="{{ asset('img/ericeira.gif') }}" class="d-block w-100" alt="Boardriders" />
-            <div class="centered"><img src="{{ asset('img/Boardridersgif.gif') }}" alt=""></div>
+            <div class="centered giftitle"><img src="{{ asset('img/Boardridersgif.gif') }}" alt="" style="width: 1000px"></div>
         </div>
 
         <!-- Single item -->
@@ -74,48 +77,48 @@
   </div>    
 </div>
 
-<div id="desportos_section">
+<div id="desportos_section" class="desp_sec">
   <div class="title_sections_home">
     <h3>Desportos</h3>
-    <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle">
+    <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
   </div>
   <div id="card_section" class="row">
     <a href="" class="col-md">
-      <div class="card">
+      <div class="card outercard cartas_home">
         <img src="{{ asset('img/surf_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body card_titulo">
             <h5 class="card-title">Surf</h5>
           </div>
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card nexttomiddlecard">
+      <div class="card nexttomiddlecard cartas_home">
         <img src="{{ asset('img/skate_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body card_titulo">
             <h5 class="card-title">Skate</h5>
           </div>
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card middlecard">
+      <div class="card middlecard cartas_home">
         <img src="{{ asset('img/bodyboard_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body card_titulo">
             <h5 class="card-title">Bodyboard</h5>
           </div>
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card nexttomiddlecard">
+      <div class="card nexttomiddlecard cartas_home">
         <img src="{{ asset('img/dhskate_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body card_titulo">
             <h5 class="card-title">Downhill Skate</h5>
           </div>
       </div>
     </a>
     <a href="" class="col-md">
-      <div class="card">
+      <div class="card outercard cartas_home">
         <img src="{{ asset('img/psurf_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body">
+          <div class="card-body card_titulo">
             <h5 class="card-title">Paddle Surf</h5>
           </div>
       </div>

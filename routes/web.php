@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactosController;
+use App\Http\Controllers\sobreController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class,'index'])->name('index');
 
-Route::get('/sobre', [PageController::class,'sobre'])->name('sobre');
+Route::get('/sobre', [sobreController::class,'index'])->name('sobre');
 
 Route::get('/aula', [PageController::class,'aula'])->name('aula');
 
@@ -28,11 +30,19 @@ Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs')
 Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
 Route::post('/contactos', [ContactosController::class, 'store'])->name('contactos.store');
 
-Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified','admin'])->name('dashboard');
 
-Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
-    Route::resource('faqs', FaqController::class);
-});
+// Route::group(['prefix'=>'admin', 'as'=>'admin.'], function () {
+//     Route::resource('faqs', FaqController::class);
+// });
+
+
+Route::get('/adminfaqs', [FaqController::class,'index'])->name('adminfaqs');
+Route::get('/adminfaqscreate', [FaqController::class,'create'])->name('adminFaqsCreate');
+Route::get('/adminfaqsedit', [FaqController::class,'edit'])->name('adminFaqsEdit');
+Route::get('/adminfaqsstore', [FaqController::class,'store'])->name('adminFaqsStore');
+Route::get('/adminfaqsShow', [FaqController::class,'show'])->name('adminFaqsShow');
+Route::get('/adminfaqsdestroy', [FaqController::class,'destroy'])->name('adminFaqsDestroy');
 
 
 Route::get('/admincontactos', [ContactosController::class,'index'])->name('admincontactos');

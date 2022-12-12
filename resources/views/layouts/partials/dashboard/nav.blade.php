@@ -1,0 +1,210 @@
+<aside class="left-sidebar sidebar-dark" id="left-sidebar">
+    <div id="sidebar" class="sidebar sidebar-with-footer">
+        <div class="app-brand">
+            <a href="/">
+                <img src="{{ asset('/dist/images/favicon.png') }}" width="35px" alt="Mono">
+                <span class="brand-name">GORILLA BOARDS</span>
+            </a>
+        </div>
+
+        <div class="sidebar-left" data-simplebar style="height: 100%;">
+
+            <ul class="nav sidebar-inner" id="sidebar-menu">
+
+                <li class="active">
+                    <a class="sidenav-item-link" href="/dashboard">
+                        <i class="mdi mdi-monitor-dashboard"></i>
+                        <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                        data-target="#aulas" aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-file"></i>
+                        <span class="nav-text">Aulas</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="aulas" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Criar Aulas</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Mostrar Aulas</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="email-details.html">
+                                    <span class="nav-text">Editar Aulas</span>
+
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                        data-target="#presencas" aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-account-check"></i>
+                        <span class="nav-text">Presenças</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="presencas" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Mostrar Presenças</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="email-details.html">
+                                    <span class="nav-text">Editar Presenças</span>
+
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#faq"
+                        aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-information-outline"></i>
+                        <span class="nav-text">Faqs</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="faq" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="#">
+                                    <span class="nav-text">Criar Faqs</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="/adminfaqs">
+                                    <span class="nav-text">Mostrar Faqs</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="email-details.html">
+                                    <span class="nav-text">Editar Faqs</span>
+
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                        data-target="#contactos" aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-phone"></i>
+                        <span class="nav-text">Contactos</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="contactos" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="/admincontactos">
+                                    <span class="nav-text">Mostrar Contactos</span>
+
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="sidenav-item-link" href="email-details.html">
+                                    <span class="nav-text">Editar Contactos</span>
+
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>
+
+
+<div class="page-wrapper">
+
+    <!-- Header -->
+    <header class="main-header" id="header">
+        <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+            <!-- Sidebar toggle button -->
+            <button id="sidebar-toggler" class="sidebar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+
+            <span class="page-title">dashboard</span>
+
+            <div class="navbar-right ">
+
+                <!-- search form -->
+                {{--  <div class="search-form">
+                    <form action="index.html" method="get">
+                        <div class="input-group input-group-sm" id="input-group-search">
+                            <input type="text" autocomplete="off" name="query" id="search-input"
+                                class="form-control" placeholder="Search..." />
+                            <div class="input-group-append">
+                                <button class="btn" type="button">/</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div> --}}
+
+                <ul class="nav navbar-nav">
+                    <!-- User Account -->
+                    <li class="dropdown user-menu">
+                        <button class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <img src="{{ asset('img/' . Auth::user()->img) }}"
+                                class="user-image
+                            rounded-circle" alt="User Image" />
+                            <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <a class="dropdown-link-item" href="user-profile.html">
+                                    <i class="mdi mdi-account-outline"></i>
+                                    <span class="nav-text">Perfil</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-link-item" href="user-account-settings.html">
+                                    <i class="mdi mdi-settings"></i>
+                                    <span class="nav-text">Configurações</span>
+                                </a>
+                            </li>
+
+                            <li class="dropdown-footer">
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a class="dropdown-link-item" href="route('logout')"
+                                        onclick="event.preventDefault(); this.closest('form').submit();">
+                                        <i class="mdi mdi-logout"></i>
+                                        <span class="nav-text">Log Out</span>
+                                    </a>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
