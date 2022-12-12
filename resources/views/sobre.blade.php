@@ -33,16 +33,12 @@
 
  <!-- 3 IMAGENS DA EQUIPA -->
 
-    <div class="row">
+    <div class="row">@foreach ($sobre as $sobre)
         <div class="column">
-        <img src="{{ asset('img/equipa.png') }}" alt="1a Imagem" style="width:100%"> 
+        <img src="{{ asset($sobre->img) }}" alt="1a Imagem" style="width:100%"> 
         </div>
-        <div class="column">
-        <img src="{{ asset('img/escolaskate.png') }}" alt="2a Imagem" style="width:100%">
-        </div>
-        <div class="column">
-        <img src="{{ asset('img/equipaskate.png') }}" alt="3a Imagem" style="width:100%">
-        </div>
+        @endforeach
+    </div>
     </div>
 
     <div class="texto1">
