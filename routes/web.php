@@ -34,12 +34,12 @@ Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth
 // });
 
 
-Route::get('/adminfaqs', [FaqController::class,'index'])->name('adminfaqs');
-Route::get('/adminfaqscreate', [FaqController::class,'create'])->name('adminFaqsCreate');
-Route::get('/adminfaqsedit', [FaqController::class,'edit'])->name('adminFaqsEdit');
-Route::get('/adminfaqsstore', [FaqController::class,'store'])->name('adminFaqsStore');
-Route::get('/adminfaqsShow', [FaqController::class,'show'])->name('adminFaqsShow');
-Route::get('/adminfaqsdestroy', [FaqController::class,'destroy'])->name('adminFaqsDestroy');
+Route::get('/adminfaqs', [FaqController::class,'index'])->middleware(['auth', 'verified'])->name('adminfaqs');
+Route::get('/adminfaqscreate', [FaqController::class,'create'])->middleware(['auth', 'verified'])->name('adminFaqsCreate');
+Route::get('/adminfaqsedit', [FaqController::class,'edit'])->middleware(['auth', 'verified'])->name('adminFaqsEdit');
+Route::get('/adminfaqsstore', [FaqController::class,'store'])->middleware(['auth', 'verified'])->name('adminFaqsStore');
+Route::get('/adminfaqsShow', [FaqController::class,'show'])->middleware(['auth', 'verified'])->name('adminFaqsShow');
+Route::get('/adminfaqsdestroy', [FaqController::class,'destroy'])->middleware(['auth', 'verified'])->name('adminFaqsDestroy');
 
 
 Route::get('/admincontactos', [ContactosController::class,'index'])->name('admincontactos');
