@@ -114,46 +114,14 @@
   <div class="carousel-container">
     <div class="inner-carousel">
       <div class="track">
+        @foreach ($aulas as $aula)
+
         <div class="card-container">
-          <div class="card_aulas card1">
-            <h4>Aula de Surf</h4>
-            <p>Hoje aula de surf 13h</p>
-            <p>Local:</p> 
-          </div>
+          <div class="card_aulas card1">{{ $aula->local_aulas }}</div>
         </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
-        <div class="card-container">
-          <div class="card_aulas card1"></div>
-        </div>
+
+        @endforeach
+
       </div>
       <div class="nav_carousel_aulas">
         <button class="prev_aulas"><i class="fas fa-arrow-left fa-2x"></i></button>
