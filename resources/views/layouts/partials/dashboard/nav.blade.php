@@ -78,22 +78,22 @@
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="{{ 'admin.faqs.index' }}" data-toggle="collapse" data-target="#faq"
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#faq"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-information-outline"></i>
                         <span class="nav-text">Faqs</span> <b class="caret"></b>
                     </a>
-                    {{-- <ul class="collapse" id="faq" data-parent="#sidebar-menu">
+                    <ul class="collapse" id="faq" data-parent="#sidebar-menu">
                         <div class="sub-menu">
 
                             <li>
-                                <a class="sidenav-item-link" href="#">
-                                    <span class="nav-text">Criar Faqs</span>
+                                <a class="sidenav-item-link" href="{{ 'admin.faqs.index' }}">
+                                    <span class="nav-text">Faqs</span>
 
                                 </a>
                             </li>
 
-                            <li>
+                            {{-- <li>
                                 <a class="sidenav-item-link" href="/adminfaqs">
                                     <span class="nav-text">Mostrar Faqs</span>
 
@@ -106,8 +106,8 @@
 
                                 </a>
                             </li>
-                        </div>
-                    </ul> --}}
+                        </div> --}}
+                    </ul>
                 </li>
 
                 <li class="has-sub">
