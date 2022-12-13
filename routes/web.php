@@ -38,7 +38,7 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.', 'middleware' => ['auth', 'verif
 
 Route::get('/admincontactos', [ContactosController::class,'index'])->name('admincontactos');
 Route::get('/admincontactosShow', [ContactosController::class,'show'])->name('adminPage.adminContactos.show');
-Route::delete('/admincontactosDestroy', [ContactosController::class,'destroy'])->name('adminPage.adminContactos.destroy');
+Route::get('/admincontactosDestroy', [ContactosController::class,'destroy'])->name('adminPage.adminContactos.destroy');
 
 
 Route::middleware(['auth', 'verified'])->group(function () {

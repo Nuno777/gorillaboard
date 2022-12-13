@@ -45,7 +45,6 @@
     <li><a id="phone_Group" href="{{ route('contactos') }}"> <img
                 id="phone_Icon"src="{{ asset('img/phone_icon.png') }}" alt="phone">CONTACTOS</a></li>
     <li><a href="{{ route('faqs') }}">FAQS</a></li>
-    <li><a href="#news">HORÁRIOS</a></li>
     <li>
         <div class="dropdown dropbtn_nav">
             <a class="btn btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
