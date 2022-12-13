@@ -19,8 +19,8 @@
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                        data-target="#aulas" aria-expanded="false" aria-controls="email">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
+                        aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-file"></i>
                         <span class="nav-text">Aulas</span> <b class="caret"></b>
                     </a>
@@ -173,38 +173,47 @@
                     <!-- User Account -->
                     <li class="dropdown user-menu">
                         <button class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <img src="{{ asset('img/' . Auth::user()->img) }}"
-                                class="user-image
-                            rounded-circle" alt="User Image" />
-                            <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li>
-                                <a class="dropdown-link-item" href="user-profile.html">
-                                    <i class="mdi mdi-account-outline"></i>
-                                    <span class="nav-text">Perfil</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a class="dropdown-link-item" href="user-account-settings.html">
-                                    <i class="mdi mdi-settings"></i>
-                                    <span class="nav-text">Configurações</span>
-                                </a>
-                            </li>
 
-                            <li class="dropdown-footer">
+                            @if (Auth::check())
+                                <img src="{{ asset('img/' . Auth::user()->img) }}" class="user-image rounded-circle"
+                                    alt="User Image" />
+                            @else
+                                <a id="profile_Icon_Box" href="{{ route('login') }}">
+                                    <img id="profile_Icon"src="{{ asset('img/profile_icon.png') }}" alt="">
+                                </a>
+                            @endauth
+
+                            <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li>
+                            <a class="dropdown-link-item" href="user-profile.html">
+                                <i class="mdi mdi-account-outline"></i>
+                                <span class="nav-text">Perfil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-link-item" href="user-account-settings.html">
+                                <i class="mdi mdi-settings"></i>
+                                <span class="nav-text">Configurações</span>
+                            </a>
+                        </li>
+
+                        <li class="dropdown-footer">
+                            @if (Auth::check())
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <a class="dropdown-link-item" href="route('logout')"
                                         onclick="event.preventDefault(); this.closest('form').submit();">
                                         <i class="mdi mdi-logout"></i>
-                                        <span class="nav-text">Log Out</span>
+                                        <span class="nav-text">Logout</span>
                                     </a>
                                 </form>
-                            </li>
-                        </ul>
+                            @endauth
                     </li>
                 </ul>
-            </div>
-        </nav>
-    </header>
+            </li>
+        </ul>
+    </div>
+</nav>
+</header>
