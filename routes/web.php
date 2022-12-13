@@ -32,7 +32,7 @@ Route::post('/contactos', [ContactosController::class, 'store'])->name('contacto
 
 Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified','admin'])->name('dashboard');
 
-Route::group(['prefix'=>'admin', 'as'=>'admin.', 'middleware' => ['auth', 'verified']], function () {
+Route::group(['prefix'=>'admin', 'as'=>'admin.', 'middleware' => ['auth', 'verified', 'admin']], function () {
     Route::resource('faqs', FaqController::class);
 });
 
