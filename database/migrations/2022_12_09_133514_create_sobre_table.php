@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('texto');
             $table->string('img');
+            $table->boolean('featured');
         });
     }
 

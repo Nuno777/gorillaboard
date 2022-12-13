@@ -106,7 +106,7 @@
 </div>
 
 <div id="aulas_section">
-  <div class="title_sections_home_aulas" style="position: inline">
+  <div class="title_sections_home_aulas">
     <h3>Aulas</h3>
     <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
   </div>
@@ -117,7 +117,7 @@
         @foreach ($aulas as $aula)
 
         <div class="card-container">
-          <div class="card_aulas card1">{{ $aula->local_aulas }}</div>
+          <div class="card_aulas card1">{{ $aula->local_aulas }} {{ $aula->data_aulas }}</div>
         </div>
 
         @endforeach
