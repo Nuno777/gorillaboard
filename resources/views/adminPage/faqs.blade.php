@@ -22,6 +22,7 @@
     <div class="card-body">
         <h2 class="name-page"><a  href="{{ url()->previous() }}">
         <i class='bx bx-chevron-left bx-sm'></i></a>Faqs</h2>
+        <a class="button" href="{{ route('admin.faqs.create') }}"><i class='bx bx-plus'></i>Criar Faq</a>
         <table class="table table-striped">
             <thead>
                 <tr>

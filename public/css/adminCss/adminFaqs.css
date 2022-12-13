@@ -2,6 +2,7 @@
 
 :root{
     --white--color:#fff;
+    --primary-colorLow:#167abd;
 }
 
 tbody tr td{
@@ -12,6 +13,8 @@ tbody tr td{
     text-align: center;
     justify-content: center;
     margin-top: 2.5rem;
+    font-weight: 500;
+    font-size: 26pt;
 }
 
 .table-content{
@@ -62,4 +65,22 @@ a{
 
     width: 50%;
     height: 50%;
+}
+.button {
+    background-color: var(--primary-color); /* Green */
+    border: none;
+    color: var(--toggle-color);
+    padding: 5px 10px;
+    text-align: left;
+    justify-content: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.button:hover {
+    background-color:var(--primary-colorLow);
 }
