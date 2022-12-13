@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contacto;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreContactosRequest;
 
 class ContactosController extends Controller
 {
@@ -37,7 +38,21 @@ class ContactosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Validação do formulario de noticia
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required'
+        ]);
+
+        //Inserção de dados no formulario de noticia
+        $contactos = new Contacto();
+        $contactos->nome_Contactos = request('name');
+        $contactos->email_Contactos = request('email');
+        $contactos->menssagem_Contactos = request('message');
+        $contactos->save();
+
+        return redirect('/contactos')->with('message', 'Nova notícia inserido com sucesso!!');
     }
 
     /**
@@ -82,6 +97,6 @@ class ContactosController extends Controller
      */
     public function destroy(Contacto $contacto)
     {
-        //
+        
     }
 }

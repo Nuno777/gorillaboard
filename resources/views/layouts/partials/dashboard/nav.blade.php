@@ -88,7 +88,7 @@
 
                             <li>
                                 <a class="sidenav-item-link" href="{{ route('admin.faqs.index') }}">
-                                    <span class="nav-text">Faqs</span>
+                                    <span class="nav-text">Mostrar Faqs</span>
 
                                 </a>
                             </li>
