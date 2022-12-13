@@ -30,8 +30,8 @@ class FaqController extends Controller
      */
     public function create()
     {
-        $faqs = new faqs;
-        return view('adminPage.faqs.create')->with('faqs', $faqs);;
+        $faq = new faqs;
+        return view('adminPage.faqs.create')->with('faq', $faq);;
     }
 
     /**
