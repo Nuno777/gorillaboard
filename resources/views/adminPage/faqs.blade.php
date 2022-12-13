@@ -20,22 +20,10 @@
     @endif
     </div>
     <div class="card-body">
-<<<<<<< HEAD
-        <h2 class="text-center mt-4">FAQS</h2>
-    <div class="goback">
-        <button>
-            <a  href="{{ url()->previous() }}">
-                <i class="fa fa-arrow-circle-o-left"></i>
-                <span>Voltar</span>
-        </button>
-        </a>
-
-    </div>
-=======
         <h2 class="name-page"><a  href="{{ url()->previous() }}">
         <i class='bx bx-chevron-left bx-sm'></i></a>Faqs</h2>
         <a class="button" href="{{ route('admin.faqs.create') }}"><i class='bx bx-plus'></i>Criar Faq</a>
->>>>>>> b316c58e9d9f59d5d705d14be69c6b129a02ca41
+
         <table class="table table-striped">
             <thead>
                 <tr>
