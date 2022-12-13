@@ -20,14 +20,8 @@
     @endif
     </div>
     <div class="card-body">
-        <button>
-                <a  href="{{ url()->previous() }}">
-                    <span><i class='bx bx-chevron-left'></i></span>
-            </button>
-        <h2 class="text-center mt-4">FAQS</h2>
-        <div class="goback">
-
-            </a>
+        <h2 class="name-page"><a  href="{{ url()->previous() }}">
+        <i class='bx bx-chevron-left bx-sm'></i></a>Faqs</h2>
         <table class="table table-striped">
             <thead>
                 <tr>

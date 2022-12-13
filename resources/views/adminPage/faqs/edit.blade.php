@@ -1,17 +1,11 @@
 @extends('layouts.partials.navAdmin')
-
+@vite('public/css/adminCss/adminFaqs.css')
 
 @section('adminMain')
     <div class="card-body">
-        <h2>Edit Faq</h2>
+        <h2 class="name-page"><a  href="{{ url()->previous() }}">
+            <i class='bx bx-chevron-left bx-sm'></i></a>Edit Faq</h2>
     </div>
-    <div class="goback">
-        <button>
-            <a  href="{{ url()->previous() }}">
-                <i class="fa fa-arrow-circle-o-left"></i>
-                <span>Voltar</span>
-        </button>
-        </a>
     <form method="POST" action="{{ route('admin.faqs.update', $faq) }}" class="form-group inline">
         @csrf
         @method('PUT')

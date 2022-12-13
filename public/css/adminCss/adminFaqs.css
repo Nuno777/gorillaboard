@@ -1,9 +1,17 @@
-*, ul, li, a{
-    list-style: none !important;
+
+
+:root{
+    --white--color:#fff;
 }
 
 tbody tr td{
     padding-right: 1rem;
+}
+
+.name-page{
+    text-align: center;
+    justify-content: center;
+    margin-top: 2.5rem;
 }
 
 .table-content{
@@ -23,22 +31,35 @@ tbody tr td{
 .btn-delete>i:hover{
     color: var(--color-danger);
 }
-.goback a{
-    list-style: none !important;
-    border: none;
-    color: var(--color-text);
-    text-align: right;
-    justify-content: right;
-    background-color: none  ;
+
+h2{
+
+    list-style: none;
+}
+.text-back{
+    list-style: none;
 
 }
-.goback button{
-    background-color: var(--body-color);
-    border: none;
-
+.card-body table{
+    color:var(--text-color)
 }
-.goback button:hover, a:hover{
-    background-color: var(--body-color);
-    color: var(--primary-color);
+thead{
+    background-color:var(--white--color);
+    border-radius: 30px;
 }
 
+table tbody tr{
+    background-color: var(--white--color);
+
+}
+
+a{
+    margin: 2rem auto;
+}
+
+
+#td_pergunta{
+
+    width: 50%;
+    height: 50%;
+}
