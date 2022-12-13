@@ -4,7 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactosController;
+use App\Http\Controllers\sobreController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +21,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class,'index'])->name('index');
 
-Route::get('/sobre', [PageController::class,'sobre'])->name('sobre');
+Route::get('/sobre', [sobreController::class,'index'])->name('sobre');
 
-Route::get('/aula', [PageController::class,'aula'])->name('aula');
+Route::get('/aula/{desporto}', [PageController::class,'aula'])->name('aula');
 
 Route::get('/PerguntasFrequentes', [PageController::class,'faqs'])->name('faqs');
 
 Route::get('/contactos', [PageController::class,'contactos'])->name('contactos');
+Route::post('/contactos', [ContactosController::class, 'store'])->name('contactos.store');
 
-Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [PageController::class,'dashboard'])->middleware(['auth', 'verified','admin'])->name('dashboard');
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.', 'middleware' => ['auth', 'verified']], function () {
     Route::resource('faqs', FaqController::class);

@@ -183,6 +183,11 @@ opacity: 0.85;
   ul.nav__ul {
     margin-left: -10px;
 }
+.containerimgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
   
   @media screen and (min-width: 24.375em) {
     .legal .legal__links {

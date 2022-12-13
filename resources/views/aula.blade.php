@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('custom_css', asset("css/aulas.css"))
+@section('custom_css', asset('css/aulas.css'))
 
 @section('title', 'GorillaBoards')
 @section('main')
@@ -12,14 +12,14 @@
         <div class="carousel-inner">
             <!-- Single item -->
             <div class="carousel-item active">
-                <img src="{{ asset('img/supertubos.png') }}" class="d-block w-100" alt="Sunset Over the City" />
-                <div class="carousel-caption d-none d-md-block color_back">
-                    <h3>Aulas de Surf</h3>
-                </div>
+                <img src="{{ asset('img/supertubosgifback.gif') }}" class="d-block w-100" alt="Supertubos" />
+
+                <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt=""
+                        style="width: 1000px"></div>
             </div>
         </div>
     </div>
-
+    <br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center">
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-
+    <br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
@@ -84,7 +84,7 @@
         </div>
         <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
     </div>
-<br>
+    <br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
@@ -119,5 +119,24 @@
             </div>
         </div>
         <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
+
+        <form role="form" method="POST" action="/aulas/" enctype="multipart/form-data">
+            @csrf
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="inputEmail4">Nome</label>
+                    <input type="text" class="form-control" id="nome" placeholder="Nome"
+                        value="{{ Auth::user()->name }}">
+                </div>
+                <div class="form-group col">
+                    <label for="inputPassword4">Número de Aulas</label>
+                    <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1"
+                        max="5">
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Inscrição</button>
+        </form>
     </div>
 @endsection

@@ -23,13 +23,13 @@
         <div class="carousel-item active">
             <img src="{{ asset('img/supertubosgifback.gif') }}" class="d-block w-100" alt="Supertubos" />
 
-            <div class="centered"><img src="{{ asset('img/supertubosgif.gif') }}" alt=""></div>
+            <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt="" style="width: 1000px"></div>
         </div>
 
         <!-- Single item -->
         <div class="carousel-item">
             <img src="{{ asset('img/ericeira.gif') }}" class="d-block w-100" alt="Boardriders" />
-            <div class="centered"><img src="{{ asset('img/Boardridersgif.gif') }}" alt=""></div>
+            <div class="centered giftitle"><img src="{{ asset('img/Boardridersgif.gif') }}" alt="" style="width: 1000px"></div>
         </div>
 
         <!-- Single item -->
@@ -77,57 +77,58 @@
   </div>    
 </div>
 
-<div id="desportos_section">
+<div id="desportos_section" class="desp_sec">
   <div class="title_sections_home">
     <h3>Desportos</h3>
     <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
   </div>
   <div id="card_section" class="row">
-    <a href="" class="col-md">
-      <div class="card outercard cartas_home">
-        <img src="{{ asset('img/surf_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body card_titulo">
-            <h5 class="card-title">Surf</h5>
-          </div>
-      </div>
-    </a>
-    <a href="" class="col-md">
-      <div class="card nexttomiddlecard cartas_home">
-        <img src="{{ asset('img/skate_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body card_titulo">
-            <h5 class="card-title">Skate</h5>
-          </div>
-      </div>
-    </a>
-    <a href="" class="col-md">
-      <div class="card middlecard cartas_home">
-        <img src="{{ asset('img/bodyboard_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body card_titulo">
-            <h5 class="card-title">Bodyboard</h5>
-          </div>
-      </div>
-    </a>
-    <a href="" class="col-md">
-      <div class="card nexttomiddlecard cartas_home">
-        <img src="{{ asset('img/dhskate_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body card_titulo">
-            <h5 class="card-title">Downhill Skate</h5>
-          </div>
-      </div>
-    </a>
-    <a href="" class="col-md">
-      <div class="card outercard cartas_home">
-        <img src="{{ asset('img/psurf_homepage_img.png') }}" class="card-img-top" alt="...">
-          <div class="card-body card_titulo">
-            <h5 class="card-title">Paddle Surf</h5>
-          </div>
-      </div>
-    </a>
+    @foreach ($desportos as $desporto)
+      <a href="" class="col-md">
+
+        @if($loop->index == 1 || $loop->index == 3)
+        <div class="card nexttomiddlecard cartas_home">
+        @elseif($loop->index == 2)
+        <div class="card middlecard cartas_home">
+        @else
+        <div class="card outercard cartas_home">
+        @endif
+
+          <img src="{{ asset('img/' . $desporto->images->first()->image) }}" class="card-img-top" alt="...">
+            <div class="card-body card_titulo">
+              <h5 class="card-title">{{ $desporto->modalidades }}</h5>
+            </div>
+        </div>
+      </a>
+    @endforeach
+
   </div>
 </div>
 
-<div id="aulas_section" class="aulassec">
-  <h3>Aulas</h3>
+<div id="aulas_section">
+  <div class="title_sections_home_aulas">
+    <h3>Aulas</h3>
+    <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
+  </div>
+
+  <div class="carousel-container">
+    <div class="inner-carousel">
+      <div class="track">
+        @foreach ($aulas as $aula)
+
+        <div class="card-container">
+          <div class="card_aulas card1">{{ $aula->local_aulas }} {{ $aula->data_aulas }}</div>
+        </div>
+
+        @endforeach
+
+      </div>
+      <div class="nav_carousel_aulas">
+        <button class="prev_aulas"><i class="fas fa-arrow-left fa-2x"></i></button>
+        <button class="next_aulas"><i class="fas fa-arrow-right fa-2x"></i></button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="loja_section">

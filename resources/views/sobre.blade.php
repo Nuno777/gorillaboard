@@ -33,16 +33,12 @@
 
  <!-- 3 IMAGENS DA EQUIPA -->
 
-    <div class="row">
+    <div class="row">@foreach ($sobre as $sobre)
         <div class="column">
-        <img src="{{ asset('img/equipa.png') }}" alt="1a Imagem" style="width:100%"> 
+        <img src="{{ asset($sobre->img) }}" alt="1a Imagem" style="width:100%"> 
         </div>
-        <div class="column">
-        <img src="{{ asset('img/escolaskate.png') }}" alt="2a Imagem" style="width:100%">
-        </div>
-        <div class="column">
-        <img src="{{ asset('img/equipaskate.png') }}" alt="3a Imagem" style="width:100%">
-        </div>
+        @endforeach
+    </div>
     </div>
 
     <div class="texto1">
@@ -67,9 +63,29 @@
         </div>
     </div>
 
- <!-- IMAGENS DE NOS -->
+ <!-- IMAGENS DE NOS E CARGOS-->
+<div class="containerimgs">
+ @foreach ($users as $user)
+ <div class="imagenspessoas row">
 
-    <div class="imagenspessoas row">
+<div class="imagemtexto col">
+   
+    <img src="{{ asset('img/' . $user->img) }}" alt="1a Imagem">
+    <h6>{{ $user->name }} <br></h6>
+  
+</div>
+</div>
+
+
+  @endforeach
+</div>
+
+
+
+
+
+
+    <!-- <div class="imagenspessoas row">
 
         <div class="imagemtexto col">
             <img src="{{ asset('img/joel.png') }}" alt="1a Imagem">
@@ -92,6 +108,6 @@
             <h6>Tiago Marques<br> CMO</h6>
         </div>
 
-        </div>
+        </div> -->
 
 @endsection
