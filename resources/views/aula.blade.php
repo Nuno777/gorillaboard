@@ -125,18 +125,21 @@
             <div class="form-row">
                 <div class="form-group col">
                     <label for="inputEmail4">Nome</label>
-                    <input type="text" class="form-control" id="nome" placeholder="Nome"
-                        value="{{ Auth::user()->name }}">
-                </div>
-                <div class="form-group col">
-                    <label for="inputPassword4">Número de Aulas</label>
-                    <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1"
-                        max="5">
-                </div>
+
+                    <input type="text" class="form-control" id="nome" placeholder="Nome" @if (Auth::check())
+                    value="{{ Auth::user()->name }} " required
+                @endauth
+                >
             </div>
+            <div class="form-group col">
+                <label for="inputPassword4">Número de Aulas</label>
+                <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1" max="5"
+                    required>
+            </div>
+        </div>
 
 
-            <button type="submit" class="btn btn-primary">Inscrição</button>
-        </form>
-    </div>
+        <button type="submit" class="btn btn-primary">Inscrição</button>
+    </form>
+</div>
 @endsection

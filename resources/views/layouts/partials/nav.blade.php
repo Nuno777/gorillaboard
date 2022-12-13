@@ -17,7 +17,6 @@
                         </a>
                     @endauth
 
-
                     <ul class="dropdown-menu drop_perfil" aria-labelledby="dropdownMenuLink">
                         @if (Auth::check())
                             <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
@@ -55,10 +54,11 @@
             </a>
             <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
 
-                @foreach ($desportos as $desporto )
-                    <li><a class="dropdown-item" href="{{ route('aula', $desporto->id) }}">{{ $desporto->modalidades }}</a></li>
+                @foreach ($desportos as $desporto)
+                    <li><a class="dropdown-item"
+                            href="{{ route('aula', $desporto->id) }}">{{ $desporto->modalidades }}</a>
+                    </li>
                 @endforeach
-
 
             </ul>
         </div>
@@ -72,11 +72,11 @@
             </a>
 
             <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="#">SURF</a></li>
-                <li><a class="dropdown-item" href="#">SKATE</a></li>
-                <li><a class="dropdown-item" href="#">BODYBOARD</a></li>
-                <li><a class="dropdown-item" href="#">PADDLE SURF</a></li>
-                <li><a class="dropdown-item" href="#">DOWNHILL SKATE</a></li>
+                @foreach ($desportos as $desporto)
+                <li><a class="dropdown-item"
+                        href="{{ route('index', $desporto->id) }}">{{ $desporto->modalidades }}</a>
+                </li>
+            @endforeach
             </ul>
         </div>
     </li>
