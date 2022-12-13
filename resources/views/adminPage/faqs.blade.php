@@ -20,14 +20,16 @@
     @endif
     </div>
     <div class="card-body">
-        <button>
-                <a  href="{{ url()->previous() }}">
-                    <span><i class='bx bx-chevron-left'></i></span>
-            </button>
         <h2 class="text-center mt-4">FAQS</h2>
-        <div class="goback">
+    <div class="goback">
+        <button>
+            <a  href="{{ url()->previous() }}">
+                <i class="fa fa-arrow-circle-o-left"></i>
+                <span>Voltar</span>
+        </button>
+        </a>
 
-            </a>
+    </div>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -39,22 +41,22 @@
             </thead>
             <tbody>
                 @foreach ($faqs as $faq)
-                    <tr class="">
-                        <td id="td_id">{{ $faq->id}}</td>
-                        <td id="td_pergunta">{{ $faq->pergunta }}</td>
-                        <td id="td_resposta">{{ $faq->resposta }}</td>
-                        <td id="">
+                    <tr>
+                        <td>{{ $faq->id}}</td>
+                        <td>{{ $faq->pergunta }}</td>
+                        <td>{{ $faq->resposta }}</td>
+                        <td>
                             <a class="btn-view btn-p"href="{{ route('admin.faqs.show', $faq) }}">
-                            <i class='bx bx-show bx-xs'></i></a>
+                            <i class='bx bx-show bx-md'></i></a>
                             <a class="btn-edit btn-p"
                             href="{{ route('admin.faqs.edit', $faq) }}">
-                            <i class='bx bx-edit bx-xs'></i></a>
+                            <i class='bx bx-edit bx-md'></i></a>
                             <form method="POST" action="{{ route('admin.faqs.destroy', $faq) }}" role="form" class="inline"
                                             onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn-delete btn-p">
-                                                <i class='bx bx-trash bx-xs'></i></button>
+                                                <i class='bx bx-trash bx-md'></i></button>
                                         </form>
                         </td>
                     </tr>

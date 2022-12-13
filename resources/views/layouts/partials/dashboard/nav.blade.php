@@ -87,8 +87,8 @@
                         <div class="sub-menu">
 
                             <li>
-                                <a class="sidenav-item-link" href="{{ route('admin.faqs.index') }}">
-                                    <span class="nav-text">Mostrar Faqs</span>
+                                <a class="sidenav-item-link" href="{{ 'admin.faqs.index' }}">
+                                    <span class="nav-text">Faqs</span>
 
                                 </a>
                             </li>
