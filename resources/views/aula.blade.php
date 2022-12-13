@@ -122,24 +122,35 @@
 
         <form role="form" method="POST" action="/aulas/" enctype="multipart/form-data">
             @csrf
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="inputEmail4">Nome</label>
+            <div class="form-row justify-content-center">
+                <div class="form-group col-lg-3">
+                    <label for="inputEmail4">Email</label>
 
-                    <input type="text" class="form-control" id="nome" placeholder="Nome" @if (Auth::check())
-                    value="{{ Auth::user()->name }} " required
+                    <input type="email" class="form-control" id="email" placeholder="Email" @if (Auth::check())
+                    value="{{ Auth::user()->email }} " required
                 @endauth
                 >
             </div>
-            <div class="form-group col">
-                <label for="inputPassword4">Número de Aulas</label>
-                <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1" max="5"
-                    required>
-            </div>
+            <div class="form-group col-lg-3">
+                <label for="inputEmail4">Nome</label>
+
+                <input type="text" class="form-control" id="nome" placeholder="Nome" @if (Auth::check())
+                value="{{ Auth::user()->name }} " required
+            @endauth
+            >
+        </div>
+        <div class="form-group col-lg-3">
+            <label for="inputPassword4">Número de Aulas</label>
+            <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1"
+                max="5" required>
         </div>
 
+    </div>
 
-        <button type="submit" class="btn btn-primary">Inscrição</button>
-    </form>
+    <div class="form-row col-lg-3 justify-content-center">
+        <button type="submit" class="btn btn-primary ">Inscrição</button>
+    </div>
+
+</form>
 </div>
 @endsection
