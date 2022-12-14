@@ -88,9 +88,9 @@
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
-                @if ($desportos)
-                    <h3 class="row justify-content-center">Aulas Privadas de {{ $desporto->modalidades }}</h3>
-                @endif
+
+                <h3 class="row justify-content-center">Aulas Privadas de </h3>
+
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -142,9 +142,9 @@
         <div class="form-row justify-content-center">
             <button type="submit" class="btn btn-primary ">Inscrição</button>
         </div>
+    </form>
 </div>
 
-<button type="submit" class="btn btn-primary">Inscrição</button>
-</form>
-</div>
+
+
 @endsection
