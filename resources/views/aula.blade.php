@@ -128,6 +128,14 @@
                 <div class="form-group col">
                     <label for="inputEmail4">Nome</label>
 
+                    <input type="email" class="form-control" id="email" placeholder="Email" @if (Auth::check())
+                    value="{{ Auth::user()->email }} " required
+                @endauth
+                >
+            </div>
+                <div class="form-group col">
+                    <label for="inputEmail4">Nome</label>
+
                     <input type="text" class="form-control" id="nome" placeholder="Nome" @if (Auth::check())
                     value="{{ Auth::user()->name }} " required
                 @endauth
