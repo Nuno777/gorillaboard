@@ -89,7 +89,7 @@
         <div class="row">
             <div class="row justify-content-center ">
                 @if ($desportos)
-                <h3 class="row justify-content-center">Aulas Privadas de {{ $desporto->modalidades }}</h3>
+                    <h3 class="row justify-content-center">Aulas Privadas de {{ $desporto->modalidades }}</h3>
                 @endif
                 <div class="col col-lg-3">
                     <div class="card">
@@ -139,17 +139,12 @@
                     required>
             </div>
         </div>
+        <div class="form-row justify-content-center">
+            <button type="submit" class="btn btn-primary ">Inscrição</button>
+        </div>
+</div>
 
-<<<<<<< Updated upstream
-=======
-    </div>
-
-    <div class="form-row justify-content-center">
-        <button type="submit" class="btn btn-primary ">Inscrição</button>
-    </div>
->>>>>>> Stashed changes
-
-        <button type="submit" class="btn btn-primary">Inscrição</button>
-    </form>
+<button type="submit" class="btn btn-primary">Inscrição</button>
+</form>
 </div>
 @endsection
