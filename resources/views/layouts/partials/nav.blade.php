@@ -1,4 +1,5 @@
 <header>
+
     <nav>
         <ul id="navbar">
             <li>
@@ -19,7 +20,7 @@
 
                     <ul class="dropdown-menu drop_perfil" aria-labelledby="dropdownMenuLink">
                         @if (Auth::check())
-                            <li><a class="dropdown-item" href="#">{{ Auth::user()->name }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">{{ Auth::user()->name }}</a></li>
                             <li><a class="dropdown-item" href="{{ route('dashboard') }}">DASHBOARD</a></li>
                         @endauth
                         <li>
@@ -32,6 +33,7 @@
                                     </a>
                                 </form>
                             @endauth
+
                     </li>
 
             </ul>
@@ -73,10 +75,10 @@
 
             <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
                 @foreach ($desportos as $desporto)
-                <li><a class="dropdown-item"
-                        href="{{ route('index', $desporto->id) }}">{{ $desporto->modalidades }}</a>
-                </li>
-            @endforeach
+                    <li><a class="dropdown-item"
+                            href="{{ route('index', $desporto->id) }}">{{ $desporto->modalidades }}</a>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </li>
