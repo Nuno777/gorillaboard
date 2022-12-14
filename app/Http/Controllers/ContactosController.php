@@ -38,21 +38,19 @@ class ContactosController extends Controller
      */
     public function store(Request $request)
     {
-        //Validação do formulario de noticia
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'message' => 'required'
-        ]);
+        
+        $fields = $request->validate(
+            [
+                'nome_Contactos' => 'required',
+                'email_Contactos' => 'required',
+                'menssagem_Contactos' => 'required'
+            ]
 
-        //Inserção de dados no formulario de noticia
-        $contactos = new Contacto();
-        $contactos->nome_Contactos = request('name');
-        $contactos->email_Contactos = request('email');
-        $contactos->menssagem_Contactos = request('message');
-        $contactos->save();
-
-        return redirect('/contactos')->with('message', 'Nova notícia inserido com sucesso!!');
+        );
+        $contacto = new Contacto();
+        $contacto->fill($fields);
+        $contacto->save();
+        return redirect()->route('contactos')->with('success', 'Categoria criada com sucesso');
     }
 
     /**
@@ -97,6 +95,5 @@ class ContactosController extends Controller
      */
     public function destroy(Contacto $contacto)
     {
-        
     }
 }
