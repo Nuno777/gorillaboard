@@ -42,11 +42,11 @@ class FaqController extends Controller
      */
     public function store(StoreFaqsRequest  $request)
     {
-        $fields=$request->validate();
+        $fields=$request->validated();
         $faq=new faqs();
         $faq->fill($fields);
         $faq->save();
-        return redirect()->route('adminPage.faqs')->with('success', 'Categoria criada com sucesso');
+        return redirect()->route('admin.faqs.index')->with('success', 'Categoria criada com sucesso');
     }
 
 

@@ -13,13 +13,9 @@ tbody tr td{
     text-align: center;
     justify-content: center;
     margin-top: 2.5rem;
-    font-weight: 500;
     font-size: 26pt;
 }
 
-.table-content{
-    width: 79%;
-}
 
 .btn-view,
 .btn-view>i:hover{
@@ -39,10 +35,7 @@ h2{
 
     list-style: none;
 }
-.text-back{
-    list-style: none;
 
-}
 .card-body table{
     color:var(--text-color)
 }
