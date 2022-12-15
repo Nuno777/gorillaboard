@@ -41,12 +41,6 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a class="sidenav-item-link" href="email-details.html">
-                                    <span class="nav-text">Editar Aulas</span>
-
-                                </a>
-                            </li>
                         </div>
                     </ul>
                 </li>
@@ -69,7 +63,7 @@
 
                             <li>
                                 <a class="sidenav-item-link" href="email-details.html">
-                                    <span class="nav-text">Editar Presenças</span>
+                                    <span class="nav-text">Marcar Presenças</span>
 
                                 </a>
                             </li>
@@ -122,13 +116,6 @@
                             <li>
                                 <a class="sidenav-item-link" href="/admincontactos">
                                     <span class="nav-text">Mostrar Contactos</span>
-
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="sidenav-item-link" href="email-details.html">
-                                    <span class="nav-text">Editar Contactos</span>
 
                                 </a>
                             </li>

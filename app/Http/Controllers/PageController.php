@@ -22,7 +22,8 @@ class PageController extends Controller
 
     public function aula(Desporto $desporto){
         $aulas = Aula::all();
-        return view('aula', compact('aulas'));
+        $desportos = Desporto::all();
+        return view('aula', compact('aulas','desportos'));
     }
 
     public function faqs(){

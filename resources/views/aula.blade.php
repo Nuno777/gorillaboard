@@ -88,7 +88,9 @@
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
-                <h3 class="row justify-content-center">Aulas Privadas de Surf</h3>
+
+                <h3 class="row justify-content-center">Aulas Privadas de </h3>
+
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -126,6 +128,14 @@
                 <div class="form-group col">
                     <label for="inputEmail4">Nome</label>
 
+                    <input type="email" class="form-control" id="email" placeholder="Email" @if (Auth::check())
+                    value="{{ Auth::user()->email }} " required
+                @endauth
+                >
+            </div>
+                <div class="form-group col">
+                    <label for="inputEmail4">Nome</label>
+
                     <input type="text" class="form-control" id="nome" placeholder="Nome" @if (Auth::check())
                     value="{{ Auth::user()->name }} " required
                 @endauth
@@ -137,9 +147,12 @@
                     required>
             </div>
         </div>
-
-
-        <button type="submit" class="btn btn-primary">Inscrição</button>
+        <div class="form-row justify-content-center">
+            <button type="submit" class="btn btn-primary ">Inscrição</button>
+        </div>
     </form>
 </div>
+
+
+
 @endsection

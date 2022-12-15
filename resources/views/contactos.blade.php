@@ -4,6 +4,7 @@
 
     @section('title', 'GorillaBoards')
     @section('main')
+
     <section class="container">
 
         <div class="row">
@@ -29,24 +30,39 @@
             </div>
         </div>
 
+        <div class="container-fluid">
+            @if ($errors->any())
+            @include ('layouts.partials.contactosErrors')
+            @endif
+
+            @if (!empty(session('success')))
+            @include ('layouts.partials.contactosSuccess')
+            @endif
+        </div>
+
         <div class="row">
             <div class="col">
                 <div class="">
                     <form action="{{ route('contactos.store') }}" method="post">
-                    @csrf
+                        @csrf
                         <div class="name">
                             <label for="name" class="name-padding">Nome</label><br>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Insira o seu nome">
+                            <input type="text" name="nome_Contactos" id="name" class="form-control" placeholder="Insira o seu nome">
                         </div>
+                        @if ($errors->has('nome_Contactos'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('nome_Contactos') }}</strong>
+                        </span>
+                        @endif
 
                         <div class="email">
                             <label for="email" class="email-padding">Email</label><br>
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Insira o seu mail">
+                            <input type="email" name="email_Contactos" id="email" class="form-control" placeholder="Insira o seu mail">
                         </div>
 
                         <div class="message">
-                            <label for="message" class="message-padding">Menssagem</label><br>
-                            <textarea name="message" id="message" class="form-control" rows="3" placeholder="Insira a sua menssagem"></textarea>
+                            <label for="message" class="message-padding">Mensagem</label><br>
+                            <textarea name="menssagem_Contactos" id="message" class="form-control" rows="3" placeholder="Insira a sua mensagem"></textarea>
                         </div>
 
                         <div>
