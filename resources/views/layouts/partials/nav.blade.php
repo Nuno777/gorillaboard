@@ -20,7 +20,7 @@
 
                     <ul class="dropdown-menu drop_perfil" aria-labelledby="dropdownMenuLink">
                         @if (Auth::check())
-                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">PERFIL - {{ Auth::user()->name }}</a></li>
+                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}">PERFIL</a></li>
                             <li><a class="dropdown-item" href="{{ route('dashboard') }}">DASHBOARD</a></li>
                         @endauth
                         <li>
