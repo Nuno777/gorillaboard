@@ -7,6 +7,8 @@ use App\Models\faqs;
 use App\Models\User;
 use App\Models\Desporto;
 use App\Models\Aula;
+use App\Http\Requests\ProfileUpdateRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class PageController extends Controller
 {
