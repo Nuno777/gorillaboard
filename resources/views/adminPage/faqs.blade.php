@@ -13,10 +13,10 @@
 
 <div class="">
     @if ($errors->any())
-    @include ('layout.partials.error')
+    @include ('layouts.partials.errors')
     @endif
     @if (!empty(session('success')))
-    @include ('layout.partials.success')
+    @include ('layouts.partials.success')
     @endif
     </div>
     <div class="card-body">
