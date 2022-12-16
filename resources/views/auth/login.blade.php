@@ -15,7 +15,7 @@
                         <i class="fas fa-user"></i>
                         {{-- <x-input-label for="email" :value="__('Email')" /> --}}
                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                            :value="old('email')" placeholder="Email" required autofocus />
+                            :value="old('email')" placeholder="Email" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required autofocus />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
                     <div class="input-field">
@@ -65,7 +65,7 @@
                         <i class="fas fa-envelope"></i>
                         {{-- <x-input-label for="email" :value="__('Email')" /> --}}
                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                            :value="old('email')"  placeholder="Email" required />
+                            :value="old('email')"  placeholder="Email" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
                     <div class="input-field">

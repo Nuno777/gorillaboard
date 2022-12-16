@@ -7,6 +7,8 @@ use App\Models\faqs;
 use App\Models\User;
 use App\Models\Desporto;
 use App\Models\Aula;
+use App\Http\Requests\ProfileUpdateRequest;
+use Illuminate\Support\Facades\Redirect;
 
 class PageController extends Controller
 {
@@ -22,7 +24,8 @@ class PageController extends Controller
 
     public function aula(Desporto $desporto){
         $aulas = Aula::all();
-        return view('aula', compact('aulas'));
+        $desportos = Desporto::all();
+        return view('aula', compact('aulas','desportos'));
     }
 
     public function faqs(){

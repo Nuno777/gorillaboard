@@ -5,6 +5,10 @@
 @vite('public/css/adminCss/adminFaqs.css')
 
 @section('adminMain')
+
+@if ($errors->any())
+@include ('layouts.partials.errors')
+@endif
     <div class="card-body">
         <h2 class="name-page"><a  href="{{ url()->previous() }}">
             <i class='bx bx-chevron-left bx-sm'></i></a>Edit Faq</h2>

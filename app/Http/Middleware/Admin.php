@@ -17,7 +17,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user() && $request->user()->admin == 1) {
+        if ($request->user() && $request->user()->admin == 0) {
             return $next($request);
         }
         throw new AccessDeniedHttpException('Ação não autorizada');

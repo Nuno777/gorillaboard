@@ -19,19 +19,20 @@ class StoreFaqsRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, mixed>
+     * @return array
      */
     public function rules()
     {
         return [
-            "name" =>'required|min:3|max:20|unique:faqs,name|regex:/^[A-ZÀ-úa-z\s]+$/'
+            'pergunta' => 'required|min:3|unique:faqs,pergunta|regex:/^[A-ZÀ-úa-z\s,.?!]+$/',
+            'resposta' => 'required|min:3|regex:/^[A-ZÀ-úa-z\s,.?!]+$/'
         ];
-}
+    }
+
     public function messages()
     {
         return [
-            'name.regex' => 'O nome deve conter apenas letras e espaços'
+            'pergunta.regex' => 'O nome deve conter apenas letras e espaços e caracteres de pontuação'
         ];
-
     }
 }

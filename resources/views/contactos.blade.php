@@ -32,11 +32,11 @@
 
         <div class="container-fluid">
             @if ($errors->any())
-            @include ('layouts.partials.contactosErrors')
+            @include ('layouts.partials.errors')
             @endif
 
             @if (!empty(session('success')))
-            @include ('layouts.partials.contactosSuccess')
+            @include ('layouts.partials.success')
             @endif
         </div>
 
