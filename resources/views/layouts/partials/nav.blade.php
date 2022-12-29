@@ -55,13 +55,11 @@
                 Aulas
             </a>
             <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
-
                 @foreach ($desportos as $desporto)
                     <li><a class="dropdown-item"
                             href="{{ route('aula', $desporto->id) }}">{{ $desporto->modalidades }}</a>
                     </li>
                 @endforeach
-
             </ul>
         </div>
     </li>
