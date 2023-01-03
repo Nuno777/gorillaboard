@@ -372,7 +372,9 @@ nav .nav_option li a:hover {
     border-radius: 10px;
   }
   .card1 {
-    background-image: url("https://cdn.pixabay.com/photo/2018/08/21/23/29/fog-3622519_960_720.jpg");
+    background-color: wheat;
+    border-radius: 0px;
+    padding: 20px;
   }
   
   .nav_carousel_aulas button {
