@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Aula;
+use App\Models\Desporto;
 use Illuminate\Http\Request;
 
 class AulaController extends Controller
@@ -15,7 +16,8 @@ class AulaController extends Controller
     public function index()
     {
         $aula = Aula::all();
-        return view('adminPage.inscricao', compact('aula'));
+        $desportos = Desporto::all();
+        return view('adminPage.inscricao', compact('desportos', 'aula'));
     }
 
     /**
@@ -37,15 +39,10 @@ class AulaController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'email' => 'required',
-            'nome' => 'required',
             'naulas' => 'required'
         ]);
 
-        //Inserção de dados no formulario de noticia
         $aula = new aula();
-        $aula->email = request('email');
-        $aula->name = request('nome');
         $aula->num_inscricoes = request('naulas');
         $aula->save();
 
@@ -60,7 +57,9 @@ class AulaController extends Controller
      */
     public function show(Aula $aula)
     {
-        //
+         $aula = Aula::all();
+        $desportos = Desporto::all();
+        return view('adminPage.inscricao', compact('desportos', 'aula'));
     }
 
     /**
