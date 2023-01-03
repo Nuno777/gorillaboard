@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\AulaController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactosController;
 use App\Http\Controllers\sobreController;
@@ -48,6 +49,8 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/admincontactos', [ContactosController::class, 'index'])->name('admincontactos');
     Route::get('/admincontactosShow', [ContactosController::class, 'show'])->name('adminPage.adminContactos.show');
     Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminPage.adminContactos.destroy');
+
+    Route::get('/inscricao', [AulaController::class, 'index'])->name('inscricao');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

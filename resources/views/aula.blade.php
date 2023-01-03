@@ -122,17 +122,18 @@
         </div>
         <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
 
-        <form role="form" method="POST" action="/aulas/" enctype="multipart/form-data">
-            @csrf
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="inputEmail4">Nome</label>
+        @if (Auth::check())
+            <form role="form" method="POST" action="/aula" enctype="multipart/form-data">
+                @csrf
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="inputEmail4">Email</label>
 
-                    <input type="email" class="form-control" id="email" placeholder="Email" @if (Auth::check())
-                    value="{{ Auth::user()->email }} " required
-                @endauth
-                >
-            </div>
+                        <input type="email" class="form-control" id="email" placeholder="Email" @if (Auth::check())
+                        value="{{ Auth::user()->email }} " required
+                    @endauth
+                    >
+                </div>
                 <div class="form-group col">
                     <label for="inputEmail4">Nome</label>
 
@@ -143,14 +144,16 @@
             </div>
             <div class="form-group col">
                 <label for="inputPassword4">Número de Aulas</label>
-                <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1" max="5"
-                    required>
+                <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1"
+                    max="5" required>
             </div>
         </div>
-        <div class="form-row justify-content-center">
-            <button type="submit" class="btn btn-primary ">Inscrição</button>
-        </div>
     </form>
+    <div class="form-row justify-content-center">
+        <button type="submit" class="btn btn-primary ">Inscrição</button>
+    </div>
+
+    @endauth
 </div>
 
 

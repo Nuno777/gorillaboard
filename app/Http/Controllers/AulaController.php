@@ -14,7 +14,8 @@ class AulaController extends Controller
      */
     public function index()
     {
-        //
+        $aula = Aula::all();
+        return view('adminPage.inscricao', compact('aula'));
     }
 
     /**
@@ -24,7 +25,7 @@ class AulaController extends Controller
      */
     public function create()
     {
-        //
+        return view('aula');
     }
 
     /**
@@ -35,7 +36,20 @@ class AulaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+            'email' => 'required',
+            'nome' => 'required',
+            'naulas' => 'required'
+        ]);
+
+        //Inserção de dados no formulario de noticia
+        $aula = new aula();
+        $aula->email = request('email');
+        $aula->name = request('nome');
+        $aula->num_inscricoes = request('naulas');
+        $aula->save();
+
+        return redirect('/aula')->with('message', 'Inscrição na aula com sucesso!!');
     }
 
     /**
