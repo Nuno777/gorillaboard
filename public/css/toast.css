@@ -1,0 +1,23 @@
+.toast {
+    position: fixed;
+    bottom: 85%;
+    left: 79%;
+    width: fit-content;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    /* start off hidden */
+}
+
+/* show the toast when .toast-show is added to the .toast element */
+.toast.toast-show {
+    display: block;
+}
+
+.warming{
+    background-color: var(--color-alert);
+}
+.success{
+    background-color: var(--color-correc);
+}

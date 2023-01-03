@@ -117,7 +117,21 @@
         @foreach ($aulas as $aula)
 
         <div class="card-container">
-          <div class="card_aulas card1">{{ $aula->local_aulas }} {{ $aula->data_aulas }}</div>
+          <div class="card_aulas card1">
+            @if ($aula->desporto_id == 1)
+              <p>Surf</p>
+            @elseif($aula->desporto_id == 2)
+              <p>Skate</p>
+            @elseif($aula->desporto_id == 3)
+              <p>Bodyboard</p>
+            @elseif($aula->desporto_id == 4)
+              <p>Downhill Skate</p>
+            @elseif($aula->desporto_id == 5)
+              <p>Paddle Surf</p>
+            @endif
+            <p>{{$aula->local_aulas}}</p>
+            <p>{{$aula->data_aulas}}</p>
+          </div>
         </div>
 
         @endforeach
