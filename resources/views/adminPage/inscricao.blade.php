@@ -30,12 +30,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                       {{--      @foreach ($aula as $aulas)
+                                          @foreach ($aula as $aulas)
                                                 <tr>
-                                                    <td scope="row">{{ $aulas-> }}</td>
-                                                    <td>{{ $aulas-> }}</td>
-                                                    <td>{{ $aulas-> }}</td>
-                                                    <td>
+                                                    <td scope="row">{{ $aulas->num_inscricoes }}</td>
+
+                                                  {{--   <td>
                                                         <a href="{{ $aulas->id }}/edit">
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
@@ -55,9 +54,9 @@
                                                                     data-toogle="tooltip"></i>
                                                             </button>
                                                         </form>
-                                                    </td>
+                                                    </td> --}}
                                                 </tr>
-                                            @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -26,6 +26,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/sobre', [sobreController::class, 'index'])->name('sobre');
 
 Route::get('/aula/{desporto}', [PageController::class, 'aula'])->name('aula');
+Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
 
 Route::get('/PerguntasFrequentes', [PageController::class, 'faqs'])->name('faqs');
 

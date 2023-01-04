@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('users_desportos', function (Blueprint $table) {
             $table->id();
             $table->integer('num_inscricoes');
-            $table->integer('num_presencas');
+            $table->integer('num_presencas')->default(0);
             $table->unsignedBigInteger('desporto_id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('desporto_id')->references('id')->on('desportos');

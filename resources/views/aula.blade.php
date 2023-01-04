@@ -52,7 +52,7 @@
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
-                <h3 class="row justify-content-center">Aulas de Surf em Grupo</h3>
+                <h3 class="row justify-content-center">Aulas de {{ $desporto->modalidade }} em Grupo</h3>
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -122,40 +122,38 @@
         </div>
         <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p> --}}
 
-        @if (Auth::check())
-            <form role="form" method="POST" action="/aula" enctype="multipart/form-data">
-                @csrf
-                <div class="form-row">
-                    <div class="form-group col">
-                        <label for="inputEmail4">Email</label>
 
-                        <input type="email" class="form-control" id="email" placeholder="Email" @if (Auth::check())
-                        value="{{ Auth::user()->email }} " required
-                    @endauth
-                    >
+
+        @if (Auth::check())
+            <form role="form" method="POST" action="{{ route('aula.store', $desporto->id) }}" enctype="multipart/form-data">
+            @csrf
+            <div class="form-row">
+
+                <div class="form-group col">
+                    <label for="inputEmail4">Email</label>
+
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email" @if (Auth::check())value="{{ Auth::user()->email }} " required
+                    disabled @endauth >
                 </div>
+
                 <div class="form-group col">
                     <label for="inputEmail4">Nome</label>
 
-                    <input type="text" class="form-control" id="nome" placeholder="Nome" @if (Auth::check())
-                    value="{{ Auth::user()->name }} " required
-                @endauth
-                >
+                    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" @if (Auth::check()) value="{{ Auth::user()->name }} " required
+                    disabled @endauth>
+                </div>
+
+                <div class="form-group col">
+                    <label for="inputPassword4">Número de Aulas</label>
+                    <input type="number" class="form-control" name="naulas" id="naulas" placeholder="Nº" min="1"
+                        max="3" required>
+                </div>
             </div>
-            <div class="form-group col">
-                <label for="inputPassword4">Número de Aulas</label>
-                <input type="number" class="form-control" id="naulas" placeholder="Nº" min="1"
-                    max="3" required>
+            <div class="form-row justify-content-center">
+                <button type="submit" class="btn btn-primary ">Inscrição</button>
             </div>
-        </div>
-    </form>
-    <div class="form-row justify-content-center">
-        <button type="submit" class="btn btn-primary ">Inscrição</button>
+
+            </form>
+        @endauth
     </div>
-
-@endauth
-</div>
-
-
-
 @endsection

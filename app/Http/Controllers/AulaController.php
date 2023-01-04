@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Models\Aula;
 use App\Models\Desporto;
+use App\Models\UserDesporto;
 use Illuminate\Http\Request;
 
 class AulaController extends Controller
@@ -36,17 +38,19 @@ class AulaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Desporto $desporto)
     {
         request()->validate([
             'naulas' => 'required'
         ]);
 
-        $aula = new aula();
+        $aula = new UserDesporto();
+        $aula->user_id = Auth::user()->id;
+        $aula->desporto_id = $desporto->id;
         $aula->num_inscricoes = request('naulas');
         $aula->save();
 
-        return redirect('/aula')->with('message', 'Inscrição na aula com sucesso!!');
+        return redirect('/')->with('message', 'Inscrição na aula com sucesso!!');
     }
 
     /**
@@ -57,7 +61,7 @@ class AulaController extends Controller
      */
     public function show(Aula $aula)
     {
-         $aula = Aula::all();
+        $aula = Aula::all();
         $desportos = Desporto::all();
         return view('adminPage.inscricao', compact('desportos', 'aula'));
     }
