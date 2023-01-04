@@ -20,6 +20,7 @@ class userSeeder extends Seeder
             [
                 'name' => 'Miguel',
                 'email' => 'mmjm.1997@gmail.com',
+                'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => '$2y$10$k9NwpyPGi9iBFNwwCZ2xeOW9FgMEKl.tGQHJzhJhbGl6Zvd5igz4K',
                 'img' => 'miguel.jpg',
                 'admin' => '1',
@@ -27,6 +28,7 @@ class userSeeder extends Seeder
             [
                 'name' => 'Roman',
                 'email' => 'romankalyuzhnov@gmail.com',
+                'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => '$2y$10$zulASHlfbkbtYG5NW3hLpOxG/tXWoaVkYrY7PClIiqjRLb5spCA7S',
                 'img' => 'roman.jpg',
                 'admin' => '1',
@@ -34,6 +36,7 @@ class userSeeder extends Seeder
             [
                 'name' => 'Nuno',
                 'email' => 'nm.albano11@gmail.com',
+                'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => '$2y$10$SFV/E7B67xtyHUnuvCgCSuqlvcumed0VYvPvP.jYnhH5a/7O2RwY2',
                 'img' => 'nuno.jpg',
                 'admin' => '1',
@@ -41,6 +44,7 @@ class userSeeder extends Seeder
             [
                 'name' => 'Joel',
                 'email' => '2211727@my.ipleiria.pt',
+                'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => '$2y$10$mgokqZhfweUXPqFHAEGzyOL0HXJX6MhXMzGfuyfXDp6Z4zS7WKGS.',
                 'img' => 'joel.jpg',
                 'admin' => '1',
@@ -48,6 +52,7 @@ class userSeeder extends Seeder
             [
                 'name' => 'Tmarques',
                 'email' => '2213032@ipleiria.pt',
+                'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => '$2y$10$4o.lW.thkJgi/KxrVf2O2uWUbGMcDO4Xd8izjg0tkJy9.yzKrSWlK',
                 'img' => 'tiago.jpg',
                 'admin' => '1',
