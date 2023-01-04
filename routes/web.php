@@ -53,7 +53,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/admincontactosShow', [ContactosController::class, 'show'])->name('adminContactosMenssagem');
     Route::get('/admincontactosEdit', [ContactosController::class, 'edit'])->name('adminContactosEdit');
     Route::get('/admincontactosUpdate', [ContactosController::class, 'update'])->name('adminContactos.update');
-    Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminPage.adminContactos.destroy');
+    Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
     Route::get('/inscricao', [AulaController::class, 'index'])->name('inscricao');
 });
