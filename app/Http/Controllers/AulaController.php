@@ -59,11 +59,11 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function show(Aula $aula)
+    public function show(Aula $aula,Desporto $desporto)
     {
         $aula = Aula::all();
         $desportos = Desporto::all();
-        return view('adminPage.inscricao', compact('desportos', 'aula'));
+        return view('adminPage.inscricao', compact('desportos', 'aula','desporto'));
     }
 
     /**
