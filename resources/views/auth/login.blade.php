@@ -5,6 +5,9 @@
 
     {{-- Sing in code --}}
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    @if ($errors->any())
+@include ('layouts.partials.errors')
+@endif
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
@@ -15,15 +18,15 @@
                         <i class="fas fa-user"></i>
                         {{-- <x-input-label for="email" :value="__('Email')" /> --}}
                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                            :value="old('email')" placeholder="Email" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required autofocus />
-                        <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                            :value="old('email')" placeholder="Email"
+                            pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$"
+                            required autofocus />
                     </div>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         {{-- <x-input-label for="password" :value="__('Password')" /> --}}
                         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                             autocomplete="current-password" placeholder="Password" />
-                        <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>
                     <input type="submit" value="Login" class="btn solid" />
 
@@ -50,7 +53,7 @@
                     </div>
                 </form>
 
-            {{-- Sing up code --}}
+                {{-- Sing up code --}}
                 <form method="POST" action="{{ route('register') }}" class="sign-up-form">
                     @csrf
                     <h2 class="title">Sign up</h2>
@@ -65,7 +68,9 @@
                         <i class="fas fa-envelope"></i>
                         {{-- <x-input-label for="email" :value="__('Email')" /> --}}
                         <x-text-input id="email" class="block mt-1 w-full" type="email" name="email"
-                            :value="old('email')"  placeholder="Email" pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$" required />
+                            :value="old('email')" placeholder="Email"
+                            pattern="^[_a-zA-Z0-9-]+(\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.(([0-9]{1,3})|([a-zA-Z]{2,3})|(aero|coop|info|museum|name))$"
+                            required />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                     </div>
                     <div class="input-field">
@@ -73,7 +78,7 @@
                         {{-- <x-input-label for="password" :value="__('Password')" /> --}}
 
                         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                            autocomplete="new-password"  placeholder="Password"/>
+                            autocomplete="new-password" placeholder="Password" />
 
                         <x-input-error :messages="$errors->get('password')" class="mt-2" />
                     </div>

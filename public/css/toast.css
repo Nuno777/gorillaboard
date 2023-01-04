@@ -12,12 +12,12 @@
 
 /* show the toast when .toast-show is added to the .toast element */
 .toast.toast-show {
-    display: block;
+    display: block !important;
 }
 
 .warming{
     background-color: var(--color-alert);
 }
 .success{
-    background-color: var(--color-correc);
+    background-color: var(--color-correct);
 }
