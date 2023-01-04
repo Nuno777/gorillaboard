@@ -25,18 +25,26 @@
                                                 <th scope="col">Nome</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Mensagem</th>
+                                                <th scope="col">created_at</th>
                                                 <th scope="col">Editar</th>
                                                 <th scope="col">Eliminar</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($contactos as $contact)
+                                            @foreach ($contactos as $contacto)
                                                 <tr>
-                                                    <td scope="row">{{ $contact->nome_Contactos }}</td>
-                                                    <td>{{ $contact->email_Contactos }}</td>
-                                                    <td>{{ $contact->menssagem_Contactos }}</td>
+                                                    <td scope="row">{{ $contacto->nome_Contactos }}</td>
+                                                    <td>{{ $contacto->email_Contactos }}</td>
+                                                    <td><a href="{{ route('adminContactosMenssagem', $contacto->id) }}/edit">
+                                                            <button type="submit" class="link"
+                                                                style="background-color: transparent; border:none">
+                                                                <i class="mdi mdi-message-text-outline" data-toogle="tooltip"></i>
+                                                        </a>
+                                                        </button></td>
+                                                        
+                                                    <td>{{ $contacto->created_at }}</td>
                                                     <td>
-                                                        <a href="{{ $contact->id }}/edit">
+                                                        <a href="{{ route('adminContactosEdit', $contacto->id) }}/edit">
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
                                                                 <i class="mdi mdi-pencil" data-toogle="tooltip"></i>
@@ -45,7 +53,7 @@
                                                     </td>
                                                     <td>
                                                         <form role="form"
-                                                            action="{{ route('adminPage.adminContactos.destroy', $contact->id) }}"
+                                                            action="{{ route('adminContactos.destroy', $contacto->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')

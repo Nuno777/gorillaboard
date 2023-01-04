@@ -38,7 +38,7 @@ class ContactosController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $fields = $request->validate(
             [
                 'nome_Contactos' => 'required',
@@ -61,7 +61,7 @@ class ContactosController extends Controller
      */
     public function show(Contacto $contacto)
     {
-        //
+        return view('adminPage.adminContactosMenssagem',compact("contacto"));
     }
 
     /**
@@ -72,7 +72,7 @@ class ContactosController extends Controller
      */
     public function edit(Contacto $contacto)
     {
-        //
+        return view('adminPage.adminContactosEdit', compact("contacto"));
     }
 
     /**
@@ -84,7 +84,10 @@ class ContactosController extends Controller
      */
     public function update(Request $request, Contacto $contacto)
     {
-        //
+        $fields = $request->validated();
+        $contacto->fill($fields);
+        $contacto->save();
+        return redirect()->route('admin.categories.index')->with('success', 'Categoria atualizada com sucesso');
     }
 
     /**

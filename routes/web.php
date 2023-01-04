@@ -31,31 +31,23 @@ Route::get('/PerguntasFrequentes', [PageController::class, 'faqs'])->name('faqs'
 Route::get('/contactos', [PageController::class, 'contactos'])->name('contactos');
 Route::post('/contactos', [ContactosController::class, 'store'])->name('contactos.store');
 
-<<<<<<< HEAD
-Route::get('/dashboard', [PageController::class, 'dashboard'])->middleware(['auth', 'verified', 'admin'])->name('dashboard');
-
-=======
->>>>>>> ec0c702d72c4e03fdc29c7e9a8b60135bb1360d2
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified', 'admin']], function () {
     Route::resource('faqs', FaqController::class);
 });
 
-<<<<<<< HEAD
-Route::get('/admincontactos', [ContactosController::class, 'index'])->name('admincontactos');
-Route::get('/admincontactosShow', [ContactosController::class, 'show'])->name('adminPage.adminContactos.show');
-Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminPage.adminContactos.destroy');
-=======
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
->>>>>>> ec0c702d72c4e03fdc29c7e9a8b60135bb1360d2
+
 
     Route::get('/profileAdmin', [ProfileAdminController::class, 'show'])->name('profileAdmin.show');
     Route::patch('/profileAdmin', [ProfileAdminController::class, 'edit'])->name('profileAdmin.edit');
     Route::delete('/profileAdmin', [ProfileAdminController::class, 'destroy'])->name('profileAdmin.destroy');
 
     Route::get('/admincontactos', [ContactosController::class, 'index'])->name('admincontactos');
-    Route::get('/admincontactosShow', [ContactosController::class, 'show'])->name('adminPage.adminContactos.show');
-    Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminPage.adminContactos.destroy');
+    Route::get('/admincontactosShow', [ContactosController::class, 'show'])->name('adminContactosMenssagem');
+    Route::get('/admincontactosEdit', [ContactosController::class, 'edit'])->name('adminContactosEdit');
+    Route::get('/admincontactosUpdate', [ContactosController::class, 'update'])->name('adminContactos.update');
+    Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
