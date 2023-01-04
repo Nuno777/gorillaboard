@@ -10,7 +10,7 @@
 @include ('layouts.partials.errors')
 @endif
     <div class="card-body">
-        <h2 class="name-page"><a  href="{{ url()->previous() }}">
+        <h2 class="name-page"><a  href="{{ route('admin.faqs.index') }}">
             <i class='bx bx-chevron-left bx-sm'></i></a>Edit Faq</h2>
     </div>
     <form method="POST" action="{{ route('admin.faqs.update', $faq) }}" class="form-group inline">

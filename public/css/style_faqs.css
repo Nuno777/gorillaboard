@@ -1,4 +1,6 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -8,6 +10,7 @@
 
 :root{
     --blue:#2AA9FF;
+    --blue3:#0E71B3;
     --blue2:#1B272C;
     --grey:#8C959A;
     --with:#ffffff;
@@ -20,10 +23,9 @@
     align-content: center;
 }
 .text hr{
-    align-content: center;
-    width: 20%;
-    height: auto;
-    color: var(--blue);
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, var(--with), var(--blue), var(--with));
 }
 .text p {
     max-width: 60% auto;

@@ -1,0 +1,21 @@
+.tosta {
+    position: fixed;
+    bottom: 85%;
+    left: 79% ;
+    width: fit-content;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    opacity:100% !important;
+    z-index:10;
+    /* start off hidden */
+}
+
+/* show the toast when .toast-show is added to the .toast element */
+.warming{
+    background-color:yellow;
+}
+.success{
+    background-color: var(--color-correct);
+}

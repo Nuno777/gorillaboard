@@ -42,28 +42,13 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
-                            <span class="text nav-text">Users</span>
+                            <span class="text nav-text">Aulas</span>
                         </a>
                     </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">professor_aula</span>
-                        </a>
-                    </li>
-
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-pie-chart-alt icon'></i>
-                            <span class="text nav-text">presencas</span>
-                        </a>
-                    </li>
-
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-heart icon'></i>
-                            <span class="text nav-text">inscricao_aulas</span>
+                            <span class="text nav-text">Presenças</span>
                         </a>
                     </li>
 
@@ -72,64 +57,38 @@
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">faqs</span>
                         </a>
-                        <i class='bx bx-chevron-down arrow'></i>
+                        {{-- <i class='bx bx-chevron-down arrow'></i>
                         <ul class="sub-menu">
                             <li><a class="link_name" href="#"></a>Posts</li>
                             <li><a href="#"></a>mostrar</li>
                             <li><a href="#"></a>editar</li>
-                        </ul>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
-                            <span class="text nav-text">desportos</span>
-                        </a>
+                        </ul> --}}
                     </li>
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">contactos</span>
                         </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
-                            <span class="text nav-text">aulas </span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
-                            <span class="text nav-text">atletas </span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
-                            <span class="text nav-text">aluno_aula </span>
-                        </a>
-                    </li>
-
-
                 </ul>
             </div>
-
-            <div class="profile-details">
-                <div class="profile-content">
-                    <img src="{{ asset('img/' . Auth::user()->img) }}" alt="profile">
-                </div>
-                    <div class="name-job">
-                        <div class="profile-name">{{ Auth::user()->name }}</div>
-                        <div class="job">{{ Auth::user()->perms }}</div>
+            <div class="pro">
+                <div class="profile-details">
+                    <div class="profile-content">
+                        <img src="{{ asset('img/' . Auth::user()->img) }}" alt="profile">
                     </div>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <a href="route('logout')"
-                            onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                            <i class='bx bx-log-out icon'></i>
-                        </a>
-                    </form>
+                        <div class="name-job">
+                            <div class="profile-name">{{ Auth::user()->name }}</div>
+                            <div class="job">{{ Auth::user()->perms }}</div>
+                        </div>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="route('logout')"
+                                onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                <i class='bx bx-log-out icon'></i>
+                            </a>
+                        </form>
+                </div>
             </div>
                 <div class="bottom-content">
                     {{-- <li class="">
@@ -143,6 +102,7 @@
                             </a>
                         </form>
                     </li> --}}
+
                     <li class="mode">
                         <div class="sun-moon">
                             <i class='bx bx-moon icon moon'></i>

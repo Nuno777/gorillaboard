@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Desporto;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,7 +25,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $desportos = Desporto::all();
-        view()->share('desportos', $desportos);
+        if(Schema::hasTable('desportos')) {
+            $desportos = Desporto::all();
+            view()->share('desportos', $desportos);
+        }
     }
 }
