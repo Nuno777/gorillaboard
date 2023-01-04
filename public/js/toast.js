@@ -1,9 +1,9 @@
-var toast = document.querySelector('.toast');
+var toast = document.querySelector('.tosta');
 
-// show the toast
-toast.classList.add('toast-show');
+/* // show the toast
+toast.classList.add('toast-show'); */
 
 // hide the toast after 5 seconds
 setTimeout(function() {
-  toast.classList.remove('toast-show');
-}, 70000);
+  tosta.style.display('none');
+}, 7000); 

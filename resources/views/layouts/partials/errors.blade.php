@@ -1,8 +1,9 @@
 @vite(['/public/css/toast.css', '/public/js/toast.js'])
 
-<div class="toast warming">
+<div class="tosta warming">
     @foreach ($errors->all() as $error)
         <p>{{ $error }}</p>
+        
     @endforeach
 </div>
 

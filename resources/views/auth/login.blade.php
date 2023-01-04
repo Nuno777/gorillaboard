@@ -1,14 +1,17 @@
 @extends('layouts.master')
-@vite(['/public/css/style_login.css', '/public/js/app.js'])
+@section('custom_css'){{ asset('css/style_login.css') }}@endsection
+@section('custom_js'){{ asset('app.js') }}@endsection
 @section('title', 'GorillaBoards')
-@section('main')
 
+@section('main')
+@if ($errors->any())
+    @include ('layouts.partials.errors')
+    @endif
     {{-- Sing in code --}}
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    @if ($errors->any())
-@include ('layouts.partials.errors')
-@endif
+    
     <div class="container">
+        
         <div class="forms-container">
             <div class="signin-signup">
                 <form method="POST" action="{{ route('login') }}" class="sign-in-form">

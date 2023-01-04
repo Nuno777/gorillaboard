@@ -1,22 +1,20 @@
-.toast {
+.tosta {
     position: fixed;
     bottom: 85%;
-    left: 79%;
+    left: 79% ;
     width: fit-content;
     color: #fff;
     padding: 10px;
     border-radius: 5px;
-    display: none;
+    display: block;
+    opacity:100% !important;
+    z-index:10;
     /* start off hidden */
 }
 
 /* show the toast when .toast-show is added to the .toast element */
-.toast.toast-show {
-    display: block !important;
-}
-
 .warming{
-    background-color: var(--color-alert);
+    background-color:yellow;
 }
 .success{
     background-color: var(--color-correct);
