@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             userSeeder::class,
             faqsSeeders::class,
             desportosSeeder::class,
+            desportoimageSeeder::class
         ]);
     }
 }
