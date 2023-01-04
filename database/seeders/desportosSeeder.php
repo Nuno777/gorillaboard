@@ -18,7 +18,7 @@ class desportosSeeder extends Seeder
         $desportos = [
             ['modalidades' => 'Surf'],
             ['modalidades' => 'Skate'],
-            ['modalidades' => 'BodyBaord'],
+            ['modalidades' => 'BodyBoard'],
             ['modalidades' => 'Downhill Skate'],
             ['modalidades' => 'Paddle Surf']
         ];

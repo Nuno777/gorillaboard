@@ -119,15 +119,46 @@
         <div class="card-container">
           <div class="card_aulas card1">
             @if ($aula->desporto_id == 1)
-              <p>Surf</p>
+
+              @foreach ($desportoImages as $desportoicon)
+                @if ($desportoicon->id == 1)
+                <p>Surf</p>
+                <img src="{{ asset('img/' . $desportoicon->icon) }}" alt="OLA">
+                @endif
+              @endforeach
+
             @elseif($aula->desporto_id == 2)
-              <p>Skate</p>
+              @foreach ($desportoImages as $desportoicon)
+                @if ($desportoicon->id == 2)
+                <p>Skate</p>
+                <img src="{{ asset('img/' . $desportoicon->icon) }}" alt="OLA">
+                @endif
+              @endforeach
+
             @elseif($aula->desporto_id == 3)
-              <p>Bodyboard</p>
+              @foreach ($desportoImages as $desportoicon)
+                @if ($desportoicon->id == 3)
+                <p>Bodyboard</p>
+                <img src="{{ asset('img/' . $desportoicon->icon) }}" alt="OLA">
+                @endif
+              @endforeach
+
             @elseif($aula->desporto_id == 4)
-              <p>Downhill Skate</p>
+              @foreach ($desportoImages as $desportoicon)
+                @if ($desportoicon->id == 4)
+                <p>Downhill Skate</p>
+                <img src="{{ asset('img/' . $desportoicon->icon) }}" alt="OLA">
+                @endif
+              @endforeach
+
             @elseif($aula->desporto_id == 5)
-              <p>Paddle Surf</p>
+              @foreach ($desportoImages as $desportoicon)
+                @if ($desportoicon->id == 5)
+                <p>Paddle Surf</p>
+                <img src="{{ asset('img/' . $desportoicon->icon) }}" alt="OLA">
+                @endif
+              @endforeach
+
             @endif
             <p>{{$aula->local_aulas}}</p>
             <p>{{$aula->data_aulas}}</p>

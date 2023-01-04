@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('desporto_images', function (Blueprint $table) {
             $table->id();
             $table->string('image');
+            $table->string('icon');
             $table->unsignedBigInteger('desporto_id');
             $table->foreign('desporto_id')->references('id')->on('desportos');
             $table->timestamps();
