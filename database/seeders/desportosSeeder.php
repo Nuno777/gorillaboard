@@ -17,10 +17,10 @@ class desportosSeeder extends Seeder
     {
         $desportos = [
             ['modalidades' => 'Surf'],
-            ['modalidades' => 'BodyBaord'],
-            ['modalidades' => 'Paddle'],
             ['modalidades' => 'Skate'],
-            ['modalidades' => 'Downhill Skate']
+            ['modalidades' => 'BodyBaord'],
+            ['modalidades' => 'Downhill Skate'],
+            ['modalidades' => 'Paddle Surf']
         ];
         foreach ($desportos as $desporto){
             Desporto::create($desporto);
