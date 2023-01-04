@@ -49,6 +49,7 @@
     <li><a href="{{ route('faqs') }}">FAQS</a></li>
     <li><a href="#news">HORÁRIOS</a></li>
     <li>
+        
         <div class="dropdown dropbtn_nav">
             <a class="btn btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
                 id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">

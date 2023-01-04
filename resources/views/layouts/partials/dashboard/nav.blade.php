@@ -41,6 +41,13 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a class="sidenav-item-link" href="/inscricao">
+                                    <span class="nav-text">Mostrar Inscrições</span>
+
+                                </a>
+                            </li>
+
                         </div>
                     </ul>
                 </li>
