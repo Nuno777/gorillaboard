@@ -17,7 +17,7 @@ class AulaController extends Controller
      */
     public function index()
     {
-        $aula = Aula::orderBy('id', 'DESC')->take(2)->get();
+        $aula = Aula::all();
         $desportos = Desporto::all();
         return view('adminPage.inscricao', compact('desportos', 'aula'));
     }
