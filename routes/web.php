@@ -57,7 +57,10 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/admincontactosUpdate', [ContactosController::class, 'update'])->name('adminContactos.update');
     Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
-    Route::get('/inscricao', [AulaController::class, 'index'])->name('inscricao');
+    Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
+
+    Route::delete('/presenca/{Aulas}', [AulaController::class, 'destroy'])->name('presenca.delete');
+
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

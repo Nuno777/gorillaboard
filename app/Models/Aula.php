@@ -10,6 +10,6 @@ class Aula extends Model
     use HasFactory;
 
     public function desporto() {
-        return $this->belongsTo(Desporto::class, 'desporto_id', 'id');
+        return $this->belongsTo(Desporto::class, 'desporto_id', 'id','modalidades');
     }
 }
