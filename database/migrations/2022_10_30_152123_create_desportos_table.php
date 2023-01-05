@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('desportos', function (Blueprint $table) {
             $table->id();
             $table->string('modalidades');
+            $table->string('icon');
             $table->timestamps();
         });
     }

@@ -16,11 +16,11 @@ class desportosSeeder extends Seeder
     public function run()
     {
         $desportos = [
-            ['modalidades' => 'Surf'],
-            ['modalidades' => 'Skate'],
-            ['modalidades' => 'BodyBoard'],
-            ['modalidades' => 'Downhill Skate'],
-            ['modalidades' => 'Paddle Surf']
+            ['modalidades' => 'Surf', 'icon'=> 'surf_icon_aulas.png'],
+            ['modalidades' => 'Skate', 'icon'=>'surf_icon_aulas.png'],
+            ['modalidades' => 'BodyBoard', 'icon'=>'surf_icon_aulas.png'],
+            ['modalidades' => 'Downhill Skate', 'icon'=>'surf_icon_aulas.png'],
+            ['modalidades' => 'Paddle Surf', 'icon'=>'paddle_icon_aulas.png']
         ];
         foreach ($desportos as $desporto){
             Desporto::create($desporto);

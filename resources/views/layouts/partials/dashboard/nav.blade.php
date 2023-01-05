@@ -19,6 +19,13 @@
                 </li>
 
                 <li class="has-sub">
+                    <a class="sidenav-item-link" href="/dashboard">
+                        <i class="mdi mdi-monitor-dashboard"></i>
+                        <span class="nav-text">Homepage</span>
+                    </a>
+                </li>
+
+                <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-file"></i>

@@ -7,7 +7,6 @@ use App\Models\faqs;
 use App\Models\User;
 use App\Models\Desporto;
 use App\Models\Aula;
-use App\Models\DesportoImage;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Support\Facades\Redirect;
 
@@ -16,8 +15,7 @@ class PageController extends Controller
     public function index(){
         $desportos = Desporto::all();
         $aulas = Aula::all();
-        $desportoImages = DesportoImage::all();
-        return view('index', compact('desportos', 'aulas', 'desportoImages'));
+        return view('index', compact('desportos', 'aulas'));
     }
 
     public function sobre(){

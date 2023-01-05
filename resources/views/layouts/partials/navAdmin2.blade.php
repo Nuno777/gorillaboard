@@ -35,6 +35,12 @@
                     Dashboard
                 </a>
             </li>
+            <li class="sidebar-menu-item active">
+                <a href="#">
+                    <i class="ri-dashboard-line sidebar-menu-item-icon"></i>
+                    Homepage
+                </a>
+            </li>
             <li class="sidebar-menu-divider mt-3 mb-1 text-uppercase">Custom</li>
             <li class="sidebar-menu-item has-dropdown">
                 <a href="#">
