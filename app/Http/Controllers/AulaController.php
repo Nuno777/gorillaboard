@@ -47,7 +47,7 @@ class AulaController extends Controller
         $aula = new UserDesporto();
         $aula->user_id = Auth::user()->id;
         $aula->desporto_id = $desporto->id;
-        $aula->num_inscricoes = $request('naulas');
+        $aula->num_inscricoes = request('naulas');
         $aula->save();
 
         return redirect('/')->with('message', 'Inscrição na aula com sucesso!!');
@@ -94,9 +94,9 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function destroy($aula)
+    public function destroy(UserDesporto $userDesporto)
     {
-        Aula::find($aula)->delete();
-        return redirect()->route('dashboard')->with('message', 'Notícia eliminada com sucesso!!');
+        $userDesporto->delete();
+        return redirect()->route('presenca.show')->with('message', 'Notícia eliminada com sucesso!!');
     }
 }

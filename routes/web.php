@@ -59,7 +59,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
 
-    Route::delete('/presenca/{Aula}', [AulaController::class, 'destroy'])->name('presenca.delete');
+    Route::delete('/presenca/{userDesporto}', [AulaController::class, 'destroy'])->name('presenca.delete');
 
 });
 
