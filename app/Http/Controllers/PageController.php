@@ -14,7 +14,7 @@ class PageController extends Controller
 {
     public function index(){
         $desportos = Desporto::all();
-        $aulas = Aula::all();
+        $aulas = Aula::orderBy('data_aulas', 'DESC')->take(2)->get();
         return view('index', compact('desportos', 'aulas'));
     }
 

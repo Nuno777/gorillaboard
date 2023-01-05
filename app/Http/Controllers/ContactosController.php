@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contacto;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreContactosRequest;
+use App\Http\Requests\UpdateContactosRequest;
 
 class ContactosController extends Controller
 {
@@ -50,7 +51,7 @@ class ContactosController extends Controller
         $contacto = new Contacto();
         $contacto->fill($fields);
         $contacto->save();
-        return redirect()->route('contactos')->with('success', 'Categoria criada com sucesso');
+        return redirect()->route('contactos')->with('success', 'Contacto criado com sucesso');
     }
 
     /**
@@ -61,7 +62,7 @@ class ContactosController extends Controller
      */
     public function show(Contacto $contacto)
     {
-        return view('adminPage.adminContactosMenssagem',compact("contacto"));
+        return view('adminPage.adminContactosMenssagem', compact("contacto"));
     }
 
     /**
@@ -82,12 +83,12 @@ class ContactosController extends Controller
      * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contacto $contacto)
+    public function update(UpdateContactosRequest $request, Contacto $contacto)
     {
         $fields = $request->validated();
         $contacto->fill($fields);
         $contacto->save();
-        return redirect()->route('admin.categories.index')->with('success', 'Categoria atualizada com sucesso');
+        return redirect()->route('admincontactos')->with('success', 'Contacto atualizado com sucesso');
     }
 
     /**
@@ -98,5 +99,10 @@ class ContactosController extends Controller
      */
     public function destroy(Contacto $contacto)
     {
+        $contacto->delete();
+        return redirect()->route('admincontactos')->with(
+            'success',
+            'Contacto eliminado com sucesso'
+        );
     }
 }

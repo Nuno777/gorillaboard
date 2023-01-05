@@ -136,6 +136,11 @@ nav .nav_option li a:hover {
 #profile_Icon {
     width: 30px;
 }
+
+.btn1{
+    width: auto;
+    justify-content: center;
+}
 /*============NAVBAR FIM=============*/
 
 /*============Carrossel=============*/
@@ -372,9 +377,44 @@ nav .nav_option li a:hover {
     border-radius: 10px;
   }
   .card1 {
-    background-color: wheat;
     border-radius: 0px;
-    padding: 20px;
+    padding: 30px;
+    border: solid 5px #1B272C;
+    background-color: white;
+  }
+
+  .card1 p{
+    display: flex;
+    justify-content: center;
+    color: black;
+  }
+
+  .card1 .nome_desp{
+    font-size: 20pt;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #2AA9FF;
+  }
+
+  .card1 .local_aulas{
+    font-size: 15pt;
+  }
+
+  .card1 .data_aulas{
+    font-size: 15pt;
+  }
+
+  .card_data_local p{
+    margin-top: 40px;
+  }
+
+  .card1 img{
+    display: flex;
+    margin: auto;
+    margin-bottom: 0px;
+    width: 120px;
+    bottom: 3px;
+    position: absolute;
   }
   
   .nav_carousel_aulas button {

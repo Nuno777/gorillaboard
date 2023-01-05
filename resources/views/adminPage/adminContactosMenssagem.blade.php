@@ -9,15 +9,16 @@
             <div class="container-fluid">
 
                 <div>
-                    <div class="card shadow mb-4">
+                    <div class="card mb-4">
                         <div class="card-header py-3">
-                            Informação da Menssagem
+                            Informação da Mensagem
                         </div>
                         <div class="card-body">
-                            <div><strong>Menssagem:</strong> {{ $contacto->menssagem_Contactos }} </div>
+                            <div><strong>Mensagem:</strong> {{ $contacto->menssagem_Contactos }} </div>
                         </div>
                     </div>
                 </div>
+                
             </div>
 
         </section>
