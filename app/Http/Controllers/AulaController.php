@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Aula;
 use App\Models\Desporto;
 use App\Models\UserDesporto;
@@ -19,7 +19,7 @@ class AulaController extends Controller
     {
         $aula = Aula::all();
         $desportos = Desporto::all();
-        return view('adminPage.inscricao', compact('desportos', 'aula'));
+        return view('adminPage.presenca', compact('desportos', 'aula'));
     }
 
     /**
@@ -47,7 +47,7 @@ class AulaController extends Controller
         $aula = new UserDesporto();
         $aula->user_id = Auth::user()->id;
         $aula->desporto_id = $desporto->id;
-        $aula->num_inscricoes = request('naulas');
+        $aula->num_inscricoes = $request('naulas');
         $aula->save();
 
         return redirect('/')->with('message', 'Inscrição na aula com sucesso!!');
@@ -59,11 +59,10 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function show(Aula $aula,Desporto $desporto)
+    public function show(Aula $aula)
     {
-        $aula = Aula::all();
-        $desportos = Desporto::all();
-        return view('adminPage.inscricao', compact('desportos', 'aula','desporto'));
+        $linhas = UserDesporto::all();
+        return view('adminPage.presenca', compact('linhas'));
     }
 
     /**
@@ -95,8 +94,9 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aula $aula)
+    public function destroy($aula)
     {
-        //
+        Aula::find($aula)->delete();
+        return redirect()->route('dashboard')->with('message', 'Notícia eliminada com sucesso!!');
     }
 }

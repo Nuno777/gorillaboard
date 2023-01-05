@@ -32,6 +32,9 @@
                 </li>
 
                 <ul class="menu-links">
+
+
+
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-home-alt icon'></i>
@@ -69,6 +72,7 @@
                             <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">contactos</span>
                         </a>
+                    </li>    
                 </ul>
             </div>
             <div class="pro">

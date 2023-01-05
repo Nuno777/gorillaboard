@@ -28,7 +28,9 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/sobre', [sobreController::class, 'index'])->name('sobre');
 
 Route::get('/aula/{desporto}', [PageController::class, 'aula'])->name('aula');
-Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
+Route::middleware(['auth','verified'])->group(function () {
+    Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
+});
 
 Route::get('/PerguntasFrequentes', [PageController::class, 'faqs'])->name('faqs');
 
@@ -55,14 +57,15 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::put('/admincontactosUpdate/{contacto}', [ContactosController::class, 'update'])->name('adminContactos.update');
     Route::delete('/admincontactosDestroy/{contacto}', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
-    Route::get('/inscricao', [AulaController::class, 'index'])->name('inscricao');
+    Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
+
+    Route::delete('/presenca/{Aula}', [AulaController::class, 'destroy'])->name('presenca.delete');
+
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profileshow', [ProfileController::class, 'index'])->name('profile.show');
     Route::get('/profileupdate', [ProfileController::class, 'edit2'])->name('profile.update2');
-
-
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -19,6 +19,13 @@
                 </li>
 
                 <li class="has-sub">
+                    <a class="sidenav-item-link" href="/dashboard">
+                        <i class="mdi mdi-monitor-dashboard"></i>
+                        <span class="nav-text">Homepage</span>
+                    </a>
+                </li>
+
+                <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-file"></i>
@@ -40,14 +47,6 @@
 
                                 </a>
                             </li>
-
-                            <li>
-                                <a class="sidenav-item-link" href="/inscricao">
-                                    <span class="nav-text">Mostrar Inscrições</span>
-
-                                </a>
-                            </li>
-
                         </div>
                     </ul>
                 </li>
@@ -62,7 +61,7 @@
                         <div class="sub-menu">
 
                             <li>
-                                <a class="sidenav-item-link" href="/admincontactos">
+                                <a class="sidenav-item-link" href="{{ route('presenca.show') }}">
                                     <span class="nav-text">Mostrar Presenças</span>
 
                                 </a>
@@ -93,21 +92,6 @@
 
                                 </a>
                             </li>
-
-                            {{-- <li>
-                                <a class="sidenav-item-link" href="/adminfaqs">
-                                    <span class="nav-text">Mostrar Faqs</span>
-
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="sidenav-item-link" href="email-details.html">
-                                    <span class="nav-text">Editar Faqs</span>
-
-                                </a>
-                            </li>
-                        </div> --}}
                     </ul>
                 </li>
 
@@ -148,20 +132,6 @@
             <span class="page-title">dashboard</span>
 
             <div class="navbar-right ">
-
-                <!-- search form -->
-                {{--  <div class="search-form">
-                    <form action="index.html" method="get">
-                        <div class="input-group input-group-sm" id="input-group-search">
-                            <input type="text" autocomplete="off" name="query" id="search-input"
-                                class="form-control" placeholder="Search..." />
-                            <div class="input-group-append">
-                                <button class="btn" type="button">/</button>
-                            </div>
-                        </div>
-                    </form>
-
-                </div> --}}
 
                 <ul class="nav navbar-nav">
                     <!-- User Account -->

@@ -16,4 +16,12 @@ class UserDesporto extends Model
         'desporto_id',
         'num_inscricoes',
     ];
+
+    public function desporto() {
+        return $this->belongsTo(Desporto::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -51,9 +51,9 @@
     <li>
         
         <div class="dropdown dropbtn_nav">
-            <a class="btn btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
+            <a class="btn1 btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
                 id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Aulas
+                AULAS
             </a>
             <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
                 @foreach ($desportos as $desporto)
@@ -67,9 +67,9 @@
     <li><a href="{{ route('sobre') }}">SOBRE</a></li>
     <li>
         <div class="dropdown dropbtn_nav">
-            <a class="btn btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
+            <a class="btn1 btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
                 id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                Desportos
+                DESPORTOS
             </a>
 
             <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
