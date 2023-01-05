@@ -133,14 +133,14 @@
                     <label for="inputEmail4">Email</label>
 
                     <input type="email" class="form-control" name="email" id="email" placeholder="Email" @if (Auth::check())value="{{ Auth::user()->email }} " required
-                    disabled @endauth >
+                     @endauth disabled>
                 </div>
 
                 <div class="form-group col">
                     <label for="inputEmail4">Nome</label>
 
                     <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome" @if (Auth::check()) value="{{ Auth::user()->name }} " required
-                    disabled @endauth>
+                     @endauth disabled>
                 </div>
 
                 <div class="form-group col">

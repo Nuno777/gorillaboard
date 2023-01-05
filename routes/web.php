@@ -28,7 +28,9 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/sobre', [sobreController::class, 'index'])->name('sobre');
 
 Route::get('/aula/{desporto}', [PageController::class, 'aula'])->name('aula');
-Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
+Route::middleware(['auth','verified'])->group(function () {
+    Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
+});
 
 Route::get('/PerguntasFrequentes', [PageController::class, 'faqs'])->name('faqs');
 
@@ -61,8 +63,6 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/profileshow', [ProfileController::class, 'index'])->name('profile.show');
     Route::get('/profileupdate', [ProfileController::class, 'edit2'])->name('profile.update2');
-
-
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
