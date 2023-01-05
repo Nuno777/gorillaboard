@@ -59,14 +59,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/profileshow', [ProfileController::class, 'index'])->name('profile.show');
-    Route::get('/profileupdate', [ProfileController::class, 'edit2'])->name('profile.update2');
-
-
-
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('profile', ProfileController::class);
 });
 
 require __DIR__ . '/auth.php';

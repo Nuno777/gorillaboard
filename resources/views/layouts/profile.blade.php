@@ -5,7 +5,7 @@
 @section('main')
 
 <div class="container">
-    <form method="post" action="{{ route('profile.update') }}" class="row">
+    <div class="row">
         @csrf
         @method('patch')
         <div class="col-12 col-md-3 col-lg-4 col-xl-3">
@@ -18,7 +18,10 @@
                 @else
                     <h5 class="mt-1 p-2">Admin</h5>
                 @endif
-                <button><a href="">Editar Imagem de Perfil</a></button>
+                <form method='post' action="{{ route('profile.update', Auth::user()) }}">
+                    <button><a href="">Editar Imagem de Perfil</a></button>
+                </form>
+
             </div>
             @endif
         </div>
@@ -26,7 +29,7 @@
             @yield('page-title')
             @yield('profile-content')
         </div>
-    </form>
+    </div>
 </div>
 
 
