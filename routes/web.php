@@ -50,10 +50,10 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::delete('/profileAdmin', [ProfileAdminController::class, 'destroy'])->name('profileAdmin.destroy');
 
     Route::get('/admincontactos', [ContactosController::class, 'index'])->name('admincontactos');
-    Route::get('/admincontactosShow', [ContactosController::class, 'show'])->name('adminContactosMenssagem');
-    Route::get('/admincontactosEdit', [ContactosController::class, 'edit'])->name('adminContactosEdit');
-    Route::get('/admincontactosUpdate', [ContactosController::class, 'update'])->name('adminContactos.update');
-    Route::delete('/admincontactosDestroy', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
+    Route::get('/admincontactosShow/{contacto}', [ContactosController::class, 'show'])->name('adminContactosMenssagem');
+    Route::get('/admincontactosEdit/{contacto}/edit', [ContactosController::class, 'edit'])->name('adminContactosEdit');
+    Route::put('/admincontactosUpdate/{contacto}', [ContactosController::class, 'update'])->name('adminContactos.update');
+    Route::delete('/admincontactosDestroy/{contacto}', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
     Route::get('/inscricao', [AulaController::class, 'index'])->name('inscricao');
 });
