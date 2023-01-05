@@ -97,6 +97,6 @@ class AulaController extends Controller
     public function destroy($aula)
     {
         Aula::find($aula)->delete();
-        return redirect('adminPage.presenca')->with('message', 'Notícia eliminada com sucesso!!');
+        return redirect()->route('dashboard')->with('message', 'Notícia eliminada com sucesso!!');
     }
 }

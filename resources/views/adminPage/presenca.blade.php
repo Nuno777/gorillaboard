@@ -45,10 +45,9 @@
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <form role="form" action="{{ route('presenca.delete', $inscricao->id) }}"
-                                                            method="POST">
+                                                        <form role="form" action="{{ route('presenca.delete', $inscricao->id) }}">
                                                             @csrf
-
+                                                            @method('DELETE')
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
                                                                 <i class="mdi mdi-trash-can text-danger"
