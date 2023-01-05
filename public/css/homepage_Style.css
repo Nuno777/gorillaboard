@@ -136,6 +136,10 @@ nav .nav_option li a:hover {
 #profile_Icon {
     width: 30px;
 }
+
+.btn1{
+    width: auto;
+}
 /*============NAVBAR FIM=============*/
 
 /*============Carrossel=============*/
