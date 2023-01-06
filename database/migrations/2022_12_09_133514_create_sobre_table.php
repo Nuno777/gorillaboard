@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('sobre', function (Blueprint $table) {
             $table->id();
-            $table->string('texto');
+            $table->string('texto')->nullable();
             $table->string('img');
             $table->boolean('featured');
+            $table->timestamps();
         });
     }
 

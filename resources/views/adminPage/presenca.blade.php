@@ -22,7 +22,8 @@
                                     <table class="table text-center">
                                         <thead class="text-uppercase">
                                             <tr>
-                                                <th scope="col">User</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Nome</th>
                                                 <th scope="col">Desporto</th>
                                                 <th scope="col">Inscrições</th>
                                                 <th scope="col">Presenças</th>
@@ -33,6 +34,7 @@
                                         <tbody>
                                             @foreach ($linhas as $inscricao)
                                                 <tr>
+                                                    <td scope="row">{{ $inscricao->user->email }}</td>
                                                     <td scope="row">{{ $inscricao->user->name }}</td>
                                                     <td> {{ $inscricao->desporto->modalidades }} </td>
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
@@ -45,7 +47,10 @@
                                                         </button>
                                                     </td>
                                                     <td>
-                                                        <form role="form" action="{{ route('presenca.delete', $inscricao->id) }}">
+                                                        <form role="form"
+                                                            action="{{ route('presenca.delete', $inscricao->id) }}"
+                                                            method="POST"
+                                                            onsubmit="return confirm('Pretende eliminar este registo?');">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="link"

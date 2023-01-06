@@ -16,7 +16,7 @@ class sobreController extends Controller
     public function index()
     {
         $sobre = sobre::where('featured', '1')->get();
-        $users = User::where('admin', '0')->get();
+        $users = User::where('admin', '1')->get();
 
         return view ('sobre')->with('sobre', $sobre)->with('users', $users);   
     }

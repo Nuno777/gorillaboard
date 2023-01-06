@@ -9,4 +9,9 @@ class sobre extends Model
 {
     use HasFactory;
     protected $table = "sobre";
+
+    protected $fillable = [
+        'img',
+        'featured',
+    ];
 }
