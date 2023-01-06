@@ -23,4 +23,5 @@
     <link href="{{ asset('/dist/images/favicon.png') }}" rel="shortcut icon" />
 
     <script src="{{ asset('/dist/plugins/nprogress/nprogress.js') }}"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>

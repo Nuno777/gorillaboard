@@ -1,4 +1,19 @@
+
+
 :root{
     --white--color:#fff;
     --primary-colorLow:#167abd;
 }
+
+
+.name-page{
+    text-align: center;
+    justify-content: center;
+    font-size: 26pt;
+}
+
+.table-responsive td{
+    text-align: left;
+    color: black;
+}
+

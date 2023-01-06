@@ -32,66 +32,52 @@
                                         <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
-                        <tbody>
-                            @foreach ($faqs as $faq)
-                                <tr>
-                                    <td>{{ $faq->id }}</td>
-                                    <td>{{ $faq->pergunta }}</td>
-                                    <td>{{ $faq->resposta }}</td>
-                                    <td>
-                                        <a href="{{ route('admin.faqs.show', $faq) }}">
-                                            <button type="submit" class="link"
-                                                style="background-color: transparent; border:none">
-                                                <i class="mdi mdi-pencil" data-toogle="tooltip"></i>
-                                        </a>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('admin.faqs.edit', $faq) }}">
-                                            <button type="submit" class="link"
-                                                style="background-color: transparent; border:none">
-                                                <i class="mdi mdi-pencil" data-toogle="tooltip"></i>
-                                        </a>
-                                        </button>
-                                    </td>
-                                    <td>
-                                        <form role="form"
-                                            action="{{ route('admin.faqs.destroy', $faq) }}"
-                                            method="POST" onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="link"
-                                                style="background-color: transparent; border:none">
-                                                <i class="mdi mdi-trash-can text-danger"
-                                                    data-toogle="tooltip"></i>
-                                            </button>
-                                        </form>
-                                    </td>
-                                    {{-- <td>
-                                        <a class="btn-view btn-p"href="{{ route('admin.faqs.show', $faq) }}">
-                                            <i class='bx bx-show bx-md'></i></a>
-                                        <a class="btn-edit btn-p" href="{{ route('admin.faqs.edit', $faq) }}">
-                                            <i class='bx bx-edit bx-md'></i></a>
-                                        <form method="POST" action="{{ route('admin.faqs.destroy', $faq) }}"
-                                            role="form" class="inline"
-                                            onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn-delete btn-p">
-                                                <i class='bx bx-trash bx-md'></i></button>
-                                        </form>
-                                    </td> --}}
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                {{-- <div class="card-header py-3">
+                                <tbody>
+                                    @foreach ($faqs as $faq)
+                                        <tr>
+                                            <td>{{ $faq->id }}</td>
+                                            <td>{{ $faq->pergunta }}</td>
+                                            <td>{{ $faq->resposta }}</td>
+                                            <td>
+                                                <a href="{{ route('admin.faqs.show', $faq) }}">
+                                                    <button type="submit" class="link"
+                                                        style="background-color: transparent; border:none">
+                                                        <i class='bx bx-show bx-sm'style="color:var(--warning);" data-toogle="tooltip"></i> 
+                                                </a>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.faqs.edit', $faq) }}">
+                                                    <button type="submit" class="link"
+                                                        style="background-color: transparent; border:none">
+                                                        <i class="mdi mdi-pencil mdi-24px" data-toogle="tooltip"></i>
+                                                </a>
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <form role="form" action="{{ route('admin.faqs.destroy', $faq) }}"
+                                                    method="POST"
+                                                    onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="link"
+                                                        style="background-color: transparent; border:none">
+                                                        <i class="mdi mdi-trash-can mdi-24px text-danger"
+                                                            data-toogle="tooltip"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        {{-- <div class="card-header py-3">
         <a class="btn btn-primary" href="{{ route('adminFaqsCreate') }}">
             <i class="fas fa-plus"></i> Nova Categoria
         </a>
     </div> --}}
-                {{-- <div class="card-body">
+                        {{-- <div class="card-body">
         @if (count($faqs))
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
