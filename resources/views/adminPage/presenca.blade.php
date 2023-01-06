@@ -24,29 +24,33 @@
                                             <tr>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Nome</th>
-                                                <th scope="col">Aulas</th>
+                                                <th scope="col">Desporto</th>
+                                                <th scope="col">Inscrições</th>
+                                                <th scope="col">Presenças</th>
                                                 <th scope="col">Editar</th>
                                                 <th scope="col">Eliminar</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          @foreach ($aula as $aulas)
+                                            @foreach ($linhas as $inscricao)
                                                 <tr>
-                                                    <td scope="row">{{ $aulas-> }}</td>
-                                                    <td>{{ $aulas->  }}</td>
-                                                    <td>{{ $aulas-> }}</td>
+                                                    <td scope="row">{{ $inscricao->user->email }}</td>
+                                                    <td scope="row">{{ $inscricao->user->name }}</td>
+                                                    <td> {{ $inscricao->desporto->modalidades }} </td>
+                                                    <td> {{ $inscricao->num_inscricoes }} </td>
+                                                    <td> {{ $inscricao->num_presencas }} </td>
                                                     <td>
-                                                        <a href="{{ $aulas->id }}/edit">
-                                                            <button type="submit" class="link"
-                                                                style="background-color: transparent; border:none">
-                                                                <i class="mdi mdi-pencil" data-toogle="tooltip"></i>
-                                                        </a>
+                                                        <button type="submit" class="link"
+                                                            style="background-color: transparent; border:none">
+                                                            <i class="mdi mdi-pencil text-primary"
+                                                                data-toogle="tooltip"></i>
                                                         </button>
                                                     </td>
                                                     <td>
                                                         <form role="form"
-                                                            action="{{ route('', $aulas->id) }}"
-                                                            method="POST">
+                                                            action="{{ route('presenca.delete', $inscricao->id) }}"
+                                                            method="POST"
+                                                            onsubmit="return confirm('Pretende eliminar este registo?');">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="link"

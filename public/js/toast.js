@@ -4,6 +4,6 @@ var toast = document.querySelector('.tosta');
 toast.classList.add('toast-show'); */
 
 // hide the toast after 5 seconds
-setTimeout(function() {
+/* setTimeout(function() {
   tosta.style.display('none');
-}, 7000); 
+}, 7000);  */

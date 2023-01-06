@@ -35,16 +35,22 @@
                                                 <tr>
                                                     <td scope="row">{{ $contacto->nome_Contactos }}</td>
                                                     <td>{{ $contacto->email_Contactos }}</td>
-                                                    <td><a href="{{ route('adminContactosMenssagem', $contacto->id) }}/edit">
+                                                    <td>
+                                                        {{-- message button --}}
+                                                        <a
+                                                            href="{{ route('adminContactosMenssagem', $contacto->id) }}">
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
-                                                                <i class="mdi mdi-message-text-outline" data-toogle="tooltip"></i>
+                                                                <i class="mdi mdi-message-text-outline"
+                                                                    data-toogle="tooltip">
+                                                                </i>
                                                         </a>
-                                                        </button></td>
-                                                        
+                                                        </button>
+                                                    </td>
+
                                                     <td>{{ $contacto->created_at }}</td>
                                                     <td>
-                                                        <a href="{{ route('adminContactosEdit', $contacto->id) }}/edit">
+                                                        <a href="{{ route('adminContactosEdit', $contacto->id) }}">
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
                                                                 <i class="mdi mdi-pencil" data-toogle="tooltip"></i>
@@ -54,7 +60,7 @@
                                                     <td>
                                                         <form role="form"
                                                             action="{{ route('adminContactos.destroy', $contacto->id) }}"
-                                                            method="POST">
+                                                            method="POST" onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="link"

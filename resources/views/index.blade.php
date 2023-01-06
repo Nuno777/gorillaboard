@@ -119,11 +119,12 @@
         <div class="card-container">
           <div class="card_aulas card1">
 
-            <p>{{$aula->desporto->modalidades}}</p>
-            <img src="{{ asset('img/' . $aula->desporto->icon) }}" alt="OLA">
-            <p>{{$aula->local_aulas}}</p>
-            <p>{{$aula->data_aulas}}</p>
-
+            <p class="nome_desp">{{$aula->desporto->modalidades}}</p>
+            <div class="row card_data_local text-center">
+            <p class="local_aulas col">{{$aula->local_aulas}}</p>
+            <p class="data_aulas col">{{$aula->data_aulas}}</p>
+            </div>
+            <p class=text-center><img src="{{ asset('img/' . $aula->desporto->icon) }}" alt="OLA"></p>
           </div>
         </div>
 

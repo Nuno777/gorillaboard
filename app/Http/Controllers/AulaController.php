@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Aula;
 use App\Models\Desporto;
 use App\Models\UserDesporto;
@@ -17,9 +17,9 @@ class AulaController extends Controller
      */
     public function index()
     {
-        $aula = Aula::orderBy('id', 'DESC')->take(2)->get();
+        $aula = Aula::all();
         $desportos = Desporto::all();
-        return view('adminPage.inscricao', compact('desportos', 'aula'));
+        return view('adminPage.presenca', compact('desportos', 'aula'));
     }
 
     /**
@@ -59,11 +59,10 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function show(Aula $aula,Desporto $desporto)
+    public function show(Aula $aula)
     {
-        $aula = Aula::all();
-        $desportos = Desporto::all();
-        return view('adminPage.inscricao', compact('desportos', 'aula','desporto'));
+        $linhas = UserDesporto::all();
+        return view('adminPage.presenca', compact('linhas'));
     }
 
     /**
@@ -95,8 +94,9 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Aula $aula)
+    public function destroy(UserDesporto $userDesporto)
     {
-        //
+        $userDesporto->delete();
+        return redirect()->route('presenca.show')->with('message', 'Notícia eliminada com sucesso!!');
     }
 }
