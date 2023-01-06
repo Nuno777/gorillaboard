@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -20,7 +21,14 @@ class ProfileController extends Controller
         return view('profile.profile');
     }
 
+    public function show(Request $request)
+    {
+        return view('profile.profile');
+    }
 
+    public function updatePassword(){
+        return view('profile.partials.update-password-form');
+    }
 
     /**
      * Display the user's profile form.
@@ -49,13 +57,45 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit', $request->user())->with('status', 'profile-updated');
+        return Redirect::route('profile.index', $request->user())->with('success', 'profile-updated');
     }
 
-    public function show(Request $request)
+
+    /**
+     * Update the user's img Profile.
+     *
+     * @param  \App\Http\Requests\ProfileUpdateRequest  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateimg(ProfileUpdateRequest $request)
     {
-        return view('profile.profile');
+        // Validate the request and the uploaded file
+        $request->validate([
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Delete the old profile image (if there is one)
+        if ($user->img) {
+            Storage::delete($user->img);
+        }
+
+        // Store the new profile image and update the user's image attribute
+        $path = $request->file('img')->store('img/profile', 'public');
+        $user->img = $path;
+        $request->user()->save();
+        /* $user->save(); */
+
+        // Redirect the user back to their profile page
+        return Redirect::route('profile.index', $request->user())->with('success', 'profile-updated');
+
     }
+
+
+
+
 
     /**
      * Delete the user's account.

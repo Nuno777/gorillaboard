@@ -1,3 +1,4 @@
+@include('layouts.partials.dashboard.head')
 <aside class="left-sidebar sidebar-dark" id="left-sidebar">
     <div id="sidebar" class="sidebar sidebar-with-footer">
         <div class="app-brand">

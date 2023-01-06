@@ -87,7 +87,6 @@
 }
 
 .container .img-profile {
-    border-radius: 2rem;
     min-height: 26rem;
     height: 100%;
     text-align: center;
@@ -108,11 +107,13 @@
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:17px;
 	padding:16px 31px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px  #E6E6E6;
+}
+.container .img-profile a{
+    color:var(--mdb-body-bg) ;
 }
 .container button:hover{
     background-color:#0e71b3;

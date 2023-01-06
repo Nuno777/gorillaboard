@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('email_encarregado_edu')->unique();
             $table->string('cc_encarregado_edu')->unique();
             $table->string('tele_encarregado_edu')->unique();
+            $table->unsignedBigInteger('user_id')->unique();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

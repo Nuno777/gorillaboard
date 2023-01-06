@@ -1,10 +1,17 @@
-@extends('layouts.partials.navAdmin')
 
-@section('adminMain')
+
+
 
 @vite('public/css/adminCss/adminFaqs.css')
 
-@section('adminMain')
+<body class="navbar-fixed sidebar-fixed" id="body">
+    <div class="wrapper">
+
+        @include('layouts.partials.dashboard.nav')
+
+        <section class="content">
+            <div class="container-fluid">
+
 
 @if ($errors->any())
 @include ('layouts.partials.errors')
@@ -22,4 +29,5 @@
             <a href="{{ route('admin.faqs.index') }}" class="btn btn-default">Cancel</a>
         </div>
     </form>
-@endsection
+
+    @include('layouts.partials.dashboard.footer')

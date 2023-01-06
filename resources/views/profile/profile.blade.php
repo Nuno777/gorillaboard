@@ -17,7 +17,8 @@
             <label for="">Cartão de cidadão</label>
             <h4 class="col-xl-3 col-lg-6 col-12">{{ Auth::user()->cartao_cidadao_users }}</h4>
 
-
+             {{-- atleta info --}}
+            <h3> Informação do atleta</h3>
 
         </div>
         <div class="option-account col-xl-4">

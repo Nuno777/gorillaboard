@@ -1,0 +1,9 @@
+/* Style the drop zone */
+.custom-file:hover .custom-file-label {
+    background-color: #f9f9f9;
+  }
+  .custom-file .custom-file-label {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }

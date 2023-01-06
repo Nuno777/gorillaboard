@@ -21,6 +21,7 @@ class User extends Authenticatable  implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'img'
     ];
 
     /**
@@ -44,5 +45,9 @@ class User extends Authenticatable  implements MustVerifyEmail
 
     public function desportos() {
         return $this->belongsToMany(UserDesporto::class);
+    }
+
+    public function atletas(){
+        return $this->belongsToMany(atletas::class);
     }
 }

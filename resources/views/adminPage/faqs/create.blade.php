@@ -1,8 +1,12 @@
-@extends('layouts.partials.navAdmin')
+
 @vite('public/css/adminCss/adminFaqs.css')
-@section('adminMain')
-@dump($errors)
-<br/><br/><br/><br/><br/><br/><br/>
+<body class="navbar-fixed sidebar-fixed" id="body">
+    <div class="wrapper">
+
+        @include('layouts.partials.dashboard.nav')
+
+        <section class="content">
+            <div class="container-fluid">
     <form method="POST" action="{{ route('admin.faqs.store') }}" class="form-group">
         @csrf
         <h2 class="name-page"><a  href="{{ url()->previous() }}">
@@ -13,4 +17,3 @@
             <a href="{{ route('admin.faqs.index') }}" class="btn btn-default">Cancel</a>
         </div>
     </form>
-@endsection

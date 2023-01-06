@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@vite(['/public/css/profile.css'])
+@vite(['public/css/profile/profile.css'])
 @section('title', 'GorillaBoards')
 
 @section('main')
@@ -8,7 +8,7 @@
     <div class="row">
         @csrf
         @method('patch')
-        <div class="col-12 col-md-3 col-lg-4 col-xl-3">
+        <div class="col-12 col-md-3 col-lg-4 col-xl-3 mt-3">
             @if (Auth::check())
             <div class="img-profile">
                 <img src="{{ asset('img/' . Auth::user()->img) }}" alt="Profile_img"><br>
@@ -18,9 +18,9 @@
                 @else
                     <h5 class="mt-1 p-2">Admin</h5>
                 @endif
-                <form method='post' action="{{ route('profile.update', Auth::user()) }}">
-                    <button><a href="">Editar Imagem de Perfil</a></button>
-                </form>
+
+                <button><a href="">Editar Imagem de Perfil</a></button>
+
 
             </div>
             @endif

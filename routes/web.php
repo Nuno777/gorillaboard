@@ -64,7 +64,6 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-
     Route::resource('profile', ProfileController::class);
 });
 
