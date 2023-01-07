@@ -116,12 +116,12 @@
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#faq"
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#atletas"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-information-outline"></i>
                         <span class="nav-text">Atletas</span> <b class="caret"></b>
                     </a>
-                    <ul class="collapse" id="faq" data-parent="#sidebar-menu">
+                    <ul class="collapse" id="atletas" data-parent="#sidebar-menu">
                         <div class="sub-menu">
 
                             <li>
