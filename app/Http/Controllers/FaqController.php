@@ -18,7 +18,7 @@ class FaqController extends Controller
     public function index()
     {
 
-        $faqs = faqs::all();
+        $faqs = faqs::paginate(10);
 
         return view ('adminPage.faqs')->with('faqs', $faqs);
     }
