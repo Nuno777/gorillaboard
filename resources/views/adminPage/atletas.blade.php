@@ -16,8 +16,10 @@
 
                 <div class="card-body">
                     <h2 class="name-page"><a href="{{ url()->previous() }}">
-                            <i class='bx bx-chevron-left bx-sm'></i></a>Faqs</h2>
-                    <a class="buttonPlus" href="{{ route('admin.faqs.create') }}"><i class='bx bx-plus'></i>Criar Faq</a>
+                            <i class='bx bx-chevron-left bx-sm'></i></a>Atletas</h2>
+                    <a class="buttonPlus" href="{{ route('admin.atletas.create') }}"><i class='bx bx-plus'></i>Criar Atleta</a>
+                @if (!$atletas == 0)
+
 
                     <div class="single-table">
                         <div class="table-responsive">
@@ -25,29 +27,37 @@
                                 <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">ID</th>
-                                        <th scope="col">Pergunta</th>
-                                        <th scope="col">Resposta</th>
+                                        <th scope="col">nasc_atleta</th>
+                                        <th scope="col">idade_atleta</th>
+                                        <th scope="col">email_encarregado_edu</th>
+                                        <th scope="col">cc_encarregado_edu</th>
+                                        <th scope="col">tele_encarregado_edu</th>
+                                        <th scope="col">user_id</th>
                                         <th scope="col">show</th>
                                         <th scope="col">Editar</th>
                                         <th scope="col">Eliminar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($faqs as $faq)
+                                    @foreach ($atletas as $atleta)
                                         <tr>
-                                            <td>{{ $faq->id }}</td>
-                                            <td>{{ $faq->pergunta }}</td>
-                                            <td>{{ $faq->resposta }}</td>
+                                            <td>{{ $atleta->id }}</td>
+                                            <td>{{ $atleta->nasc_atleta }}</td>
+                                            <td>{{ $atleta->idade_atleta }}</td>
+                                            <td>{{ $atleta->email_encarregado_edu }}</td>
+                                            <td>{{ $atleta->cc_encarregado_edu }}</td>
+                                            <td>{{ $atleta->tele_encarregado_edu }}</td>
+                                            <td>{{ $atleta->user_id }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.faqs.show', $faq) }}">
+                                                <a href="{{ route('admin.atletas.show', $atleta) }}">
                                                     <button type="submit" class="link"
                                                         style="background-color: transparent; border:none">
-                                                        <i class='bx bx-show bx-sm'style="color:var(--warning);" data-toogle="tooltip"></i> 
+                                                        <i class='bx bx-show bx-sm'style="color:var(--warning);" data-toogle="tooltip"></i>
                                                 </a>
                                                 </button>
                                             </td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.faqs.edit', $faq) }}">
+                                                <a href="{{ route('admin.atletas.edit', $atleta) }}">
                                                     <button type="submit" class="link"
                                                         style="background-color: transparent; border:none">
                                                         <i class="mdi mdi-pencil mdi-24px" data-toogle="tooltip"></i>
@@ -55,7 +65,7 @@
                                                 </button>
                                             </td>
                                             <td class="text-center">
-                                                <form role="form" action="{{ route('admin.faqs.destroy', $faq) }}"
+                                                <form role="form" action="{{ route('admin.atletas.destroy', $atletas) }}"
                                                     method="POST"
                                                     onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                     @csrf
@@ -72,11 +82,11 @@
                                 </tbody>
                             </table>
                             <div class="Paguination">
-                                {{ $faqs->links() }}
-                            </div> 
+                                {{ $atletas->links() }}
+                            </div>
                         </div>
                     </div>
-                    
+                @endif
                 </div>
 
 
@@ -85,7 +95,13 @@
     </div>
 </body>
                         {{-- <div class="card-header py-3">
-        <a class="btn btn-primary" href="{{ route('adminFaqsCreate') }}">
+        <a class="btn btn-primary" href="{{ route('admin
+
+
+
+
+
+        sCreate') }}">
             <i class="fas fa-plus"></i> Nova Categoria
         </a>
     </div> --}}

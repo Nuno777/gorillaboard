@@ -15,6 +15,7 @@ class Faqs extends Model
         'pergunta',
         'resposta',
     ];
+    
 
 
 }
