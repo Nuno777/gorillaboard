@@ -99,4 +99,16 @@ class FaqController extends Controller
             return redirect()->route('admin.faqs.index')->with('success',
             'Faq eliminada com sucesso');
     }
+
+    public function search()
+    {
+        $search_text = $_GET['query'];
+        $faqs = faqs::table('faqs')
+                ->where('id', 'like', '%'.$search_text.'%')
+                ->orWhere('pergunta', 'like', '%'.$search_text.'%')
+                ->orWhere('resposta', 'like', '%'.$search_text.'%')
+                ->get();
+
+        return view('adminPage.faqs.search', compact('$faqs'));
+    }
 }

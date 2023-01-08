@@ -22,8 +22,6 @@
     border: none;
     color: var(--white--color);
     padding: 5px 10px;
-    text-align: left;
-    justify-content: left;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -35,4 +33,10 @@
 .buttonPlus:hover {
     background-color:var(--primary-colorLow);
     color: var(--white--color);
+}
+
+#formSearch{
+    align-items: left;
+    text-align: left;
+    width: fit-content;
 }

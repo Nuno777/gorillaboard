@@ -1,9 +1,10 @@
-var toast = document.querySelector('.tosta');
+const tosta = document.getElementsByClassName('tosta');
 
 /* // show the toast
 toast.classList.add('toast-show'); */
 
-// hide the toast after 5 seconds
-/* setTimeout(function() {
+// hide the toast after 7 seconds
+setTimeout(function() {
   tosta.style.display('none');
-}, 7000);  */
+}, 7);
+

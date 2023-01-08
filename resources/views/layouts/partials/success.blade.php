@@ -1,6 +1,6 @@
 
 @vite(['/public/css/toast.css', '/public/js/toast.js'])
 
-<div class="toast show success">
-            <p>{{session('success')}}</p>
+<div class="tosta success">
+    <p>{{session('success')}}</p>
 </div>
