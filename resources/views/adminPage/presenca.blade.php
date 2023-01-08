@@ -40,11 +40,14 @@
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
                                                     <td> {{ $inscricao->num_presencas }} </td>
                                                     <td>
-                                                        <button type="submit" class="link"
+
+                                                        <a href="{{-- {{ $inscricao->id }}/edit --}} {{ route('presenca.edit', $inscricao->id) }}">
+                                                            <button type="submit" class="link"
                                                             style="background-color: transparent; border:none">
                                                             <i class="mdi mdi-pencil text-primary"
                                                                 data-toogle="tooltip"></i>
-                                                        </button>
+                                                            </button>
+                                                        </a>
                                                     </td>
                                                     <td>
                                                         <form role="form"

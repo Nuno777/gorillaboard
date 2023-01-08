@@ -71,9 +71,9 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function edit(Aula $aula)
+    public function edit(UserDesporto $userDesporto)
     {
-        //
+        return view('adminPage.presencaEdit', compact('userDesporto'));
     }
 
     /**
@@ -83,9 +83,22 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aula $aula)
+    public function update(Request $request, Aula $aula, UserDesporto $userDesporto)
     {
-        //
+
+        //Validação do formulario de noticia
+        request()->validate([
+            'inputTituloNotic' => 'required',
+            'inputNotic' => 'required',
+            'inputDataNotic' => 'required'
+        ]);
+
+        //Inserção de dados no formulario de noticia
+        $userDesporto->titulo = request('inputTituloNotic');
+        $userDesporto->noticia = request('inputNotic');
+        $userDesporto->data = request('inputDataNotic');
+        $userDesporto->save();
+        return redirect()->route('presenca.show')->with('message', 'Informacoes da notícia alterada com sucesso!!');
     }
 
     /**

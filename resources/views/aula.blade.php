@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
+        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído.</b></p>
     </div>
     <br>
     <div class="container">
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído (prancha e fato).</b></p>
+        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído.</b></p>
 
 
 

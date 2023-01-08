@@ -13,16 +13,9 @@
             <ul class="nav sidebar-inner" id="sidebar-menu">
 
                 <li class="active">
-                    <a class="sidenav-item-link" href="/dashboard">
+                    <a class="sidenav-item-link" href="{{ route('dashboard') }}">
                         <i class="mdi mdi-monitor-dashboard"></i>
                         <span class="nav-text">Dashboard</span>
-                    </a>
-                </li>
-
-                <li class="has-sub">
-                    <a class="sidenav-item-link" href="/dashboard">
-                        <i class="mdi mdi-monitor-dashboard"></i>
-                        <span class="nav-text">Homepage</span>
                     </a>
                 </li>
 

@@ -60,7 +60,8 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::delete('/admincontactosDestroy/{contacto}', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
     Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
-
+    Route::get('/presenca/{userDesporto}/edit', [AulaController::class, 'edit'])->name('presenca.edit');
+    Route::put('/presenca/{userDesporto}', [AulaController::class, 'update'])->name('presenca.update');
     Route::delete('/presenca/{userDesporto}', [AulaController::class, 'destroy'])->name('presenca.delete');
 
 });
