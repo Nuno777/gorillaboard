@@ -1,3 +1,8 @@
+@section('custom_css')
+<link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+@stop
+
+
 <footer class="footer">
     <div class="footer__addr">
         <h1 class="footer__logo"><img src="{{ asset('IMG/gori_horizontal_branco.png') }}" alt="logo" width="130" />

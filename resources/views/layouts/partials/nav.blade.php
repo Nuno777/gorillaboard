@@ -1,6 +1,8 @@
-<header>
+@section('custom_css')
+'{{ asset("css/homepage_Style.css") }}'
+@endsection
 
-    <nav>
+<nav>
         <ul id="navbar">
             <li>
 
@@ -84,18 +86,5 @@
 </div>
 </ul>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 </nav>
-</header>
+

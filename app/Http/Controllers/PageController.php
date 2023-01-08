@@ -14,7 +14,7 @@ class PageController extends Controller
 {
     public function index(){
         $desportos = Desporto::all();
-        $aulas = Aula::orderBy('data_aulas', 'DESC')->take(2)->get();
+        $aulas = Aula::orderBy('data_aulas', 'DESC')->take(5)->get();
         return view('index', compact('desportos', 'aulas'));
     }
 
@@ -43,5 +43,9 @@ class PageController extends Controller
 
 
         return view('dashboard')->with('countUsers', $countUsers);
+    }
+    public function desportos(){
+        return view('desportos');
+
     }
 }

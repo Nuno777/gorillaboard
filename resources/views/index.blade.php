@@ -117,14 +117,16 @@
         @foreach ($aulas as $aula)
 
         <div class="card-container">
-          <div class="card_aulas card1">
-
+          @if ($aula->desporto->modalidades == "Skate" || $aula->desporto->modalidades == "Downhill Skate")
+            <div class="card_aulas card1 cardback_desp_cinza">
+          @else
+            <div class="card_aulas card1 cardback_desp_azul"> 
+          @endif
+          
             <p class="nome_desp">{{$aula->desporto->modalidades}}</p>
-            <div class="row card_data_local text-center">
-            <p class="local_aulas col">{{$aula->local_aulas}}</p>
-            <p class="data_aulas col">{{$aula->data_aulas}}</p>
-            </div>
-            <p class=text-center><img src="{{ asset('img/' . $aula->desporto->icon) }}" alt="OLA"></p>
+            <p class="local_aulas">{{$aula->local_aulas}}</p>
+            <p class="data_aulas">{{$aula->data_aulas}}</p>
+            <p class="text-center"><img src="{{ asset('img/' . $aula->desporto->icon) }}" alt="icon"></p>
           </div>
         </div>
 
@@ -140,7 +142,12 @@
 </div>
 
 <div id="loja_section">
-  <h3>Loja</h3>
+  <div class="titulo_sec_loja">
+    <h3 class="text-center">Loja</h3>
+    <p class="text-center"><img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle_loja"></p>
+  </div>
 </div>
+
+
 @endsection
 

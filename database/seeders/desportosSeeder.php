@@ -17,9 +17,9 @@ class desportosSeeder extends Seeder
     {
         $desportos = [
             ['modalidades' => 'Surf', 'icon'=> 'surf_icon_aulas.png'],
-            ['modalidades' => 'Skate', 'icon'=>'surf_icon_aulas.png'],
-            ['modalidades' => 'BodyBoard', 'icon'=>'surf_icon_aulas.png'],
-            ['modalidades' => 'Downhill Skate', 'icon'=>'surf_icon_aulas.png'],
+            ['modalidades' => 'Skate', 'icon'=>'skate_icon_aulas.png'],
+            ['modalidades' => 'BodyBoard', 'icon'=>'bodyboard_icon_aulas.png'],
+            ['modalidades' => 'Downhill Skate', 'icon'=>'dhskate_icon_aulas.png'],
             ['modalidades' => 'Paddle Surf', 'icon'=>'paddle_icon_aulas.png']
         ];
         foreach ($desportos as $desporto){

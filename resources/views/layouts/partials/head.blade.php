@@ -8,6 +8,7 @@
     <link href="{{ asset('img/favicon.png ') }}" rel="apple-touch-icon">
 
     <link rel="stylesheet" href="{{ asset('css/homepage_Style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/navbar_style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
 
     <!-- CSS only -->
