@@ -39,16 +39,14 @@
                     <div class="col-xl-3 col-sm-6">
                         <div class="card card-default card-mini">
                             <div class="card-header">
-                                <h2>Criar nova Aula</h2>
+                                <h2>Criar nova Atleta</h2>
                                 <div class="sub-title">
                                     <span class="mr-1"></span>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="chart-wrapper">
-                                    <div>
-                                        Criar Aula
-                                    </div>
+                                    <a href="{{ route('admin.atletas.index') }}">Criar Atleta</a>
                                 </div>
                             </div>
                         </div>
@@ -63,9 +61,8 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-wrapper">
-                                    <div>
-                                        Presenças
-                                    </div>
+                                    <a href="{{ route('presenca.show') }}">Presenças</a>
+
                                 </div>
                             </div>
                         </div>

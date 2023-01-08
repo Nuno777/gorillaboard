@@ -60,13 +60,6 @@
 
                                 </a>
                             </li>
-
-                            <li>
-                                <a class="sidenav-item-link" href="email-details.html">
-                                    <span class="nav-text">Marcar Presenças</span>
-
-                                </a>
-                            </li>
                         </div>
                     </ul>
                 </li>
