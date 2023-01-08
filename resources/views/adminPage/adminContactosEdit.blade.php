@@ -1,10 +1,10 @@
 @include('layouts.partials.dashboard.head')
 
 <body class="navbar-fixed sidebar-fixed" id="body">
-    <div class="wrapper">
+
 
         @include('layouts.partials.dashboard.nav')
-
+    <div class="wrapper">
         <section class="content">
             <div class="container-fluid">
 
@@ -36,7 +36,7 @@
                                     <a href="{{ route('admincontactos') }}" class="btn btn btn-pill">Cancelar</a>
                                 </div>
                             </form>
-                        
+
                         </div>
                     </div>
                 </div>

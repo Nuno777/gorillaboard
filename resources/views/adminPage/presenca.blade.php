@@ -35,7 +35,7 @@
                                             @foreach ($linhas as $inscricao)
                                                 <tr>
                                                     <td scope="row">{{ $inscricao->user->email }}</td>
-                                                    <td scope="row">{{ $inscricao->user->name }}</td>
+                                                    <td>{{ $inscricao->user->name }}</td>
                                                     <td> {{ $inscricao->desporto->modalidades }} </td>
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
                                                     <td> {{ $inscricao->num_presencas }} </td>
