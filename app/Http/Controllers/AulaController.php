@@ -62,7 +62,6 @@ class AulaController extends Controller
      */
     public function show(Aula $aula)
     {
-        Log::channel('main')->alert('ukhgoi');
         $linhas = UserDesporto::all();
         return view('adminPage.presenca', compact('linhas'));
     }
@@ -107,7 +106,6 @@ class AulaController extends Controller
      */
     public function destroy(UserDesporto $userDesporto)
     {
-        dump('ID '.Auth::user()->id.' eliminou a inscrição '.$userDesporto->id.' com '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' de presenças');
         $userDesporto->delete();
         Log::channel('main')->alert('ID '.Auth::user()->id.' eliminou a inscrição '.$userDesporto->id.' com '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' de presenças');
         return redirect()->route('presenca.show')->with('message', 'Notícia eliminada com sucesso!!');

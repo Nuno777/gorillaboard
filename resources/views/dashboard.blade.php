@@ -1,9 +1,3 @@
-{{--  @extends('layouts.partials.navAdmin')
-
-@section('adminMain')
-
-@endsection --}}
-
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
@@ -14,7 +8,7 @@
     <div class="wrapper">
 
         @include('layouts.partials.dashboard.nav')
-        
+
         {{-- main --}}
         <div class="content-wrapper">
             <div class="content">

@@ -29,7 +29,7 @@ Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/sobre', [sobreController::class, 'index'])->name('sobre');
 
 Route::get('/aula/{desporto}', [PageController::class, 'aula'])->name('aula');
-Route::middleware(['auth','verified'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
 });
 
@@ -66,7 +66,6 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/presenca/{userDesporto}/edit', [AulaController::class, 'edit'])->name('presenca.edit');
     Route::put('/presenca/{userDesporto}', [AulaController::class, 'update'])->name('presenca.update');
     Route::delete('/presenca/{userDesporto}', [AulaController::class, 'destroy'])->name('presenca.delete');
-
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

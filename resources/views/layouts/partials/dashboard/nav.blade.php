@@ -175,6 +175,7 @@
                                     <a class="dropdown-link-item" href="route('logout')"
                                         onclick="event.preventDefault(); this.closest('form').submit();">
                                         <i class="mdi mdi-logout"></i>
+
                                         <span class="nav-text">Logout</span>
                                     </a>
                                 </form>

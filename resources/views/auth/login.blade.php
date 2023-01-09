@@ -4,14 +4,14 @@
 @section('title', 'GorillaBoards')
 
 @section('main')
-@if ($errors->any())
-    @include ('layouts.partials.errors')
+    @if ($errors->any())
+        @include ('layouts.partials.errors')
     @endif
     {{-- Sing in code --}}
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    
+
     <div class="container">
-        
+
         <div class="forms-container">
             <div class="signin-signup">
                 <form method="POST" action="{{ route('login') }}" class="sign-in-form">
@@ -31,6 +31,7 @@
                         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                             autocomplete="current-password" placeholder="Password" />
                     </div>
+                  
                     <input type="submit" value="Login" class="btn solid" />
 
                     <!-- Remember Me -->
