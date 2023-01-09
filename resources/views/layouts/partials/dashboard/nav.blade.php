@@ -162,9 +162,9 @@
                             </a>
                         </li>
                         <li>
-                            <a class="dropdown-link-item" href="{{ route('profileAdmin.edit') }}">
+                            <a class="dropdown-link-item" href="/logs">
                                 <i class="mdi mdi-settings"></i>
-                                <span class="nav-text">Configurações</span>
+                                <span class="nav-text">Logs</span>
                             </a>
                         </li>
 

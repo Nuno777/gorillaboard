@@ -48,4 +48,9 @@ class PageController extends Controller
         return view('desportos');
 
     }
+
+    public function logs() {
+        $logCollection = file(storage_path().'/logs/main.log');
+        return view('adminPage.log', compact('logCollection'));
+    }
 }

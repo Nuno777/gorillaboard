@@ -14,7 +14,7 @@
     <div class="wrapper">
 
         @include('layouts.partials.dashboard.nav')
-
+        
         {{-- main --}}
         <div class="content-wrapper">
             <div class="content">

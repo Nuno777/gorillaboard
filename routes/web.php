@@ -50,6 +50,7 @@ Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos'
 
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+    Route::get('/logs', [PageController::class, 'logs'])->name('logs');
 
     Route::get('/profileAdmin', [ProfileAdminController::class, 'show'])->name('profileAdmin.show');
     Route::patch('/profileAdmin', [ProfileAdminController::class, 'edit'])->name('profileAdmin.edit');
