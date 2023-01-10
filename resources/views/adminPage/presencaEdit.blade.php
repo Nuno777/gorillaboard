@@ -13,7 +13,7 @@
                             <h4 class="title">Marcar Presença</h4>
                         </div>
 
-                        <form action="{{ route('presenca.update', $userDesporto) }}" method="post">
+                        <form action="{{ route('presenca.update', $userDesporto) }}" method="post" id="edituser">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -63,7 +63,8 @@
                                 </div>
 
                                 <div class="form-footer mt-6">
-                                    <button type="submit" class="btn btn-primary btn-pill">Marcar Presença</button>
+                                    <button type="submit" class="btn btn-primary btn-pill" name="edituser"
+                                        id="editbtn" disabled>Marcar Presença</button>
                                     <a href="{{ route('presenca.show') }}" class="btn btn-light btn-pill">Cancelar</a>
                                 </div>
                         </form>
@@ -81,3 +82,4 @@
     </section>
 
     @include('layouts.partials.dashboard.footer')
+

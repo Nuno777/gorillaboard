@@ -86,16 +86,14 @@ class AulaController extends Controller
      */
     public function update(Request $request, UserDesporto $userDesporto, Desporto $desporto)
     {
-        //Validação do formulario de noticia
         request()->validate([
             'npresen' => 'required'
         ]);
 
-        //Inserção de dados no formulario de noticia
         $userDesporto->num_presencas = request('npresen');
         $userDesporto->save();
-        Log::channel('main')->info('ID '.Auth::user()->id.' editou as inscrições de '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' do utilizador '.$userDesporto->user_id = Auth::user()->id.' do desporto '.$userDesporto->desporto_id);
-        return redirect()->route('presenca.show')->with('message', 'Informacoes da notícia alterada com sucesso!!');
+        Log::channel('main')->info('ID '.Auth::user()->id.' alterou a presença de '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' do utilizador '.$userDesporto->user_id = Auth::user()->id.' do desporto '.$userDesporto->desporto_id);
+        return redirect()->route('presenca.show')->with('message', 'A presença do aluno '.$userDesporto->user_id = Auth::user()->name.' foi marcada, com o número da inscrição '.$userDesporto->id.'!');
     }
 
     /**
@@ -108,6 +106,6 @@ class AulaController extends Controller
     {
         $userDesporto->delete();
         Log::channel('main')->alert('ID '.Auth::user()->id.' eliminou a inscrição '.$userDesporto->id.' com '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' de presenças');
-        return redirect()->route('presenca.show')->with('message', 'Notícia eliminada com sucesso!!');
+        return redirect()->route('presenca.show')->with('message', 'A inscrição do aluno '.$userDesporto->user_id = Auth::user()->name.' foi eliminada, com o número da inscrição '.$userDesporto->id.'!');
     }
 }

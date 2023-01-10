@@ -46,3 +46,10 @@
 <script src="{{ asset('/dist/js/chart.js') }}"></script>
 <script src="{{ asset('/dist/js/map.js') }}"></script>
 <script src="{{ asset('/dist/js/custom.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('#edituser').on('input change', function() {
+            $('#editbtn').attr('disabled', false);
+        });
+    })
+</script>

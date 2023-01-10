@@ -9,9 +9,17 @@
             <div class="container-fluid">
 
                 <div class="row">
-                    <!-- left column -->
                     <div class="col-md-12">
-                        <!-- general form elements -->
+                        @if (Session::has('message'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                 <strong>{{ Session::get('message') }}</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"
+                                style="color:#4f5962;">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        @endif
+
                         <div class="card card-primary" style="background-color: #F3F8FB">
                             <div class="card-body">
                                 <h4 class="title">Lista das Inscrições</h4>
@@ -41,11 +49,12 @@
                                                     <td> {{ $inscricao->num_presencas }} </td>
                                                     <td>
 
-                                                        <a href="{{-- {{ $inscricao->id }}/edit --}} {{ route('presenca.edit', $inscricao->id) }}">
+                                                        <a
+                                                            href="{{-- {{ $inscricao->id }}/edit --}} {{ route('presenca.edit', $inscricao->id) }}">
                                                             <button type="submit" class="link"
-                                                            style="background-color: transparent; border:none">
-                                                            <i class="mdi mdi-pencil text-primary"
-                                                                data-toogle="tooltip"></i>
+                                                                style="background-color: transparent; border:none">
+                                                                <i class="mdi mdi-pencil text-primary"
+                                                                    data-toogle="tooltip"></i>
                                                             </button>
                                                         </a>
                                                     </td>
