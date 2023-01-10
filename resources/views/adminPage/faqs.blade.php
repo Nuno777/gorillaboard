@@ -89,6 +89,7 @@
             </div>
         </section>
     </div>
+    @include('layouts.partials.dashboard.footer')
 </body>
                         {{-- <div class="card-header py-3">
         <a class="btn btn-primary" href="{{ route('adminFaqsCreate') }}">

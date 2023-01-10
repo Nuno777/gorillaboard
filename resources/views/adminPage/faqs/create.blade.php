@@ -17,3 +17,4 @@
             <a href="{{ route('admin.faqs.index') }}" class="btn btn-default">Cancel</a>
         </div>
     </form>
+    @include('layouts.partials.dashboard.footer')
