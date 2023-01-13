@@ -7,6 +7,7 @@ use App\Http\Controllers\AulaController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ContactosController;
 use App\Http\Controllers\sobreController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AtletasController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     Route::resource('faqs', FaqController::class);
     Route::resource('atletas', AtletasController::class);
     Route::resource('sobre', sobreController::class);
+    Route::resource('user', UserController::class);
 });
 // End route Admin Faqs
 

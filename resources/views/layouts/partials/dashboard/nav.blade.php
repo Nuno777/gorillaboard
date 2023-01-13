@@ -135,6 +135,23 @@
                             </li>
                     </ul>
                 </li>
+                <li class="has-sub">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
+                        aria-expanded="false" aria-controls="email">
+                        <i class="mdi mdi-information-outline"></i>
+                        <span class="nav-text">Users</span> <b class="caret"></b>
+                    </a>
+                    <ul class="collapse" id="users" data-parent="#sidebar-menu">
+                        <div class="sub-menu">
+
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('admin.user.index') }}">
+                                    <span class="nav-text">Users</span>
+
+                                </a>
+                            </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

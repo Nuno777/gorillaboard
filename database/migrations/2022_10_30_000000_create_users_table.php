@@ -23,6 +23,7 @@ return new class extends Migration
             $table->boolean('admin')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
             $table->string('categoria_users')->nullable();
             $table->string('cartao_cidadao_users')->nullable();
         });
