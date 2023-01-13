@@ -67,7 +67,7 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#faq"
                         aria-expanded="false" aria-controls="email">
-                        <i class="mdi mdi-information-outline"></i>
+                        <i class="mdi mdi-Help"></i>
                         <span class="nav-text">Faqs</span> <b class="caret"></b>
                     </a>
                     <ul class="collapse" id="faq" data-parent="#sidebar-menu">
@@ -104,7 +104,7 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#atletas"
                         aria-expanded="false" aria-controls="email">
-                        <i class="mdi mdi-information-outline"></i>
+                        <i class="mdi mdi-Run"></i>
                         <span class="nav-text">Atletas</span> <b class="caret"></b>
                     </a>
                     <ul class="collapse" id="atletas" data-parent="#sidebar-menu">
@@ -138,7 +138,7 @@
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
                         aria-expanded="false" aria-controls="email">
-                        <i class="mdi mdi-information-outline"></i>
+                        <i class="mdi mdi-account"></i>
                         <span class="nav-text">Users</span> <b class="caret"></b>
                     </a>
                     <ul class="collapse" id="users" data-parent="#sidebar-menu">
