@@ -15,10 +15,8 @@ class sobreController extends Controller
      */
     public function index()
     {
-        $sobre = sobre::where('featured', '1')->get();
-        $users = User::where('admin', '1')->get();
-
-        return view ('sobre')->with('sobre', $sobre)->with('users', $users);   
+        $sobre = sobre::all();
+        return view('adminPage.sobre.index', compact('sobre'));
     }
 
     /**
@@ -28,7 +26,7 @@ class sobreController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminPage.sobre.create');
     }
 
     /**
@@ -39,7 +37,24 @@ class sobreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            "texto" => 'nullable',
+            "img" => 'required',
+            "featured" => 'required',
+        ]);
+
+        $img = $request->img;
+        $sobre = new sobre();
+        if ($img) {
+            $image_name = $img->getClientOriginalName();
+            $img->move(public_path('img'), $image_name);
+            $sobre->img = $image_name;
+        }
+        $sobre->texto = $request->texto;
+        $sobre->featured = $request->featured;
+
+        $sobre->save();
+        return back();
     }
 
     /**
@@ -48,9 +63,9 @@ class sobreController extends Controller
      * @param  \App\Models\sobre  $sobre
      * @return \Illuminate\Http\Response
      */
-    public function show(sobre $sobre)
+    public function show()
     {
-        //
+        return view('adminPage.sobre.index');
     }
 
     /**
@@ -61,7 +76,8 @@ class sobreController extends Controller
      */
     public function edit(sobre $sobre)
     {
-        //
+        //return $sobre;
+        return view('adminPage.sobre.edit', compact('sobre'));
     }
 
     /**
@@ -73,7 +89,25 @@ class sobreController extends Controller
      */
     public function update(Request $request, sobre $sobre)
     {
-        //
+        $this->validate($request, [
+            "texto" => 'nullable',
+            "img" => 'required',
+            "featured" => 'required',
+        ]);
+
+        $img = $request->img;
+
+        if ($img) {
+            $image_name = $img->getClientOriginalName();
+            $img->move(public_path('img'), $image_name);
+            $sobre->img = $image_name;
+        }
+        $sobre->texto = $request->texto;
+        $sobre->featured = $request->featured;
+
+        $sobre->save();
+
+        return back();
     }
 
     /**
@@ -84,6 +118,7 @@ class sobreController extends Controller
      */
     public function destroy(sobre $sobre)
     {
-        //
+        $sobre->delete();
+        return back();
     }
 }

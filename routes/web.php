@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
-Route::get('/sobre', [sobreController::class, 'index'])->name('sobre');
+Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 
 Route::get('/aula/{desporto}', [PageController::class, 'aula'])->name('aula');
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -42,6 +42,7 @@ Route::post('/contactos', [ContactosController::class, 'store'])->name('contacto
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified', 'admin']], function () {
     Route::resource('faqs', FaqController::class);
     Route::resource('atletas', AtletasController::class);
+    Route::resource('sobre', sobreController::class);
 });
 // End route Admin Faqs
 

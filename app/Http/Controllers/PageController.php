@@ -7,6 +7,7 @@ use App\Models\faqs;
 use App\Models\User;
 use App\Models\Desporto;
 use App\Models\Aula;
+use App\Models\sobre;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Support\Facades\Redirect;
 
@@ -19,7 +20,11 @@ class PageController extends Controller
     }
 
     public function sobre(){
-        return view('sobre');
+        $sobre = sobre::where('featured', '1')->get();
+        $users = User::where('admin', '1')->get();
+
+        return view ('sobre')->with('sobre', $sobre)->with('users', $users);  
+
     }
 
     public function aula(Desporto $desporto){

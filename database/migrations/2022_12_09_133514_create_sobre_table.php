@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('img');
             $table->boolean('featured');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
