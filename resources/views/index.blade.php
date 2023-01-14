@@ -94,7 +94,7 @@
         <div class="card outercard cartas_home">
         @endif
 
-          <img src="{{ asset('img/' . $desporto->images->first()->image) }}" class="card-img-top" alt="...">
+          <img src="{{ asset('storage/galeria/' . $desporto->images->first()->image) }}" class="card-img-top" alt="...">
             <div class="card-body card_titulo">
               <h5 class="card-title">{{ $desporto->modalidades }}</h5>
             </div>

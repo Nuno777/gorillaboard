@@ -1,0 +1,9 @@
+#surf_gal .card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#surf_gal .card img{
+    margin: 10px;
+}

@@ -42,22 +42,22 @@ class desportos_ImgController extends Controller
             
             $desportos_img = new DesportoImage();
             $desportos_img->image = basename($img_path);
-            $desportos_img->desporto_id = 1;
+            $desportos_img->desporto_id = $request->desp_img;
             $desportos_img->save();
 
-            
+            return redirect('admin/Img_Dashboard');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\DesportoImage  $desportos_img
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(DesportoImage $desportos_img)
     {
-        //
+        return view('adminPage.DesportoImage.show')->with('desportos_img', $desportos_img);
     }
 
     /**
