@@ -146,6 +146,8 @@
     <h3 class="text-center">Loja</h3>
     <p class="text-center"><img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle_loja"></p>
   </div>
+
+  
 </div>
 
 

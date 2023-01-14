@@ -20,6 +20,13 @@
                 </li>
 
                 <li class="has-sub">
+                    <a class="sidenav-item-link" href="{{ route('admin.Img_Dashboard.index') }}">
+                        <i class="mdi mdi-image"></i>
+                        <span class="nav-text">Imagens</span>
+                    </a>
+                </li>
+
+                <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-file"></i>

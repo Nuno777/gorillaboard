@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactosController;
 use App\Http\Controllers\sobreController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AtletasController;
+use App\Http\Controllers\desportos_ImgController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -43,12 +44,16 @@ Route::post('/contactos', [ContactosController::class, 'store'])->name('contacto
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'verified', 'admin']], function () {
     Route::resource('faqs', FaqController::class);
     Route::resource('atletas', AtletasController::class);
+    Route::resource('Img_Dashboard', desportos_ImgController::class);
+    //Route::get('verimagemxpto', [desportos_ImgController::class, 'verimagemxpto'])->name('verimagemxpto');
     Route::resource('sobre', sobreController::class);
     Route::resource('user', UserController::class);
 });
 // End route Admin Faqs
 
 Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos');
+
+
 
 
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
