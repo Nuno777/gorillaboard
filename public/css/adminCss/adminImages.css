@@ -7,3 +7,43 @@
 #surf_gal .card img{
     margin: 10px;
 }
+
+#skate_gal .card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#skate_gal .card img{
+    margin: 10px;
+}
+
+#bodyboard_gal .card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#bodyboard_gal .card img{
+    margin: 10px;
+}
+
+#dhskate_gal .card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#dhskate_gal .card img{
+    margin: 10px;
+}
+
+#paddle_gal .card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#paddle_gal .card img{
+    margin: 10px;
+}
