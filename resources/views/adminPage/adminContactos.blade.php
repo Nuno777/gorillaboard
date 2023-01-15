@@ -26,6 +26,7 @@
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Mensagem</th>
                                                 <th scope="col">created_at</th>
+                                                <th scope="col">updated_at</th>
                                                 <th scope="col">Editar</th>
                                                 <th scope="col">Eliminar</th>
                                             </tr>
@@ -49,6 +50,7 @@
                                                     </td>
 
                                                     <td>{{ $contacto->created_at }}</td>
+                                                    <td>{{ $contacto->updated_at }}</td>
                                                     <td>
                                                         <a href="{{ route('adminContactosEdit', $contacto->id) }}">
                                                             <button type="submit" class="link"

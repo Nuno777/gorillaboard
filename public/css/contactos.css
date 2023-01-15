@@ -1,10 +1,15 @@
 .title {
     padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .map-size {
     border-radius: 5px;
     height: 300px
+}
+
+.icons{
+    padding-top: 20px;
 }
 
 .name {
