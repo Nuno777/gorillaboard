@@ -31,11 +31,47 @@
         </a>
     </p>
       <div class="collapse" id="surf_gal">
+
+        <form action="/search" method="POST" role="search">
+          @csrf
+          <div class="input-group">
+              <input type="text" class="form-control" name="q"
+                  placeholder="Search users"> <span class="input-group-btn">
+                  <button type="submit" class="btn btn-default">
+                      <span class="glyphicon glyphicon-search"></span>
+                  </button>
+              </span>
+          </div>
+        </form>
+
         <div class="card card-body">
             @foreach ($desportos_img as $desp)
 
             @if ($desp->desporto_id == 1)
-            <img src="{{ asset('storage/galeria/'. $desp->image) }}" alt="brr" style="width: 200px;"/>
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
+              <img src="{{ asset('storage/galeria/'. $desp->image) }}" alt="brr" style="width: 200px;"/>
+            </button>
+
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-l" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img src="{{ asset('storage/galeria/'. $desp->image) }}" alt="brr"/>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Editar</button>
+                    <button type="button" class="btn btn-secondary">Eliminar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
             @endif
             @endforeach
         </div>

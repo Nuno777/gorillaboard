@@ -20,6 +20,7 @@
         @yield('main')
     </main>
 
+    @include('layouts.partials.BTTbutton')
     @include('layouts.partials.footer')
 
 
