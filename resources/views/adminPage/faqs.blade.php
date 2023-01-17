@@ -18,12 +18,12 @@
                     <h2 class="name-page"><a href="{{ url()->previous() }}">
                             <i class='bx bx-chevron-left bx-sm'></i></a>Faqs</h2>
                     <a class="buttonPlus" href="{{ route('admin.faqs.create') }}"><i class='bx bx-plus'></i>Criar Faq</a>
-                    <form id="formSearch" action="{{ route('admin.faqs.search', $faqs) }}" method="get">
+                    <form id="formSearch" action="{{ route('admin.search', $faqs) }}" method="get">
                         <div class="input-group">
                             <div class="form-outline">
                               <input type="search" id="form1" class="form-control" placeholder="Search" name="query" />
                             </div>
-                            <button type="button" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-search"></i> go
                             </button>
                           </div>
