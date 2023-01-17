@@ -15,7 +15,10 @@
     --grey:#8C959A;
     --with:#ffffff;
 }
-
+footer.footer {
+    bottom: 0;
+    position:absolute;
+}
 .text{
     text-align: center;
     margin-bottom: .30rem;

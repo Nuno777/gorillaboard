@@ -1,5 +1,6 @@
 @extends('layouts.master')
-@section('custom_css', asset("css/stylesobre.css"))
+{{-- @section('custom_css', asset("css/stylesobre.css")) --}}
+<link href="{{ asset('css/stylesobre.css') }}" rel="stylesheet">
 @section('title', 'GorillaBoards')
 @section('main')
 

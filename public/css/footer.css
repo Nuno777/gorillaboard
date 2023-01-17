@@ -58,15 +58,30 @@
   .footer ul {
     list-style: none;
     padding-left: 0;
+    transition: all 0.3s ease-in-out;
     }
   
   .footer li {
     line-height: 2em;
+    transition: all 0.3s ease-in-out;
   }
+  .footer ul li {
+    display: inline-block;
+    padding: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+
   .footer li:hover{
     color: #2AA9FF;
+    transition: all 0.3s ease-in-out;
   }
   
+  .nav__ul a:hover {
+    color: #2AA9FF;
+    transition: all 0.3s ease-in-out;
+}
+
   .footer a {
     text-decoration: none;
   }

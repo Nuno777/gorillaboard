@@ -73,8 +73,17 @@ opacity: 0.85;
 }
 
 .imagenspessoas img{
-    width: 200px;
     margin: 10px 10px 40px 10px;
+    border: 10px solid white;
+    border-radius: 10px;
+    width: 180px;
+    height: 180px;
+    transition: 1s;
+}
+.imagenspessoas img:hover{
+  transform: scale(1.01);
+  border: 0px;
+
 }
 .imagemtexto{
     text-align: center;
@@ -92,7 +101,34 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  width: 95%;
+  transition: 0.2s;
 }
+h6:hover{
+  font-size: 21px;
+  color: #fff;
+  background-color: #1B272C;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* FOOTER */
 .footer {
     display: flex;
