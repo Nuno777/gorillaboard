@@ -22,6 +22,7 @@
 
         </div>
         <div class="option-account col-xl-4">
+            <button><i class='bx bx-lock-alt bx-sm'></i><a href="">Adicionar-me como Atleta</a></button>
             <button><i class='bx bx-pencil bx-sm' ></i><a href="{{ route('profile.edit' , Auth::user()) }}"> Editar Perfil</a></button><br>
             <button><i class='bx bx-lock-alt bx-sm'></i><a href="">Editar Password</a></button>
             <div class="delete">
