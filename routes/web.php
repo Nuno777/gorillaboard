@@ -86,7 +86,17 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('profile', ProfileController::class);
-    Route::post('profile/updatimg', [ProfileController::class, 'updateimg'])->name('profile.updateimg');
+        //GET: index
+        //GET show = profile/**** */
+        //GET create
+        //POST store
+        //GET edit = profile/ID/edit
+        //PUT update = ID
+        //DELETE destroy
+    Route::put('profile/edit/image', [ProfileController::class, 'updateimg'])->name('profile.upgradeimg');
+    Route::get('/profile/edit/image', function () {
+        return view('profile/partials/update-img-user');
+    })->name('profile.updateimg');
 });
 
 require __DIR__ . '/auth.php';

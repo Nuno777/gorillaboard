@@ -28,7 +28,15 @@
             <div class="delete">
                 <h4>Delete Account</h4>
                 <p>Deleting Your Account Is Permanent</p>
-                <button><a href="{{ route('profile.destroy' , Auth::user()) }}">Delete Account</a></button>
+                <form method="POST"
+                    action="{{ route('profile.destroy' , Auth::user()) }}" role="form"
+                    class="inline" onsubmit="return confirm('Confirma que
+                    pretende eliminar este registo?');">
+                    @csrf
+                    @method("DELETE")
+
+                    <button type="submit">Delete Account</button>
+                </form>
             </div>
         </div>
 

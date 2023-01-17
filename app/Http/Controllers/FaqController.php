@@ -20,7 +20,7 @@ class FaqController extends Controller
 
         $faqs = faqs::paginate(10);
 
-        return view ('adminPage.faqs')->with('faqs', $faqs);
+        return view ('adminPage.faqs.search')->with('faqs', $faqs);
     }
 
     /**
@@ -103,12 +103,11 @@ class FaqController extends Controller
     public function search()
     {
         $search_text = $_GET['query'];
-        $faqs = faqs::table('faqs')
-                ->where('id', 'like', '%'.$search_text.'%')
+        $faqs = faqs::where('id', 'like', '%'.$search_text.'%')
                 ->orWhere('pergunta', 'like', '%'.$search_text.'%')
                 ->orWhere('resposta', 'like', '%'.$search_text.'%')
-                ->get();
+                ->paginate(10);
 
-        return view('adminPage.faqs.search', compact('$faqs'));
+        return view('adminPage.faqs.search', compact('faqs'));
     }
 }

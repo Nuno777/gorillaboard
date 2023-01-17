@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('custom_css'){{ asset('css/style_login.css') }}@endsection
-@section('custom_js'){{ asset('app.js') }}@endsection
+@section('custom_js'){{ asset('js/app.js') }}@endsection
 @section('title', 'GorillaBoards')
 
 @section('main')
@@ -31,7 +31,7 @@
                         <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
                             autocomplete="current-password" placeholder="Password" />
                     </div>
-                  
+
                     <input type="submit" value="Login" class="btn solid" />
 
                     <!-- Remember Me -->

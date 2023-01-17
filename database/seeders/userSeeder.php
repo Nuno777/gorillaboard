@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 
@@ -21,7 +22,7 @@ class userSeeder extends Seeder
                 'name' => 'Miguel',
                 'email' => 'mmjm.1997@gmail.com',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => '$2y$10$k9NwpyPGi9iBFNwwCZ2xeOW9FgMEKl.tGQHJzhJhbGl6Zvd5igz4K',
+                'password' => Hash::make('123123123'),
                 'img' => 'miguel.png',
                 'admin' => '1',
             ],
@@ -29,7 +30,7 @@ class userSeeder extends Seeder
                 'name' => 'Roman',
                 'email' => 'romankalyuzhnov@gmail.com',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => '$2y$10$zulASHlfbkbtYG5NW3hLpOxG/tXWoaVkYrY7PClIiqjRLb5spCA7S',
+                'password' => Hash::make('123123123'),
                 'img' => 'roman.png',
                 'admin' => '1',
             ],
@@ -37,7 +38,7 @@ class userSeeder extends Seeder
                 'name' => 'Nuno',
                 'email' => 'nm.albano11@gmail.com',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => '$2y$10$SFV/E7B67xtyHUnuvCgCSuqlvcumed0VYvPvP.jYnhH5a/7O2RwY2',
+                'password' => Hash::make('123123123'),
                 'img' => 'nuno.png',
                 'admin' => '1',
             ],
@@ -45,7 +46,7 @@ class userSeeder extends Seeder
                 'name' => 'Joel',
                 'email' => '2211727@my.ipleiria.pt',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => '$2y$10$mgokqZhfweUXPqFHAEGzyOL0HXJX6MhXMzGfuyfXDp6Z4zS7WKGS.',
+                'password' => Hash::make('1231231233'),
                 'img' => 'joel.png',
                 'admin' => '1',
             ],
@@ -53,7 +54,7 @@ class userSeeder extends Seeder
                 'name' => 'Tmarques',
                 'email' => '2213032@ipleiria.pt',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => '$2y$10$4o.lW.thkJgi/KxrVf2O2uWUbGMcDO4Xd8izjg0tkJy9.yzKrSWlK',
+                'password' => Hash::make('1231231233'),
                 'img' => 'tiago.png',
                 'admin' => '1',
             ],

@@ -67,7 +67,7 @@ class ProfileController extends Controller
      * @param  \App\Http\Requests\ProfileUpdateRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function updateimg(ProfileUpdateRequest $request)
+    public function updateimg(Request $request)
     {
         // Validate the request and the uploaded file
         $request->validate([
@@ -79,13 +79,15 @@ class ProfileController extends Controller
 
         // Delete the old profile image (if there is one)
         if ($user->img) {
-            Storage::delete($user->img);
+            Storage::delete('img/profile/' . $user->img);
         }
 
         // Store the new profile image and update the user's image attribute
         $path = $request->file('img')->store('img/profile', 'public');
         $user->img = $path;
-        $request->user()->save();
+
+        
+        $user->save();
         /* $user->save(); */
 
         // Redirect the user back to their profile page
@@ -105,11 +107,7 @@ class ProfileController extends Controller
      */
     public function destroy(Request $request)
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current-password'],
-        ]);
-
-        $user = $request->user();
+        $user = Auth::user();
 
         Auth::logout();
 

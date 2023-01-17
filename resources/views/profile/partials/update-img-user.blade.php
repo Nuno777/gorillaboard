@@ -12,11 +12,14 @@
 @endif
 
 @section('profile-content')
-<form action="{{ route('profile.updateimg') }}" method="post">
+<form action="{{ route('profile.upgradeimg') }}" method="post" enctype="multipart/form-data">
     @csrf
+    @method('PUT')
     <div class="imgchange">
         <input type="file" name="img" id="img">
     </div>
+
+    <button type="submit">Submeter</button>
 </form>
 
 @endsection
