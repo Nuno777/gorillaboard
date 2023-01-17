@@ -22,25 +22,14 @@
             <h2 class="nav__title">Aulas</h2>
 
             <ul class="nav__ul">
-                <li>
-                    <a href="#">Surf</a>
-                </li>
 
-                <li>
-                    <a href="#">Skate</a>
-                </li>
 
+                @foreach ($desportos as $desporto)
                 <li>
-                    <a href="#">Body Board</a>
+                    <a href="{{ route('aula', $desporto->id) }}">{{ $desporto->modalidades }}</a>
                 </li>
+            @endforeach
 
-                <li>
-                    <a href="#">Downhill Skate</a>
-                </li>
-
-                <li>
-                    <a href="#">Paddle Surf</a>
-                </li>
             </ul>
         </li>
 
@@ -48,25 +37,13 @@
             <h2 class="nav__title">Desportos</h2>
 
             <ul class="nav__ul nav__ul--extra">
-                <li>
-                    <a href="#">Surf</a>
-                </li>
 
+                @foreach ($desportos as $desporto)
                 <li>
-                    <a href="#">Skate</a>
+                    <a href="{{ route('aula', $desporto->id) }}">{{ $desporto->modalidades }}</a>
                 </li>
+            @endforeach
 
-                <li>
-                    <a href="#">Body Board</a>
-                </li>
-
-                <li>
-                    <a href="#">Downhill Skate</a>
-                </li>
-
-                <li>
-                    <a href="#">Paddle Surf</a>
-                </li>
             </ul>
         </li>
 

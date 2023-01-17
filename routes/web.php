@@ -32,8 +32,9 @@ Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
 
 Route::get('/aula/{desporto}', [PageController::class, 'aula'])->name('aula');
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
+Route::post('/aula/{desporto}', [AulaController::class, 'store'])->name('aula.store');
 });
+
 
 Route::get('/PerguntasFrequentes', [PageController::class, 'faqs'])->name('faqs');
 
