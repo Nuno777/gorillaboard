@@ -50,6 +50,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     Route::resource('sobre', sobreController::class);
     Route::resource('user', UserController::class);
 });
+Route::get('admin/search', [FaqController::class, 'search'])->middleware('auth', 'verified', 'admin')->name('admin.search');
 // End route Admin Faqs
 
 Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos');
