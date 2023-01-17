@@ -6,9 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Loading</title>
 </head>
-<style>
 
-</style>
 <body>
 </body>
 </html>

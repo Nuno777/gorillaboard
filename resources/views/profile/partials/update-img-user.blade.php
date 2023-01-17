@@ -13,6 +13,7 @@
 
 @section('profile-content')
 <form action="{{ route('profile.updateimg') }}" method="post">
+    @csrf
     <div class="imgchange">
         <input type="file" name="img" id="img">
     </div>

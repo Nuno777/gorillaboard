@@ -19,7 +19,7 @@
                     <h5 class="mt-1 p-2">Admin</h5>
                 @endif
 
-                <button><a href="">Editar Imagem de Perfil</a></button>
+                <button><a href="{{ route('') }}">Editar Imagem de Perfil</a></button>
 
 
             </div>
