@@ -19,63 +19,71 @@
 
     <ul class="footer__nav">
         <li class="nav__item">
-            <h2 class="nav__title">Media</h2>
+            <h2 class="nav__title">Aulas</h2>
 
             <ul class="nav__ul">
                 <li>
-                    <a href="#">Online</a>
+                    <a href="#">Surf</a>
                 </li>
 
                 <li>
-                    <a href="#">Print</a>
+                    <a href="#">Skate</a>
                 </li>
 
                 <li>
-                    <a href="#">Alternative Ads</a>
+                    <a href="#">Body Board</a>
+                </li>
+
+                <li>
+                    <a href="#">Downhill Skate</a>
+                </li>
+
+                <li>
+                    <a href="#">Paddle Surf</a>
                 </li>
             </ul>
         </li>
 
         <li class="nav__item nav__item--extra">
-            <h2 class="nav__title">Technology</h2>
+            <h2 class="nav__title">Desportos</h2>
 
             <ul class="nav__ul nav__ul--extra">
                 <li>
-                    <a href="#">Hardware Design</a>
+                    <a href="#">Surf</a>
                 </li>
 
                 <li>
-                    <a href="#">Software Design</a>
+                    <a href="#">Skate</a>
                 </li>
 
                 <li>
-                    <a href="#">Digital Signage</a>
+                    <a href="#">Body Board</a>
                 </li>
 
                 <li>
-                    <a href="#">Artificial Intelligence</a>
+                    <a href="#">Downhill Skate</a>
                 </li>
 
                 <li>
-                    <a href="#">IoT</a>
+                    <a href="#">Paddle Surf</a>
                 </li>
             </ul>
         </li>
 
         <li class="nav__item">
-            <h2 class="nav__title">Legal</h2>
+            <h2 class="nav__title">Sobre</h2>
 
             <ul class="nav__ul">
                 <li>
-                    <a href="#">Privacy Policy</a>
+                    <a href="{{ route('sobre') }}">Sobre nós</a>
                 </li>
 
                 <li>
-                    <a href="#">Terms of Use</a>
+                    <a href="{{ route('contactos') }}">Contactos</a>
                 </li>
 
                 <li>
-                    <a href="#">Sitemap</a>
+                    <a href="{{ route('faqs') }}">FAQs</a>
                 </li>
             </ul>
         </li>

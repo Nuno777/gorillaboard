@@ -79,7 +79,20 @@ opacity: 0.85;
 .imagemtexto{
     text-align: center;
 }
-
+.imagemtexto.col {
+  background-color: #1B272C;
+  border-radius: 10px;
+}
+h6 {
+  color: #1B272C;
+  background-color: white;
+  height: 50px;
+  width: auto;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* FOOTER */
 .footer {
     display: flex;
@@ -238,6 +251,15 @@ opacity: 0.85;
   .column{
     padding: 10px !important;
   }
+  .containerimgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imagenspessoas.row {
+  max-width: 300px;
+  margin-top: 10px;
+}
   }
   @media screen and (max-width: 500px) {
     .texto1pequeno{

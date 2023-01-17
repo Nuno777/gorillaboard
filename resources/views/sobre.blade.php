@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('custom_css', asset("css/stylesobre.css"))
-
 @section('title', 'GorillaBoards')
 @section('main')
 
@@ -79,35 +77,5 @@
 
   @endforeach
 </div>
-
-
-
-
-
-
-    <!-- <div class="imagenspessoas row">
-
-        <div class="imagemtexto col">
-            <img src="{{ asset('img/joel.png') }}" alt="1a Imagem">
-            <h6>Joel Mota <br> CFO</h6>
-        </div>
-        <div class="imagemtexto col">
-        <img src="{{ asset('img/miguel.png') }}" alt="2a Imagem">
-            <h6>Miguel Mendes<br> CTO</h6>
-        </div>
-        <div class="imagemtexto col">
-        <img src="{{ asset('img/roman.png') }}" alt="3a Imagem">
-            <h6>Roman Kalyuzhnov<br> CEO</h6>
-        </div>
-        <div class="imagemtexto col">
-        <img src="{{ asset('img/nuno.png') }}" alt="4a Imagem">
-            <h6>Nuno Albano<br> COO</h6>
-        </div>
-        <div class="imagemtexto col">
-        <img src="{{ asset('img/tiago.png') }}" alt="5a Imagem">
-            <h6>Tiago Marques<br> CMO</h6>
-        </div>
-
-        </div> -->
 
 @endsection
