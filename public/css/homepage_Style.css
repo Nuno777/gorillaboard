@@ -330,24 +330,57 @@
 /*============Seccao Aulas FIM=============*/
 
 /*============Seccao Loja=============*/
-
-.titulo_sec_loja{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#loja_section{
+  margin-top: 100px;
+}
+#savetgor{
+  margin-bottom: -66px;
 }
 
-.titulo_sec_loja h3{
+#savethegorilas_info{
+  padding-top: 40px;
+  padding-left: 180px !important;
+}
+
+#savethegorilas_info h2{
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 900;
+  font-size: 45pt;
+  color: #2AA9FF;
+  margin-bottom: 20px;
+}
+
+#savethegorilas_info h4{
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 600;
+}
+
+#btns_savegori{
+  margin-top: 50px;
+}
+
+#savethegorilas_info #btns_savegori h5{
+  font-family: 'Raleway', sans-serif !important;
+  color: #1B272C;
+  font-weight: bold;
+  text-decoration: solid ;
+  height: 60px;
+}
+
+#savethegorilas_info p{
+  font-family: 'Raleway', sans-serif !important;
+  margin-top: 30px;
+}
+
+#savethegorilas_info #btns_savegori a{
   font-family: 'Raleway', sans-serif !important;
   font-weight: bold;
-  position: absolute;
-  font-size: 26pt;
+  background-color: #2AA9FF;
   color: white;
-  margin-bottom: 30px;
+  display: block;
+  height: 40px;
+  font-size: 18pt;
+  width: 150px;
+  margin: auto;
 }
-
-.triangletitle_loja {
-  width: 50%;
-}
-
 /*============Seccao Loja FIM=============*/

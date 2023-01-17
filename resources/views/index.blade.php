@@ -70,7 +70,7 @@
     </a>
     <a href="#loja_section" class="col">
       <div class="info_home">
-              <h3>Loja</h3>
+              <h3>Gorilla Care</h3>
 
       </div>
     </a>    
@@ -107,7 +107,7 @@
 
 <div id="aulas_section">
   <div class="title_sections_home_aulas">
-    <h3>Aulas</h3>
+    <h3 class="text-center">Aulas</h3>
     <img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle">
   </div>
 
@@ -142,11 +142,30 @@
 </div>
 
 <div id="loja_section">
-  <div class="titulo_sec_loja">
-    <h3 class="text-center">Loja</h3>
-    <p class="text-center"><img src="{{ asset('img/trianglefor_title.png') }}" alt="triangle" class="triangletitle_loja"></p>
-  </div>
 
+
+  <div class="row text-center" id="savetgor">
+
+    <div class="col" id="savethegorilas_info">
+      <h2>Gorilla Care</h2>
+      <h4>Vamos Salvar os Gorilas Gigantes do Congo</h4>
+      <p>Os Gorilas Gigantes de Congo, conhecidos como <b>Gorilas de Grauer</b>, sofreram uma <b>perda catastrofica de 77% da sua população</b> por concequencia da <b>caça ilegal</b> e <b>destruição de habitat</b></p>
+      <div class="row" id="btns_savegori">
+        <div class="doar col text-center">
+          <h5>Doe para esta causa</h5>
+          <a href="https://gracegorillas.org/grace-save-a-gorilla/" target="_blank">Doação</a>
+        </div>
+        <div class="loja_gori col text-center">
+          <h5>20% do valor de todas as vendas é doado</h5>
+          <a href="http://gorillaboards.epizy.com/" target="_blank">Loja</a>
+        </div>
+    </div>
+    </div>
+
+    <div class="col">
+      <p class="text-center"><img src="{{ asset('img/savethegorilass.png') }}" alt="ola" style="width: 800px;"></p>
+    </div>
+  </div>
   
 </div>
 

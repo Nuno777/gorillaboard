@@ -115,9 +115,18 @@ body{
   
 /*============NAVBAR=============*/
 nav {
-    position: sticky;
     z-index: 100;
-    top: 0;
+    padding: 0 !important;
+}
+
+.navedit{
+  padding: 0 !important;
+}
+
+.bugfix_boot {
+  position: absolute;
+  margin: 0px;
+  transform: translate(-100px, 0px);
 }
 
 nav ul {
@@ -164,6 +173,7 @@ nav .nav_option li a:hover {
 
 #nav_Logo {
     width: 130px;
+    margin-left: 15px;
 }
 
 #li_Logo {
