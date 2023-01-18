@@ -12,9 +12,9 @@
                     <div class="col-md-12">
                         @if (Session::has('message'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                 <strong>{{ Session::get('message') }}</strong>
+                                <strong>{{ Session::get('message') }}</strong>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"
-                                style="color:#4f5962;">
+                                    style="color:#4f5962;">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
@@ -47,17 +47,29 @@
                                                     <td> {{ $inscricao->desporto->modalidades }} </td>
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
                                                     <td> {{ $inscricao->num_presencas }} </td>
-                                                    <td>
+                                                    @if ($inscricao->num_inscricoes == $inscricao->num_presencas)
+                                                        <td>
 
-                                                        <a
-                                                            href="{{-- {{ $inscricao->id }}/edit --}} {{ route('presenca.edit', $inscricao->id) }}">
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
-                                                                <i class="mdi mdi-pencil text-primary"
+                                                                <i class="mdi mdi-close text-danger"
                                                                     data-toogle="tooltip"></i>
                                                             </button>
-                                                        </a>
-                                                    </td>
+
+                                                        </td>
+                                                    @else
+                                                        <td>
+                                                            <a href="{{ route('presenca.edit', $inscricao->id) }}">
+                                                                <button type="submit" class="link"
+                                                                    style="background-color: transparent; border:none">
+                                                                    <i class="mdi mdi-pencil text-primary"
+                                                                        data-toogle="tooltip"></i>
+                                                                </button>
+                                                            </a>
+                                                        </td>
+                                                    @endif
+
+
                                                     <td>
                                                         <form role="form"
                                                             action="{{ route('presenca.delete', $inscricao->id) }}"
