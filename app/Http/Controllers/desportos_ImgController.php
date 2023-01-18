@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desporto;
 use App\Models\DesportoImage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class desportos_ImgController extends Controller
 {
@@ -14,9 +16,8 @@ class desportos_ImgController extends Controller
      */
     public function index()
     {
-
-        $desportos_img = DesportoImage::all();
-        return view('adminPage.admin_Img', compact('desportos_img'));
+        $desportos = Desporto::all();
+        return view('adminPage.admin_Img', compact('desportos'));
     }
 
     /**
@@ -89,9 +90,11 @@ class desportos_ImgController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(DesportoImage $Img_Dashboard)
     {
-        //
+        $Img_Dashboard->delete();
+        Storage::delete('public/galeria/' . $Img_Dashboard->image);
+        return redirect()->route('admin.Img_Dashboard.index');
     }
 
     public function verimagemxpto()

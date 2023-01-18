@@ -39,7 +39,6 @@
                                     <table class="table text-center">
                                         <thead class="text-uppercase">
                                             <tr>
-                                                <th scope="col">ID</th>
                                                 <th scope="col">Texto</th>
                                                 <th scope="col">Imagem</th>
                                                 <th scope="col">Featured</th>
@@ -50,7 +49,6 @@
                                         <tbody>
                                             @foreach ($sobre as $sobre)
                                             <tr>
-                                                <td scope="row">{{ $sobre->id }}</td>
                                                 <td>{{ $sobre->texto }}</td>
                                                 <td>{{ $sobre->img }}</td>
                                                 <td>{{ $sobre->featured }}</td>

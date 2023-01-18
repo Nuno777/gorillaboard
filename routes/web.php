@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Sobre_textoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\PageController;
@@ -49,6 +50,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     //Route::get('verimagemxpto', [desportos_ImgController::class, 'verimagemxpto'])->name('verimagemxpto');
     Route::resource('sobre', sobreController::class);
     Route::resource('user', UserController::class);
+
+    Route::get('sobre_texto', [Sobre_textoController::class, 'index'])->name('sobre_texto.index');
+    Route::get('sobre_texto/{id}/edit', [Sobre_textoController::class, 'edit'])->name('sobre_texto.edit');
+    Route::put('sobre_texto/{id}/edit', [Sobre_textoController::class, 'update'])->name('sobre_texto.update');
 });
 Route::get('admin/search', [FaqController::class, 'search'])->middleware('auth', 'verified', 'admin')->name('admin.search');
 // End route Admin Faqs
