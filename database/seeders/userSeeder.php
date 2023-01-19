@@ -54,7 +54,7 @@ class userSeeder extends Seeder
                 'name' => 'Tmarques',
                 'email' => '2213032@ipleiria.pt',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => Hash::make('1231231233'),
+                'password' => Hash::make('123456789'),
                 'img' => 'tiago.png',
                 'admin' => '1',
             ],
