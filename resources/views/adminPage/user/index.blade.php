@@ -21,7 +21,6 @@
                                     <table class="table text-center">
                                         <thead class="text-uppercase">
                                             <tr>
-                                                <th scope="col">ID</th>
                                                 <th scope="col">Nome</th>
                                                 <th scope="col">E-mail</th>
                                                 <th scope="col">Imagem</th>
@@ -33,7 +32,6 @@
                                         <tbody>
                                             @foreach ($users as $user)
                                             <tr>
-                                                <td scope="row">{{ $user->id }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->img }}</td>

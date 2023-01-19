@@ -92,8 +92,8 @@ class AulaController extends Controller
 
         $userDesporto->num_presencas = request('npresen');
         $userDesporto->save();
-        Log::channel('main')->info('ID '.Auth::user()->id.' alterou a presença de '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' do utilizador '.$userDesporto->user_id = Auth::user()->id.' do desporto '.$userDesporto->desporto_id);
-        return redirect()->route('presenca.show')->with('message', 'A presença do aluno '.$userDesporto->user_id = Auth::user()->name.' foi marcada, com o número da inscrição '.$userDesporto->id.'!');
+        Log::channel('main')->info('ID ' . Auth::user()->id . ' alterou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
+        return redirect()->route('presenca.show')->with('message', 'A presença do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi marcada, com o número da inscrição ' . $userDesporto->id . '!');
     }
 
     /**
@@ -105,7 +105,7 @@ class AulaController extends Controller
     public function destroy(UserDesporto $userDesporto)
     {
         $userDesporto->delete();
-        Log::channel('main')->alert('ID '.Auth::user()->id.' eliminou a inscrição '.$userDesporto->id.' com '.$userDesporto->num_inscricoes.'/'.$userDesporto->num_presencas.' de presenças');
-        return redirect()->route('presenca.show')->with('message', 'A inscrição do aluno '.$userDesporto->user_id = Auth::user()->name.' foi eliminada, com o número da inscrição '.$userDesporto->id.'!');
+        Log::channel('main')->alert('ID ' . Auth::user()->id . ' eliminou a inscrição ' . $userDesporto->id . ' com ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' de presenças');
+        return redirect()->route('presenca.show')->with('message', 'A inscrição do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi eliminada, com o número da inscrição ' . $userDesporto->id . '!');
     }
 }

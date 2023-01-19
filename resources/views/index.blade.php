@@ -163,7 +163,7 @@
     </div>
 
     <div class="col">
-      <p class="text-center"><img src="{{ asset('img/savethegorilass.png') }}" alt="ola" style="width: 800px;"></p>
+      <img src="{{ asset('img/savethegorilass.png') }}" alt="ola" id="savegori_img">
     </div>
   </div>
   
