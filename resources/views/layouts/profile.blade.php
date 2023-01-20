@@ -11,7 +11,7 @@
         <div class="col-12 col-md-3 col-lg-4 col-xl-3 mt-3">
             @if (Auth::check())
             <div class="img-profile">
-                <img src="{{ asset('img/' . Auth::user()->img) }}" alt="Profile_img"><br>
+                <img src="{{ asset('storage/' . Auth::user()->img) }}" alt="Profile_img"><br>
                 <h3 class="mt-2 p-2">{{ Auth::user()->name }}</h3>
                 @if (Auth::user()->password == 0)
                     <h5 class="mt-1 p-2">User</h4>

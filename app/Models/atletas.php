@@ -12,6 +12,7 @@ class atletas extends Model
     protected $table = 'atletas';
 
     protected $fillable = [
+        'id',
         'nasc_atleta',
         'idade_atleta',
         'email_encarregado_edu',
