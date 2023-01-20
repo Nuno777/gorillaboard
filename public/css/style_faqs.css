@@ -49,6 +49,16 @@ footer.footer {
 .container:hover{
     background-color: none !important;
 }
+/* btnSearch  */
+.text form{
+    width: 25rem;
+    align-items: center;
+    text-align: center;
+}
+
+.text
+
+/* Show faqs Container */
 
 .question{
     border-bottom: 1px solid var(--with);
@@ -87,6 +97,14 @@ footer.footer {
     padding:0px 15px 30px 15px;
     border-left: 2px solid var(--blue);
 }
+
+/*  Rotate the icon */
 .question button .d-arrow.rotate{
     transform: rotate(180deg);
+}
+
+
+.Paguination
+{
+    margin: 0 2rem 0 2rem;
 }

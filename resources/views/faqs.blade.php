@@ -10,7 +10,7 @@
             <div class="form-outline">
               <input type="search" id="form1" class="form-control" placeholder="Search" name="query" />
             </div>
-            <button type="button" class="btn btn-primary">
+            <button type="submit" class="btn btn-primary">
                 <i class="fas fa-search"></i>
               </button>
           </div>

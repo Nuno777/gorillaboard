@@ -34,7 +34,7 @@ class PageController extends Controller
     }
 
     public function faqs(){
-        $faqs = faqs::paginate(10);
+        $faqs = faqs::paginate(2);
 
         return view ('faqs')->with('faqs', $faqs);
     }
