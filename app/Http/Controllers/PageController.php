@@ -23,7 +23,7 @@ class PageController extends Controller
         $sobre = sobre::where('featured', '1')->get();
         $users = User::where('admin', '1')->get();
 
-        return view ('sobre')->with('sobre', $sobre)->with('users', $users);  
+        return view ('sobre')->with('sobre', $sobre)->with('users', $users);
 
     }
 
@@ -34,7 +34,7 @@ class PageController extends Controller
     }
 
     public function faqs(){
-        $faqs = faqs::all();
+        $faqs = faqs::paginate(10);
 
         return view ('faqs')->with('faqs', $faqs);
     }

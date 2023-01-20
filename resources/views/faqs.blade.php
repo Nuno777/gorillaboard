@@ -5,10 +5,20 @@
 @section('main')
 <div class="text container-fluid">
     <h1>Perguntas mais Frequentes</h1>
+    <form action="{{ route('admin.search') }}" method="get">
+        <div class="input-group">
+            <div class="form-outline">
+              <input type="search" id="form1" class="form-control" placeholder="Search" name="query" />
+            </div>
+            <button type="button" class="btn btn-primary">
+                <i class="fas fa-search"></i>
+              </button>
+          </div>
+    </form>
     <hr>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa est laboriosam voluptates nobis nisi blanditiis? Consequatur, ut molestias quidem, a eos rem sunt fugiat saepe perferendis fugit minus? Hic.</p>
 </div>
 <div class="questions-container">
+
     @foreach ($faqs as $faq)
         <div class="question">
             <button>
@@ -18,6 +28,9 @@
             <p>{{ $faq->resposta}}</p>
         </div>
     @endforeach
+</div>
+<div class="Paguination">
+    {{ $faqs->links() }}
 </div>
 </section>
 @endsection

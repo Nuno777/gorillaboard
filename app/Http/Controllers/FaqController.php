@@ -18,9 +18,9 @@ class FaqController extends Controller
     public function index()
     {
 
-        $faqs = faqs::paginate(2);
+        $faqs = faqs::paginate(10);
 
-        return view ('adminPage.faqs.search')->with('faqs', $faqs);
+        return view ('adminPage.faqs')->with('faqs', $faqs);
     }
 
     /**
@@ -107,7 +107,11 @@ class FaqController extends Controller
                 ->orWhere('pergunta', 'like', '%'.$search_text.'%')
                 ->orWhere('resposta', 'like', '%'.$search_text.'%')
                 ->paginate(10);
+        if(url()->previous() == url('/admin'))
+            return view('faqs', compact('faqs'));
+        else{
+            return view('adminPage.faqs', compact('faqs'));
+        }
 
-        return view('adminPage.faqs.search', compact('faqs'));
     }
 }
