@@ -107,7 +107,7 @@ class FaqController extends Controller
                 ->orWhere('pergunta', 'like', '%'.$search_text.'%')
                 ->orWhere('resposta', 'like', '%'.$search_text.'%')
                 ->paginate(10);
-        if(url()->previous() == url('/admin'))
+        if(url()->previous() == url('/PerguntasFrequentes'))
             return view('faqs', compact('faqs'));
         else{
             return view('adminPage.faqs', compact('faqs'));

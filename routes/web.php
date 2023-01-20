@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     Route::get('sobre_texto/{id}/edit', [Sobre_textoController::class, 'edit'])->name('sobre_texto.edit');
     Route::put('sobre_texto/{id}/edit', [Sobre_textoController::class, 'update'])->name('sobre_texto.update');
 });
-Route::get('admin/search', [FaqController::class, 'search'])->middleware('auth', 'verified', 'admin')->name('admin.search');
+Route::get('Search', [FaqController::class, 'search'])->middleware('auth', 'verified',)->name('btnSearch');
 // End route Admin Faqs
 
 Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos');

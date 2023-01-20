@@ -5,7 +5,7 @@
 @section('main')
 <div class="text container-fluid">
     <h1>Perguntas mais Frequentes</h1>
-    <form action="{{ route('admin.search') }}" method="get">
+    <form action="{{ route('btnSearch') }}" method="get">
         <div class="input-group">
             <div class="form-outline">
               <input type="search" id="form1" class="form-control" placeholder="Search" name="query" />
