@@ -42,9 +42,9 @@ class AtletasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAtletasRequest  $request)
+    public function store(Request  $request)
     {
-        $fields=$request->validated();
+        $fields=$request->all();
         $atleta=new atletas();
         $atleta->fill($fields);
         $atleta->save();
@@ -71,7 +71,8 @@ class AtletasController extends Controller
      */
     public function edit(atletas $atleta)
     {
-        return view('adminPage.atletas.edit')->with('atleta', $atleta);
+        $users = User::all();
+        return view('adminPage.atletas.edit')->with('atleta', $atleta)->with('users', $users);
     }
 
     /**

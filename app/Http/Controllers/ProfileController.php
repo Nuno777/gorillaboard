@@ -129,7 +129,8 @@ class ProfileController extends Controller
         return view('profile.partials.update-password');
     }
     public function addAtleta(){
-        return view('profile.add-atleta');
+        $users = User::all();
+        return view('profile.add-atleta')>with('users', $users);
     }
 
     public function deleteAccount(){

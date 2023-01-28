@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="infoatleta">
-            {{-- @if( Auth::user()->atleta() <= '0')
-                {{ return: Redirect::to('.profile.add-atleta') }}
+            @if(is_null(Auth::user()->atletas))
+                
             @else
                 @if (Auth::user()->atletas->user_id == Auth::user()->id)
                     @if(Auth::user()->atletas->idade_atleta >= '18')
@@ -49,7 +49,7 @@
 
                     @endif
                 @endif
-            @endif --}}
+            @endif
         </div>
     </div>
 
