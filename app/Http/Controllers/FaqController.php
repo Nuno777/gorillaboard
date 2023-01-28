@@ -6,7 +6,7 @@ use App\Http\Requests\UpdateFaqsRequest;
 use App\Http\Requests\StoreFaqsRequest;
 use App\Models\faqs;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 
 class FaqController extends Controller
 {
@@ -46,7 +46,7 @@ class FaqController extends Controller
         $faq=new faqs();
         $faq->fill($fields);
         $faq->save();
-        return redirect()->route('admin.faqs.index')->with('success', 'Categoria criada com sucesso');
+        return redirect()->route('admin.faqs.index')->with('success', 'FAQ criada com sucesso');
     }
 
 
@@ -84,7 +84,7 @@ class FaqController extends Controller
         $fields=$request->validated();
         $faq->fill($fields);
         $faq->save();
-        return redirect()->route('admin.faqs.index')->with('success','Categoria atualizada com sucesso');
+        return redirect()->route('admin.faqs.index')->with('success','FAQ atualizada com sucesso');
     }
 
     /**

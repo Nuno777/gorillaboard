@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -40,7 +41,7 @@ class UserController extends Controller
         $this->validate($request, [
             "name" => 'required',
             "email" => 'required',
-            "img" => 'required',
+            "img" => '',
             "admin" => 'required',
         ]);
 
@@ -57,7 +58,7 @@ class UserController extends Controller
         $user->admin = $request->admin;
 
         $user->save();
-        return back();
+        return redirect()->route('admin.user.index')->with('success','User Criado com sucesso');
     }
 
     /**
@@ -91,7 +92,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, user $user)
-    {   
+    {
         $this->validate($request, [
             "name" => 'required',
             "email" => 'required',
@@ -102,15 +103,17 @@ class UserController extends Controller
         $img = $request->img;
         if ($img) {
             $image_name = $img->getClientOriginalName();
-            $img->move(public_path('img'), $image_name);
+            Storage::putFileAs('img',$img ,$image_name);
+            /* $img->move(public_path('img'), $image_name); */
             $user->img = $image_name;
         }
+        $user->salutation = $request->salutation;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->admin = $request->admin;
-
+        $user->number_phone = $request->number_phone;
         $user->save();
-        return back();
+        return redirect()->route('admin.user.index')->with('success','User atualizado com sucesso');
     }
 
     /**
@@ -122,6 +125,6 @@ class UserController extends Controller
     public function destroy(user $user)
     {
         $user->delete();
-        return back();
+        return redirect()->route('admin.user.index')->with('success','User Eliminado com sucesso. ');
     }
 }
