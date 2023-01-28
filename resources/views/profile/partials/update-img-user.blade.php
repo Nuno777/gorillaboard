@@ -1,17 +1,13 @@
-@extends('layouts.profile')
 <head>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-@section('page-title')
-<h3>Alterar imagem</h3>
-@endsection
+@extends('profile.partials.nav-options')
 
-@section('profile-content')
+<div class="cont-user">
+    @section('content-base')
 @if ($errors->any())
     @include ('layouts.partials.errors')
 @endif
-
-@section('profile-content')
 <form action="{{ route('profile.upgradeimg') }}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
@@ -21,8 +17,7 @@
 
     <button type="submit">Submeter</button>
 </form>
-
-@endsection
+</div>
 
 
 @endsection

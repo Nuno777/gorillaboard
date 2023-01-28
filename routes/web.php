@@ -25,8 +25,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
+Route::get('/profile-test', function () {
+    return view('profile.test.profile');
+})->name('test');
 Route::get('/', [PageController::class, 'index'])->name('index');
 
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
@@ -99,9 +100,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         //PUT update = ID
         //DELETE destroy
     Route::put('profile/edit/image', [ProfileController::class, 'updateimg'])->name('profile.upgradeimg');
-    Route::get('/profile/edit/image', function () {
-        return view('profile/partials/update-img-user');
-    })->name('profile.updateimg');
+    Route::get('profile/edit/email', [profileController::class, 'changeEmail'])->name('profile.updateEmail');
+    Route::get('profile/edit/password', [profileController::class, 'changePassword'])->name('profile.updatePasswowrd');
+    Route::get('profile/edit/image', [profileController::class, 'changeImg'])->name('profile.updateimg');
+    Route::get('profile/addAtleta', [profileController::class, 'addAtleta'])->name('profile.add-atleta');
+    Route::get('/profile/delete-account', [profileController::class, 'deleteAccount'])->name('profile.delete-account');
+
 });
 
 require __DIR__ . '/auth.php';

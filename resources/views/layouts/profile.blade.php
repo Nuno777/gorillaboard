@@ -1,37 +1,38 @@
 @extends('layouts.master')
-@vite(['public/css/profile/profile.css'])
 @section('title', 'GorillaBoards')
-
+@vite(['public/css/profile/profile-test.css'])
 @section('main')
 
-<div class="container">
-    <div class="row">
-        @csrf
-        @method('patch')
-        <div class="col-12 col-md-3 col-lg-4 col-xl-3 mt-3">
-            @if (Auth::check())
-            <div class="img-profile">
-                <img src="{{ asset('storage/' . Auth::user()->img) }}" alt="Profile_img"><br>
-                <h3 class="mt-2 p-2">{{ Auth::user()->name }}</h3>
-                @if (Auth::user()->password == 0)
-                    <h5 class="mt-1 p-2">User</h4>
-                @else
-                    <h5 class="mt-1 p-2">Admin</h5>
-                @endif
-
-                <button><a href="{{ route('profile.updateimg') }}">Editar Imagem de Perfil</a></button>
-
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <div class="nav-profile">
+                    <table>
+                        <ul>
+                            <li>
+                                <div class="profile-logout">
+                                    <img class="imgUser" src="{{ asset('storage/' . Auth::user()->img) }}" alt="Imagem Profile">
+                                    <p id="name">{{ Auth::user()->name }}</p>
+                                    <i title="Logout" class="fa-solid fa-right-from-bracket"></i>
+                                </div>
+                                <hr>
+                            </li>
+                            <li><i class="fa-solid fa-house"></i><a href="">Home</a></li>
+                            <li><i class="fa-solid fa-user"></i><a href="{{ route('profile.edit', Auth::user()) }}">Meu Perfil</a></li>
+                            <li><i class="fa-solid fa-person-running"></i><a href="{{ route('profile.add-atleta') }}">Adiconar Atleta</a></li>
+                        </ul>
+                    </table>
+                </div>
+            </div>
+            <div class="col-10 row p-0 .shadow">
+                @yield('header-info')
+                <div class="content-account col-12 p-2" style="margin:1.5rem;" >
+                    @yield('content-base')
+                </div>
 
             </div>
-            @endif
         </div>
-        <div class="col-12 col-md-9 col-lg-7 col-xl-9">
-            @yield('page-title')
-            @yield('profile-content')
-        </div>
+
     </div>
-</div>
-
-
 
 @endsection

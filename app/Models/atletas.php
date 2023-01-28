@@ -21,10 +21,6 @@ class atletas extends Model
         'user_id'
     ];
 
-    public function atletas() {
-        return $this->belongsTo(atletas::class);
-    }
-
     public function user() {
         return $this->belongsTo(User::class);
     }

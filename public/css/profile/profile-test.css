@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    color: black;
+}
+
+:root {
+    --color-primary: #2aaaff;
+    --color-primary2: #42B4FF;
+    --color-primary3: #0E71B3;
+    --color-red2: #a82b23;
+}
+
+a {
+    color: white;
+}
+
+ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.footer{
+    margin-top: 0px !important;
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+.nav-profile {
+    background: linear-gradient(0deg, var(--color-primary3) 12%, var(--color-primary) 50%, var(--color-primary2)100%);
+    height: 100%;
+    width: max-content;
+    justify-content: center;
+    padding: 20px;
+    text-align: left;
+}
+
+.nav-profile .profile-logout {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+
+    padding: 4px;
+}
+.nav-profile li:active{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.nav-profile li:not(:first-child){
+    margin-top: 20px;
+    color: white;
+}
+.nav-profile li i{
+    margin-right: 10px;
+    margin-left: 5px;
+}
+.nav-profile li a{
+    color:white;
+}
+
+.container-fluid .imgUser {
+    border-radius: 4.5rem;
+
+
+}
+
+.nav-profile .profile-logout .imgUser,
+.textUser .introUser .imgUser {
+    width: 50px;
+    height: 50px;
+}
+
+.nav-profile .profile-logout ul li {
+    width: 1;
+    height: 20px;
+
+}
+
+.nav-profile .profile-logout #name {
+    font-size: 23px;
+    margin-left: 15px;
+    line-height: 50px;
+    margin-bottom: 0;
+}
+
+.nav-profile .profile-logout i:hover {
+    color: #a82b23;
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.nav-profile .profile-logout i {
+    text-align: right;
+    margin-left: 20px;
+    line-height: 50px;
+}
+
+.nav-profile .profile-logout hr {
+
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+
+}
+.cont-user{
+    box-shadow: 1px 1px 3px 3px  gray;
+    margin: 3rem;
+    padding: 1.5rem ;
+    background-color: azure;
+}
+.infouser .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.introUser {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    font-weight: 50px;
+
+}
+
+.textUser .introUser  {
+    display: flex;
+    flex-direction: column;
+    margin-left: 26px;
+
+}
+
+.introUser .textUser h3,
+.introUser .textUser p {
+    color: black;
+}
+
+.option-profile {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+}
+
+.btn-nav-profile {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 12pt;
+    text-decoration: none;
+    border: none;
+    width: max-content;
+    padding: 0;
+    padding-right: 3rem;
+}
+
+.btn-nav-profile a {
+    color: black;
+}
+
+.btn-nav-profile a:hover {
+    border-bottom: 3px solid var(--color-primary);
+    color: black;
+}
+
+.btn-nav-profile .del a:hover {
+    border-bottom: 3px solid var(--color-red2);
+}
+
+.btn-nav-profile:active {
+    position: relative;
+    top: 1px;
+}
+.cont-user{
+    display: flex;
+    flex-direction: row;
+}
