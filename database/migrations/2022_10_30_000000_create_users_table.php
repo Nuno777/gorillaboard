@@ -19,12 +19,13 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('number_phone',15)->nullable();
             $table->string('img')->nullable()->default('person.svg');
             $table->boolean('admin')->default(0);
+            $table->enum('salutation', ['Sr', 'Sra', ''])->nullable()->default('');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
-            $table->string('categoria_users')->nullable();
             $table->string('cartao_cidadao_users')->nullable();
         });
     }
