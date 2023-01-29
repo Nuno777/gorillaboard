@@ -2,12 +2,12 @@
 @section('title', 'GorillaBoards')
 @section('header-info')
     <h3>O meu Perfil</h3>
-    <div class="option-profile">
-        <button class="btn-nav-profile"><a href="{{ route('profile.index') }}">Informações basicas</a></button>
-        <button class="btn-nav-profile"><a href="{{ route('profile.upgradeimg') }}">Alterar Imagem</a></button>
-        <button class="btn-nav-profile "><a href="{{ route('profile.updateEmail') }}">Mudar Email</a></button>
-        <button class="btn-nav-profile "><a href="{{ route('profile.updatePasswowrd') }}">Mudar Password</a></button>
-        <button class="btn-nav-profile del"><a href="{{ route('profile.delete-account') }}">Eliminar Conta</a></button>
+    <div class="d-flex">
+        <button class="btn-nav-profile" id="changeProfile">Informações basicas</button>
+        <button class="btn-nav-profile" id="changeImg" ></a>Alterar Imagem</button>
+        <button class="btn-nav-profile" id="changeEmail" >Mudar Email</button>
+        <button class="btn-nav-profile" id="changePassword" ></a>Mudar Password</button>
+        <button class="btn-nav-profile del" id="deletAccount" >Eliminar Conta</button>
     </div>
 
 

@@ -8,7 +8,7 @@
 }
 
 :root {
-    --color-primary: #;
+    --color-primary: #2aaaff;
     --color-primary2: #42B4FF;
     --color-primary3: #0E71B3;
     --color-red2: #a82b23;
@@ -32,8 +32,8 @@ ul {
 
 .nav-profile {
     background: linear-gradient(0deg, var(--color-primary3) 12%, var(--color-primary) 50%, var(--color-primary2)100%);
-    height: 100%;
-    width: max-content;
+    min-height:34rem;
+    max-width: fit-content;
     justify-content: center;
     padding: 20px;
     text-align: left;
@@ -106,36 +106,10 @@ ul {
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 
 }
-.cont-user{
-    box-shadow: 1px 1px 3px 3px  gray;
-    margin: 3rem;
-    padding: 1.5rem ;
-    background-color: azure;
-}
-.infouser .info{
-    display: flex;
-    flex-direction: column;
+.card-body{
+    margin-top: 1rem;
 }
 
-.introUser {
-    color: black;
-    display: flex;
-    flex-direction: row;
-    font-weight: 50px;
-
-}
-
-.textUser .introUser  {
-    display: flex;
-    flex-direction: column;
-    margin-left: 26px;
-
-}
-
-.introUser .textUser h3,
-.introUser .textUser p {
-    color: black;
-}
 
 .option-profile {
     width: 100%;
@@ -176,4 +150,12 @@ ul {
 .cont-user{
     display: flex;
     flex-direction: row;
+}
+
+
+@media (max-with:1023) {
+    .nav-profile .profile-logout p,
+    .nav-profile .profile-logout i{
+        visibility: hidden;
+    }
 }

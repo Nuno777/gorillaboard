@@ -2,10 +2,47 @@
 @section('title', 'GorillaBoards')
 @vite(['public/css/profile/profile-test.css'])
 @section('main')
-
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2">
+            <div class="col-2 bg-light">
+                <nav class="navbar navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-link d-flex">
+                            <img class="" style="with:40px; height:40px;" src="{{ asset('public/img/joel.png') }}" alt="Imagem Profile">
+                            <p id="name">{{ Auth::user()->name }}</p>
+                            <i title="Logout" class="fa-solid fa-right-from-bracket"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ asset('profile.index') }}"><i class="fa-solid fa-house mr-2"></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('profile.edit', Auth::user()) }}"><i class="fa-solid fa-user mr-2"></i>Profile</a>
+                        </li>
+                        <li class="nav-item">
+
+                                <a class="nav-link" href="{{ route('profile.add-atleta') }}">Adicionar Atleta</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-10">
+                <div class="card">
+                    <div class="card-header">
+                        @yield('header-info')
+                    </div>
+                    <div class="card-body">
+                        @yield('content-base')
+                        <!-- Add form for profile information here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {{-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
                 <div class="nav-profile">
                     <table>
                         <ul>
@@ -24,15 +61,18 @@
                     </table>
                 </div>
             </div>
-            <div class="col-10 row p-0 .shadow">
+            <div class="col-9 row p-0 .shadow">
                 @yield('header-info')
-                <div class="content-account col-12 p-2" style="margin:1.5rem;" >
+                <div class="content-account col-12 p-2" style="margin:1.5rem;">
                     @yield('content-base')
                 </div>
-
             </div>
+
         </div>
+    </nav>
 
     </div>
+
+    </div> --}}
 
 @endsection

@@ -51,7 +51,7 @@
                                                 @else
                                                     <td>{{ $user->number_phone}}</td>
                                                 @endif
-                                                <td><img style="width: 50px; height:auto;" src="{{ asset('storage/img/profile/' . $user->img) }}" alt="Imagem Profile"></td>
+                                                <td><img style="width: 50px; height:auto;" src="{{ asset('storage/public/' . $user->img) }}" alt="Imagem Profile"></td>
                                                 <td>{{ $user->admin }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.user.edit', $user) }}">

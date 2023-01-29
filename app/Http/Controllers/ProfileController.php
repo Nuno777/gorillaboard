@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
+use App\Models\atletas;
 
 class ProfileController extends Controller
 {
@@ -83,7 +85,6 @@ class ProfileController extends Controller
         $path = $request->file('img')->store('img/profile', 'public');
         $user->img = $path;
 
-
         $user->save();
         /* $user->save(); */
 
@@ -96,18 +97,22 @@ class ProfileController extends Controller
 
 
 
+
+
     /**
      * Delete the user's account.
-     *
+     * @param  \App\Models\atletas  $atletas
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Request $request)
+    public function destroy(Request $request, atletas $atleta)
     {
         $user = Auth::user();
 
+
         Auth::logout();
 
+        $atleta->delete();
         $user->delete();
 
         $request->session()->invalidate();
@@ -130,7 +135,8 @@ class ProfileController extends Controller
     }
     public function addAtleta(){
         $users = User::all();
-        return view('profile.add-atleta')>with('users', $users);
+        $atleta = new atletas;
+        return view('profile.add-atleta')->with('atleta', $atleta)->with('users', $users);
     }
 
     public function deleteAccount(){

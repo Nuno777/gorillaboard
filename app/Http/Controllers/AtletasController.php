@@ -47,8 +47,13 @@ class AtletasController extends Controller
         $fields=$request->all();
         $atleta=new atletas();
         $atleta->fill($fields);
+        dd(url()->previous());
         $atleta->save();
-        return redirect()->route('admin.atletas.index')->with('success', 'Atleta criado com sucesso');
+        if(url()->previous() == url('/add/Atleta'))
+            return redirect()->route('atletas.index')->with('success', 'Atleta criado com sucesso');
+        else{
+            return redirect()->route('admin.atletas.index')->with('success', 'Atleta criado com sucesso');
+        }
     }
 
 
@@ -98,6 +103,7 @@ class AtletasController extends Controller
      */
     public function destroy(atletas $atleta)
     {
+
             $atleta->delete();
             return redirect()->route('admin.atletas.index')->with('success',
             'Atleta eliminado com sucesso');

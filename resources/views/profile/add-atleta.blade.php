@@ -1,6 +1,14 @@
-@extends('profile.partial.nav-options')
+@extends('profile.partials.nav-options')
 
-@section('profile-content')
-    @include('adminPage.atletas.partials.add-edit')
-
+@section('content-base')
+    <div class="cont-user">
+        <form method="POST" action="{{ route('admin.atletas.store') }}" class="form-group">
+            @csrf
+            @include('profile.partials.add-edit')
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" name="ok">Save</button>
+                <a href="{{ route('profile.index') }}" class="btn btn-default">Cancel</a>
+            </div>
+        </form>
+    </div>
 @endsection
