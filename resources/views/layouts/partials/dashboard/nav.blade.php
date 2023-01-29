@@ -26,7 +26,7 @@
                     </a>
                 </li>
 
-            {{--     <li class="has-sub">
+                {{--     <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-file"></i>
@@ -140,11 +140,18 @@
 
                                 </a>
                             </li>
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('admin.sobre_texto.index') }}">
+                                    <span class="nav-text">Sobre Texto</span>
+
+                                </a>
+                            </li>
+                            
                     </ul>
                 </li>
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#users"
-                        aria-expanded="false" aria-controls="email">
+                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                        data-target="#users" aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-account"></i>
                         <span class="nav-text">Users</span> <b class="caret"></b>
                     </a>
@@ -185,8 +192,8 @@
                         <button class="dropdown-toggle nav-link" data-toggle="dropdown">
 
                             @if (Auth::check())
-                                <img src="{{ asset('storage/' . Auth::user()->img) }}" class="user-image rounded-circle"
-                                    alt="User Image" />
+                                <img src="{{ asset('storage/' . Auth::user()->img) }}"
+                                    class="user-image rounded-circle" alt="User Image" />
                             @else
                                 <a id="profile_Icon_Box" href="{{ route('login') }}">
                                     <img id="profile_Icon"src="{{ asset('img/profile_icon.png') }}" alt="">
@@ -196,12 +203,6 @@
                             <span class="d-none d-lg-inline-block">{{ Auth::user()->name }}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li>
-                            <a class="dropdown-link-item" href="{{ route('profileAdmin.show') }}">
-                                <i class="mdi mdi-account-outline"></i>
-                                <span class="nav-text">Perfil</span>
-                            </a>
-                        </li>
                         <li>
                             <a class="dropdown-link-item" href="/logs">
                                 <i class="mdi mdi-settings"></i>

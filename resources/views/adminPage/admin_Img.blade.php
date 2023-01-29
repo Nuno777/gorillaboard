@@ -9,13 +9,15 @@
     
     <form action="{{ route('admin.Img_Dashboard.store') }}" method="post" enctype="multipart/form-data">
         @csrf
-        <p>Desporto:</p>
-
-        @foreach ($desportos as $desporto)
-
-        <input type="radio" id="{{ $desporto->modalidades }}_rad" class="radio_options" name="desp_img" value="{{ $desporto->id }}" required/>
-        <label for="{{ $desporto->modalidades }}_rad">{{ $desporto->modalidades }}</label>
-        @endforeach
+        <h4>Desporto:</h4>
+        <div class="radio_options_desp">
+          @foreach ($desportos as $desporto)
+          <div class="rad_sing_option">
+          <input type="radio" id="{{ $desporto->modalidades }}_rad" class="radio_options" name="desp_img" value="{{ $desporto->id }}" required/>
+          <label for="{{ $desporto->modalidades }}_rad">{{ $desporto->modalidades }}</label>
+          </div>
+          @endforeach
+        </div>
         <input type="text" class="form-control-file" name="image_name" id="inputImage" aria-describedby="fileHelp" />
         <input type="file" class="form-control-file" name="image" id="inputImage" aria-describedby="fileHelp" required/>
         <small id="fileHelp" class="form-text text-muted">
@@ -57,7 +59,7 @@
                 <div class="modal-dialog modal-dialog-centered modal-l" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="modal-desporto-{{ $image->id }}-title">Modal title</h5>
+                      <h5 class="modal-title" id="modal-desporto-{{ $image->id }}-title">{{ $image->image }}</h5>
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
@@ -66,7 +68,6 @@
                       <img src="{{ asset('storage/galeria/'. $image->image) }}" alt="brr" width="100%" />
                     </div>
                     <div class="modal-footer">
-                      <a href="rotaparaeditar/id" class="btn btn-secondary">Editar</a>
                       <form method="POST" action="{{ route('admin.Img_Dashboard.destroy', $image) }}">
                         @csrf
                         @method('DELETE')

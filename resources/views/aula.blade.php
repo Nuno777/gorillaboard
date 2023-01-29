@@ -128,7 +128,7 @@
             <form role="form" method="POST" action="{{ route('aula.store', $desporto->id) }}"
                 enctype="multipart/form-data">
                 @csrf
-                <div class="form-row">
+                <div class="row">
 
                     <div class="form-group col">
                         <label for="inputEmail4">Email</label>
@@ -146,7 +146,9 @@
                     value="{{ Auth::user()->name }} " required
                 @endauth disabled>
             </div>
+        </div>
 
+        <div class="row">
             <div class="form-group col">
                 <label for="inputEmail4">Desporto</label>
 
@@ -160,6 +162,7 @@
                     min="1" max="3" required>
             </div>
         </div>
+
         <div class="form-row justify-content-center">
             <button type="submit" class="btn btn-primary ">Inscrição</button>
         </div>
