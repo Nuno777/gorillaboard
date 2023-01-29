@@ -103,7 +103,7 @@ class UserController extends Controller
         $img = $request->img;
         if ($img) {
             $image_name = $img->getClientOriginalName();
-            Storage::putFileAs('public/img/profile/',$img ,$image_name);
+            Storage::putFileAs('public/',$img ,$image_name);
             /* $img->move(public_path('img'), $image_name); */
             $user->img = $image_name;
         }

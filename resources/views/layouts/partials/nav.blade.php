@@ -56,7 +56,7 @@
                 @if (Auth::check())
                     <a id="profile_Icon_Box" href="#" role="button" id="dropdownMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <img id="profile_Icon" src="{{ asset('img/' . Auth::user()->img) }}" alt=""
+                        <img id="profile_Icon" src="{{ asset('storage/' . Auth::user()->img) }}" alt=""
                             style="border-radius: 100%;">
                     </a>
                 @else

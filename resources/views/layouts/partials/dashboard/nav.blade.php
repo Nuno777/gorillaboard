@@ -185,7 +185,7 @@
                         <button class="dropdown-toggle nav-link" data-toggle="dropdown">
 
                             @if (Auth::check())
-                                <img src="{{ asset('img/' . Auth::user()->img) }}" class="user-image rounded-circle"
+                                <img src="{{ asset('storage/' . Auth::user()->img) }}" class="user-image rounded-circle"
                                     alt="User Image" />
                             @else
                                 <a id="profile_Icon_Box" href="{{ route('login') }}">

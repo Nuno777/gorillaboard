@@ -34,7 +34,7 @@
 
     <div class="row">@foreach ($sobre as $sobre)
         <div class="column">
-        <img src="{{ asset('img/' . $sobre->img) }}" alt="1a Imagem" style="width:100%"> 
+        <img src="{{ asset('storage/' . $sobre->img) }}" alt="1a Imagem" style="width:100%"> 
         </div>
         @endforeach
     </div>
@@ -69,7 +69,7 @@
 
 <div class="imagemtexto col">
    
-    <img src="{{ asset('img/' . $user->img) }}" alt="1a Imagem">
+    <img src="{{ asset('storage/' . $user->img) }}" alt="1a Imagem">
     <h6>{{ $user->name }} <br></h6>
   
 </div>
