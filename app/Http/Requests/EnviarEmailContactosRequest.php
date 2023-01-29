@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateContactosRequest extends FormRequest
+class EnviarEmailContactosRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,6 @@ class UpdateContactosRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome_Contactos' => 'required',
-            'email_Contactos' => 'required',
             'menssagem_Contactos' => 'required'
         ];
     }
