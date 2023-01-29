@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Sobre_textoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\PageController;
@@ -24,8 +25,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
+Route::get('/profile-test', function () {
+    return view('profile.test.profile');
+})->name('test');
 Route::get('/', [PageController::class, 'index'])->name('index');
 
 Route::get('/sobre', [PageController::class, 'sobre'])->name('sobre');
@@ -49,8 +51,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'v
     //Route::get('verimagemxpto', [desportos_ImgController::class, 'verimagemxpto'])->name('verimagemxpto');
     Route::resource('sobre', sobreController::class);
     Route::resource('user', UserController::class);
+
+    Route::get('sobre_texto', [Sobre_textoController::class, 'index'])->name('sobre_texto.index');
+    Route::get('sobre_texto/{id}/edit', [Sobre_textoController::class, 'edit'])->name('sobre_texto.edit');
+    Route::put('sobre_texto/{id}/edit', [Sobre_textoController::class, 'update'])->name('sobre_texto.update');
 });
-Route::get('admin/search', [FaqController::class, 'search'])->middleware('auth', 'verified', 'admin')->name('admin.search');
+Route::get('Search', [FaqController::class, 'search'])->middleware('auth', 'verified',)->name('btnSearch');
 // End route Admin Faqs
 
 Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos');
@@ -94,9 +100,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
         //PUT update = ID
         //DELETE destroy
     Route::put('profile/edit/image', [ProfileController::class, 'updateimg'])->name('profile.upgradeimg');
-    Route::get('/profile/edit/image', function () {
-        return view('profile/partials/update-img-user');
-    })->name('profile.updateimg');
+    Route::get('profile/edit/email', [profileController::class, 'changeEmail'])->name('profile.updateEmail');
+    Route::get('profile/edit/password', [profileController::class, 'changePassword'])->name('profile.updatePasswowrd');
+    Route::get('profile/edit/image', [profileController::class, 'changeImg'])->name('profile.updateimg');
+    Route::get('profile/add/Atleta', [profileController::class, 'addAtleta'])->name('profile.add-atleta');
+    Route::get('/profile/delete/account', [profileController::class, 'deleteAccount'])->name('profile.delete-account');
+
 });
 
 require __DIR__ . '/auth.php';

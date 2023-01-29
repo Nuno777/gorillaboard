@@ -26,7 +26,7 @@
                     </a>
                 </li>
 
-                <li class="has-sub">
+            {{--     <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
                         aria-expanded="false" aria-controls="email">
                         <i class="mdi mdi-file"></i>
@@ -50,7 +50,7 @@
                             </li>
                         </div>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"

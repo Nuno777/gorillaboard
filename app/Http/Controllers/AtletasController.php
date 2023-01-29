@@ -6,6 +6,7 @@ use App\Http\Requests\UpdateAtletasRequest;
 use App\Http\Requests\StoreAtletasRequest;
 use Illuminate\Http\Request;
 use App\Models\atletas;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class AtletasController extends Controller
@@ -31,7 +32,8 @@ class AtletasController extends Controller
     public function create()
     {
         $atleta = new atletas;
-        return view('adminPage.atletas.create')->with('atleta', $atleta);;
+        $users = User::all();
+        return view('adminPage.atletas.create')->with('atleta', $atleta)->with('users', $users);
     }
 
     /**
@@ -40,9 +42,9 @@ class AtletasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreAtletasRequest  $request)
+    public function store(Request  $request)
     {
-        $fields=$request->validated();
+        $fields=$request->all();
         $atleta=new atletas();
         $atleta->fill($fields);
         $atleta->save();
@@ -69,7 +71,8 @@ class AtletasController extends Controller
      */
     public function edit(atletas $atleta)
     {
-        return view('adminPage.atletas.edit')->with('atleta', $atleta);
+        $users = User::all();
+        return view('adminPage.atletas.edit')->with('atleta', $atleta)->with('users', $users);
     }
 
     /**
@@ -79,9 +82,9 @@ class AtletasController extends Controller
      * @param  \App\Models\atletas  $atletas
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAtletasRequest $request, atletas $atleta)
+    public function update(Request $request, atletas $atleta)
     {
-        $fields=$request->validated();
+        $fields=$request->all();
         $atleta->fill($fields);
         $atleta->save();
         return redirect()->route('admin.atletas.index')->with('success','atleta atualizado com sucesso');

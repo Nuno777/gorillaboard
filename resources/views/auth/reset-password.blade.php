@@ -9,6 +9,15 @@
     @vite(['/public/css/style_login.css', '/public/js/app.js'])
     @section('title', 'GorillaBoards')
     @section('main')
+    <div class="container-fluid">
+        @if ($errors->any())
+            @include ('layouts.partials.errors')
+        @endif
+
+        @if (!empty(session('success')))
+            @include ('layouts.partials.success')
+        @endif
+    </div>
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="container">
         <div class="forms-container">

@@ -18,17 +18,14 @@ class ProfileController extends Controller
      */
     public function index(Request $request)
     {
-        return view('profile.profile');
+        return view('profile.home');
     }
 
     public function show(Request $request)
     {
-        return view('profile.profile');
+        return view('profile.home');
     }
 
-    public function updatePassword(){
-        return view('profile.partials.update-password-form');
-    }
 
     /**
      * Display the user's profile form.
@@ -86,7 +83,7 @@ class ProfileController extends Controller
         $path = $request->file('img')->store('img/profile', 'public');
         $user->img = $path;
 
-        
+
         $user->save();
         /* $user->save(); */
 
@@ -117,5 +114,26 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+    // define paginas de ações do perfil
+
+    public function changeImg(){
+        return view('profile.partials.update-img-user');
+    }
+
+    public function changeEmail(){
+        return view('profile.partials.update-email');
+    }
+
+    public function changePassword(){
+        return view('profile.partials.update-password');
+    }
+    public function addAtleta(){
+        $users = User::all();
+        return view('profile.add-atleta')>with('users', $users);
+    }
+
+    public function deleteAccount(){
+        return view('profile.partials.delete-account');
     }
 }

@@ -334,7 +334,7 @@
   margin-top: 100px;
 }
 #savetgor{
-  margin-bottom: -66px;
+  margin-bottom: -50px;
 }
 
 #savethegorilas_info{
@@ -382,5 +382,9 @@
   font-size: 18pt;
   width: 150px;
   margin: auto;
+}
+
+#savegori_img{
+  width: 700px;
 }
 /*============Seccao Loja FIM=============*/

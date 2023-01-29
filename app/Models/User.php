@@ -22,7 +22,9 @@ class User extends Authenticatable  implements MustVerifyEmail
         'name',
         'email',
         'password',
-        'img'
+        'img',
+        'number_phone',
+        'salutation'
     ];
 
     /**
@@ -49,6 +51,6 @@ class User extends Authenticatable  implements MustVerifyEmail
     }
 
     public function atletas(){
-        return $this->belongsToMany(atletas::class);
+        return $this->hasOne(atletas::class);
     }
 }

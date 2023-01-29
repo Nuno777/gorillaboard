@@ -65,9 +65,8 @@
                                                 </button>
                                             </td>
                                             <td class="text-center">
-                                                <form role="form" action="{{ route('admin.atletas.destroy', $atletas) }}"
-                                                    method="POST"
-                                                    onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
+                                                <form role="form" action="{{ route('admin.atletas.destroy', $atleta) }}" method="POST"
+                                                    onsubmit="return confirm('Confirma que pretende eliminar este atleta?');">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="link"

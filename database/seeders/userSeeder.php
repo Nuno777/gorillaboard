@@ -23,7 +23,7 @@ class userSeeder extends Seeder
                 'email' => 'mmjm.1997@gmail.com',
                 'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => Hash::make('123123123'),
-                'img' => 'miguel.png',
+                'img' => 'img/profile/miguel.png',
                 'admin' => '1',
             ],
             [
@@ -31,7 +31,7 @@ class userSeeder extends Seeder
                 'email' => 'romankalyuzhnov@gmail.com',
                 'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => Hash::make('123123123'),
-                'img' => 'roman.png',
+                'img' => 'img/profile/roman.png',
                 'admin' => '1',
             ],
             [
@@ -39,7 +39,7 @@ class userSeeder extends Seeder
                 'email' => 'nm.albano11@gmail.com',
                 'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => Hash::make('123123123'),
-                'img' => 'nuno.png',
+                'img' => 'img/profile/nuno.png',
                 'admin' => '1',
             ],
             [
@@ -47,15 +47,15 @@ class userSeeder extends Seeder
                 'email' => '2211727@my.ipleiria.pt',
                 'email_verified_at'=>'2023-01-03 13:19:13',
                 'password' => Hash::make('1231231233'),
-                'img' => 'joel.png',
+                'img' => 'img/profile/joel.png',
                 'admin' => '1',
             ],
             [
                 'name' => 'Tmarques',
                 'email' => '2213032@ipleiria.pt',
                 'email_verified_at'=>'2023-01-03 13:19:13',
-                'password' => Hash::make('1231231233'),
-                'img' => 'tiago.png',
+                'password' => Hash::make('123456789'),
+                'img' => 'img/profile/tiago.png',
                 'admin' => '1',
             ],
         ];

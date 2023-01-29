@@ -7,7 +7,9 @@
     <div class="wrapper">
         <section class="content">
             <div class="container-fluid">
-
+                @if ($errors->any())
+                @include ('layouts.partials.errors')
+            @endif
                 <div class="row">
                     <div class="col-md-12">
                         <a style="font-size:25px;" href="{{ route('admin.user.index') }}"><i class='bx bx-left-arrow-alt'></i></a>
@@ -24,7 +26,7 @@
                                         <label for="name">E-Mail</label>
                                         <input type="text" class="form-control" name="email" id="email" required>
                                         <label for="name">Imagem</label>
-                                        <input type="file" class="form-control" name="img" id="img" required>            
+                                        <input type="file" class="form-control" name="img" id="img" required>
                                         <label for="name">Admin</label>
                                         <input type="text" class="form-control" name="admin" id="admin"required>
                                     </div>

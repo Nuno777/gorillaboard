@@ -12,6 +12,7 @@ class atletas extends Model
     protected $table = 'atletas';
 
     protected $fillable = [
+        'id',
         'nasc_atleta',
         'idade_atleta',
         'email_encarregado_edu',
@@ -19,10 +20,6 @@ class atletas extends Model
         'tele_encarregado_edu',
         'user_id'
     ];
-
-    public function atletas() {
-        return $this->belongsTo(atletas::class);
-    }
 
     public function user() {
         return $this->belongsTo(User::class);
