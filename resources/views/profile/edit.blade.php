@@ -13,7 +13,7 @@
 
     {{-- editar informaçoes base --}}
 
-    <div id="info-base" class="card-body info-base visible" >
+    <div id="info-base" class="card-body info-base " >
         <h2>Informações Base</h2>
         <form method="post" action="{{ route('profile.update', Auth::user()) }}" class="mt-6 space-y-6">
             @csrf
@@ -55,7 +55,7 @@
 
     {{-- edita a imaguem do utilizador  --}}
 
-    <div id="change-img" class= "invisible">
+    <div id="change-img" class= "d-none">
         <form action="{{ route('profile.upgradeimg') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -69,7 +69,7 @@
 
     {{-- edita o email do utilizador  --}}
 
-    <div id="change-email" class="change-email invisible">
+    <div id="change-email" class="change-email d-none">
         <h2>Email</h2>
         <form method="post" action="{{ route('profile.update', Auth::user()) }}" class="mt-6 space-y-6">
             @csrf
@@ -111,7 +111,7 @@
 
     {{-- edita a passsword do utilizador  --}}
 
-    <div id="change-password" class="invisible">
+    <div id="change-password" class="d-none">
         <form method="post" action="{{ route('password.update' , Auth::user()) }}" class="mt-6 space-y-6">
             @csrf
             @method('put')
@@ -138,7 +138,7 @@
 
     {{-- elemina a conta do utilizador --}}
 
-    <div id="delete-account"  class=" invisible">
+    <div id="delete-account"  class=" d-none">
         <div class="cont-user">
             <p>Deleting Your Account Is Permanent</p>
             <form method="POST" action="{{ route('profile.destroy', Auth::user()) }}" role="form" class="inline"
