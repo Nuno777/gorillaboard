@@ -139,7 +139,17 @@ class ProfileController extends Controller
         return view('profile.add-atleta')->with('atleta', $atleta)->with('users', $users);
     }
 
+    public function atletaStore(Request $request){
+
+        $fields=$request->all();
+        $atleta=new atletas();
+        $atleta->fill($fields);
+        $atleta->save();
+        return redirect()->route('profile.index')->with('success', 'Atleta criado com sucesso');
+    }
+
     public function deleteAccount(){
         return view('profile.partials.delete-account');
     }
+
 }

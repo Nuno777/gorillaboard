@@ -7,20 +7,19 @@
             <div class="col-2 bg-light">
                 <nav class="navbar navbar-light">
                     <ul class="navbar-nav">
-                        <li class="nav-link d-flex">
-                            <img class="" style="with:40px; height:40px;" src="{{ asset('public/img/joel.png') }}" alt="Imagem Profile">
+                        <li class="nav-link nav-item d-flex">
+                            <img class="" style="with:40px; height:40px;" src="{{ asset('storage/public/img/profile/joel.png') }}" alt="Imagem Profile">
                             <p id="name">{{ Auth::user()->name }}</p>
                             <i title="Logout" class="fa-solid fa-right-from-bracket"></i>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ asset('profile.index') }}"><i class="fa-solid fa-house mr-2"></i>Home</a>
+                            <a class="nav-link" href="{{ asset('profile.home') }}"><i class="fa-solid fa-house mr-2"></i>Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('profile.edit', Auth::user()) }}"><i class="fa-solid fa-user mr-2"></i>Profile</a>
                         </li>
                         <li class="nav-item">
-
-                                <a class="nav-link" href="{{ route('profile.add-atleta') }}">Adicionar Atleta</a>
+                             <a class="nav-link" href="{{ route('profile.show.add-atleta') }}"><i class="fa-solid fa-person-running"></i>Adicionar Atleta</a>
                         </li>
                     </ul>
                 </nav>

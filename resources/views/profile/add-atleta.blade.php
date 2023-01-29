@@ -2,7 +2,7 @@
 
 @section('content-base')
     <div class="cont-user">
-        <form method="POST" action="{{ route('admin.atletas.store') }}" class="form-group">
+        <form method="POST" action="{{ route('profile.add-atleta') }}" class="form-group">
             @csrf
             @include('profile.partials.add-edit')
             <div class="form-group">

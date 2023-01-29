@@ -6,7 +6,7 @@
     @else
         <h3 class="card-title"> Bem vinda {{ Auth::user()->salutation }}, {{ Auth::user()->name }}</h3>
     @endif
-    <p class="card-text">Here you can view and update your profile information.</p>
+    <p class="card-text">Bem vindo a sua paguina de perfil na Gorillaboards</p>
     {{-- <h3>User Profile</h3> --}}
     {{-- <div class="textUser">
         <div class="col-12 introUser">
@@ -18,13 +18,21 @@
 
 
 @section('content-base')
+        <div class="">
+            <h2 style="color:#2aa9ff;">Sua Informação Base</h2>
+                <label for="">Saudação</label>
+                <p>{{ Auth::user()->salutation }}</p>
 
-            <h2 style="color:blueviolet;">Sua Informação Base</h2>
                 <label for="">Nome</label>
                 <p>{{ Auth::user()->name }}</p>
 
                 <label for="">Email</label>
                 <p>{{ Auth::user()->email }}</p>
+
+                <label for="">Numero de telemovel</label>
+                <p>{{ Auth::user()->number_phone }}</p>
+        </div>
+
 
         <div class="infoatleta">
             @if (is_null(Auth::user()->atletas))
