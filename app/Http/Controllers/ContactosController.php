@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use App\Mail\SendMail;
 use App\Models\Contacto;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreContactosRequest;
-use App\Http\Requests\UpdateContactosRequest;
+use App\Http\Requests\EnviarEmailContactosRequest;
 
 class ContactosController extends Controller
 {
@@ -71,9 +73,9 @@ class ContactosController extends Controller
      * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contacto $contacto)
+    public function responder(Contacto $contacto)
     {
-        return view('adminPage.adminContactosEdit', compact("contacto"));
+        return view('adminPage.adminContactosResponder', compact("contacto"));
     }
 
     /**
@@ -83,12 +85,13 @@ class ContactosController extends Controller
      * @param  \App\Models\Contacto  $contacto
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateContactosRequest $request, Contacto $contacto)
+    public function enviarEmail(EnviarEmailContactosRequest $request, Contacto $contacto)
     {
         $fields = $request->validated();
-        $contacto->fill($fields);
-        $contacto->save();
-        return redirect()->route('admincontactos')->with('success', 'Contacto atualizado com sucesso');
+        
+        Mail::to($contacto->email_Contactos)->send(new SendMail($fields['menssagem_Contactos']));
+
+        return redirect()->route('admincontactos')->with('success', 'Contacto enviado com sucesso');
     }
 
     /**

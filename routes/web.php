@@ -80,8 +80,8 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::get('/admincontactos', [ContactosController::class, 'index'])->name('admincontactos');
     Route::get('/admincontactosShow/{contacto}', [ContactosController::class, 'show'])->name('adminContactosMenssagem');
-    Route::get('/admincontactosEdit/{contacto}/edit', [ContactosController::class, 'edit'])->name('adminContactosEdit');
-    Route::put('/admincontactosUpdate/{contacto}', [ContactosController::class, 'update'])->name('adminContactos.update');
+    Route::get('/admincontactosResponder/{contacto}/responder', [ContactosController::class, 'responder'])->name('adminContactosResponder');
+    Route::post('/admincontactosUpdate/{contacto}', [ContactosController::class, 'enviarEmail'])->name('adminContactos.enviarEmail');
     Route::delete('/admincontactosDestroy/{contacto}', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
     Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
