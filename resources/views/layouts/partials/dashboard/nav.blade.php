@@ -140,6 +140,13 @@
 
                                 </a>
                             </li>
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('admin.sobre_texto.index') }}">
+                                    <span class="nav-text">Sobre Texto</span>
+
+                                </a>
+                            </li>
+                            
                     </ul>
                 </li>
                 <li class="has-sub">

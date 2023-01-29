@@ -51,7 +51,7 @@
                 <li><a href="{{ route('faqs') }}">FAQS</a></li>
                 <li>
                     <a id="phone_Group" href="{{ route('contactos') }}"> <img
-                            id="phone_Icon"src="{{ asset('img/phone_icon.png') }}" alt="phone">CONTACTOS</a>
+                            id="phone_Icon" src="{{ asset('img/phone_icon.png') }}" alt="phone">CONTACTOS</a>
                 </li>
                 <li>
                     <div class="dropdown dropbtn_nav">
@@ -64,7 +64,7 @@
                             </a>
                         @else
                             <a id="profile_Icon_Box" href="{{ route('login') }}">
-                                <img id="profile_Icon"src="{{ asset('img/profile_icon.png') }}" alt="">
+                                <img id="profile_Icon"src="{{ asset('storage/profile_icon.png') }}" alt="">
                             </a>
                         @endauth
 
