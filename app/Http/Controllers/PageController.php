@@ -44,10 +44,9 @@ class PageController extends Controller
 
     }
     public function dashboard(){
-        $countUsers = User::count();
+        $userCount = User::all()->count();
 
-
-        return view('dashboard')->with('countUsers', $countUsers);
+        return view('dashboard')->with('userCount', $userCount);
     }
     public function desportos(){
         return view('desportos');

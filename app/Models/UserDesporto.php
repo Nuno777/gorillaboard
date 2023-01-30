@@ -15,6 +15,7 @@ class UserDesporto extends Model
         'user_id',
         'desporto_id',
         'num_inscricoes',
+        'num_presencas',
     ];
 
     public function desporto() {
