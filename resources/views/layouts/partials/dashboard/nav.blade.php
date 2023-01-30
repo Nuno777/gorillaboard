@@ -26,32 +26,6 @@
                     </a>
                 </li>
 
-                {{--     <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#aulas"
-                        aria-expanded="false" aria-controls="email">
-                        <i class="mdi mdi-file"></i>
-                        <span class="nav-text">Aulas</span> <b class="caret"></b>
-                    </a>
-                    <ul class="collapse" id="aulas" data-parent="#sidebar-menu">
-                        <div class="sub-menu">
-
-                            <li>
-                                <a class="sidenav-item-link" href="/admincontactos">
-                                    <span class="nav-text">Criar Aulas</span>
-
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="sidenav-item-link" href="/admincontactos">
-                                    <span class="nav-text">Mostrar Aulas</span>
-
-                                </a>
-                            </li>
-                        </div>
-                    </ul>
-                </li> --}}
-
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                         data-target="#presencas" aria-expanded="false" aria-controls="email">
@@ -72,58 +46,24 @@
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#faq"
-                        aria-expanded="false" aria-controls="faqs">
+                    <a class="sidenav-item-link" href="{{ route('admin.faqs.index') }}">
                         <i class="mdi mdi-help"></i>
-                        <span class="nav-text">Faqs</span> <b class="caret"></b>
+                        <span class="nav-text">Faqs</span>
                     </a>
-                    <ul class="collapse" id="faq" data-parent="#sidebar-menu">
-                        <div class="sub-menu">
-
-                            <li>
-                                <a class="sidenav-item-link" href="{{ route('admin.faqs.index') }}">
-                                    <span class="nav-text">Faqs</span>
-
-                                </a>
-                            </li>
-                    </ul>
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                        data-target="#contactos" aria-expanded="false" aria-controls="email">
+                    <a class="sidenav-item-link" href="{{ route('admincontactos') }}">
                         <i class="mdi mdi-phone"></i>
-                        <span class="nav-text">Contactos</span> <b class="caret"></b>
+                        <span class="nav-text">Contactos</span>
                     </a>
-                    <ul class="collapse" id="contactos" data-parent="#sidebar-menu">
-                        <div class="sub-menu">
-
-                            <li>
-                                <a class="sidenav-item-link" href="/admincontactos">
-                                    <span class="nav-text">Mostrar Contactos</span>
-
-                                </a>
-                            </li>
-                        </div>
-                    </ul>
                 </li>
 
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#atletas"
-                        aria-expanded="false" aria-controls="atletas">
+                    <a class="sidenav-item-link" href="{{ route('admin.atletas.index') }}">
                         <i class="mdi mdi-run"></i>
-                        <span class="nav-text">Atletas</span> <b class="caret"></b>
+                        <span class="nav-text">Atletas</span>
                     </a>
-                    <ul class="collapse" id="atletas" data-parent="#sidebar-menu">
-                        <div class="sub-menu">
-
-                            <li>
-                                <a class="sidenav-item-link" href="{{ route('admin.atletas.index') }}">
-                                    <span class="nav-text">Atletas</span>
-
-                                </a>
-                            </li>
-                    </ul>
                 </li>
                 <li class="has-sub">
                     <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#sobre"
@@ -150,21 +90,10 @@
                     </ul>
                 </li>
                 <li class="has-sub">
-                    <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
-                        data-target="#users" aria-expanded="false" aria-controls="email">
+                    <a class="sidenav-item-link" href="{{ route('admin.user.index') }}">
                         <i class="mdi mdi-account"></i>
-                        <span class="nav-text">Users</span> <b class="caret"></b>
+                        <span class="nav-text">Users</span>
                     </a>
-                    <ul class="collapse" id="users" data-parent="#sidebar-menu">
-                        <div class="sub-menu">
-
-                            <li>
-                                <a class="sidenav-item-link" href="{{ route('admin.user.index') }}">
-                                    <span class="nav-text">Users</span>
-
-                                </a>
-                            </li>
-                    </ul>
                 </li>
             </ul>
         </div>
@@ -174,10 +103,8 @@
 
 <div class="page-wrapper">
 
-    <!-- Header -->
     <header class="main-header" id="header">
         <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-            <!-- Sidebar toggle button -->
             <button id="sidebar-toggler" class="sidebar-toggle">
                 <span class="sr-only">Toggle navigation</span>
             </button>

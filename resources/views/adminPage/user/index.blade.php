@@ -31,7 +31,6 @@
                                                 <th scope="col">E-mail</th>
                                                 <th scope="col">Telemovel</th>
                                                 <th scope="col">Imagem</th>
-                                                <th scope="col">Admin</th>
                                                 <th scope="col">Editar</th>
                                                 <th scope="col">Eliminar</th>
                                             </tr>
@@ -52,7 +51,6 @@
                                                     <td>{{ $user->number_phone}}</td>
                                                 @endif
                                                 <td><img style="width: 50px; height:auto;" src="{{ asset('storage/' . $user->img) }}" alt="Imagem Profile"></td>
-                                                <td>{{ $user->admin }}</td>
                                                 <td>
                                                     <a href="{{ route('admin.user.edit', $user) }}">
                                                         <button type="submit" class="link" style="background-color: transparent; border:none">
