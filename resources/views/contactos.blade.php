@@ -43,7 +43,7 @@
                             <li><i class="fas fa-phone mt-4 fa-3x"></i>
                                 <p>+ 351 234 567 890</p>
                             </li>
-    
+
                             <li><i class="fas fa-envelope mt-4 fa-3x"></i>
                                 <p>gorillaboards@gmail.com</p>
                             </li>
@@ -54,15 +54,21 @@
                         </ul>
                     </div>
                 </div>
-                
+
                 <div class="col-md-6">
                     <div class="">
                         <form action="{{ route('contactos.store') }}" method="post">
                             @csrf
                             <div class="name">
                                 <label for="name" class="name-padding">Nome</label><br>
+                                
+                                @if (Auth::check())
                                 <input type="text" name="nome_Contactos" id="name" class="form-control"
-                                    placeholder="Insira o seu nome">
+                                placeholder="Insira o seu nome" value="{{ Auth::user()->name }}">
+                                @else
+                                <input type="text" name="nome_Contactos" id="name" class="form-control"
+                                placeholder="Insira o seu nome">
+                                @endif
                             </div>
                             @if ($errors->has('nome_Contactos'))
                                 <span class="invalid-feedback" role="alert">
@@ -72,8 +78,14 @@
 
                             <div class="email">
                                 <label for="email" class="email-padding">Email</label><br>
-                                <input type="email" name="email_Contactos" id="email" class="form-control"
-                                    placeholder="Insira o seu mail">
+
+                                @if (Auth::check())
+                                    <input type="email" name="email_Contactos" id="email" class="form-control"
+                                        placeholder="Insira o seu mail" value="{{ Auth::user()->email }}">
+                                @else
+                                    <input type="email" name="email_Contactos" id="email" class="form-control"
+                                        placeholder="Insira o seu mail">
+                                @endif
                             </div>
 
                             <div class="message">

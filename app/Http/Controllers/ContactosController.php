@@ -91,6 +91,9 @@ class ContactosController extends Controller
         
         Mail::to($contacto->email_Contactos)->send(new SendMail($fields['menssagem_Contactos']));
 
+        $contacto->resposta = $fields['menssagem_Contactos'];
+        $contacto->save();
+        
         return redirect()->route('admincontactos')->with('success', 'Contacto enviado com sucesso');
     }
 

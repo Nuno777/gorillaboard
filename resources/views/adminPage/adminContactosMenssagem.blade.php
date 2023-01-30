@@ -15,6 +15,7 @@
                         </div>
                         <div class="card-body">
                             <div><strong>Mensagem:</strong> {{ $contacto->menssagem_Contactos }} </div>
+                            <div><strong>Resposta:</strong> {{ $contacto->resposta }} </div>
                         </div>
                     </div>
                 </div>

@@ -25,8 +25,8 @@
                                                 <th scope="col">Nome</th>
                                                 <th scope="col">Email</th>
                                                 <th scope="col">Mensagem</th>
-                                                <th scope="col">created_at</th>
-                                                <th scope="col">Resposta</th>
+                                                <th scope="col">criado em</th>
+                                                <th scope="col">Responder</th>
                                                 <th scope="col">Eliminar</th>
                                             </tr>
                                         </thead>
@@ -37,30 +37,46 @@
                                                     <td>{{ $contacto->email_Contactos }}</td>
                                                     <td>
                                                         {{-- message button --}}
-                                                        <a
-                                                            href="{{ route('adminContactosMenssagem', $contacto->id) }}">
-                                                            <button type="submit" class="link"
-                                                                style="background-color: transparent; border:none">
+
+                                                        <button type="submit" class="link"
+                                                            style="background-color: transparent; border:none">
+                                                            <a
+                                                                href="{{ route('adminContactosMenssagem', $contacto->id) }}">
                                                                 <i class="mdi mdi-message-text-outline"
                                                                     data-toogle="tooltip">
                                                                 </i>
-                                                        </a>
+                                                            </a>
                                                         </button>
                                                     </td>
 
                                                     <td>{{ $contacto->created_at }}</td>
                                                     <td>
-                                                        <a href="{{ route('adminContactosResponder', $contacto->id) }}">
+                                                        @if ($contacto->resposta === null)
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
-                                                                <i class="mdi mdi-reply" data-toogle="tooltip"></i>
-                                                        </a>
-                                                        </button>
+                                                                <a
+                                                                    href="{{ route('adminContactosResponder', $contacto->id) }}">
+                                                                    <i class="mdi mdi-reply" data-toogle="tooltip"></i>
+                                                                </a>
+                                                            </button>
+                                                        @else
+                                                            <p>Respondido</p>
+                                                            <button type="submit" class="link"
+                                                                style="background-color: transparent; border:none">
+                                                                <a
+                                                                    href="{{ route('adminContactosMenssagem', $contacto->id) }}">
+                                                                    <i class="mdi mdi-message-text-outline"
+                                                                        data-toogle="tooltip">
+                                                                    </i>
+                                                                </a>
+                                                            </button>
+                                                        @endif
                                                     </td>
                                                     <td>
                                                         <form role="form"
                                                             action="{{ route('adminContactos.destroy', $contacto->id) }}"
-                                                            method="POST" onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
+                                                            method="POST"
+                                                            onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit" class="link"

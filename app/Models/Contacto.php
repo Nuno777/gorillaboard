@@ -9,5 +9,5 @@ class Contacto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nome_Contactos', 'email_Contactos', 'menssagem_Contactos'];
+    protected $fillable = ['nome_Contactos', 'email_Contactos', 'menssagem_Contactos' , 'resposta'];
 }
