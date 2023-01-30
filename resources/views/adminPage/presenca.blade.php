@@ -58,12 +58,12 @@
                                                                 style="background-color: transparent; border:none">
                                                                 <i class="mdi mdi-plus text-primary"
                                                                     data-toogle="tooltip"></i>
-                                                                    {{  $inscricao->num_presencas }}
+                                                                {{ $inscricao->num_presencas }}
                                                             </button>
                                                         </form>
                                                     </td>
 
-                                                    {{-- @if ($inscricao->num_inscricoes == $inscricao->num_presencas)
+                                                    @if ($inscricao->num_inscricoes == $inscricao->num_presencas)
                                                         <td>
 
                                                             <button type="submit" class="link"
@@ -84,7 +84,6 @@
                                                             </a>
                                                         </td>
                                                     @endif
- --}}
 
                                                     <td>
                                                         <form role="form"
