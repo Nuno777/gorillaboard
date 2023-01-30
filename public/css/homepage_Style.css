@@ -1,348 +1,549 @@
+body{
+  width: 100% !important;
+}
+
 /*============Carrossel=============*/
 .carousel-indicators {
-    height: 20px;
+  height: 20px;
 
 }
 
 .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  font-size: 50pt;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.giftitle img {
+  width: 1000px;
+}
+
+@media only screen and (max-width: 700px) {
+  .giftitle img {
+    width: 300px;
+  }
+
+  #carouselBasicExample {
+    width: 100%;
+  }
+
+  .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1000;
-    font-size: 50pt;
+    font-size: 24pt;
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.giftitle{
-    width: 1000px;
+  }
 }
 
 /*============Carrossel FIM=============*/
 
 /*============Botoes Depois do Carrossel=============*/
 #info_Row {
-    width: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-#info_Row a{
-    padding: 0 !important;
+#info_Row a {
+  padding: 0 !important;
 }
 
 .info_home {
-    display: flex;
-    align-items: center;
-    padding-right: 0 !important;
-    height: 100px;
+  display: flex;
+  align-items: center;
+  padding-right: 0 !important;
+  height: 100px;
 }
 
 #info_Row .info_home {
-    background-color: #1B272C;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    transition: ease-in-out 0.3s;
-    justify-content: center;
+  background-color: #1B272C;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  transition: ease-in-out 0.3s;
+  justify-content: center;
 }
 
 #info_Row .info_home:hover {
-    background-color: #2AA9FF;
+  background-color: #2AA9FF;
+  font-weight: bold !important;
 }
 
 .info_home h3 {
+  color: white;
+  padding: 30px;
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 30pt;
+}
+
+@media only screen and (max-width: 700px) {
+  #info_Row .row {
+    flex-direction: column;
+  }
+
+  .info_home {
+    display: flex;
+    align-items: center;
+    padding-right: 0 !important;
+    height: 60px;
+  }
+
+  .info_home h3 {
     color: white;
     padding: 30px;
     font-family: 'Raleway', sans-serif !important;
-    font-size: 30pt;
+    font-size: 18pt;
+  }
+
 }
 
 /*============Botoes Depois do Carrossel FIM=============*/
 
 /*============Seccao Desportos=============*/
-.title_sections_home img{
-    width: 100%;
-    position: absolute;
-    z-index: -10;
-    animation: wipe-enter 2s;
+.title_sections_home img {
+  width: 100%;
+  position: absolute;
+  z-index: -10;
+  animation: wipe-enter 2s;
 }
 
-.title_sections_home h3{
+.title_sections_home h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: bold;
+  font-size: 32pt;
+  position: absolute;
+  height: 170px;
+  width: 100%;
+  color: white;
+  z-index: -9;
+  animation: wipe-enter 2s;
+}
+
+#card_section {
+  display: flex;
+
+}
+
+#card_section a {
+  padding: 0 !important;
+  width: 300px !important;
+}
+
+#card_section .cartas_home {
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  z-index: -1000;
+}
+
+.cartas_home img {
+  border-radius: 0 !important;
+}
+
+.cartas_home {
+  width: 100%;
+  height: 100%;
+}
+
+.card_titulo {
+  padding: 10px !important;
+  background-color: #1B272C;
+  transition: ease-in-out 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px !important;
+
+}
+
+.card_titulo h5 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  transition: ease-in-out 0.5s;
+}
+
+#desportos_section a:hover .card_titulo {
+  background-color: #2AA9FF !important;
+}
+
+#desportos_section a:hover .card_titulo h5 {
+  font-size: 18pt !important;
+}
+
+.middlecard {
+  animation: wipe-enter1 2s;
+}
+
+.nexttomiddlecard {
+  animation: wipe-enter1 3s;
+}
+
+.outercard {
+  animation: wipe-enter1 4s;
+}
+
+
+.animationnew {
+  animation: wipe-enter 3s;
+}
+
+.animationnew2 {
+  animation: wipe-enter1 3s;
+}
+
+@keyframes wipe-enter {
+  0% {
+    top: 300px;
+  }
+
+  100% {
+    top: 715px;
+  }
+}
+
+@keyframes wipe-enter1 {
+  0% {
+    top: -500px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  #desportos_section{
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #card_section {
+    display: flex;
+    justify-content: center;
+  }
+
+  #card_section a {
+    padding: 0 !important;
+    width: 50% !important;
+  }
+
+  .title_sections_home img {
+    width: 100%;
+    position: block;
+    z-index: 1;
+    animation: none !important;
+    height: 100px;
+  }
+
+  .title_sections_home h3 {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Raleway', sans-serif !important;
     font-weight: bold;
-    font-size: 32pt;
+    font-size: 18pt;
     position: absolute;
-    height: 170px;
+    height: 80px;
     width: 100%;
     color: white;
-    z-index: -9;
-    animation: wipe-enter 2s;
-}
+    z-index: 2;
+    animation: none !important;
+  }
 
-#card_section{
-    display: flex;
-    
-}
+  .middlecard {
+    animation: none;
+  }
 
-#card_section a{
-    padding: 0 !important;
-    width: 300px !important;
-}
+  .nexttomiddlecard {
+    animation: none;
+  }
 
-#card_section .cartas_home{
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    z-index: -1000;
-}
-
-.cartas_home img{
-    border-radius: 0 !important;
-}
-
-.cartas_home{
-    width: 100%;
-    height: 100%;
-}
-
-.card_titulo{
-    padding: 10px !important;
-    background-color: #1B272C;
-    transition: ease-in-out 0.5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px !important;
-
-}
-
-.card_titulo h5{
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    margin: 0;
-    font-weight: bold;
-    transition: ease-in-out 0.5s;
-}
-
-#desportos_section a:hover .card_titulo{
-    background-color: #2AA9FF !important;
-} 
-
-#desportos_section a:hover .card_titulo h5{
-    font-size: 18pt !important;
-}
-
-.middlecard{
-    animation: wipe-enter1 2s;
-}
-
-.nexttomiddlecard{
-    animation: wipe-enter1 3s;
-}
-
-.outercard{
-    animation: wipe-enter1 4s;
-}
+  .outercard {
+    animation: none;
+  }
 
 
-.animationnew{
-    animation: wipe-enter 3s;
-}
+  .animationnew {
+    animation: none;
+  }
 
-.animationnew2{
-    animation: wipe-enter1 3s;
-}
+  .animationnew2 {
+    animation: none;
+  }
 
-@keyframes wipe-enter {
-	0% {
-		top: 300px;
-	}
-	100% {
-		top: 715px;
-	}
-}
 
-@keyframes wipe-enter1 {
-	0% {
-		top:-500px;
-	}
-	100% {
-		top: 0px;
-	}
 }
 
 /*============Seccao Desportos FIM=============*/
 
 /*============Seccao Aulas=============*/
 
- .card_aulas img {
-    max-width: 100%;
-  }
-  .carousel-container {
-    width: 1100px;
-    margin: 50px auto;
-    position: relative;
-  }
-  @media (max-width: 768px) {
-    .carousel-container {
-      width: 95%;
-    }
-  }
-  .inner-carousel {
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-  }
-  .track {
-    display: inline-flex;
-    height: 100%;
-    transition: transform 0.2s ease-in-out;
-  }
-  .card-container {
-    width: 275px;
-    height: 400px;
-    flex-shrink: 0;
-    padding-right: 10px;
-  }
-  @media (max-width: 768px) {
-    .card-container {
-      width: 184px;
-    }
-  }
-  .card_aulas {
-    width: 100%;
-    height: 100%;
-    /*display: flex;
+.card_aulas img {
+  max-width: 100%;
+}
+
+.carousel-container {
+  width: 1100px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.inner-carousel {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.track {
+  display: inline-flex;
+  height: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-container {
+  width: 275px;
+  height: 400px;
+  flex-shrink: 0;
+  padding-right: 10px;
+}
+
+.card_aulas {
+  width: 100%;
+  height: 100%;
+  /*display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;*/
-    background-position: center bottom;
-    background-size: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-  }
-  .card1 {
-    border-radius: 0px;
-    border: solid 5px #1B272C;
+  background-position: center bottom;
+  background-size: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
 
-  }
+.card1 {
+  border-radius: 0px;
+  border: solid 5px #1B272C;
 
-  .cardback_desp_azul{
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 85%, rgba(22,172,255,1) 85%, rgba(42,169,255,1) 100%); 
-  }
+}
 
-  .cardback_desp_cinza{
-    background: rgb(255,255,255);
-    background: linear-gradient(180deg, rgba(255,255,255,1) 85%, rgba(140,149,154,1) 85%, rgba(140,149,154,1) 100%); 
-  }
+.cardback_desp_azul {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 85%, rgba(22, 172, 255, 1) 85%, rgba(42, 169, 255, 1) 100%);
+}
 
-  .card1 p{
-    display: flex;
-    justify-content: center;
-    color: black;
-  }
+.cardback_desp_cinza {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 85%, rgba(140, 149, 154, 1) 85%, rgba(140, 149, 154, 1) 100%);
+}
 
-  .card1 .nome_desp{
-    display: flex;
-    align-items: center;
-    font-size: 20pt;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    color: white;
-    background-color: #1B272C;
-    height: 60px;
-  }
+.card1 p {
+  display: flex;
+  justify-content: center;
+  color: black;
+}
 
-  .card1 .local_aulas{
-    font-size: 16pt;
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    margin-top: 30px;
-    color: #2AA9FF;
-  }
+.card1 .nome_desp {
+  display: flex;
+  align-items: center;
+  font-size: 20pt;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: #1B272C;
+  height: 60px;
+}
 
-  .card1 .data_aulas{
-    font-size: 15pt;
-    font-family: 'Raleway', sans-serif;
-    margin-bottom: 20px;
-  }
+.card1 .local_aulas {
+  font-size: 16pt;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #2AA9FF;
+}
 
-  .card1 p img{
-    display: flex;
-    margin: auto;
-    align-content: flex-end;
-    height: 220px;
-  }
-  
-  .nav_carousel_aulas button {
-    position: absolute;
-    top: 50%;
-    transform: translatey(-50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    outline: none;
-    border: 1px solid #000;
-    cursor: pointer;
-  }
-  .nav_carousel_aulas .prev_aulas {
-    left: -30px;
-    display: none;
-  }
-  .nav_carousel_aulas .prev_aulas.show {
-    display: block;
-  }
-  .nav_carousel_aulas .next_aulas {
-    right: -30px;
-  }
-  .nav_carousel_aulas .next_aulas.hide {
-    display: none;
-  }
+.card1 .data_aulas {
+  font-size: 15pt;
+  font-family: 'Raleway', sans-serif;
+  margin-bottom: 20px;
+}
 
-  .title_sections_home_aulas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .title_sections_home_aulas img{
-    width: 75%;
-    z-index: 0;
-  }
+.card1 p img {
+  display: flex;
+  margin: auto;
+  align-content: flex-end;
+  height: 220px;
+}
 
-  .title_sections_home_aulas h3{
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: bold;
-    position: absolute;
-    font-size: 32pt;
-    color: white;
-    z-index: 1;
-  }
+.nav_carousel_aulas button {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.nav_carousel_aulas .prev_aulas {
+  left: -30px;
+  display: none;
+}
+
+.nav_carousel_aulas .prev_aulas.show {
+  display: block;
+}
+
+.nav_carousel_aulas .next_aulas {
+  right: -30px;
+}
+
+.nav_carousel_aulas .next_aulas.hide {
+  display: none;
+}
+
+.title_sections_home_aulas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title_sections_home_aulas img {
+  width: 75%;
+  z-index: 0;
+}
+
+.title_sections_home_aulas h3 {
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: bold;
+  position: absolute;
+  font-size: 32pt;
+  color: white;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 700px) {
+
+.title_sections_home_aulas img {
+  width: 100%;
+  z-index: 0;
+  height: 100px;
+}
+
+.carousel-container {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.card-container {
+  width: 200px;
+}
+
+.card1 .local_aulas {
+  font-size: 12pt;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #2AA9FF;
+}
+
+#aulas_section .inner-carousel {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+#aulas_section .card1 p img {
+  display: flex;
+  margin: auto;
+  align-content: flex-end;
+  height: 130px;
+}
+
+.card1 .nome_desp {
+  display: flex;
+  align-items: center;
+  font-size: 14pt;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: white;
+  background-color: #1B272C;
+  height: 60px;
+}
+
+.cardback_desp_cinza {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 85%, rgba(140, 149, 154, 1) 85%, rgba(140, 149, 154, 1) 100%);
+  height: 300px;
+}
+
+.cardback_desp_azul {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 85%, rgba(22, 172, 255, 1) 85%, rgba(42, 169, 255, 1) 100%);
+  height: 300px;
+}
+
+.nav_carousel_aulas .next_aulas {
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  top: 80px;
+}
+
+.nav_carousel_aulas .prev_aulas.show {
+  display: block;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  top: 80px;
+}
+
+.nav_carousel_aulas .next_aulas .fa-2x {
+  font-size: 1em;
+}
+
+.nav_carousel_aulas .prev_aulas.show .fa-2x {
+  font-size: 1em;
+}
+
+}
 
 /*============Seccao Aulas FIM=============*/
 
 /*============Seccao Loja=============*/
-#loja_section{
+#loja_section {
   margin-top: 100px;
 }
-#savetgor{
+
+#savetgor {
   margin-bottom: -50px;
 }
 
-#savethegorilas_info{
+#savethegorilas_info {
   padding-top: 40px;
   padding-left: 180px !important;
 }
 
-#savethegorilas_info h2{
+#savethegorilas_info h2 {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 900;
   font-size: 45pt;
@@ -350,29 +551,29 @@
   margin-bottom: 20px;
 }
 
-#savethegorilas_info h4{
+#savethegorilas_info h4 {
   font-family: 'Raleway', sans-serif !important;
   font-weight: 600;
 }
 
-#btns_savegori{
+#btns_savegori {
   margin-top: 50px;
 }
 
-#savethegorilas_info #btns_savegori h5{
+#savethegorilas_info #btns_savegori h5 {
   font-family: 'Raleway', sans-serif !important;
   color: #1B272C;
   font-weight: bold;
-  text-decoration: solid ;
+  text-decoration: solid;
   height: 60px;
 }
 
-#savethegorilas_info p{
+#savethegorilas_info p {
   font-family: 'Raleway', sans-serif !important;
   margin-top: 30px;
 }
 
-#savethegorilas_info #btns_savegori a{
+#savethegorilas_info #btns_savegori a {
   font-family: 'Raleway', sans-serif !important;
   font-weight: bold;
   background-color: #2AA9FF;
@@ -384,7 +585,33 @@
   margin: auto;
 }
 
-#savegori_img{
+#savegori_img {
   width: 700px;
 }
+
+
+@media only screen and (max-width: 700px) {
+
+  #savethegorilas_info {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    background-image: url('../img/savethegorilas.png');
+    height: 700px;
+  }
+
+  #savegori_img {
+    width: 300px;
+  }
+
+  .testt{
+    display: none;
+  }
+
+  .text_savegori{
+    padding-right: 10px;
+    padding-right: ;
+  }
+  
+  }
 /*============Seccao Loja FIM=============*/

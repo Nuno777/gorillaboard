@@ -4,3 +4,33 @@
     align-items: center;
 }
 
+.desp_submit{
+    padding: 5px;
+}
+
+.add_img_desp{
+    width: 600px;
+}
+
+.galerias_imgs_desportos{
+    width: 700px;
+    margin-bottom: 30px;
+}
+
+.galerias_imgs_desportos p a{
+    width: 100%;
+    color: white !important;
+    border-radius: 0;
+    border-bottom: solid #1B272C 5px;
+    font-size: 15pt;
+}
+
+#searchbar_imgs{
+    width: 700px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.searchbtn{
+    height: 100%;
+}

@@ -42,11 +42,11 @@ class Sobre_textoController extends Controller
     {
         // Validation for required fields
         $request->validate([
-            'text'=>'required',
+            'stock_name'=>'required',
         ]); 
         $sobre_text = Sobre_texto::findOrFail($id);
         // Getting values from the blade template form
-        $sobre_text->text =  $request->get('stock_name');
+        $sobre_text->texto =  $request->get('stock_name');
         $sobre_text->save();
     
         return redirect()->route('admin.sobre_texto.index')->with('success','Categoria atualizada com sucesso');

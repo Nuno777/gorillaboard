@@ -23,13 +23,13 @@
         <div class="carousel-item active">
             <img src="{{ asset('img/supertubosgifback.gif') }}" class="d-block w-100" alt="Supertubos" />
 
-            <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt="" style="width: 1000px"></div>
+            <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt=""></div>
         </div>
 
         <!-- Single item -->
         <div class="carousel-item">
             <img src="{{ asset('img/ericeira.gif') }}" class="d-block w-100" alt="Boardriders" />
-            <div class="centered giftitle"><img src="{{ asset('img/Boardridersgif.gif') }}" alt="" style="width: 1000px"></div>
+            <div class="centered giftitle"><img src="{{ asset('img/Boardridersgif.gif') }}" alt=""></div>
         </div>
 
         <!-- Single item -->
@@ -84,7 +84,7 @@
   </div>
   <div id="card_section" class="row">
     @foreach ($desportos as $desporto)
-      <a href="" class="col-md">
+      <a href="{{ route('aula', $desporto->id) }}" class="col-md">
 
         @if($loop->index == 1 || $loop->index == 3)
         <div class="card nexttomiddlecard cartas_home">
@@ -147,9 +147,11 @@
   <div class="row text-center" id="savetgor">
 
     <div class="col" id="savethegorilas_info">
+      <div class="text_savegori">
       <h2>Gorilla Care</h2>
       <h4>Vamos Salvar os Gorilas Gigantes do Congo</h4>
       <p>Os Gorilas Gigantes de Congo, conhecidos como <b>Gorilas de Grauer</b>, sofreram uma <b>perda catastrofica de 77% da sua população</b> por concequencia da <b>caça ilegal</b> e <b>destruição de habitat</b></p>
+      </div>
       <div class="row" id="btns_savegori">
         <div class="doar col text-center">
           <h5>Doe para esta causa</h5>
@@ -162,7 +164,7 @@
     </div>
     </div>
 
-    <div class="col">
+    <div class="col testt">
       <img src="{{ asset('img/savethegorilass.png') }}" alt="ola" id="savegori_img">
     </div>
   </div>

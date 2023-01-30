@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sobre_texto;
 use App\Models\faqs;
 use App\Models\User;
 use App\Models\Desporto;
@@ -22,8 +23,9 @@ class PageController extends Controller
     public function sobre(){
         $sobre = sobre::where('featured', '1')->get();
         $users = User::where('admin', '1')->get();
+        $texto_sobre = Sobre_texto::all();
 
-        return view ('sobre')->with('sobre', $sobre)->with('users', $users);
+        return view ('sobre')->with('sobre', $sobre)->with('users', $users)->with('sobre_texto', $texto_sobre);
 
     }
 
