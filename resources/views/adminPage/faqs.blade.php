@@ -16,7 +16,7 @@
 
                 <div class="card-body">
                     <h2 class="name-page"><a href="{{ url()->previous() }}">
-                            <i class='bx bx-chevron-left bx-sm'></i></a>Faqs</h2>
+                            <i class='bx bx-chevron-left bx-sm'></i></a>FAQS</h2>
                     <a class="buttonPlus" href="{{ route('admin.faqs.create') }}"><i class='bx bx-plus'></i>Criar Faq</a>
                     <form id="formSearch" action="{{ route('btnSearch', $faqs) }}" method="get">
                         <div class="input-group">
@@ -34,7 +34,6 @@
                             <table class="table text-center">
                                 <thead class="text-uppercase">
                                     <tr>
-                                        <th scope="col">ID</th>
                                         <th scope="col">Pergunta</th>
                                         <th scope="col">Resposta</th>
                                         <th scope="col">Ações</th>
@@ -43,7 +42,6 @@
                                 <tbody>
                                     @foreach ($faqs as $faq)
                                         <tr>
-                                            <td>{{ $faq->id }}</td>
                                             <td>{{ $faq->pergunta }}</td>
                                             <td>{{ $faq->resposta }}</td>
                                             <td class="text-center">
@@ -89,44 +87,7 @@
             </div>
         </section>
     </div>
-    @include('layouts.partials.dashboard.footer')
+
 </body>
-                        {{-- <div class="card-header py-3">
-        <a class="btn btn-primary" href="{{ route('adminFaqsCreate') }}">
-            <i class="fas fa-plus"></i> Nova Categoria
-        </a>
-    </div> --}}
-                        {{-- <div class="card-body">
-        @if (count($faqs))
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    ...
-                    <tbody>
-                        @foreach ($faqs as $faq)
-                            <tr>
-                                <td>{{ $faq->pergunta }}</td>
-                                <td nowrap>
-                                    <a class="btn btn-xs btn-primary btn-p"
-                                        href="{{ route('adminFaqsShow', $faq) }}"><i
-                                            class="fas fa-eye fa-xs"></i></a>
-                                    <a class="btn btn-xs btn-warning btn-p"
-                                        href="{{ route('adminFaqsEdit', $faq) }}"><i
-                                            class="fas fa-pen fa-xs"></i></a>
-                                    <form method="POST" action="{{ route('adminFaqsDestroy', $faq) }}"
-                                        role="form" class="inline"
-                                        onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-xs btn-danger btn-p">
-                                            <i class="fas fa-trash fa-xs"></i></button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        @else
-            <h6>Não existem categorias registadas</h6>
-        @endif
-    </div> --}}
+@include('layouts.partials.dashboard.footer')
+

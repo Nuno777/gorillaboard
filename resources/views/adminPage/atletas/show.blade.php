@@ -20,6 +20,7 @@
                 <div><strong>user_id</strong> {{ $atleta->user_id }} </div>
             </div>
             <button class="btn-warming"><a href="{{ url()->previous() }}"></a></button>
+        </section>
     </div>
-    </div>
+</body>
     @include('layouts.partials.dashboard.footer')
