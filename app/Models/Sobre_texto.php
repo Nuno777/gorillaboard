@@ -12,6 +12,6 @@ class Sobre_texto extends Model
     protected $table = 'sobre_textos';
 
     protected $fillable = [
-        'texto'
+        'texto',
     ];
 }

@@ -14,9 +14,15 @@ class desportos_ImgController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $desportos = Desporto::all();
+        if(isset($request->q))
+            $desportos = Desporto::whereHas('images', function($q) use ($request) {
+                $q->where('image', 'LIKE', '%' . $request->q . '%');
+            })->get();
+        else
+            $desportos = Desporto::all();
+
         return view('adminPage.admin_Img', compact('desportos'));
     }
 

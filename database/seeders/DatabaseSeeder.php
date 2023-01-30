@@ -27,7 +27,9 @@ class DatabaseSeeder extends Seeder
             desportosSeeder::class,
             desportoimageSeeder::class,
             AulaSeeder::class,
-            SobreSeed::class
+            SobreSeed::class,
+            SobretextoSeeder::class
+
         ]);
     }
 }

@@ -61,13 +61,7 @@ Route::get('Search', [FaqController::class, 'search'])->middleware('auth', 'veri
 
 Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos');
 
-Route::any('/search', function () {
-    $q = Input::get('q');
-    $img_search = User::where('image', 'LIKE', '%' . $q . '%')->orWhere('desporto_id', 'LIKE', '%' . $q . '%')->get();
-    if (count($img_search) > 0)
-        return view('welcome')->withDetails($img_search)->withQuery($q);
-    else return view('welcome')->withMessage('No Details found. Try to search again !');
-});
+
 
 
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {

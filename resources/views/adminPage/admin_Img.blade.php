@@ -9,8 +9,7 @@
 
     <h1>Imagens</h1>
   
-    <form action="/search" method="POST" role="search" id="searchbar_imgs">
-      @csrf
+    <form action="{{route('admin.Img_Dashboard.index')}}" method="GET" role="search" id="searchbar_imgs">
       <div class="input-group">
           <input type="text" class="form-control" name="q"
               placeholder="Search users"> <span class="input-group-btn">

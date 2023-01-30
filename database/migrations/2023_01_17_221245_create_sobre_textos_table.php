@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('sobre_textos', function (Blueprint $table) {
             $table->id();
-            $table->string('texto');
+            $table->text('texto');
             $table->timestamps();
         });
     }
