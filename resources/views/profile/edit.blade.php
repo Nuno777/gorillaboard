@@ -18,11 +18,18 @@
         <form method="post" action="{{ route('profile.update', Auth::user()) }}" class="mt-6 space-y-6">
             @csrf
             @method('patch')
+            <p for="">Saudação</p>
+            <label for="">Sr</label>
+            <input type="radio" name="salutation" value="Sr">
+            <label for="">Sra</label>
+            <input type="radio" name="salutation" value="Sra">
+            <label for="">Nenhum</label>
+            <input type="radio" name="salutation" value="">
 
             <div class="edit-data">
-                <label for="name">Nome</label>
-                <input class="mt-3" type="text" name="name"
-                    value="{{ old('name', Auth::user()->name) }}" required autocomplete="name" placeholder="Nome"><br>
+                <label for="name">Nome: </label>
+                    <input class="mt-3" type="text" name="name"
+                        value="{{ old('name', Auth::user()->name) }}" required autocomplete="name" placeholder="Nome"><br>
                 @if (Auth::user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !Auth::user()->hasVerifiedEmail())
                     <div>
                         <p class="text-sm mt-2 text-gray-800">
@@ -41,29 +48,40 @@
                         @endif
                     </div>
                 @endif
-                <div>
-                    <button type="submit">Atualizar Perfil</button>
-                    @if (session('status') === 'profile-updated')
-                        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                            class="text-sm text-gray-600">{{ __('Atualizado') }}</p>
-                    @endif
-                </div>
+                <label for="">Numero de Telemovel</label>
+                <input type="tel"  pattern="[0-9]{3}[0-9]{3}[0-9]{3}" class="form-control" placeholder="" name="number_phone" value="{{ old('number_phone', Auth::user()->number_phone)}}">
             </div>
 
+            <div>
+                <button class="footer__btn" type="submit">Atualizar</button>
+                @if (session('status') === 'profile-updated')
+                    <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
+                        class="text-sm text-gray-600">{{ __('Atualizado') }}</p>
+                @endif
+            </div>
         </form>
     </div>
 
     {{-- edita a imaguem do utilizador  --}}
 
     <div id="change-img" class= "d-none">
-        <form action="{{ route('profile.upgradeimg') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('profile.updateimg') }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="imgchange">
-                <input type="file" name="img" id="img">
-            </div>
 
-            <button type="submit">Submeter</button>
+                <div class="d-flex flex-column align-items-center ">
+                    <div class="img-preview">
+                        <img id="preview" >
+                    </div><br>
+                    <label class="file-input flex-item">
+                        <i class="fa fa-upload"></i>
+                        Selecionar Imagem
+                        <input type="file" name="img" accept="image/*">
+                    </label>
+                    <button class="footer__btn"  type="submit">Submeter</button>
+                </div>
+
+
         </form>
     </div>
 
@@ -98,7 +116,7 @@
                     </div>
                 @endif
                 <div>
-                    <button type="submit">Atualizar Perfil</button>
+                    <button class="footer__btn" type="submit">Atualizar Perfil</button>
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
                             class="text-sm text-gray-600">{{ __('Atualizado') }}</p>
@@ -125,7 +143,7 @@
                 autocomplete="new-password">
 
             <div>
-                <button type="submit">Atualizar password</button>
+                <button class="footer__btn" type="submit">Atualizar password</button>
 
                 @if (session('status') === 'password-updated')
                     <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
@@ -146,7 +164,7 @@
                 @csrf
                 @method('DELETE')
 
-                <button type="submit">Delete Account</button>
+                <button class="footer__btn" type="submit">Delete Account</button>
             </form>
         </div>
     </div>

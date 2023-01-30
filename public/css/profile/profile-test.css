@@ -22,7 +22,29 @@ ul {
     margin: 0 !important;
     padding: 0 !important;
 }
-.footer{
+.info-base input,
+.change-email input,
+.change-password input,
+.info-base input[type="tel"]{
+    outline: none;
+    border: none;
+    border-bottom: 3px solid var(--color-primary);
+
+}
+.info-base input:hover,
+.info-base input[type="tel"]:hover,
+.info-base input:checked,
+.info-base input[type="tel"]:checked,
+.change-email input:hover,
+.change-email input:checked,
+.change-password input:hover,
+.change-password input:checked{
+    outline: none;
+    border: none;
+    border-bottom: 3px solid var(--color-primary3);
+}
+
+.footer {
     margin-top: 0px !important;
 }
 
@@ -32,7 +54,7 @@ ul {
 
 .nav-profile {
     background: linear-gradient(0deg, var(--color-primary3) 12%, var(--color-primary) 50%, var(--color-primary2)100%);
-    min-height:34rem;
+    min-height: 34rem;
     max-width: fit-content;
     justify-content: center;
     padding: 20px;
@@ -46,19 +68,23 @@ ul {
 
     padding: 4px;
 }
-.nav-profile li:active{
+
+.nav-profile li:active {
     background-color: rgba(255, 255, 255, 0.3);
 }
-.nav-profile li:not(:first-child){
+
+.nav-profile li:not(:first-child) {
     margin-top: 20px;
     color: white;
 }
-.nav-profile li i{
+
+.nav-profile li i {
     margin-right: 10px;
     margin-left: 5px;
 }
-.nav-profile li a{
-    color:white;
+
+.nav-profile li a {
+    color: white;
 }
 
 .container-fluid .imgUser {
@@ -106,7 +132,8 @@ ul {
     box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 
 }
-.card-body{
+
+.card-body {
     margin-top: 1rem;
 }
 
@@ -147,15 +174,51 @@ ul {
     position: relative;
     top: 1px;
 }
-.cont-user{
+
+.cont-user {
     display: flex;
     flex-direction: row;
 }
 
+/* Previsualizar img  */
+
+.file-input {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.file-input input[type="file"] {
+    display: none;
+}
+
+.img-preview {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary3);
+    overflow: hidden;
+}
+
+.img-preview img {
+    width: 100%;
+
+}
+.info-base i.fa {
+    font-size: 24px;
+    color: black;
+    cursor: pointer;
+    margin-right: 10px;
+ }
+input[type="radio"]:checked + i.fa {
+    color: var(--color-primary3);
+}
 
 @media (max-with:1023) {
+
     .nav-profile .profile-logout p,
-    .nav-profile .profile-logout i{
+    .nav-profile .profile-logout i {
         visibility: hidden;
     }
 }

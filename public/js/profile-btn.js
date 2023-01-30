@@ -69,3 +69,17 @@ deletAccount.onclick = function() {
 
     divDeletAccount.classList.remove("d-none");
 }
+
+
+
+// code para previsualizar imagem carregada para o utilizador.
+
+const fileInput = document.querySelector(".file-input input[type='file']");
+  const fileLabel = document.querySelector(".file-input");
+  const preview = document.querySelector("#preview");
+
+  fileInput.addEventListener("change", function () {
+    
+    preview.style.display = "block";
+    preview.src = URL.createObjectURL(fileInput.files[0]);
+  });

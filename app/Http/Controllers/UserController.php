@@ -43,6 +43,8 @@ class UserController extends Controller
             "email" => 'required',
             "img" => '',
             "admin" => 'required',
+            "number_phone" => '',
+            "salutation" => ''
         ]);
 
         $img = $request->img;
@@ -96,8 +98,10 @@ class UserController extends Controller
         $this->validate($request, [
             "name" => 'required',
             "email" => 'required',
-            "img" => 'required',
+            "img" => '',
             "admin" => 'required',
+            "number_phone" => '',
+            "salutation" => ''
         ]);
 
         $img = $request->img;

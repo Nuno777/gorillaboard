@@ -22,12 +22,14 @@
                             <div class="row">
                                 <div class="col-lg-9">
                                     <div class="form-group">
-                                        {{-- <label for="salutation">Saudação</label>
-                                        <select name="salutation" class="form-control">
-                                            @foreach($user as $user)
-                                                <option value="{{ $user->id }}">{{ $user->salutation }}</option>
-                                           @endforeach
-                                        </select> --}}
+                                        <p for="">Saudação</p>
+                                        <label for="">Sr</label>
+                                        <input type="radio" name="salutation" value="Sr">
+                                        <label for="">Sra</label>
+                                        <input type="radio" name="salutation" value="Sra">
+                                        <label for="">Nenhum</label>
+                                        <input type="radio" name="salutation" value="">
+
                                         <label for="name">Nome</label>
                                         <input type="text" class="form-control" name="name" id="name" value="{{ $user->name }}" required>
                                         <label for="email">E-Mail</label>

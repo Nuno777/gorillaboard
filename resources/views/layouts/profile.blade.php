@@ -8,7 +8,7 @@
                 <nav class="navbar navbar-light">
                     <ul class="navbar-nav">
                         <li class="nav-link nav-item d-flex">
-                            <img class="" style="with:40px; height:40px;" src="{{ asset('storage/public/img/profile/joel.png') }}" alt="Imagem Profile">
+                            <img class="" style="with:40px; height:40px;" src="{{ asset('storage/' . Auth::user()->img) }}" alt="Imagem Profile">
                             <p id="name">{{ Auth::user()->name }}</p>
                             <i title="Logout" class="fa-solid fa-right-from-bracket"></i>
                         </li>

@@ -53,7 +53,7 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
-
+        dd($request);
         $request->user()->save();
 
         return Redirect::route('profile.index', $request->user())->with('success', 'profile-updated');
@@ -122,17 +122,17 @@ class ProfileController extends Controller
     }
     // define paginas de ações do perfil
 
-    public function changeImg(){
-        return view('profile.partials.update-img-user');
-    }
+    // public function changeImg(){
+    //     return view('profile.partials.update-img-user');
+    // }
 
-    public function changeEmail(){
-        return view('profile.partials.update-email');
-    }
+    // public function changeEmail(){
+    //     return view('profile.partials.update-email');
+    // }
 
-    public function changePassword(){
-        return view('profile.partials.update-password');
-    }
+    // public function changePassword(){
+    //     return view('profile.partials.update-password');
+    // }
     public function addAtleta(){
         $users = User::all();
         $atleta = new atletas;
@@ -148,8 +148,8 @@ class ProfileController extends Controller
         return redirect()->route('profile.index')->with('success', 'Atleta criado com sucesso');
     }
 
-    public function deleteAccount(){
+    /* public function deleteAccount(){
         return view('profile.partials.delete-account');
-    }
+    } */
 
 }
