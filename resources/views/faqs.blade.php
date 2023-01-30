@@ -3,7 +3,7 @@
 @section('title', 'GorillaBoards')
 
 @section('main')
-<div class="text container-fluid">
+<div class="text container-fluid d-flex flex-column  justify-content-between">
     <h1>Perguntas mais Frequentes</h1>
     <form action="{{ route('btnSearch') }}" method="get">
         <div class="input-group">

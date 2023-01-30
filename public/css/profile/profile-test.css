@@ -4,7 +4,6 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    color: black;
 }
 
 :root {
@@ -22,23 +21,15 @@ ul {
     margin: 0 !important;
     padding: 0 !important;
 }
-.info-base input,
-.change-email input,
-.change-password input,
-.info-base input[type="tel"]{
+
+.input-style{
     outline: none;
     border: none;
     border-bottom: 3px solid var(--color-primary);
 
 }
-.info-base input:hover,
-.info-base input[type="tel"]:hover,
-.info-base input:checked,
-.info-base input[type="tel"]:checked,
-.change-email input:hover,
-.change-email input:checked,
-.change-password input:hover,
-.change-password input:checked{
+.input-style:hover,
+.input-style:checked{
     outline: none;
     border: none;
     border-bottom: 3px solid var(--color-primary3);
@@ -51,101 +42,25 @@ ul {
 .container-fluid {
     padding: 0 !important;
 }
-
-.nav-profile {
-    background: linear-gradient(0deg, var(--color-primary3) 12%, var(--color-primary) 50%, var(--color-primary2)100%);
-    min-height: 34rem;
-    max-width: fit-content;
-    justify-content: center;
-    padding: 20px;
-    text-align: left;
-}
-
-.nav-profile .profile-logout {
-    width: fit-content;
+.cont-user {
     display: flex;
     flex-direction: row;
-
-    padding: 4px;
 }
 
-.nav-profile li:active {
-    background-color: rgba(255, 255, 255, 0.3);
+/* img navbar */
+.img-user{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary3);
+    overflow: hidden;
 }
-
-.nav-profile li:not(:first-child) {
-    margin-top: 20px;
-    color: white;
-}
-
-.nav-profile li i {
-    margin-right: 10px;
-    margin-left: 5px;
-}
-
-.nav-profile li a {
-    color: white;
-}
-
-.container-fluid .imgUser {
-    border-radius: 4.5rem;
-
-
-}
-
-.nav-profile .profile-logout .imgUser,
-.textUser .introUser .imgUser {
-    width: 50px;
-    height: 50px;
-}
-
-.nav-profile .profile-logout ul li {
-    width: 1;
-    height: 20px;
-
-}
-
-.nav-profile .profile-logout #name {
-    font-size: 23px;
-    margin-left: 15px;
-    line-height: 50px;
-    margin-bottom: 0;
-}
-
-.nav-profile .profile-logout i:hover {
-    color: #a82b23;
-    opacity: 1;
-    visibility: visible;
-
-}
-
-.nav-profile .profile-logout i {
-    text-align: right;
-    margin-left: 20px;
-    line-height: 50px;
-}
-
-.nav-profile .profile-logout hr {
-
-    height: 12px;
-    border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
-
-}
-
-.card-body {
-    margin-top: 1rem;
-}
-
-
-.option-profile {
+.img-user img{
     width: 100%;
-    display: flex;
-    flex-direction: row;
-    box-shadow: var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-
 }
+/* img navbar  end */
 
+/* btn options nav profile */
 .btn-nav-profile {
     background-color: transparent;
     cursor: pointer;
@@ -174,11 +89,9 @@ ul {
     position: relative;
     top: 1px;
 }
+/* btn options nav profile end */
 
-.cont-user {
-    display: flex;
-    flex-direction: row;
-}
+
 
 /* Previsualizar img  */
 
@@ -205,15 +118,38 @@ ul {
     width: 100%;
 
 }
-.info-base i.fa {
-    font-size: 24px;
-    color: black;
-    cursor: pointer;
-    margin-right: 10px;
- }
-input[type="radio"]:checked + i.fa {
-    color: var(--color-primary3);
+/* Previsualizar img  end */
+
+/* Delete account */
+.delete-div{
+    padding: 1.5rem ;
+    background-color: rgba(255, 251, 235, 1);
 }
+.delete-div p:first-child{
+    color: #92400e;
+    font-size: 1.6rem;
+}
+.delete-div p:first-child i{
+    color: #FBBF24;
+    margin-right: 0.6rem;
+}
+
+.delete-div p:nth-child(2){
+    font-size: 1.2rem;
+}
+.delete-div p:last-child{
+    color:rgba(221, 52, 76, 1);
+}
+
+.delete-div .text-warming{
+    padding-left: 2.5rem;
+    color:rgba(180, 83, 9, 1);
+}
+
+.btwarming{
+    background-color: #FBBF24 !important;
+}
+/* Delete account  end*/
 
 @media (max-with:1023) {
 

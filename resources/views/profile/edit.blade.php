@@ -28,7 +28,7 @@
 
             <div class="edit-data">
                 <label for="name">Nome: </label>
-                    <input class="mt-3" type="text" name="name"
+                    <input class="mt-3 ml-1 input-style" type="text" name="name"
                         value="{{ old('name', Auth::user()->name) }}" required autocomplete="name" placeholder="Nome"><br>
                 @if (Auth::user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !Auth::user()->hasVerifiedEmail())
                     <div>
@@ -48,8 +48,8 @@
                         @endif
                     </div>
                 @endif
-                <label for="">Numero de Telemovel</label>
-                <input type="tel"  pattern="[0-9]{3}[0-9]{3}[0-9]{3}" class="form-control" placeholder="" name="number_phone" value="{{ old('number_phone', Auth::user()->number_phone)}}">
+                <label for="">Numero de Telemovel:</label>
+                <input  class="input-style ml-1" type="tel"  pattern="[0-9]{3}[0-9]{3}[0-9]{3}" class="form-control" placeholder="" name="number_phone" value="{{ old('number_phone', Auth::user()->number_phone)}}">
             </div>
 
             <div>
@@ -76,7 +76,7 @@
                     <label class="file-input flex-item">
                         <i class="fa fa-upload"></i>
                         Selecionar Imagem
-                        <input type="file" name="img" accept="image/*">
+                        <input class="input-style" type="file" name="img" accept="image/*">
                     </label>
                     <button class="footer__btn"  type="submit">Submeter</button>
                 </div>
@@ -93,9 +93,9 @@
             @csrf
             @method('patch')
 
-            <div class="edit-data">
+            <div class="">
                 <label for="email">Email</label>
-                <input class="mt-3" type="text" name="email"
+                <input class="mt-3 input-style" type="text" name="email"
                     value="{{ old('email', Auth::user()->email) }}" required autocomplete="email" placeholder="Email"><br>
                 @if (Auth::user() instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && !Auth::user()->hasVerifiedEmail())
                     <div>
@@ -133,16 +133,16 @@
         <form method="post" action="{{ route('password.update' , Auth::user()) }}" class="mt-6 space-y-6">
             @csrf
             @method('put')
-
-            <label for="current_password">Password Atual</label>
-            <input id="current_password" name="current_password" type="password" class="" autocomplete="current-password">
-            <label for="password">Nova Password</label>
-            <input id="password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password">
-            <label for="password_confirmation">Confirmar Password</label>
-            <input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full"
+            <div class="d-flex flex-column">
+            <label for="current_password">Password Atual:</label>
+            <input id="current_password" name="current_password" type="password" class="input-style" autocomplete="current-password">
+            <label class="mt-3" for="password">Nova Password:</label>
+            <input id="password" name="password" type="password" class="mt-1 block input-style" autocomplete="new-password">
+            <label class="mt-3" for="password_confirmation">Confirmar Password:</label>
+            <input id="password_confirmation" name="password_confirmation" type="password" class="mt-1 block  input-style"
                 autocomplete="new-password">
 
-            <div>
+
                 <button class="footer__btn" type="submit">Atualizar password</button>
 
                 @if (session('status') === 'password-updated')
@@ -157,14 +157,20 @@
     {{-- elemina a conta do utilizador --}}
 
     <div id="delete-account"  class=" d-none">
-        <div class="cont-user">
-            <p>Deleting Your Account Is Permanent</p>
+        <div class="cont-user d-flex flex-column p-2">
+            <h4 class="mb-2">Eliminar Conta </h4>
+            <div class="delete-div">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> Atenção</p>
+                <p class="text-warming">Pare e pense: apagar sua conta significa perder todos os dados registrados, incluindo informações valiosas sobre seu atleta associado. Mantenha sua conta ativa.</p>
+                <p class="text-warming">Será impossivel voltar a traz. </p>
+            </div>
+
             <form method="POST" action="{{ route('profile.destroy', Auth::user()) }}" role="form" class="inline"
                 onsubmit="return confirm('Confirma que pretende eliminar a sua conta Permanentemente ?');">
                 @csrf
                 @method('DELETE')
 
-                <button class="footer__btn" type="submit">Delete Account</button>
+                <button class="footer__btn btwarming" type="submit">Delete Account</button>
             </form>
         </div>
     </div>
