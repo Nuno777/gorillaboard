@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Aula;
 use App\Models\Desporto;
+use App\Models\User;
 use App\Models\UserDesporto;
 use Illuminate\Http\Request;
 
@@ -84,16 +85,17 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserDesporto $userDesporto, Desporto $desporto)
+    public function update(Request $request, UserDesporto $userDesporto)
     {
         request()->validate([
             'npresen' => 'required'
         ]);
 
-        $userDesporto->num_presencas = request('npresen');
+        //$userDesporto->num_presencas = request('npresen');
+        $userDesporto->num_presencas->increment('npresen');
         $userDesporto->save();
         Log::channel('main')->info('ID ' . Auth::user()->id . ' alterou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
-        return redirect()->route('presenca.show')->with('message', 'A presença do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi marcada, com o número da inscrição ' . $userDesporto->id . '!');
+        return redirect()->route('presenca.show',compact('userDesporto'))->with('message', 'A presença do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi marcada, com o número da inscrição ' . $userDesporto->id . '!');
     }
 
     /**

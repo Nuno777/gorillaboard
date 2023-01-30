@@ -35,6 +35,7 @@
                                                 <th scope="col">Desporto</th>
                                                 <th scope="col">Inscrições</th>
                                                 <th scope="col">Presenças</th>
+                                                <th scope="col">Marcar Presença</th>
                                                 <th scope="col">Editar</th>
                                                 <th scope="col">Eliminar</th>
                                             </tr>
@@ -47,7 +48,22 @@
                                                     <td> {{ $inscricao->desporto->modalidades }} </td>
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
                                                     <td> {{ $inscricao->num_presencas }} </td>
-                                                    @if ($inscricao->num_inscricoes == $inscricao->num_presencas)
+
+                                                    <td>
+                                                        <form action="{{ route('presenca.update', $inscricao) }}"
+                                                            method="post">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <button type="submit" class="link"
+                                                                style="background-color: transparent; border:none">
+                                                                <i class="mdi mdi-plus text-primary"
+                                                                    data-toogle="tooltip"></i>
+                                                                    {{  $inscricao->num_presencas }}
+                                                            </button>
+                                                        </form>
+                                                    </td>
+
+                                                    {{-- @if ($inscricao->num_inscricoes == $inscricao->num_presencas)
                                                         <td>
 
                                                             <button type="submit" class="link"
@@ -68,7 +84,7 @@
                                                             </a>
                                                         </td>
                                                     @endif
-
+ --}}
 
                                                     <td>
                                                         <form role="form"
