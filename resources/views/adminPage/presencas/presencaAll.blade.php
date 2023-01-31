@@ -9,6 +9,88 @@
             <div class="container-fluid">
 
                 <div class="row">
+
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card card-default card-mini">
+                            <div class="card-header">
+                                <h2>Criar novo Professor</h2>
+                                <div class="sub-title">
+                                    <span class="mr-1"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-wrapper">
+                                    <div>
+                                        Criar Professor
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card card-default card-mini">
+                            <div class="card-header">
+                                <h2>Criar nova Atleta</h2>
+                                <div class="sub-title">
+                                    <span class="mr-1"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-wrapper">
+                                    <a href="{{ route('admin.atletas.index') }}">Criar Atleta</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card card-default card-mini">
+                            <div class="card-header">
+                                <h2>Marcar presenças</h2>
+                                <div class="sub-title">
+                                    <span class="mr-1"></span>
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                Presenças
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card card-default card-mini">
+                            <div class="card-header">
+                                <h2>Marcar presenças</h2>
+                                <div class="sub-title">
+                                    <span class="mr-1"></span>
+                                </div>
+
+                            </div>
+                            <div class="card-body">
+                                Presenças
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-sm-6">
+                        <div class="card card-default card-mini">
+                            <div class="card-header">
+                                <h2>Total de Alunos</h2>
+                                <div class="sub-title">
+                                    <span class="mr-1"></span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-wrapper">
+                                    <div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="col-md-12">
                         @if (Session::has('message'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -49,7 +131,6 @@
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
                                                     <td> {{ $inscricao->num_presencas }} </td>
 
-                                                    {{--  marcar presença --}}
                                                     @if ($inscricao->num_inscricoes <= $inscricao->num_presencas)
                                                         <td>
 
@@ -61,20 +142,19 @@
 
                                                         </td>
                                                     @else
-                                                    <td>
-                                                        <form action="{{ route('presenca.inc', $inscricao->id) }}"
-                                                            method="post">
-                                                            @csrf
-                                                            <button type="submit" class="link"
-                                                                style="background-color: transparent; border:none">
-                                                                <i class="mdi mdi-plus text-primary"
-                                                                    data-toogle="tooltip"></i>
-                                                            </button>
-                                                        </form>
-                                                    </td>
+                                                        <td>
+                                                            <form action="{{ route('presenca.inc', $inscricao->id) }}"
+                                                                method="post">
+                                                                @csrf
+                                                                <button type="submit" class="link"
+                                                                    style="background-color: transparent; border:none">
+                                                                    <i class="mdi mdi-plus text-primary"
+                                                                        data-toogle="tooltip"></i>
+                                                                </button>
+                                                            </form>
+                                                        </td>
                                                     @endif
 
-                                                    {{-- edit presença --}}
                                                     @if ($inscricao->num_inscricoes != $inscricao->num_presencas)
                                                         <td>
 

@@ -34,10 +34,33 @@
                     </a>
                     <ul class="collapse" id="presencas" data-parent="#sidebar-menu">
                         <div class="sub-menu">
-
                             <li>
-                                <a class="sidenav-item-link" href="{{ route('presenca.show') }}">
-                                    <span class="nav-text">Mostrar Presenças</span>
+                                <a class="sidenav-item-link" href="{{ route('presenca.showSurf') }}">
+                                    <span class="nav-text">Surf</span>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('presenca.showSkate') }}">
+                                    <span class="nav-text">Skate</span>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('presenca.showBodyboard') }}">
+                                    <span class="nav-text">Bodyboard</span>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('presenca.showDownhill') }}">
+                                    <span class="nav-text">Downhill</span>
+
+                                </a>
+                            </li>
+                            <li>
+                                <a class="sidenav-item-link" href="{{ route('presenca.showPaddle') }}">
+                                    <span class="nav-text">Paddle</span>
 
                                 </a>
                             </li>

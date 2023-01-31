@@ -74,7 +74,12 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::post('/admincontactosUpdate/{contacto}', [ContactosController::class, 'enviarEmail'])->name('adminContactos.enviarEmail');
     Route::delete('/admincontactosDestroy/{contacto}', [ContactosController::class, 'destroy'])->name('adminContactos.destroy');
 
-    Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
+    Route::get('/presenca/show/all', [AulaController::class, 'show'])->name('presenca.show');
+    Route::get('/presenca/show/surf', [AulaController::class, 'showSurf'])->name('presenca.showSurf');
+    Route::get('/presenca/show/skate', [AulaController::class, 'showSkate'])->name('presenca.showSkate');
+    Route::get('/presenca/show/bodyboard', [AulaController::class, 'showBodyboard'])->name('presenca.showBodyboard');
+    Route::get('/presenca/show/downhill', [AulaController::class, 'showDownhill'])->name('presenca.showDownhill');
+    Route::get('/presenca/show/paddle', [AulaController::class, 'showPaddle'])->name('presenca.showPaddle');
     Route::get('/presenca/{userDesporto}/edit', [AulaController::class, 'edit'])->name('presenca.edit');
     Route::post('/presenca/{id}/increment', [AulaController::class, 'increment'])->name('presenca.inc');
     Route::put('/presenca/{userDesporto}', [AulaController::class, 'update'])->name('presenca.update');
@@ -97,7 +102,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('profile/show/add/Atleta', [profileController::class, 'addAtleta'])->name('profile.show.add-atleta');
     // Route::get('profile/delete/account', [profileController::class, 'deleteAccount'])->name('profile.delete-account');
     Route::post('profile/add/atleta', [profileController::class, 'atletaStore'])->name('profile.add-atleta');
-
 });
 
 require __DIR__ . '/auth.php';

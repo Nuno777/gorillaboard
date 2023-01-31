@@ -21,7 +21,7 @@ class AulaController extends Controller
     {
         $aula = Aula::all();
         $desportos = Desporto::all();
-        return view('adminPage.presenca', compact('desportos', 'aula'));
+        return view('adminPage.presencas.presenca', compact('desportos', 'aula'));
     }
 
     /**
@@ -61,11 +61,37 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function show(Aula $aula)
+    public function show()
     {
         $linhas = UserDesporto::all();
-        return view('adminPage.presenca', compact('linhas'));
+        return view('adminPage.presencas.presencaAll', compact('linhas'));
     }
+    public function showSurf()
+    {
+        $linhas = UserDesporto::where('desporto_id', 1)->orderby('id')->get();
+        return view('adminPage.presencas.presenca', compact('linhas'));
+    }
+    public function showSkate()
+    {
+        $linhas = UserDesporto::where('desporto_id', 2)->orderby('id')->get();
+        return view('adminPage.presencas.presenca', compact('linhas'));
+    }
+    public function showBodyboard()
+    {
+        $linhas = UserDesporto::where('desporto_id', 3)->orderby('id')->get();
+        return view('adminPage.presencas.presenca', compact('linhas'));
+    }
+    public function showDownhill()
+    {
+        $linhas = UserDesporto::where('desporto_id', 4)->orderby('id')->get();
+        return view('adminPage.presencas.presenca', compact('linhas'));
+    }
+    public function showPaddle()
+    {
+        $linhas = UserDesporto::where('desporto_id', 5)->orderby('id')->get();
+        return view('adminPage.presencas.presenca', compact('linhas'));
+    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -75,7 +101,7 @@ class AulaController extends Controller
      */
     public function edit(UserDesporto $userDesporto)
     {
-        return view('adminPage.presencaEdit', compact('userDesporto'));
+        return view('adminPage.presencas.presencaEdit', compact('userDesporto'));
     }
 
     /**
