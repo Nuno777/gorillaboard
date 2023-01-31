@@ -111,7 +111,7 @@ class AulaController extends Controller
      * @param  \App\Models\Aula  $aula
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserDesporto $userDesporto)
+    public function update(Request $request, UserDesporto $userDesporto,Desporto $desporto)
     {
         request()->validate([
             'npresen' => 'required'
@@ -119,8 +119,8 @@ class AulaController extends Controller
 
         $userDesporto->num_presencas = request('npresen');
         $userDesporto->save();
-        Log::channel('main')->info('ID ' . Auth::user()->id . ' editou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
-        return redirect()->route('presenca.show')->with('message', 'ID ' . Auth::user()->id . ' editou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->name . '!');
+        Log::channel('main')->info('ID ' . Auth::user()->id . ' editou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do aluno ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
+        return redirect()->route('presenca.show')->with('message', 'A presença do aluno ' . $userDesporto->user_id = Auth::user()->name .' foi editado para '. $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas);
     }
 
     public function increment(UserDesporto $userDesporto, $id)

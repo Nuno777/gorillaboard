@@ -2,7 +2,7 @@
 
 @section('custom_css', asset('css/aulas.css'))
 
-@section('title', 'GorillaBoards')
+@section('title', 'GorillaBoards - '.$desporto->modalidades)
 @section('main')
 
     <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
@@ -163,11 +163,47 @@
             </div>
         </div>
 
-        <div class="form-row justify-content-center">
-            <button type="submit" class="btn btn-primary ">Inscrição</button>
-        </div>
+
+        @if (Auth::user()->atletas->user_id == Auth::user()->id)
+            <div class="form-row justify-content-center">
+                <button type="submit" class="btn btn-primary ">Inscrição</button>
+            </div>
+        @else
+
+        @endif
 
     </form>
 @endauth
+</div>
+
+<div id="loja_section">
+
+    <div class="row text-center" id="savetgor">
+
+        <div class="col" id="savethegorilas_info">
+            <div class="text_savegori">
+                <h2>Gorilla Care</h2>
+                <h4>Vamos Salvar os Gorilas Gigantes do Congo</h4>
+                <p>Os Gorilas Gigantes de Congo, conhecidos como <b>Gorilas de Grauer</b>, sofreram uma <b>perda
+                        catastrofica de 77% da sua população</b> por concequencia da <b>caça ilegal</b> e <b>destruição
+                        de habitat</b></p>
+            </div>
+            <div class="row" id="btns_savegori">
+                <div class="doar col text-center">
+                    <h5>Doe para esta causa</h5>
+                    <a href="https://gracegorillas.org/grace-save-a-gorilla/" target="_blank">Doação</a>
+                </div>
+                <div class="loja_gori col text-center">
+                    <h5>20% do valor de todas as vendas é doado</h5>
+                    <a href="http://gorillaboards.epizy.com/" target="_blank">Loja</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col testt">
+            <img src="{{ asset('img/savethegorilass.png') }}" alt="ola" id="savegori_img">
+        </div>
+    </div>
+
 </div>
 @endsection

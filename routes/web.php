@@ -62,8 +62,6 @@ Route::get('Search', [FaqController::class, 'search'])->middleware('auth', 'veri
 Route::get('/desportos', [PageController::class, 'desportos'])->name('desportos');
 
 
-
-
 Route::middleware(['auth', 'verified', 'admin'])->group(function () {
     Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
     Route::get('/logs', [PageController::class, 'logs'])->name('logs');

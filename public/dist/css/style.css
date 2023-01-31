@@ -3040,7 +3040,7 @@ fieldset:disabled a.btn {
   text-decoration: none;
 }
 .btn-link:hover {
-  color: #742ed3;
+  color: #2AA9FF;
   text-decoration: underline;
 }
 .btn-link:focus, .btn-link.focus {
@@ -4818,7 +4818,7 @@ input[type=button].btn-block {
 }
 .page-link:hover {
   z-index: 2;
-  color: #742ed3;
+  color: #2AA9FF;
   text-decoration: none;
   background-color: #f0f1f5;
   border-color: #b6bdca;
@@ -11176,7 +11176,7 @@ button.bg-smoke:focus {
 }
 
 a.text-primary:hover, a.text-primary:focus {
-  color: #742ed3 !important;
+  color: #2AA9FF !important;
 }
 
 .text-secondary {

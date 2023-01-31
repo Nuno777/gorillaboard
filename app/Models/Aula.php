@@ -12,4 +12,12 @@ class Aula extends Model
     public function desporto() {
         return $this->belongsTo(Desporto::class, 'desporto_id', 'id','modalidades');
     }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function atletas(){
+        return $this->belongsTo(atletas::class);
+    }
 }
