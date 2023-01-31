@@ -50,15 +50,13 @@
                                                     <td> {{ $inscricao->num_presencas }} </td>
 
                                                     <td>
-                                                        <form action="{{ route('presenca.update', $inscricao) }}"
+                                                        <form action="{{ route('presenca.inc', $inscricao->id) }}"
                                                             method="post">
                                                             @csrf
-                                                            @method('PUT')
                                                             <button type="submit" class="link"
                                                                 style="background-color: transparent; border:none">
                                                                 <i class="mdi mdi-plus text-primary"
                                                                     data-toogle="tooltip"></i>
-                                                                {{ $inscricao->num_presencas }}
                                                             </button>
                                                         </form>
                                                     </td>

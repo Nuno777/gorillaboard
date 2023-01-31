@@ -76,6 +76,7 @@ Route::middleware(['auth', 'verified', 'admin'])->group(function () {
 
     Route::get('/presenca/show', [AulaController::class, 'show'])->name('presenca.show');
     Route::get('/presenca/{userDesporto}/edit', [AulaController::class, 'edit'])->name('presenca.edit');
+    Route::post('/presenca/{id}/increment', [AulaController::class, 'increment'])->name('presenca.inc');
     Route::put('/presenca/{userDesporto}', [AulaController::class, 'update'])->name('presenca.update');
     Route::delete('/presenca/{userDesporto}', [AulaController::class, 'destroy'])->name('presenca.delete');
 });

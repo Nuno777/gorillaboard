@@ -93,8 +93,17 @@ class AulaController extends Controller
 
         $userDesporto->num_presencas = request('npresen');
         $userDesporto->save();
-        Log::channel('main')->info('ID ' . Auth::user()->id . ' alterou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
-        return redirect()->route('presenca.show',compact('userDesporto'))->with('message', 'A presença do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi marcada, com o número da inscrição ' . $userDesporto->id . '!');
+        Log::channel('main')->info('ID ' . Auth::user()->id . ' editou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
+        return redirect()->route('presenca.show')->with('message', 'ID ' . Auth::user()->id . ' editou a presença do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi marcada, com o número da inscrição ' . $userDesporto->id . '!');
+    }
+
+    public function increment(UserDesporto $userDesporto, $id)
+    {
+        $inc = UserDesporto::find($id);
+        $inc->increment('num_presencas');
+        $inc->save();
+        Log::channel('main')->notice('ID ' . Auth::user()->id . ' alterou a presença de ' . $userDesporto->num_inscricoes . '/' . $userDesporto->num_presencas . ' do utilizador ' . $userDesporto->user_id = Auth::user()->id . ' do desporto ' . $userDesporto->desporto_id);
+        return redirect()->route('presenca.show')->with('message', 'A presença do aluno ' . $userDesporto->user_id = Auth::user()->name . ' foi marcada, com o número da inscrição ' . $userDesporto->id . '!');
     }
 
     /**
