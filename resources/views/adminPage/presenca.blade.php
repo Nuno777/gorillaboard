@@ -49,6 +49,18 @@
                                                     <td> {{ $inscricao->num_inscricoes }} </td>
                                                     <td> {{ $inscricao->num_presencas }} </td>
 
+                                                    {{--  marcar presença --}}
+                                                    @if ($inscricao->num_inscricoes <= $inscricao->num_presencas)
+                                                        <td>
+
+                                                            <button type="submit" class="link"
+                                                                style="background-color: transparent; border:none">
+                                                                <i class="mdi mdi-close text-danger"
+                                                                    data-toogle="tooltip"></i>
+                                                            </button>
+
+                                                        </td>
+                                                    @else
                                                     <td>
                                                         <form action="{{ route('presenca.inc', $inscricao->id) }}"
                                                             method="post">
@@ -60,8 +72,10 @@
                                                             </button>
                                                         </form>
                                                     </td>
+                                                    @endif
 
-                                                    @if ($inscricao->num_inscricoes == $inscricao->num_presencas)
+                                                    {{-- edit presença --}}
+                                                    @if ($inscricao->num_inscricoes != $inscricao->num_presencas)
                                                         <td>
 
                                                             <button type="submit" class="link"
