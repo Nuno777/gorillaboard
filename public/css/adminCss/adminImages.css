@@ -13,22 +13,34 @@
 }
 
 .galerias_imgs_desportos{
-    width: 700px;
+    width: 100%;
     margin-bottom: 30px;
+    
 }
 
 .galerias_imgs_desportos p a{
     width: 100%;
     color: white !important;
     border-radius: 0;
-    border-bottom: solid #1B272C 5px;
     font-size: 15pt;
+    font-weight: bold;
+}
+
+.galerias_imgs_desportos p a:hover{
+border-bottom: solid #1B272C 10px;
 }
 
 #searchbar_imgs{
-    width: 700px;
     margin-top: 30px;
     margin-bottom: 30px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.search_input_button{
+    width: 600px !important;
 }
 
 .searchbtn{

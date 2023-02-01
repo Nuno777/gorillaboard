@@ -1,3 +1,5 @@
+@vite('public/css/adminCss/edit_texto_sobrestyle.css')
+
 @include('layouts.partials.dashboard.head')
 
 <body class="navbar-fixed sidebar-fixed" id="body">
@@ -14,7 +16,7 @@
                       {{ session()->get('success') }}  
                     </div>
                   @endif
-                  <table class="table table-striped">
+                  <table class="table table-striped table_edit">
                     <thead>
                         <tr>
                           <td>Texto</td>
@@ -38,7 +40,7 @@
                             <td>
                                 
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-sobretext-{{ $sobre_text->id }}">
-                                    Edit
+                                    Editar
                                   </button>
                     
                                   <div class="modal fade" id="modal-sobretext-{{ $sobre_text->id }}" tabindex="-1" role="dialog" aria-labelledby="modal-sobretext-{{ $sobre_text->id }}-title" aria-hidden="true">

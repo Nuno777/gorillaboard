@@ -586,7 +586,8 @@ body{
 }
 
 #savegori_img {
-  width: 700px;
+  width: 900px;
+  float: right;
 }
 
 
@@ -604,12 +605,13 @@ body{
     width: 300px;
   }
 
-  .testt{
+  .col_invise{
     display: none;
   }
 
   .text_savegori{
-    padding-right: 10px;
+    padding: 10px;
+    color: black;
   }
   
   }

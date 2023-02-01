@@ -262,4 +262,31 @@ nav .nav_option li a:hover {
     width: auto;
     justify-content: center;
 }
+
+@media only screen and (max-width: 700px) {
+  
+  nav li {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+  }
+
+  nav li a {
+    width: 100%;
+    background-color: white !important;
+    color: #1B272C !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    text-decoration: none !important;
+    height: 60px !important;
+    display: flex !important;
+    align-content: space-around !important;
+    flex-wrap: wrap !important;
+    font-family: 'Raleway', sans-serif !important;
+    font-size: 12pt !important;
+    transition: .5s ease-in-out !important;
+    border-radius: 0 !important;
+}
+}
 /*============NAVBAR FIM=============*/
