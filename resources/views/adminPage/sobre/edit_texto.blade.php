@@ -10,7 +10,7 @@
 
              <div class="row">
                 <div class="col-sm-12">
-                    <h1 class="display-3">Sobre Texto</h1>     
+                    <h1 class="display-3" style="padding-left: 20px">Sobre Texto</h1>     
                     @if(session()->get('success'))
                     <div class="alert alert-success">
                       {{ session()->get('success') }}  
