@@ -24,7 +24,7 @@
                                     <div class="form-group">
                                         <p for="">Saudação</p>
                                         <label for="">Sr</label>
-                                        <input type="radio" name="salutation" value="Sr">
+                                        <input type="radio" name="salutation" value="Sr" required>
                                         <label for="">Sra</label>
                                         <input type="radio" name="salutation" value="Sra">
                                         <label for="">Nenhum</label>
