@@ -15,6 +15,16 @@
                 <button class="btn-nav-profile mr-4" id="changeEmail" >Mudar Email</button>
                 <button class="btn-nav-profile mr-4" id="changePassword" ></a>Mudar Password</button>
                 <button class="btn-nav-profile del mr-4" id="deletAccount" >Eliminar Conta</button>
+                @if (Auth::check())
+                                <form method="POST" action="{{ route('logout') }}" class=" ">
+                                    @csrf
+                                    <a class="dropdown-link-item pr-3 btn-nav-profile" href="route('logout')"
+                                        onclick="event.preventDefault(); this.closest('form').submit();">
+
+                                        <span class="nav-text pl-3">Logout</span>
+                                    </a>
+                                </form>
+                            @endauth
             </div>
             <div id="mobile" class="form-floating d-none" >
                 <select class="form-select" id="floatingSelect" aria-label="Floating label select example">

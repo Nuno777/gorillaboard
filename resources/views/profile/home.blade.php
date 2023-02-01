@@ -15,10 +15,20 @@
             @endif
             <div class="d-flex btns-link">
                 <a href="{{ route('profile.index') }}"><button class="btn-nav-profile"> </button>Home</a>
-                <a href="{{ route('profile.edit', Auth::user()) }}"><button class="btn-nav-profile pr-3"></button>Alterar
+                <a href="{{ route('profile.edit', Auth::user()) }}"><button class="btn-nav-profile pl-3"></button>Alterar
                     Perfil</a>
-                <a href="{{ route('profile.add-atleta') }}"><button class="btn-nav-profile pr-3"></button>Adicionar
-                    Atleta</a>
+                <a href="{{ route('profile.add-atleta') }}"><button class="btn-nav-profile pl-3"></button>Adicionar Atleta</a>
+                @if (Auth::check())
+                                <form method="POST" action="{{ route('logout') }}" class=" ">
+                                    @csrf
+                                    <a class="dropdown-link-item pr-3 btn-nav-profile" href="route('logout')"
+                                        onclick="event.preventDefault(); this.closest('form').submit();">
+
+                                        <span class="nav-text pl-3">Logout</span>
+                                    </a>
+                                </form>
+                            @endauth
+
             </div>
 
         </div>

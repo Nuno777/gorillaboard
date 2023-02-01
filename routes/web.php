@@ -97,7 +97,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('profile/edit/email', [profileController::class, 'changeEmail'])->name('profile.updateEmail');
     // Route::get('profile/edit/password', [profileController::class, 'changePassword'])->name('profile.updatePasswowrd');
     // Route::get('profile/edit/image', [profileController::class, 'changeImg'])->name('profile.updateimg');
-    Route::get('profile/show/add/Atleta', [profileController::class, 'addAtleta'])->name('profile.show.add-atleta');
+    Route::post('profile/show/add/Atleta', [profileController::class, 'addAtleta'])->name('profile.show.add-atleta');
     // Route::get('profile/delete/account', [profileController::class, 'deleteAccount'])->name('profile.delete-account');
     Route::post('profile/add/atleta', [profileController::class, 'atletaStore'])->name('profile.add-atleta');
 });
