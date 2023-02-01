@@ -2,22 +2,12 @@
 
 @section('custom_css', asset('css/aulas.css'))
 
-@section('title', 'GorillaBoards - '.$desporto->modalidades)
+@section('title', 'GorillaBoards - ' . $desporto->modalidades)
 @section('main')
 
-    <div id="carouselBasicExample" class="carousel slide carousel-fade" data-mdb-ride="carousel">
-        <!-- Indicators -->
-        <div class="carousel-indicators">
-        </div>
-        <div class="carousel-inner">
-            <!-- Single item -->
-            <div class="carousel-item active">
-                <img src="{{ asset('img/supertubosgifback.gif') }}" class="d-block w-100" alt="Supertubos" />
-
-                <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt=""
-                        style="width: 1000px"></div>
-            </div>
-        </div>
+    <div class="carousel-inner">
+        <img src="{{ asset('img/aulas.png') }}" class="d-block w-100" alt="aulas" />
+        <div class="centered escola">Escola GorillaBoards</div>
     </div>
     <br>
     <div class="container">
@@ -26,7 +16,7 @@
                 <div class="col col-lg-5">
                     <div class="card">
                         <div class="card-body">
-                            <i class="fas fa-users"></i><b>Aulas de Grupo</b>
+                            <i class="fas fa-users cor"></i><b> Aulas de Grupo</b>
                             <p class="card-text">Durante as aulas serão transmitidas as bases da modalidade, de forma a
                                 permitir uma aprendizagem rápida e sustentada.</p>
                             <p class="card-text">O acompanhamento do instrutor será sempre próximo, permitindo corrigir de
@@ -37,7 +27,7 @@
                 <div class="col col-lg-5">
                     <div class="card">
                         <div class="card-body">
-                            <i class="fa-solid fa-user"></i><b>Aulas Privadas</b>
+                            <i class="fa-solid fa-user cor"></i><b> Aulas Privadas</b>
                             <p class="card-text">As aulas privadas permitem um desenvolvimento mais rápido e eficaz do
                                 aluno. </p>
                             <p class="card-text">O instrutor acompanha em exclusivo o aluno, permitindo a correção imediata
@@ -52,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
-                <h3 class="row justify-content-center">Aulas de {{ $desporto->modalidades }} em Grupo</h3>
+                <h3 class="row justify-content-center cor">Aulas de {{ $desporto->modalidades }} em Grupo</h3>
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -82,14 +72,14 @@
                 </div>
             </div>
         </div>
-        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído.</b></p>
+        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o</b> <b class="cor">material incluído.</b></p>
     </div>
     <br>
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
 
-                <h3 class="row justify-content-center">Aulas Privadas de {{ $desporto->modalidades }}</h3>
+                <h3 class="row justify-content-center cor">Aulas Privadas de {{ $desporto->modalidades }}</h3>
 
                 <div class="col col-lg-3">
                     <div class="card">
@@ -120,7 +110,7 @@
                 </div>
             </div>
         </div>
-        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o material incluído.</b></p>
+        <p class="card-text text-center p-info"><b>Qualquer aula tem todo o</b> <b class="cor">material incluído.</b> </p>
 
 
 
@@ -134,7 +124,7 @@
                         <label for="inputEmail4">Email</label>
 
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email"
-                            @if (Auth::check())value="{{ Auth::user()->email }} " required
+                            @if (Auth::check()) value="{{ Auth::user()->email }} " required
                     @endauth disabled>
                 </div>
 
@@ -174,12 +164,11 @@
             </div>
         @else
         <div class="form-row justify-content-center">
-            <a class="btn btn-primary" href='{{ route('profile.show.add-atleta') }}'>Adicionar como Atleta</a>
-        </div>
+            <a class="btn btn-primary cor" href='{{ route('profile.show.add-atleta') }}'>Adicionar como Atleta</a>
+        </div> @endif
         @endif
-    @endif
-    </form>
-@endauth
+            </form>
+        @endauth
 </div>
 
 <div id="loja_section">

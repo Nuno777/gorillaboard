@@ -19,7 +19,40 @@
                                 </button>
                             </div>
                         @endif
+                        <div class="col-md-12">
 
+                            <div class="card align-items-center" style="background-color: transparent; ">
+
+                                <div class="card-body">
+
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination pagination-flat ">
+
+                                            <li class="page-item active">
+                                                <a class="page-link" href="{{ route('presenca.show') }}">All</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="{{ route('presenca.showSurf') }}">Surf</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="{{ route('presenca.showSkate') }}">Skate</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                    href="{{ route('presenca.showBodyboard') }}">Bodyboard</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                    href="{{ route('presenca.showDownhill') }}">Downhill</a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="{{ route('presenca.showPaddle') }}">Paddle</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card card-primary" style="background-color: #F3F8FB">
                             <div class="card-body">
                                 <h4 class="title">Lista das Inscrições</h4>
@@ -114,40 +147,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-
-                        <div class="card align-items-center" style="background-color: transparent; ">
-
-                            <div class="card-body">
-
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination pagination-flat ">
-
-                                        <li class="page-item active">
-                                            <a class="page-link" href="{{ route('presenca.show') }}">All</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="{{ route('presenca.showSurf') }}">Surf</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="{{ route('presenca.showSkate') }}">Skate</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link"
-                                                href="{{ route('presenca.showBodyboard') }}">Bodyboard</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link"
-                                                href="{{ route('presenca.showDownhill') }}">Downhill</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="{{ route('presenca.showPaddle') }}">Paddle</a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>
