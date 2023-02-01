@@ -1,33 +1,11 @@
 @extends('layouts.master')
 @section('title', 'GorillaBoards')
 @vite(['public/css/profile/profile-test.css'])
+@vite(['public/js/profile-btn.js'])
 @section('main')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 bg-light">
-                <nav class="navbar navbar-light mt-2">
-                    <ul class="navbar-nav">
-                        <li class=" nav-item d-flex flex-fill pt-3">
-                            <div class="img-user">
-                                <img class="" src="{{ asset('storage/' . Auth::user()->img) }}" alt="Imagem Profile">
-                            </div>
-                            <p id="name">{{ Auth::user()->name }}</p>
-                            <i title="Logout" class="fa-solid fa-right-from-bracket"></i>
-                            <hr>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ asset('profile.home') }}"><i class="fa-solid fa-house mr-2"></i>Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('profile.edit', Auth::user()) }}"><i class="fa-solid fa-user mr-2"></i>Profile</a>
-                        </li>
-                        <li class="nav-item">
-                             <a class="nav-link" href="{{ route('profile.show.add-atleta') }}"><i class="fa-solid fa-person-running"></i>Adicionar Atleta</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-10">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         @yield('header-info')

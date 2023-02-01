@@ -53,7 +53,6 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
-        dd($request);
         $request->user()->save();
 
         return Redirect::route('profile.index', $request->user())->with('success', 'profile-updated');

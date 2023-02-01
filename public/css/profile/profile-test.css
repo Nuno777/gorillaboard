@@ -21,7 +21,10 @@ ul {
     margin: 0 !important;
     padding: 0 !important;
 }
-
+label{
+    font-size: 13pt;
+    color: black;
+}
 .input-style{
     outline: none;
     border: none;
@@ -49,17 +52,23 @@ ul {
 
 /* img navbar */
 .img-user{
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    border: 2px solid var(--color-primary3);
     overflow: hidden;
 }
 .img-user img{
     width: 100%;
 }
+
 /* img navbar  end */
 
+.card-header{
+    background: #2aa9ff !important; ;
+    color: white !important;
+    border-bottom:2px solid var(--color-primary3) !important;
+    border-radius: none !important;
+}
 /* btn options nav profile */
 .btn-nav-profile {
     background-color: transparent;
@@ -69,17 +78,10 @@ ul {
     border: none;
     width: max-content;
     padding: 0;
-    padding-right: 3rem;
 }
 
-.btn-nav-profile a {
-    color: black;
-}
 
-.btn-nav-profile a:hover {
-    border-bottom: 3px solid var(--color-primary);
-    color: black;
-}
+
 
 .btn-nav-profile .del a:hover {
     border-bottom: 3px solid var(--color-red2);
@@ -151,10 +153,16 @@ ul {
 }
 /* Delete account  end*/
 
-@media (max-with:1023) {
 
-    .nav-profile .profile-logout p,
-    .nav-profile .profile-logout i {
-        visibility: hidden;
+.back-profile{
+    border: none !important;
+    background-color: transparent !important;
+    color:black;
+}
+
+
+@media (min-with:474){
+    .header-img{
+        display: none !important;
     }
 }

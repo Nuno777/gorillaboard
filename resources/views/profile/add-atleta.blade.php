@@ -4,6 +4,7 @@
     <div class="cont-user">
         <form method="POST" action="{{ route('profile.add-atleta') }}" class="form-group">
             @csrf
+            <h3>Adicionar-me como Atleta</h3>
             @include('profile.partials.add-edit')
             <div class="form-group">
                 <button type="submit" class="btn btn-success" name="ok">Save</button>

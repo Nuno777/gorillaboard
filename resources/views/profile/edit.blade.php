@@ -1,4 +1,3 @@
-@vite(['public/js/profile-btn.js'])
 @extends('profile.partials.nav-options')
 @section('content-base')
     @if ($errors->any())
@@ -20,7 +19,7 @@
             @method('patch')
             <p for="">Saudação</p>
             <label for="">Sr</label>
-            <input type="radio" name="salutation" value="Sr">
+            <input type="radio" name="salutation" value="Sr" required>
             <label for="">Sra</label>
             <input type="radio" name="salutation" value="Sra">
             <label for="">Nenhum</label>
@@ -174,4 +173,5 @@
             </form>
         </div>
     </div>
+    <a href="{{ route("profile.index") }}"><button class="back-profile" ><i class="fa-sharp fa-solid fa-arrow-left pr-2"></i>Voltar ao Perfil </button> </a>
     @endsection

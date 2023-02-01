@@ -71,56 +71,77 @@ deletAccount.onclick = function () {
 }
 
 $(window).resize(function () {
-    if ($(window).width() < 722) {
-        const divCompt = document.getElementById("compt");
-        const divMobile = document.getElementById("mobile");
-        const select = document.getElementById("floatingSelect");
-        const value = select.value;
+    const divCompt = document.getElementById("compt");
+    const divMobile = document.getElementById("mobile");
+    const select = document.getElementById("floatingSelect");
 
+    if ($(window).width() < 722) {
         divCompt.classList.add("d-none");
         divMobile.classList.remove("d-none");
+    } else {
+        divCompt.classList.remove("d-none");
+        divMobile.classList.add("d-none");
+    }
 
+    select.onchange = function () {
+        const selectedOption = select.value;
         const divProfile = document.getElementById("info-base");
         const divChangeImg = document.getElementById("change-img");
         const divChangeEmail = document.getElementById("change-email");
         const divChangePassword = document.getElementById("change-password");
         const divDeletAccount = document.getElementById("delete-account");
 
-        select.onchange = function () {
-            const selectedOption = this.options[this.selectedIndex].value;
-            console.log(selectedOption);
-            if (selectedOption === "1") {
+        switch (selectedOption) {
+            case "1":
                 divProfile.classList.remove("d-none");
                 divChangeImg.classList.add("d-none");
                 divChangeEmail.classList.add("d-none");
                 divChangePassword.classList.add("d-none");
                 divDeletAccount.classList.add("d-none");
-            } else if (selectedOption === "2") {
+                break;
+            case "2":
                 divProfile.classList.add("d-none");
                 divChangeImg.classList.remove("d-none");
                 divChangeEmail.classList.add("d-none");
                 divChangePassword.classList.add("d-none");
                 divDeletAccount.classList.add("d-none");
-            } else if (selectedOption === "3") {
+                break;
+            case "3":
                 divProfile.classList.add("d-none");
                 divChangeImg.classList.add("d-none");
                 divChangeEmail.classList.remove("d-none");
                 divChangePassword.classList.add("d-none");
                 divDeletAccount.classList.add("d-none");
-            } else if (selectedOption === "4") {
+                break;
+            case "4":
                 divProfile.classList.add("d-none");
                 divChangeImg.classList.add("d-none");
                 divChangeEmail.classList.add("d-none");
                 divChangePassword.classList.remove("d-none");
                 divDeletAccount.classList.add("d-none");
-            } else if (selectedOption === "5") {
+                break;
+            case "5":
                 divProfile.classList.add("d-none");
                 divChangeImg.classList.add("d-none");
                 divChangeEmail.classList.add("d-none");
                 divChangePassword.classList.add("d-none");
                 divDeletAccount.classList.remove("d-none");
-            }
-        };
+                break;
+        }
+    };
+});
+
+
+
+
+
+$(window).resize(function () {
+    const divImgHeader = document.getElementById('header-img')
+
+    if ($(window).width() < 474) {
+        divImgHeader.classList.add("d-none");
+    } else {
+        divImgHeader.classList.remove("d-none");
     }
 });
 
