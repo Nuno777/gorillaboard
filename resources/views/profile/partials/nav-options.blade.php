@@ -9,7 +9,7 @@
         </div>
         <div class="col ">
             <h3>O meu Perfil</h3>
-            <div id="compt" class="d-flex ">
+            <div id="compt" class="d-flex btns-link">
                 <button class="btn-nav-profile mr-4" id="changeProfile">Informações basicas</button>
                 <button class="btn-nav-profile mr-4" id="changeImg" ></a>Alterar Imagem</button>
                 <button class="btn-nav-profile mr-4" id="changeEmail" >Mudar Email</button>

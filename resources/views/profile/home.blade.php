@@ -13,7 +13,7 @@
             @else
                 <h3 class="card-title"> Bem vinda {{ Auth::user()->salutation }}, {{ Auth::user()->name }}</h3>
             @endif
-            <div class="d-flex ">
+            <div class="d-flex btns-link">
                 <a href="{{ route('profile.index') }}"><button class="btn-nav-profile"> </button>Home</a>
                 <a href="{{ route('profile.edit', Auth::user()) }}"><button class="btn-nav-profile pr-3"></button>Alterar
                     Perfil</a>

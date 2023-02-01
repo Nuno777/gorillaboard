@@ -122,6 +122,21 @@ label{
 }
 /* Previsualizar img  end */
 
+.btns-link button,
+.btns-link a{
+    color: white;
+
+}
+.btns-link button:hover,
+.btns-link a:hover{
+    color: #1b272c;
+    border-bottom: 3px solid var(--color-primary3);
+
+
+}
+
+
+
 /* Delete account */
 .delete-div{
     padding: 1.5rem ;

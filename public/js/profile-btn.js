@@ -138,7 +138,7 @@ $(window).resize(function () {
 $(window).resize(function () {
     const divImgHeader = document.getElementById('header-img')
 
-    if ($(window).width() < 474) {
+    if ($(window).width() < 520) {
         divImgHeader.classList.add("d-none");
     } else {
         divImgHeader.classList.remove("d-none");
