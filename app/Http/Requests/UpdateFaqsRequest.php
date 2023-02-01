@@ -24,7 +24,7 @@ class UpdateFaqsRequest extends FormRequest
     public function rules()
     {
         return [
-            "pergunta" => 'required|min:3|unique:faqs,pergunta,'.$this->faq->id.'|regex:/^[A-ZÀ-úa-z\s]+$/',
+            "pergunta" => 'required|min:3|unique:faqs,pergunta,'.$this->faq->id.'|regex:/^[A-ZÀ-úa-z\s,.?!]+$/',
         ];
             }
     public function messages()

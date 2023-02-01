@@ -5,7 +5,7 @@
 
 <footer class="footer">
     <div class="footer__addr">
-        <h1 class="footer__logo"><img src="{{ asset('IMG/gori_horizontal_branco.png') }}" alt="logo" width="130" />
+        <h1 class="footer__logo"><img src="{{ asset('img/gori_horizontal_branco.png') }}" alt="logo" width="130" />
         </h1>
 
         <h2>Contacto</h2>
