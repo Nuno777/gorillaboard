@@ -163,15 +163,21 @@
             </div>
         </div>
 
-
+    @if (is_null(Auth::user()->atletas))
+        <div class="form-row justify-content-center">
+            <a class="btn btn-primary" href='{{ route('profile.show.add-atleta') }}'>Adicionar como Atleta</a>
+        </div>
+    @else
         @if (Auth::user()->atletas->user_id == Auth::user()->id)
             <div class="form-row justify-content-center">
                 <button type="submit" class="btn btn-primary ">Inscrição</button>
             </div>
         @else
-
+        <div class="form-row justify-content-center">
+            <a class="btn btn-primary" href='{{ route('profile.show.add-atleta') }}'>Adicionar como Atleta</a>
+        </div>
         @endif
-
+    @endif
     </form>
 @endauth
 </div>
