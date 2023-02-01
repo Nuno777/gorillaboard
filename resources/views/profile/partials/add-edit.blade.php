@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group d-flex row">
     {{-- <label for="inputName">Nome</label> --}}
     <div class="col-6">
         <label for="">Data de nacimento do Atleta</label>
