@@ -7,12 +7,12 @@
 
     @include('layouts.partials.dashboard.nav')
 
-    <h1>Imagens</h1>
+    <h1 class="display-3">Imagens</h1>
   
     <form action="{{route('admin.Img_Dashboard.index')}}" method="GET" role="search" id="searchbar_imgs">
-      <div class="input-group">
+      <div class="input-group search_input_button">
           <input type="text" class="form-control" name="q"
-              placeholder="Search users"> <span class="input-group-btn">
+              placeholder="Procurar Imagens"> <span class="input-group-btn">
               <button type="submit" class="btn btn-primary searchbtn" style="border-radius: 0">
                 GO
               </button>

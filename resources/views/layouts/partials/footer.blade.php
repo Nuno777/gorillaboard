@@ -11,7 +11,7 @@
         <h2>Contacto</h2>
 
         <address>
-            Leiria, Portugal. Escola Superior de Tecnologia e GestÃ£o<br>
+            Leiria, Portugal. Escola Superior de Tecnologia e Gestao<br>
 
             <a class="footer__btn" href="mailto:gorillaboards@gmail.com">Contacte-nos</a>
         </address>
@@ -19,22 +19,17 @@
 
     <ul class="footer__nav">
         <li class="nav__item">
-            <h2 class="nav__title">Aulas</h2>
+            <h2 class="nav__title">Doação</h2>
 
             <ul class="nav__ul">
-
-
-                @foreach ($desportos as $desporto)
                 <li>
-                    <a href="{{ route('aula', $desporto->id) }}">{{ $desporto->modalidades }}</a>
+                    <a href="{{ route('index','#savetgor') }}">Gorilla Care</a>
                 </li>
-            @endforeach
-
             </ul>
         </li>
 
         <li class="nav__item nav__item--extra">
-            <h2 class="nav__title">Desportos</h2>
+            <h2 class="nav__title">Aulas</h2>
 
             <ul class="nav__ul nav__ul--extra">
 

@@ -168,7 +168,7 @@
                 </div>
             </div>
 
-            <div class="col testt">
+            <div class="col col_invise">
                 <img src="{{ asset('img/savethegorilass.png') }}" alt="ola" id="savegori_img">
             </div>
         </div>

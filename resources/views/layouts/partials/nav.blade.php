@@ -13,22 +13,6 @@
         <div class="collapse navbar-collapse nav_option" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
                 <li>
-                    <div class="dropdown dropbtn_nav">
-                        <a class="btn1 btn-secondary {{-- dropdown-toggle --}} desp_btn_nav" href="#" role="button"
-                            id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                            DESPORTOS
-                        </a>
-
-                        <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
-                            @foreach ($desportos as $desporto)
-                                <li><a class="dropdown-item"
-                                        href="{{ route('index', $desporto->id) }}">{{ $desporto->modalidades }}</a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </li>
-                <li>
                     <a href="{{ route('sobre') }}">SOBRE</a>
                 </li>
                 <li>
@@ -40,8 +24,9 @@
                         </a>
                         <ul class="dropdown-menu drop_desportos" aria-labelledby="dropdownMenuLink">
                             @foreach ($desportos as $aulaDesporto)
-                                <li><a class="dropdown-item"
-                                        href="{{ route('aula', $aulaDesporto->id) }}">{{ $aulaDesporto->modalidades }}
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('aula', $aulaDesporto->id) }}">
+                                    {{ $aulaDesporto->modalidades }}
                                     </a>
                                 </li>
                             @endforeach
