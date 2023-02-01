@@ -42,7 +42,7 @@
     <div class="container">
         <div class="row">
             <div class="row justify-content-center ">
-                <h3 class="row justify-content-center cor">Aulas de {{ $desporto->modalidades }} em Grupo</h3>
+                <h3 class="row justify-content-center">Aulas de {{ $desporto->modalidades }} em Grupo</h3>
                 <div class="col col-lg-3">
                     <div class="card">
                         <div class="card-body">
@@ -79,7 +79,7 @@
         <div class="row">
             <div class="row justify-content-center ">
 
-                <h3 class="row justify-content-center cor">Aulas Privadas de {{ $desporto->modalidades }}</h3>
+                <h3 class="row justify-content-center ">Aulas Privadas de {{ $desporto->modalidades }}</h3>
 
                 <div class="col col-lg-3">
                     <div class="card">
