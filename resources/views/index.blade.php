@@ -21,6 +21,7 @@
         <div class="carousel-inner">
             <!-- Single item -->
             <div class="carousel-item active">
+
                 <img src="{{ asset('img/supertubosgifback.gif') }}" class="d-block w-100" alt="Supertubos" />
 
                 <div class="centered giftitle"><img src="{{ asset('img/supertubosgif.gif') }}" alt=""></div>
@@ -37,6 +38,7 @@
                 <img src="{{ asset('img/serradaestrelaimg.png') }}" class="d-block w-100" alt="serradaestrela" />
                 <div class="centered">Serra da Estrela</div>
             </div>
+
         </div>
         <!-- Inner -->
 
@@ -54,6 +56,8 @@
 
     <div id="info_Row">
         <div class="row">
+
+
             <a href="#desportos_section" class="col">
                 <div class="info_home">
                     <h3>Desportos</h3>
@@ -124,7 +128,8 @@
                             <p class="nome_desp">{{ $aula->desporto->modalidades }}</p>
                             <p class="local_aulas">{{ $aula->local_aulas }}</p>
                             <p class="data_aulas">{{ $aula->data_aulas }}</p>
-                            <p class="text-center"><img src="{{ asset('img/' . $aula->desporto->icon) }}" alt="icon">
+                            <p class="text-center"><img src="{{ asset('img/' . $aula->desporto->icon) }}"
+                                    alt="icon">
                             </p>
                         </div>
                 </div>

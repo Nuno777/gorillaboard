@@ -17,6 +17,16 @@
     @include('layouts.partials.nav')
 
     <main>
+        <div class="col-md-12">
+            @if (Session::has('message'))
+                <div class="alert alert-success alert-dismissible fade show " role="alert">
+                    <strong>{{ Session::get('message') }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close" style="color:#4f5962;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+        </div>
         @yield('main')
     </main>
 
@@ -25,7 +35,7 @@
 
 
     <script>
-        $(window).on('load', function(){
+        $(window).on('load', function() {
             $(".loader").parent().fadeOut("slow");
         });
     </script>
