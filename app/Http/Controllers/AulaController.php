@@ -40,7 +40,7 @@ class AulaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Desporto $desporto,$id)
+    public function store(Request $request, Desporto $desporto)
     {
         request()->validate([
             'naulas' => 'required'
@@ -52,7 +52,7 @@ class AulaController extends Controller
         $aula->num_inscricoes = request('naulas');
         $aula->save();
 
-        return route('/')->with('message', 'Inscrição na aula com sucesso!!');
+        return redirect('/')->with('message', 'Inscrição na aula com sucesso!!');
     }
 
     /**
